@@ -3,13 +3,13 @@ from django.contrib import admin
 from django.urls import path,include
 from django.conf.urls.static import static
 from django.conf import settings 
-from catalog.views import index
+from electrical.views import index
 
 
 urlpatterns = [
     path('admin/', admin.site.urls), 
     path('', index),
-    path('catalog/', include("catalog.urls")),
+    path('electrical/', include("electrical.urls")),
     path('accounts/', include("accounts.urls")),
 ]
 
