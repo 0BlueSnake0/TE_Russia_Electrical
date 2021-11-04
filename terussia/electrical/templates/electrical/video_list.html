@@ -1,0 +1,19 @@
+{% extends 'electrical/base.html' %} 
+{% load static %}
+{% block videos %}
+<title>Videos</title>   
+
+<h1 class="category-title">Videos</h1>
+<div class="video-flex-container">
+{% for video in all_videos %}
+    <a href="{% url 'electrical:detail_video' category_slug='slug' video_slug=video.slug %}" class="video-link">
+        {% if video.preview and video.preview.url %}
+        <img src="{{video.preview.url}}">
+        {% else %}
+        <img src="{% static 'main/images/previews/default.png' %}">
+        {% endif %}
+        <p style="margin:1em;" class="preview-title">{{video.title}}</p>
+    </a>    
+{% endfor %} 
+</div> 
+{% endblock %}

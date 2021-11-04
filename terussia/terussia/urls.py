@@ -11,6 +11,7 @@ urlpatterns = [
     path('', index),
     path('electrical/', include("electrical.urls")),
     path('accounts/', include("accounts.urls")),
+    path('ckeditor/', include('ckeditor_uploader.urls')),
 ]
 
 if settings.DEBUG:
