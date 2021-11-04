@@ -38,7 +38,7 @@
     display:block; 
     overflow:auto;
     width: 90%;
-    height:100vh;
+    height:auto;
     word-break:break-word;
     position:relative; 
     margin:5%;
