@@ -6,8 +6,7 @@ from django.utils.safestring import mark_safe
 @admin.register(Video)
 class VideoAdmin(admin.ModelAdmin):
     list_display = [
-        'get_preview', 
-        'uploaded_at', 
+        'get_preview',  
         'get_filename',
     ]
 
@@ -51,4 +50,4 @@ class VideoAdmin(admin.ModelAdmin):
         return mark_safe(file)
 
     get_preview.short_description = "Preview"
-    get_filename.short_description = "Filename"
+    get_filename.short_description = "File"

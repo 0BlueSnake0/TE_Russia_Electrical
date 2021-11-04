@@ -8,9 +8,11 @@
 {% for video in all_videos %}
     <a href="{% url 'electrical:detail_video' category_slug='slug' video_slug=video.slug %}" class="video-link">
         {% if video.preview and video.preview.url %}
-        <img src="{{video.preview.url}}">
+        <img class="video-preview-img" src="{{video.preview.url}}">
         {% else %}
-        <img src="{% static 'main/images/previews/default.png' %}">
+        <video class="video-preview-img" >
+            <source src="{{video.file.url}}" type="video/mp4"> 
+        </video> 
         {% endif %}
         <p style="margin:1em;" class="preview-title">{{video.title}}</p>
     </a>    

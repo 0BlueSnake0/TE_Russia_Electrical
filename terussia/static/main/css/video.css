@@ -19,9 +19,9 @@
 .video-flex-container .video-link:hover {opacity: 0.8;cursor:pointer;}
 
 
-.video-flex-container .video-link img { 
-    width:94%;height:70%;border-radius: 1em;
-    margin:3%;  
+.video-preview-img { 
+    width:94%;height:70%; 
+    margin:3%; 
 }
 .preview-title {
     text-decoration: none!important;;
@@ -32,8 +32,8 @@
 }
 .preview-title:hover {color:rgb(0,0,0,0.5);cursor:pointer;}
 
-/* Detail video styles */
 
+/* Detail video styles */
 .video-detail {
     display:block; 
     overflow:auto;
@@ -46,8 +46,5 @@
     border-radius: 2em;
 }
 
-.video-clip {
-    width:60%;height:50%;
-    margin:5%;
-}
+.video-clip {width:60%;height:50%;margin:5%}
 .video-clip:hover {opacity:0.8;}
