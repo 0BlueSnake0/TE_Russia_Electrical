@@ -1,12 +1,15 @@
 from django.shortcuts import render, HttpResponse
 from .models import *
+from .header import *
 
 
 def index(request):
     return render(
         request,
         template_name="electrical/index.html",
-        context={}
+        context={
+            'dropdown1':DROPDOWN_1,
+        }
     )
 
 
