@@ -1,19 +1,18 @@
-{% load static %}
-<!DOCTYPE html>
+{% load static %} 
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/header.css' %}">
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/titles.css' %}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/header.css' %}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}"> 
     </head>
 
     <body>
  
 
-        <label class="site-navigation-750-minus"> 
+        <label id="site-navigation-750-minus" class="site-navigation-750-minus"> 
             
             <input type="checkbox" class="checkbox-1"> 
-            <div class="fixed">
+            <div id="to-fix-1">
                 <img class="dropdown-icon" src="/static/main/images/icons/bl-dropdown-icon.png"> 
             </div> 
             <div class="menu-item-content-1">
@@ -44,10 +43,9 @@
                 {% endfor %}   
                 </div>    
             </div>  
-        </label> 
-
+        </label>  
         <header> 
-            <div class="contact-info">   
+            <div id="contact-info" class="contact-info">   
                 <a class="default-text" type="tel" style="float: left;">
                     <img src="/static/main/images/icons/address.png">
                     <p>Адрес: </p>
@@ -62,11 +60,12 @@
                 <div class="gray-gl"></div>
             </div>
 
-            <div class="fixed">
+            <div id="site-navigation-750-plus" class="site-navigation-750-plus">
                 <div class="logo-item">
-                    <a href="https://terussia.ru/" class="logo"><img src="/static/main/images/icons/te-logo.png"></a> 
+                    <a href="https://terussia.ru/" class="logo">
+                    <img src="/static/main/images/icons/te-logo.png"></a> 
                 </div> 
-                <nav class="site-navigation-750-plus"> 
+                <label id="nav"> 
                     {% for title1,value1 in dropdown1.items %}  
                         <label class="layer-1"> 
                             <a class="menu-item-title-1 default-text"href="{{value1.link}}">
@@ -84,7 +83,7 @@
                                     {% if value2.content.items|length != 0 %}
                                         <div class="menu-item-content-2"> 
                                             {% for title3,value3 in value2.content.items %}   
-                                            <a class="default-text" href="{{value3.link}}">{{title3}}</a>
+                                            <label><a class="default-text" href="{{value3.link}}">{{title3}}</a></label>
                                             {% endfor %}  
                                         </div>
                                     {% endif %}
@@ -93,95 +92,10 @@
                             </div>
                         </label> 
                     {% endfor %}  
-                </nav> 
-            </div>
-
-                
-            <div style="width:100%;display:flex;flex-direction:column;margin-top:2em;"> 
-                <div class="orange-gl"></div>
-                <div style="width:100%;display:flex;flex-direction:column;">
-                    <span class="header-title default-text">
-                    Посмотреть расписание вебинаров TE Connectivity
-                    </span>   
-                    <span class="header-title default-text"> 
-                        и записаться на них можно
-                        <span class="header-title default-text">  
-                        <a style="text-decoration:none;padding:0.1em;" class="default-text or-bl-link" 
-                        target="_blank" href="https://terussia.ru/%d1%80%d0%b0%d1%81%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b2%d0%b5%d0%b1%d0%b8%d0%bd%d0%b0%d1%80%d0%be%d0%b2-te-connectivity/">ЗДЕСЬ</a>
-                        </span>   
-                    </span>   
-                </div>
-                <div class="orange-gl"></div>
-            </div>
-
+                </label> 
+            </div> 
         </header>
-
-        <footer></footer>  
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
-        <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
+        {% block start %}{% endblock %}
         <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
         <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
         <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
@@ -360,4 +274,20 @@
         <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
         <div>TExTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtTExtt</div>
     </body>
+ 
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script type="text/javascript">   
+        var navigation_1 = document.getElementById("site-navigation-750-minus");
+        var navigation_2 = document.getElementById("site-navigation-750-plus");
+        window.addEventListener(
+            "scroll", function(e) {  
+                if (window.innerWidth >= 750) { 
+                    var scrolled = document.body.scrollTop - navigation_2.offsetTop; 
+                    if (scrolled > 100 ) {navigation_2.classList.add("to-fix-2");}
+                    else {navigation_2.classList.remove("to-fix-2");} 
+                }
+            }
+        );
+
+    </script>
 </html>

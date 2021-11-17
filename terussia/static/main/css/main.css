@@ -1,0 +1,19 @@
+
+
+.under-header-content {
+    width:90vw;
+    display:flex;
+    flex-direction:column;
+    margin-top:2em; 
+    margin-left:5vw;margin-right:5vw;
+}
+.orange-gl {border-top:1px solid #e98300;width:auto;}
+.under-header-title {
+    font-family:Arial, Helvetica, sans-serif sans-serif;
+    text-align:center;
+    text-decoration: none; 
+    line-height:1em;
+    color: #6f7279;
+    font-size:18pt;
+    line-height:1.5;  
+}

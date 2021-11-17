@@ -1,10 +1,20 @@
 {% extends 'electrical/base.html' %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>Electrical</title>
-    </head>
-    <body>
-        
-    </body>
-</html>
+{% block start %}
+<title>Electrical</title> 
+<div class="under-header-content"> 
+    <div class="orange-gl"></div>
+    <div style="width:100%;display:flex;flex-direction:column;">
+        <span class="under-header-title default-text">
+        Посмотреть расписание вебинаров TE Connectivity
+        </span>   
+        <span class="under-header-title default-text"> 
+            и записаться на них можно
+            <span class="title default-text">  
+            <a style="text-decoration:none;padding:0.1em;" class="default-text or-bl-link" 
+            target="_blank" href="https://terussia.ru/%d1%80%d0%b0%d1%81%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b2%d0%b5%d0%b1%d0%b8%d0%bd%d0%b0%d1%80%d0%be%d0%b2-te-connectivity/">ЗДЕСЬ</a>
+            </span>   
+        </span>   
+    </div>
+    <div class="orange-gl"></div>
+</div> 
+{% endblock %}
