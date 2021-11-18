@@ -26,7 +26,7 @@
                         <div class="menu-item-content-2"> 
                             {% for title2,value2 in value1.content.items %} 
                             <label class="layer-2">
-                                <a class="menu-item-title-2 default-text" href="{{value2.link}}">{{title2}}</a>
+                                <label><a class="menu-item-title-2 default-text" href="{{value2.link}}">{{title2}}</a></label>
                                 {% if value2.content.items|length != 0 %}
                                     <input type="checkbox" class="checkbox-3">  
                                     <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-1.png">  
@@ -44,6 +44,7 @@
                 </div>    
             </div>  
         </label>  
+
         <header> 
             <div id="contact-info" class="contact-info">   
                 <a class="default-text" type="tel" style="float: left;">
@@ -97,8 +98,7 @@
         </header>
         {% block start %}{% endblock %} 
     </body>
- 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  
     <script type="text/javascript">   
         var navigation_1 = document.getElementById("site-navigation-750-minus");
         var navigation_2 = document.getElementById("site-navigation-750-plus");
