@@ -1,6 +1,11 @@
 {% extends 'electrical/base.html' %}
+{% load static %} 
 {% block start %}
-<title>Electrical</title> 
+<head>
+    <meta charset="UTF-8">
+    <title>Electrical</title> 
+    <link rel="stylesheet" type="text/css" href="{% static 'main/css/slideshow.css' %}">  
+</head>
 <div class="under-header-content"> 
     <div class="orange-gl"></div>
     <div style="width:100%;display:flex;flex-direction:column;">
@@ -17,100 +22,77 @@
     </div>
     <div class="orange-gl"></div>
 </div> 
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
-<div>Content</div>
+
+<div class="slideshow" id="slideshow-1"> 
+    <div style="display:flex;width:100%;height:100%;">
+        <div style="margin-right:-7%;" class="click-zone">
+            <label onclick="lastSlide()" onmouseenter="stopAutoSlideshow()"class="last-slide-arrow"></label>
+        </div> 
+        <div class="slideshow-content" onmouseleave="stopAutoSlideshow()" onmouseenter="runAutoSlideshow()">
+            <img class="slide" id="image-0" src="/static/main/images/icons/bl-arrow-icon-1.png">
+            <img class="slide" id="image-1" src="/static/main/images/icons/bl-arrow-icon-2.png">
+            <img class="slide" id="image-2" src="/static/main/images/icons/bl-arrow-icon-3.png">
+            <img class="slide" id="image-3" src="/static/main/images/icons/bl-dropdown-icon.png">
+        </div> 
+        <div style="margin-left:-7%;" class="click-zone">
+            <label onclick="nextSlide()" onmouseenter="stopAutoSlideshow()" class="next-slide-arrow"></label>
+        </div> 
+    </div>
+    <div style="display:flex;margin-top:-5vh;width:auto;">
+        <div class="dot-block"> 
+            <div class="or-dot" id="dot-0"></div>  
+            <div class="or-dot" id="dot-1"></div>  
+            <div class="or-dot" id="dot-2"></div>  
+            <div class="or-dot" id="dot-3"></div>  
+        </div>  
+    </div>
+</div>
+   
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script type="text/javascript">
+    var slide_number = 0;
+    var min_slide_number=0;
+    var max_slide_number=3;
+
+    var last_slide_button = document.getElementById("left");
+    var next_slide_button = document.getElementById("right");
+
+    function turn_on_slide (slide_number) { 
+        document.getElementById("image-" + slide_number).style.display = "flex";
+        document.getElementById("dot-" + slide_number).style.backgroundColor = "#e98300";
+        $("#dot-" + slide_number).addClass("checked-dot"); 
+        for (var i=0;i<=max_slide_number;i++) {
+            if (i != slide_number) { 
+            document.getElementById("image-" + i).style.display = "none"; 
+            document.getElementById("dot-" + i).style.backgroundColor = "white";
+            $("#dot-" + i).removeClass("checked-dot");
+            } 
+        }
+    }
+    turn_on_slide(0); 
+    function lastSlide() {
+        if (slide_number>0) {slide_number-=1;}
+        else {slide_number=max_slide_number;}  
+        var slide = document.getElementById("image-" + slide_number);
+        slide.style.animationName = "last-slide";
+        turn_on_slide(slide_number);
+    }  
+    function nextSlide () {
+        if (slide_number<max_slide_number) {slide_number+=1;}
+        else {slide_number=min_slide_number;} 
+        var slide = document.getElementById("image-" + slide_number); 
+        slide.style.animationName = "next-slide";
+        turn_on_slide(slide_number);
+    }  
+    var auto_scrolling = false;
+    function runAutoSlideshow() {
+        auto_scrolling = setInterval(function () {nextSlide();}, 8000);
+    }
+    function stopAutoSlideshow() {
+        clearInterval(auto_scrolling);
+    }
+
+
+</script>
+
 {% endblock %}

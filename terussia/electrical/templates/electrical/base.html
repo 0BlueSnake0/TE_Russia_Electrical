@@ -96,17 +96,17 @@
                 </label> 
             </div> 
         </header>
+
         {% block start %}{% endblock %} 
-    </body>
-  
+    </body> 
     <script type="text/javascript">   
         var navigation_1 = document.getElementById("site-navigation-750-minus");
         var navigation_2 = document.getElementById("site-navigation-750-plus");
         window.addEventListener(
             "scroll", function(e) {  
-                if (window.innerWidth >= 750) { 
+                if (window.innerWidth > 750) { 
                     var scrolled = document.body.scrollTop - navigation_2.offsetTop; 
-                    if (scrolled > 100 ) {navigation_2.classList.add("to-fix-2");}
+                    if (scrolled > 300 ) {navigation_2.classList.add("to-fix-2");}
                     else {navigation_2.classList.remove("to-fix-2");} 
                 }
             }
