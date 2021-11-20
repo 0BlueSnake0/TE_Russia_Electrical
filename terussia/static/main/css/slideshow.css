@@ -7,24 +7,16 @@
     0% {opacity:0;} 
     100% {opacity:1;}
 }
-
-@keyframes click-left-arrow {
-    from {transform:translateX(0%)}
-    to {transform:translateX(-10%)}
-}
-@keyframes click-right-arrow {
-    from {transform:translateX(0%)}
-    to {transform:translateX(10%)}
-}
+ 
 @keyframes dot-fading {
-    from {opacity:0;background:white;}
-    to {opacity:1;background: #e98300;}
+    from {background:white;}
+    to {background: #e98300;}
 }
 
 
 .slideshow {
     width:90vw;
-    height:60vw;
+    height:30vw;
     margin-left:auto;
     margin-right:auto;
     margin-top:1vw;  

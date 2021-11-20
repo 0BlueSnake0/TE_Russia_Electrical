@@ -5,7 +5,8 @@
     display:flex;
     flex-direction:column;
     margin-top:2em; 
-    margin-left:5vw;margin-right:5vw;
+    margin-left:auto;
+    margin-right:auto;
 }
 .orange-gl {border-top:1px solid #e98300;width:auto;}
 .under-header-title {
@@ -16,4 +17,4 @@
     color: #6f7279;
     font-size:18pt;
     line-height:1.5;  
-}
+} 

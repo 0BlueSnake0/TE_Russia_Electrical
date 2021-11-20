@@ -4,6 +4,7 @@
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/header.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/fields.css' %}"> 
     </head>
 
     <body>
@@ -14,6 +15,13 @@
             <input type="checkbox" class="checkbox-1"> 
             <div id="to-fix-1">
                 <img class="dropdown-icon" src="/static/main/images/icons/bl-dropdown-icon.png"> 
+                <form method="POST" class="searcher">
+                    {% csrf_token %}
+                    <input type="text" class="searcher-field">
+                    <button type="submit" class="search-button">
+                        <img class="search-icon" src="/static/main/images/icons/search.png">  
+                    </button>
+                </form> 
             </div> 
             <div class="menu-item-content-1">
                 <div id="content"> 
@@ -46,19 +54,28 @@
         </label>  
 
         <header> 
-            <div id="contact-info" class="contact-info">   
-                <a class="default-text" type="tel" style="float: left;">
-                    <img src="/static/main/images/icons/address.png">
-                    <p>Адрес: </p>
-                    <p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
-                </a> 
-                <div class="gray-vl"></div>
-                <a class="default-text">
-                    <img src="/static/main/images/icons/phone.png">
-                    <p>Телефон: </p>
-                    <p>+7(495) 790-9028</p>  
-                </a>   
-                <div class="gray-gl"></div>
+            <div class="contact-info">    
+                <div  id="contact-info" >
+                    <a class="default-text" type="tel">
+                        <img src="/static/main/images/icons/address.png">
+                        <p>Адрес: </p>
+                        <p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
+                    </a> 
+                    <div class="gray-vl"></div>
+                    <a class="default-text">
+                        <img src="/static/main/images/icons/phone.png">
+                        <p>Телефон: </p>
+                        <p>+7(495) 790-9028</p>  
+                    </a>   
+                    <form method="POST" class="searcher">
+                        {% csrf_token %}
+                        <input type="text" class="searcher-field">
+                        <button type="submit" class="search-button">
+                            <img class="search-icon" src="/static/main/images/icons/search.png">  
+                        </button>
+                    </form> 
+                </div>
+                <div style="width:100%;" class="gray-gl"></div>
             </div>
 
             <div id="site-navigation-750-plus" class="site-navigation-750-plus">
@@ -95,6 +112,7 @@
                     {% endfor %}  
                 </label> 
             </div> 
+
         </header>
 
         {% block start %}{% endblock %} 
