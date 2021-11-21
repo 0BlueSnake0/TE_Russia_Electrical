@@ -1,39 +1,4 @@
-DROPDOWN_1 = { 
-    "ОТДЕЛЕНИЕ ЭНЕРГЕТИКИ": {
-        "title":"ОТДЕЛЕНИЕ ЭНЕРГЕТИКИ",
-        "link":"https://terussia.ru/",
-        "content": {
-            "Новости_TE":{
-                "link":"https://terussia.ru/%d0%bd%d0%be%d0%b2%d0%be%d1%81%d1%82%d0%b8-te/",
-                "content": {},
-            },
-            "Видео_TE": {
-                "link":"https://terussia.ru/%d0%b2%d0%b8%d0%b4%d0%b5%d0%be-te/",
-                "content": {},
-            },
-            "Статьи_TE":{
-                "link":"#",
-                "content": {},
-            },
-            "Instagram_TE":{
-                "link":"https://www.instagram.com/terussia/",
-                "content": {},
-            },
-            "Facebook_TE":{
-                "link":"https://www.facebook.com/TE-Russia-344293529426054/",
-                "content": {},
-            },
-            "Youtube_TE":{
-                "link":"https://www.youtube.com/channel/UCBszQ_vhM3PCpwxLrs1oKzQ",
-                "content": {},
-            },
-            "Вебинары_TE":{
-                "link":"https://terussia.ru/%d1%80%d0%b0%d1%81%d0%bf%d0%b8%d1%81%d0%b0%d0%bd%d0%b8%d0%b5-%d0%b2%d0%b5%d0%b1%d0%b8%d0%bd%d0%b0%d1%80%d0%be%d0%b2-te-connectivity/",
-                "content": {},
-            },
-        }
-
-    },
+DROPDOWN_1 = {  
 
     "ПРОДУКЦИЯ": {
         "title":"ПРОДУКЦИЯ",
@@ -108,32 +73,6 @@ DROPDOWN_1 = {
     "КОНТАКТЫ": {
         "title":"КОНТАКТЫ",
         "link":"#", 
-        "content": {
-            "Центральный филиал":{
-                "link":"https://terussia.ru/%d1%86%d0%b5%d0%bd%d1%82%d1%80%d0%b0%d0%bb%d1%8c%d0%bd%d1%8b%d0%b9-%d1%84%d0%b8%d0%bb%d0%b8%d0%b0%d0%bb/",
-                "content":{},    
-            },
-            "Представительства в регионах":{
-                "link":"https://terussia.ru/%d0%bf%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b0%d0%b2%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d1%82%d0%b2%d0%b0-%d0%b2-%d1%80%d0%b5%d0%b3%d0%b8%d0%be%d0%bd%d0%b0%d1%85/",
-                "content":{},    
-            },
-            "Производство Углич":{
-                "link":"#",
-                "content":{},    
-            },
-            "Представительство СНГ-Восток":{
-                "link":"https://terussia.ru/%d0%bf%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b0%d0%b2%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d1%82%d0%b2%d0%be-%d1%81%d0%bd%d0%b3-%d0%b2%d0%be%d1%81%d1%82%d0%be%d0%ba/",
-                "content":{},    
-            },
-            "Представительство СНГ-Запад":{
-                "link":"https://terussia.ru/%d0%bf%d1%80%d0%b5%d0%b4%d1%81%d1%82%d0%b0%d0%b2%d0%b8%d1%82%d0%b5%d0%bb%d1%8c%d1%81%d1%82%d0%b2%d0%be-%d1%81%d0%bd%d0%b3-%d0%b7%d0%b0%d0%bf%d0%b0%d0%b4/",
-                "content": {},
-            },
-            "Отдел по работе с клиентами":{
-                "link":"https://terussia.ru/%d0%be%d1%82%d0%b4%d0%b5%d0%bb-%d0%bf%d0%be-%d1%80%d0%b0%d0%b1%d0%be%d1%82%d0%b5-%d1%81-%d0%ba%d0%bb%d0%b8%d0%b5%d0%bd%d1%82%d0%b0%d0%bc%d0%b8/",
-                "content":{},    
-            },
-        }
-
+        "content": {}, 
     },
 } 

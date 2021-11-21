@@ -1,10 +1,5 @@
-var slideshows = [
-    1,
-];
-
 var slide_number = 0;
 var min_slide_number=0;
-var max_slide_number=3;
 
 var last_slide_button = document.getElementById("left");
 var next_slide_button = document.getElementById("right");
@@ -25,8 +20,7 @@ function turn_on_slide (slide_number, slideshow_id) {
         } 
     }
 }
-
-for (var i=1;i<=slideshows.length;i++) {turn_on_slide(0, i);} 
+turn_on_slide(0, slideshow_id);
 
 function clickOnDot(choosed, slideshow_id) {
     if (choosed < slide_number) { 

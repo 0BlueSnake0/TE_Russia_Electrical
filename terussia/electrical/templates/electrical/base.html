@@ -1,8 +1,10 @@
-{% load static %} 
+ 
+{% load static %}  
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/header.css' %}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/footer.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/fields.css' %}"> 
     </head>
@@ -29,13 +31,16 @@
                     <label class="layer-1">  
                         <a class="menu-item-title-1 default-text"href="{{value1.link}}">{{title1}}</a> 
                         
+                        {% if value1.content.items|length != 0 %}
                         <input type="checkbox" class="checkbox-2">   
                         <img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png">  
-                        <div class="menu-item-content-2"> 
-                            {% for title2,value2 in value1.content.items %} 
-                            <label class="layer-2">
-                                <label><a class="menu-item-title-2 default-text" href="{{value2.link}}">{{title2}}</a></label>
-                                {% if value2.content.items|length != 0 %}
+                            <div class="menu-item-content-2"> 
+                                {% for title2,value2 in value1.content.items %} 
+                                <label class="layer-2">
+                                    <label>
+                                        <a class="menu-item-title-2 default-text" href="{{value2.link}}">{{title2}}</a>
+                                    </label>
+                                    {% if value2.content.items|length != 0 %}
                                     <input type="checkbox" class="checkbox-3">  
                                     <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-1.png">  
                                     <div class="menu-item-content-3"> 
@@ -43,10 +48,11 @@
                                         <label><a class="default-text" href="{{value3.link}}">{{title3}}</a></label>
                                         {% endfor %}  
                                     </div>
-                                {% endif %}
-                            </label>
-                            {% endfor %} 
-                        </div>
+                                    {% endif %}
+                                </label>
+                                {% endfor %} 
+                            </div>
+                        {% endif %} 
                     </label> 
                 {% endfor %}   
                 </div>    
@@ -75,60 +81,79 @@
                         </button>
                     </form> 
                 </div>
-                <div style="width:100%;" class="gray-gl"></div>
+                <div class="gray-gl"></div>
             </div>
 
             <div id="site-navigation-750-plus" class="site-navigation-750-plus">
-                <div class="logo-item">
+                <div  class="logo-item">
                     <a href="https://terussia.ru/" class="logo">
                     <img src="/static/main/images/icons/te-logo.png"></a> 
                 </div> 
                 <label id="nav"> 
                     {% for title1,value1 in dropdown1.items %}  
                         <label class="layer-1"> 
-                            <a class="menu-item-title-1 default-text"href="{{value1.link}}">
-                                {{title1}}<img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png"> 
+                            <a class="menu-item-title-1 default-text" href="{{value1.link}}">
+                                {{title1}}
+                                {% if value1.content.items|length != 0 %}
+                                <img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png"> 
+                                {% endif %}
                             </a>  
-                            <div class="menu-item-content-1"> 
-                                {% for title2,value2 in value1.content.items %} 
-                                <label class="layer-2">
-                                    <a class="menu-item-title-2 default-text" href="{{value2.link}}">
-                                        {{title2}}
+                            {% if value1.content.items|length != 0 %}
+                                <div class="menu-item-content-1"> 
+                                    {% for title2,value2 in value1.content.items %} 
+                                    <label class="layer-2">
+                                        <a class="menu-item-title-2 default-text" href="{{value2.link}}">
+                                            {{title2}}
+                                            {% if value2.content.items|length != 0 %}
+                                            <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-3.png"> 
+                                            {% endif %}
+                                        </a>
                                         {% if value2.content.items|length != 0 %}
-                                        <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-3.png"> 
+                                            <div class="menu-item-content-2"> 
+                                                {% for title3,value3 in value2.content.items %}   
+                                                <label><a class="default-text" href="{{value3.link}}">{{title3}}</a></label>
+                                                {% endfor %}  
+                                            </div>
                                         {% endif %}
-                                    </a>
-                                    {% if value2.content.items|length != 0 %}
-                                        <div class="menu-item-content-2"> 
-                                            {% for title3,value3 in value2.content.items %}   
-                                            <label><a class="default-text" href="{{value3.link}}">{{title3}}</a></label>
-                                            {% endfor %}  
-                                        </div>
-                                    {% endif %}
-                                </label>
-                                {% endfor %} 
-                            </div>
+                                    </label>
+                                    {% endfor %} 
+                                </div>
+                            {% endif %}
                         </label> 
                     {% endfor %}  
                 </label> 
-            </div> 
+            </div>  
+        </header>   
 
-        </header>
+        {% block start %}{% endblock %}
+        {% block contacts %}{% endblock %}
+        {% block catalog %}{% endblock %}
+ 
+        <div  class="footer-gray-vl"></div>
+        <div class="footer-info">    
+            <div class="gray-gl"></div>
+            <div  id="footer-info" >
+                <p id="footer-copyright" class="default-text" >Разработано © TE Russia 2021.</p> 
+                <label>
+                    <a class="default-text">
+                        <img src="/static/main/images/icons/address-2.png"> 
+                        <p style="color:gray;">127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
+                    </a>  
+                    <div  class="gray-vl"></div>
+                    <a class="default-text" style="cursor:pointer;" type="tel">
+                        <img src="/static/main/images/icons/phone.png"> 
+                        <p>+7(495) 790-9028</p>  
+                    </a>   
+                    <div class="gray-vl"></div>
+                    <a class="default-text"  style="cursor:pointer;">
+                        <img src="/static/main/images/icons/@-email.png"> 
+                        <p>info@terussia.ru</p>  
+                    </a>    
+                </label>
+            </div>
+        </div>
+        
 
-        {% block start %}{% endblock %} 
     </body> 
-    <script type="text/javascript">   
-        var navigation_1 = document.getElementById("site-navigation-750-minus");
-        var navigation_2 = document.getElementById("site-navigation-750-plus");
-        window.addEventListener(
-            "scroll", function(e) {  
-                if (window.innerWidth > 750) { 
-                    var scrolled = document.body.scrollTop - navigation_2.offsetTop; 
-                    if (scrolled > 300 ) {navigation_2.classList.add("to-fix-2");}
-                    else {navigation_2.classList.remove("to-fix-2");} 
-                }
-            }
-        );
-
-    </script>
-</html>
+    <script type="text/javascript" src="{% static 'main/js/navigation_fix.js' %}"></script>
+</html> 
