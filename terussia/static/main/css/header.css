@@ -244,7 +244,7 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
     position:absolute;
     background:white; 
     box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.35); 
-    margin-left:-90%;
+    margin-left:-19em;
     word-wrap:break-word;  
     bottom:0;
 }

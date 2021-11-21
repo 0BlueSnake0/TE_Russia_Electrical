@@ -22,7 +22,24 @@ def technologies(request, **kwargs):
     
 
 def catalog(request, **kwargs):
-    return HttpResponse("")
+    return render(
+        request,
+        template_name="electrical/catalog.html",
+        context={
+            'dropdown1':DROPDOWN_1,
+        }
+    )
+
+
+def contacts(request, **kwargs):
+    return render(
+        request,
+        template_name="electrical/contacts.html",
+        context={
+            'dropdown1':DROPDOWN_1,
+        }
+    )
+
 
 
 def video_list(request, **kwargs):
