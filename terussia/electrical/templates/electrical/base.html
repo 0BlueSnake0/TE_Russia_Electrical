@@ -28,11 +28,10 @@
                 </form> 
             </div> 
             <div class="menu-item-content-1">
-                <div id="content"> 
+                <div id="content">  
                 {% for title1,value1 in dropdown1.items %}  
                     <label class="layer-1">  
-                        <a class="menu-item-title-1 default-text"href="{{value1.link}}">{{title1}}</a> 
-                        
+                        <a class="menu-item-title-1 default-text" href="{{value1.link}}">{{title1}}</a> 
                         {% if value1.content.items|length != 0 %}
                         <input type="checkbox" class="checkbox-2">   
                         <img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png">  
@@ -47,7 +46,7 @@
                                     <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-1.png">  
                                     <div class="menu-item-content-3"> 
                                         {% for title3,value3 in value2.content.items %}    
-                                        <label><a class="default-text" href="{{value3.link}}">{{title3}}</a></label>
+                                        <label><a class="default-text" href="{{value3}}">{{title3}}</a></label>
                                         {% endfor %}  
                                     </div>
                                     {% endif %}
@@ -113,7 +112,7 @@
                                         {% if value2.content.items|length != 0 %}
                                             <div class="menu-item-content-2"> 
                                                 {% for title3,value3 in value2.content.items %}   
-                                                <label><a class="default-text" href="{{value3.link}}">{{title3}}</a></label>
+                                                <label><a class="default-text" href="{{value3}}">{{title3}}</a></label>
                                                 {% endfor %}  
                                             </div>
                                         {% endif %}

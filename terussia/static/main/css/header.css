@@ -244,7 +244,7 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
     position:absolute;
     background:white; 
     box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.35); 
-    margin-left:-19em;
+    margin-left:-90%;
     word-wrap:break-word;  
     bottom:0;
 }
@@ -255,8 +255,7 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
     overflow-wrap:break-word; 
     text-decoration: none;
 }  
-.site-navigation-750-plus  a:hover {color:#e98300;}  
-.menu-item-content-2 label:hover a {color:#e98300;}
+.site-navigation-750-plus  a:hover {color:#e98300;}   
 
 
 

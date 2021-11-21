@@ -10,11 +10,7 @@ DROPDOWN_1 = {
             }, 
             "Продукция завода Schrack":{
                 "link":"https://terussia.ru/catalogs/%D0%9A%D0%B0%D1%82%D0%B0%D0%BB%D0%BE%D0%B3%20%D0%B0%D1%80%D0%BC%D0%B0%D1%82%D1%83%D1%80%D0%B0%20%D0%A1%D0%98%D0%9F%20%D0%A1%D0%98%D0%9C%D0%95%D0%9B%D0%AC%20-%202017.pdf",
-                "content":{
-                    "Арматура_СИП_SIMEL_каталог":"https://bit.ly/2x1m5Jb",
-                    "Типовой_проект_СИП4":"https://bit.ly/3oh1q9O",
-                    "Типовой_проект_СИП3":"https://bit.ly/2HeLVi4",
-                },
+                "content":{},
             }, 
         } 
     },
@@ -25,7 +21,10 @@ DROPDOWN_1 = {
         "content": {
             "Каталоги_продукции":{
                 "link":"/electrical/catalog",
-                "content":{},
+                "content":{ 
+                    "Москва":"/electrical/catalog/Moscow/RUS_1218",
+                    "Санкт-Петербург":"/electrical/catalog/St-Petersburg/RELAYS_2020", 
+                },
             }, 
             "Обучение":{
                 "link":"https://terussia.ru/%d0%be%d0%b1%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d0%b5/",
