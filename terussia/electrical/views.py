@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse
 from django.conf import settings
 from django.http import FileResponse
+from .catalog import CATALOGS
 from .models import *
 from .header import *
 
@@ -29,11 +30,12 @@ def catalog(request, **kwargs):
         template_name="electrical/catalog.html",
         context={
             'dropdown1':DROPDOWN_1,
+            'catalogs':CATALOGS,
         }
     ) 
 
 def catalog_detail(request, **kwargs):   
-	filepath = f'{settings.BASE_DIR}/static/main/catalog_files/{kwargs["folder"]}/{kwargs["filename"]}.pdf'
+	filepath = f'{settings.BASE_DIR}/static/main/catalog_files/{kwargs["folder"]}/{CATALOGS[kwargs["folder"]]["filename"]}'
 	return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
 
 

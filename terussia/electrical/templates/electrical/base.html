@@ -17,16 +17,19 @@
         <label id="site-navigation-750-minus" class="site-navigation-750-minus"> 
             
             <input type="checkbox" class="checkbox-1"> 
+
             <div id="to-fix-1">
-                <img class="dropdown-icon" src="/static/main/images/icons/bl-dropdown-icon.png"> 
-                <form method="POST" class="searcher">
-                    {% csrf_token %}
-                    <input type="text" class="searcher-field">
-                    <button type="submit" class="search-button">
-                        <img class="search-icon" src="/static/main/images/icons/search.png">  
-                    </button>
-                </form> 
+                <img class="dropdown-icon" src="/static/main/images/icons/bl-dropdown-icon.png">  
+                <label class="search-box">
+                    <input type="checkbox" class="search-checkbox">
+                    <form method="POST" class="searcher">
+                        {% csrf_token %}  
+                        <input type="text" placeholder="Искать" class="searcher-field">   
+                    </form> 
+                    <img  class="search-icon" src="/static/main/images/icons/search.png">   
+                </label>   
             </div> 
+
             <div class="menu-item-content-1">
                 <div id="content">  
                 {% for title1,value1 in dropdown1.items %}  
@@ -62,25 +65,29 @@
 
         <header> 
             <div class="contact-info">    
-                <div  id="contact-info" >
-                    <a class="default-text" type="tel">
-                        <img src="/static/main/images/icons/address.png">
-                        <p>Адрес: </p>
-                        <p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
-                    </a> 
-                    <div class="gray-vl"></div>
-                    <a class="default-text">
-                        <img src="/static/main/images/icons/phone.png">
-                        <p>Телефон: </p>
-                        <p>+7(495) 790-9028</p>  
-                    </a>   
-                    <form method="POST" class="searcher">
-                        {% csrf_token %}
-                        <input type="text" class="searcher-field">
-                        <button type="submit" class="search-button">
-                            <img class="search-icon" src="/static/main/images/icons/search.png">  
-                        </button>
-                    </form> 
+                <div id="contact-info">
+                    <div id="address-and-tel">
+                        <a class="default-text" type="tel">
+                            <img src="/static/main/images/icons/address.png">
+                            <p>Адрес: </p>
+                            <p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
+                        </a> 
+                        <div class="gray-vl"></div>
+                        <a class="default-text">
+                            <img src="/static/main/images/icons/phone.png">
+                            <p>Телефон: </p>
+                            <p>+7(495) 790-9028</p>  
+                        </a>   
+                    </div> 
+                    <label class="search-box" >
+                        <input type="checkbox" class="search-checkbox">
+                        <form method="POST" class="searcher">
+                            {% csrf_token %}  
+                            <input type="text" placeholder="Искать" class="searcher-field">   
+                        </form> 
+                        <img  class="search-icon" src="/static/main/images/icons/search.png">   
+                    </label>
+
                 </div>
                 <div class="gray-gl"></div>
             </div>

@@ -36,7 +36,7 @@ header {
     font-weight: 400;
     text-decoration: none;
 } 
-
+a {text-decoration:none;}
 .or-bl-link {color:#e98300;}.or-bl-link:hover {color: #0066a1;}
 .bl-or-link {color:#0066a1;}.or-bl-link:hover {color: #e98300;}
 
@@ -55,7 +55,10 @@ header {
     margin-bottom:2vh;
 } 
 .contact-info #contact-info {
+    width:100%; 
     display:flex;
+    align-items:center;
+    margin-bottom:1em;
 }
 .contact-info a {display:flex;align-items:center;padding-bottom:5px;padding-top:5px;min-width:10em;}
 .contact-info a:first-child {min-width:10em;}
@@ -64,10 +67,10 @@ header {
 .contact-info a p {font-size:12px;}
 .contact-info a p:nth-child(2n){color: #0066a1;padding:0.5em;} 
 .contact-info a p:nth-child(2n+1) {color:#e98300;cursor:pointer;padding:0.5em;} 
-.contact-info a p:nth-child(2n+1):hover {color: #0066a1;} 
-
-
-
+.contact-info a p:nth-child(2n+1):hover {color: #0066a1;}  
+#address-and-tel {
+    display:flex;align-items:center;margin-right:2em; 
+}
 
 .to-fix-2 {
     position:fixed;margin-top:-1em;
@@ -105,6 +108,7 @@ input[class="checkbox-1"]:checked + div .dropdown-icon:hover {content:url('/stat
     width:100vw;
     box-shadow: 0 4px 5px -2px rgba(0,0,0,0.5); 
     z-index:2;
+    align-items: center;
 }
 .site-navigation-750-minus .menu-item-content-1 { 
     width:90vw;
@@ -276,22 +280,24 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
     .site-navigation-750-plus {white-space: pre-line;} 
 }
 
-#site-navigation-750-minus .searcher {display:none;}
-
+#site-navigation-750-minus .search-box {display:none;}
 @media screen and (max-width: 750px) { 
-    .contact-info #contact-info {
-        flex-direction:column;flex-wrap:wrap;
+    .contact-info #address-and-tel {
+        flex-direction:column;
+        flex-wrap:wrap;
         margin-left:auto;
         margin-right:auto;
     }
     .logo-item {text-align:center;} 
     .gray-vl {display:none;}  
+    .gray-gl {display:none;}  
     header {margin-top:8vh;}
     .site-navigation-750-plus #nav {display:none;}
     .site-navigation-750-minus #to-fix-1 {
         display:flex;top:0;position:fixed;
         animation-name:opacity-occurance-1;animation-duration:1s;
     }  
-    header .searcher {display:none;}
-    #to-fix-1 .searcher {display:flex;}
+    header .search-box {display:none;}
+    #to-fix-1 .search-box {display:flex;margin-right:2em;}  
+    #to-fix-1 .search-box .searcher-field {left:4em;} 
 }  

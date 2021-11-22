@@ -22,8 +22,8 @@ DROPDOWN_1 = {
             "Каталоги_продукции":{
                 "link":"/electrical/catalog",
                 "content":{ 
-                    "Москва":"/electrical/catalog/Moscow/RUS_1218",
-                    "Санкт-Петербург":"/electrical/catalog/St-Petersburg/RELAYS_2020", 
+                    "Москва":"/electrical/catalog/Moscow/",
+                    "Санкт-Петербург":"/electrical/catalog/St-Petersburg/", 
                 },
             }, 
             "Обучение":{

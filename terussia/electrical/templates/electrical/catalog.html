@@ -4,7 +4,16 @@
 <html>
     <body> 
         <div class="catalog-content">
-            <div class="catalog-item"></div>
+            {% for title, catalog in catalogs.items %}
+                <div class="catalog-item"> 
+                    <a href="{{catalog.link}}"> 
+                        <p class="catalog-title">{{catalog.title}}</p>
+                    </a> 
+                    <a style="display:flex;" href="{{catalog.link}}"> 
+                        <img class="catalog-preview-image" src="{{catalog.preview}}">
+                    </a>
+                </div>
+            {% endfor %%}
         </div>
     </body>
 </html>
