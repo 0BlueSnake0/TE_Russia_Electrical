@@ -240,15 +240,16 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
     color: #0066a1;  
     font-size:12px;
     overflow-wrap:break-word; 
-    text-decoration: none;
+    min-width:12em;max-width:15em;text-decoration: none;
+    display:flex;flex-wrap:nowrap;
 }  
 
 .site-navigation-750-plus .menu-item-content-2 { 
     display:none;    
     position:absolute;
-    background:white; 
-    box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.35); 
-    margin-left:-90%;
+    background:white;  
+    box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.35);
+    margin-left:-14em;
     word-wrap:break-word;  
     bottom:0;
 }
@@ -257,7 +258,8 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
     color: #0066a1;  
     font-size:12px;  
     overflow-wrap:break-word; 
-    text-decoration: none;
+    min-width:12em;max-width:15em;text-decoration: none;
+    display:flex;flex-wrap:nowrap;
 }  
 .site-navigation-750-plus  a:hover {color:#e98300;}   
 

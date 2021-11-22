@@ -1,8 +1,32 @@
 {% extends 'electrical/base.html' %}
-{% load static %}
+{% load static %} 
 {% block contacts %} 
 <html>
     <body> 
+
+        <div class="contact-list">
+            {% for title, contact in contacts.items %} 
+            <div class="contact">
+                <div class="contact-info">
+                    <p class="contact-title">{{contact.last_name}} {{contact.first_name}} {{contact.patronymic}}</p>
+                    <p class="position">{{contact.position}}</p>
+                    <div class="contact-text">
+                        <div class="tel-block"> 
+                            <label style="display:flex;">
+                                <p>Тел.: </p>
+                                <a href="tel:7-495-790-7902" type="tel">+7-495-790-7902</a>
+                                <p> доб. {{contact.additional}}</p></label>
+                        </div>
+                        <a target="_blank" href="mailto:Alexander.maskov@te.com">
+                            <img class="contact-email-icon" src="/static/main/images/icons/@-email-2.png">
+                            {{contact.email}}
+                        </a>
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+
     </body>
 </html>
 {% endblock %}

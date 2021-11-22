@@ -1,0 +1,71 @@
+@keyframes jump {
+    0% {transform:translateY(0px);}
+    50% {transform:translateY(-6px);} 
+    100% {transform:translateY(0px);}
+}
+
+.contact-list {
+    display:flex;
+    flex-direction:column;
+    width:75vw;
+    margin-left:auto;margin-right:auto;
+    padding:5vw;
+}
+
+.contact {
+    font-family: Arial, Helvetica, sans-serif; 
+    letter-spacing: 0.1em;
+    box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.35);
+    padding:2.5vw;
+}
+.contact:hover {
+    transition:0.3s;
+    box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.5);
+}
+
+.contact-title {font-weight:800;font-size:20px; } 
+
+.contact-list a {letter-spacing: 0.05em;cursor:pointer;color:#e98300;}
+.contact-list a:hover {transition:0.5s;color:#0066a1;}
+
+
+.position {
+    font-weight:100;
+    letter-spacing: 0.1em;
+    font-size:16px; 
+    color:gray; 
+    letter-spacing: 0.1em;
+} 
+
+.company-name {  
+    letter-spacing: 0.05em;
+    font-weight:800;
+    font-size:16px; 
+}
+
+.address {
+    max-width:14em;word-wrap:break-word;
+    font-family: Arial, Helvetica, sans-serif; 
+    letter-spacing: 0.05em;
+}
+
+.contact-text {
+    display:block;
+}
+
+.tel-block label p {
+    display:flex;
+}
+  
+.contact-info {
+    text-align:left;
+    display:block; 
+}
+.contact-email-icon {
+    margin-right:1em;margin-left:1em;
+    width:2.25em;
+}
+.contact-email-icon:hover {
+    opacity:0.75;
+    animation-name:jump;animation-duration: 0.5s;
+}

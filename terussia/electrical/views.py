@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse
 from django.conf import settings
 from django.http import FileResponse
 from .catalog import CATALOGS
+from .contacts import CONTACTS
 from .models import *
 from .header import *
 
@@ -46,6 +47,7 @@ def contacts(request, **kwargs):
         template_name="electrical/contacts.html",
         context={
             'dropdown1':DROPDOWN_1,
+            "contacts":CONTACTS,
         }
     )
 
