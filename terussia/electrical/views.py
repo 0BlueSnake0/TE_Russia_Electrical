@@ -3,6 +3,7 @@ from django.conf import settings
 from django.http import FileResponse
 from .catalog import CATALOGS
 from .contacts import CONTACTS
+from .department_info import DEPARTMENT_SPECIFICATIONS
 from .models import *
 from .header import *
 
@@ -13,6 +14,7 @@ def index(request):
         template_name="electrical/index.html",
         context={
             'dropdown1':DROPDOWN_1,
+            'department_specifications':DEPARTMENT_SPECIFICATIONS,
         }
     )
 

@@ -27,7 +27,7 @@
 
 
 header {
-    display:flex;flex-direction:column;width:75vw; 
+    display:flex;flex-direction:column;width:100%; 
     margin-left:auto;margin-right:auto;
 }  
     
@@ -41,7 +41,7 @@ a {text-decoration:none;}
 .bl-or-link {color:#0066a1;}.or-bl-link:hover {color: #e98300;}
 
 
-.logo-item {text-align:left;float:left;} 
+.logo-item {text-align:left;float:left;z-index:1;} 
 .logo-item .logo {margin:1em;} 
 
 
@@ -79,6 +79,7 @@ a {text-decoration:none;}
     padding-left:20%;  
     margin-left:-20%;  
     padding-right:100vw; 
+    z-index:10; 
 }
 .dropdown-icon {margin:1.5em;width:1.5em;height:1.25em;cursor:pointer;}
 .dropdown-icon:hover {content:url('/static/main/images/icons/or-dropdown-icon.png');} 
@@ -105,10 +106,10 @@ input[class="checkbox-1"]:checked + div .dropdown-icon:hover {content:url('/stat
 #to-fix-1 {
     background:white;
     display:none;  
-    width:100vw;
-    box-shadow: 0 4px 5px -2px rgba(0,0,0,0.5); 
-    z-index:2;
-    align-items: center;
+    width:100%;left:0; 
+    box-shadow: 0 4px 5px -2px rgba(0,0,0,0.5);  
+    align-items: center;  
+    z-index:5;
 }
 .site-navigation-750-minus .menu-item-content-1 { 
     width:90vw;
@@ -192,7 +193,9 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
 
 
 
-.site-navigation-750-plus #nav {display:flex;flex-wrap: nowrap;margin-left:auto;} 
+.site-navigation-750-plus #nav {
+    display:flex;flex-wrap: nowrap;margin-left:auto; 
+} 
 .site-navigation-750-plus {
     align-items:center;
     display:flex;

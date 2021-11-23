@@ -4,10 +4,9 @@
 {% block start %}
 <head> 
     <title>Electrical</title> 
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
 </head>
 
-<body>
+<body id="main-content" class="main-content"> 
     <div class="under-header-content"> 
         <div class="orange-gl"></div>
         <div style="width:100%;display:flex;flex-direction:column;">
@@ -30,7 +29,65 @@
             {% include 'electrical/slideshow.html' %}
         {% endwith %}
     {% endwith %}
-    
+
+    <div>
+        <h1 class="paragraph-title">TE Connectivity</h1>
+        <p class="paragraph">
+            TE Connectivity является ведущим мировым производителем компонентов 
+            для энергетики и электроники. В 2009 году объем продаж компании превысил 10 млрд. $ 
+            США. Компания насчитывает более 200 000 заказчиков в 150 странах мира. 
+            В наших 13 научно-исследовательских центрах работают около 7000 инженеров, 
+            создавая новые материалы и конструкции, и получившие в ходе работ более 16000 
+            патентов. Ежегодно TE Connectivity направляет на научные цели и разработки более 
+            600 млн. $ США. Результатом таких инвестиций является тот факт, что 
+            в настоящее время 34% наших продаж приходится на изделия, разработанные 
+            в течение последних 3-х лет. Производственные мощности, находящиеся в 25 странах,
+            и разветвленная сеть торговых представительств являются важным преимуществом для 
+            наших заказчиков.
+        </p> 
+    </div>
+    <div>
+        <h1 class="paragraph-title">Отделение электрики</h1>
+        <script type="text/javascript">
+            var specifications = []; 
+        </script>
+        <div id="department-info" class="department-info"> 
+            {% for title, specification in department_specifications.items %}
+            <input type="text" id="numbers-animation-showed" value="false" style="display:none;">
+            <div class="departmant-item">
+                <img class="specification-icon" src="/static/main/images/icons/{{specification.icon}}">
+                <p style="color: #e98300;" id="specification-{{specification.number}}">{{specification.number}}</p>  
+                <input type="text" id="specification-{{specification.number}}-number" value="{{specification.number}}" style="display:none;">
+                <p style="font-weight:600;font-size:22px;color: #6f7279;">{{specification.title}}</p>  
+            </div>
+            <script type="text/javascript">
+                specifications.push("specification-{{specification.number}}") 
+            </script>
+            {% endfor %}
+            <script type="text/javascript">  
+                function animateAllNumbers () {  
+                    var dep = document.getElementById("department-info");
+                    console.log(
+                        
+                    );
+                    var showed = document.getElementById("numbers-animation-showed"); 
+                    console.log(dep.getBoundingClientRect().bottom / document.body.scrollTop + window.innerWidth) / dep.getBoundingClientRect().height
+                    if (showed.value == "false" && dep.getBoundingClientRect().bottom / document.body.scrollTop <= 3.05 ) {
+         
+                        for (var i=0;i<=specifications.length;i++) {  
+                            var obj = document.getElementById(specifications[i]);
+                            var number = document.getElementById(specifications[i] + "-number").value; 
+                            animateNumber(obj, 0,number, 2000);
+                            showed.value = "true";
+                        }
+                    } 
+                } 
+
+                window.addEventListener("scroll", animateAllNumbers);
+            </script>
+        </div> 
+    </div>
+
 </body>
 
 {% endblock %}
