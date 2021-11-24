@@ -13,7 +13,7 @@ body {
 }
 .orange-gl {border-top:1px solid #e98300;width:auto;}
 .under-header-title {
-    font-family:Arial, Helvetica, sans-serif sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-align:center;
     text-decoration: none; 
     line-height:1em;
@@ -29,7 +29,7 @@ body {
     display:block;
     word-wrap: break-word;
     text-align:justify;
-    font-family:Arial, Helvetica, sans-serif sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-align:center;
     text-decoration: none;  
     color: #6f7279; 
@@ -40,12 +40,19 @@ body {
 .paragraph-title {
     display:block;
     word-wrap: break-word;
-    font-family:Arial, Helvetica, sans-serif sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-align:center;
     text-decoration: none;  
     color: #6f7279; 
     font-size:28px;
     font-weight:200; 
+} 
+ 
+
+.paragraph-img {   
+    width:50%;
+    float:right;
+    margin:1em;  
 }
 
 .department-info {
@@ -60,13 +67,10 @@ body {
     min-width:12em;max-width:20em;
 }
 .department-info p {  
-    font-family:Arial, Helvetica, sans-serif sans-serif;
+    font-family:Arial, Helvetica, sans-serif;
     text-align:center;
     text-decoration: none;  
     font-size:28px;
     font-weight:200; 
 } 
-.specification-icon {
-    margin:1em;
-    width:8em;
-}
+.specification-icon {margin:1em;width:8em;}
