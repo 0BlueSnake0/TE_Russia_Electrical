@@ -24,9 +24,21 @@
         <div class="orange-gl"></div>
     </div> 
 
+    <script type="text/javascript">
+        var max_slide_numbers = {};
+        var delays = {}; 
+        var slideshows = {}; 
+    </script>
+
     {% with 1 as slideshow_id %} 
-        {% with 6 as number_of_photos %} 
-            {% include 'electrical/slideshow.html' %}
+        {% with 6 as number_of_slides %} 
+            {% with "image" as data_type %}  
+                {% with 3 as delay %}  
+                    {% with "255,255,255" as arrows_color %} 
+                        {% include 'electrical/slideshow.html' %}
+                    {% endwith %}
+                {% endwith %}
+            {% endwith %}
         {% endwith %}
     {% endwith %}
 
@@ -130,6 +142,20 @@
         каждого из наших заказчиков.  
     </div> 
     <h1 style="margin-top:3em;margin-bottom:3em;" class="paragraph-title">ООО “Тайко Электроникс РУС” – российское представительство TE Connectivity</h1>
+
+    
+    {% with 1 as slideshow_id %} 
+        {% with 4 as number_of_slides %} 
+            {% with "text" as data_type %}  
+                {% with 8 as delay %} 
+                    {% with "0,0,0" as arrows_color %} 
+                        {% include 'electrical/slideshow.html' %}
+                    {% endwith %}
+                {% endwith %}
+            {% endwith %}
+        {% endwith %}
+    {% endwith %} 
+    
 
 </body>
 

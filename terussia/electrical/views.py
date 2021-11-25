@@ -4,6 +4,7 @@ from django.http import FileResponse
 from .catalog import CATALOGS
 from .contacts import CONTACTS
 from .department_info import DEPARTMENT_SPECIFICATIONS
+from .text_slideshows import TEXT_SLIDESHOWS
 from .models import *
 from .header import *
 
@@ -15,6 +16,7 @@ def index(request):
         context={
             'dropdown1':DROPDOWN_1,
             'department_specifications':DEPARTMENT_SPECIFICATIONS,
+            'text_slideshows':TEXT_SLIDESHOWS,
         }
     )
 

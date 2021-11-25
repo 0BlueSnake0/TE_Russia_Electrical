@@ -25,6 +25,15 @@
 ::-webkit-scrollbar-thumb {background-color:rgba(233, 131, 0, 0.6);border-radius:1em;width:1em;} 
 ::-webkit-scrollbar-thumb:hover {background-color:rgba(233, 131, 0, 1);} 
 
+#page-up {
+    background:#e98300;
+    width:50px;height:50px;
+    border-radius:50%;position:fixed;
+    top:80%;right:5%;
+    display:none;
+    animation-name:opacity-occurance-1;animation-duration:1s;
+}
+#page-up:hover {background:#0066a1;transition:1s;}
 
 header {
     display:flex;flex-direction:column;width:100%; 
