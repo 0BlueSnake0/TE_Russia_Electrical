@@ -6,11 +6,15 @@ DROPDOWN_1 = {
         "content": {
             "Продукция завода Entrellec":{
                 "link":"#",
-                "content":{},
+                "content":{
+
+                },
             }, 
             "Продукция завода Schrack":{
                 "link":"#",
-                "content":{},
+                "content":{
+                    
+                },
             }, 
         } 
     },
@@ -20,10 +24,8 @@ DROPDOWN_1 = {
         "link":"#", 
         "content": {
             "Каталоги_продукции":{
-                "link":"/electrical/catalog",
+                "link":"/catalog",
                 "content":{ 
-                    "Москва":"/electrical/catalog/Moscow/",
-                    "Санкт-Петербург":"/electrical/catalog/St-Petersburg/", 
                 },
             }, 
             "Обучение":{
@@ -35,7 +37,16 @@ DROPDOWN_1 = {
     },
     "КОНТАКТЫ": {
         "title":"КОНТАКТЫ",
-        "link":"/electrical/contacts", 
-        "content": {}, 
+        "link":"#", 
+        "content": {
+            "Москва":{
+                "link":"/contacts/Moscow/",
+                "content":{}, 
+            },
+            "Санкт-Петербург":{
+                "link":"/contacts/St-Petersburg/",
+                "content":{}, 
+            } 
+        }, 
     },
 } 

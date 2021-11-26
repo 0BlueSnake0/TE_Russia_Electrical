@@ -4,7 +4,7 @@ from django.http import FileResponse
 from .catalog import CATALOGS
 from .contacts import CONTACTS
 from .department_info import DEPARTMENT_SPECIFICATIONS
-from .text_slideshows import TEXT_SLIDESHOWS
+from .slideshows import TEXT_SLIDESHOWS,IMAGE_SLIDESHOWS
 from .models import *
 from .header import *
 
@@ -17,6 +17,7 @@ def index(request):
             'dropdown1':DROPDOWN_1,
             'department_specifications':DEPARTMENT_SPECIFICATIONS,
             'text_slideshows':TEXT_SLIDESHOWS,
+            'image_slideshows':IMAGE_SLIDESHOWS,
         }
     )
 
@@ -40,7 +41,8 @@ def catalog(request, **kwargs):
     ) 
 
 def catalog_detail(request, **kwargs):   
-	filepath = f'{settings.BASE_DIR}/static/main/catalog_files/{kwargs["folder"]}/{CATALOGS[kwargs["folder"]]["filename"]}'
+	filepath = f'{settings.BASE_DIR}/static/main/catalog_files/catalogs/{CATALOGS[kwargs["product"]]["filename"]}'
+    
 	return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
 
 
@@ -52,6 +54,7 @@ def contacts(request, **kwargs):
         context={
             'dropdown1':DROPDOWN_1,
             "contacts":CONTACTS,
+            "current_city":kwargs["city"],
         }
     )
 

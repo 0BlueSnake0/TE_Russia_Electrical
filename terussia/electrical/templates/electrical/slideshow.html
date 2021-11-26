@@ -19,10 +19,14 @@ onmouseleave="removeKeyControl()">
         </div>  
         <div class="slideshow-content" onmouseleave='stopAutoSlideshow("{{data_type}}",{{slideshow_id}})' onmouseenter='runAutoSlideshow("{{data_type}}",{{slideshow_id}})'>
             {% get_range number_of_slides as slides %}
-            {% if data_type == "image" %}
-                {% for id in slides %}
-                    <img class="slide" id="{{data_type}}-slideshow-{{slideshow_id}}-{{id}}" src="/static/main/images/slideshow-images/slideshow-{{slideshow_id}}-image-{{id}}.png">
-                {% endfor %}   
+            {% if data_type == "image" %} 
+                {% for slideshow_id_, slideshow_content in image_slideshows.items %}
+                    {% if slideshow_id_ == slideshow_id %}
+                        {% for slide_id, file_path in slideshow_content.items %} 
+                        <img class="slide" id="{{data_type}}-slideshow-{{slideshow_id}}-{{slide_id}}" src="{{file_path}}">
+                        {% endfor %}   
+                    {% endif %} 
+                {% endfor %} 
             {% elif data_type == "text" %} 
                 {% for slideshow_id_, slideshow_content in text_slideshows.items %}
                     {% if slideshow_id_ == slideshow_id %}
