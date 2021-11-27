@@ -7,6 +7,7 @@ style= "
     {% if data_type == 'image' %}
         height:55.6vw;
     {% elif data_type == 'text'  %}
+        height:22vh;
         display:flex;flex-direction:column;justify-content:center;align-items:center;
     {% endif %};
 "
@@ -19,6 +20,7 @@ onmouseleave="removeKeyControl()">
         </div>  
         <div class="slideshow-content" onmouseleave='stopAutoSlideshow("{{data_type}}",{{slideshow_id}})' onmouseenter='runAutoSlideshow("{{data_type}}",{{slideshow_id}})'>
             {% get_range number_of_slides as slides %}
+            
             {% if data_type == "image" %} 
                 {% for slideshow_id_, slideshow_content in image_slideshows.items %}
                     {% if slideshow_id_ == slideshow_id %}
