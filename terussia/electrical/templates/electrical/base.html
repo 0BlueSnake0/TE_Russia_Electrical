@@ -14,56 +14,59 @@
     </head>
 
     <body> 
+
         <a href="#site-navigation-750-minus" id="page-up">
             <img style="margin:auto;" src="/static/main/images/icons/page-up.png">
         </a>
-        <label id="site-navigation-750-minus" class="site-navigation-750-minus"> 
-            
-            <input type="checkbox" class="checkbox-1"> 
 
-            <div id="to-fix-1">
-                <img class="dropdown-icon" src="/static/main/images/icons/bl-dropdown-icon.png">  
+        <label id="site-navigation-750-minus" class="site-navigation-750-minus"> 
+
+            <div id="to-fix-1">  
+                <input type="checkbox" class="checkbox-1"> 
+                <img class="dropdown-icon" src="/static/main/images/icons/bl-dropdown-icon.png"> 
+
+                <div class="menu-item-content-1">
+                    <div id="content">  
+                    {% for title1,value1 in dropdown1.items %}  
+                        <label class="layer-1">  
+                            <a class="menu-item-title-1 default-text" href="{{value1.link}}">{{title1}}</a> 
+                            {% if value1.content.items|length != 0 %}
+                            <input type="checkbox" class="checkbox-2">   
+                            <img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png">  
+                                <div class="menu-item-content-2"> 
+                                    {% for title2,value2 in value1.content.items %} 
+                                    <label class="layer-2">
+                                        <label>
+                                            <a class="menu-item-title-2 default-text" href="{{value2.link}}">{{title2}}</a>
+                                        </label>
+                                        {% if value2.content.items|length != 0 %}
+                                        <input type="checkbox" class="checkbox-3">  
+                                        <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-1.png">  
+                                        <div class="menu-item-content-3"> 
+                                            {% for title3,value3 in value2.content.items %}    
+                                            <label><a class="default-text" href="{{value3}}">{{title3}}</a></label>
+                                            {% endfor %}  
+                                        </div>
+                                        {% endif %}
+                                    </label>
+                                    {% endfor %} 
+                                </div>
+                            {% endif %} 
+                        </label> 
+                    {% endfor %}   
+                    </div>    
+                </div> 
+
                 <label class="search-box">
                     <input type="checkbox" class="search-checkbox">
                     <form method="POST" class="searcher">
                         {% csrf_token %}  
                         <input type="text" placeholder="Искать" class="searcher-field">   
                     </form> 
-                    <img  class="search-icon" src="/static/main/images/icons/search.png">   
+                    <img class="search-icon" src="/static/main/images/icons/search.png">   
                 </label>   
             </div> 
-
-            <div class="menu-item-content-1">
-                <div id="content">  
-                {% for title1,value1 in dropdown1.items %}  
-                    <label class="layer-1">  
-                        <a class="menu-item-title-1 default-text" href="{{value1.link}}">{{title1}}</a> 
-                        {% if value1.content.items|length != 0 %}
-                        <input type="checkbox" class="checkbox-2">   
-                        <img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png">  
-                            <div class="menu-item-content-2"> 
-                                {% for title2,value2 in value1.content.items %} 
-                                <label class="layer-2">
-                                    <label>
-                                        <a class="menu-item-title-2 default-text" href="{{value2.link}}">{{title2}}</a>
-                                    </label>
-                                    {% if value2.content.items|length != 0 %}
-                                    <input type="checkbox" class="checkbox-3">  
-                                    <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-1.png">  
-                                    <div class="menu-item-content-3"> 
-                                        {% for title3,value3 in value2.content.items %}    
-                                        <label><a class="default-text" href="{{value3}}">{{title3}}</a></label>
-                                        {% endfor %}  
-                                    </div>
-                                    {% endif %}
-                                </label>
-                                {% endfor %} 
-                            </div>
-                        {% endif %} 
-                    </label> 
-                {% endfor %}   
-                </div>    
-            </div>  
+ 
         </label>  
 
         <header> 
