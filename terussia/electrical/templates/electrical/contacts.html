@@ -14,18 +14,18 @@
                             <div> 
                                 <div><p style="color:gray;">{{contact.LLC}}</p></div>
                                 <div><p style="color:gray;">{{contact.address}}</p></div> 
-                                <label style="display:flex;">
-                                    <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p><a href="tel:{{contact.tel}}" type="tel">+{{contact.tel}}</a>
+                                <label style="display:flex;align-items:center;">
+                                    <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p><a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel">+{{contact.tel}}</a>
                                     {% if contact.ext != "" %}
                                         <p style="color:gray;"> доб. {{contact.ext}}</p>
                                     {% endif %} 
                                 </label>   
-                                <div style="display:flex;">
+                                <div style="display:flex;align-items:center;">
                                     <p style="margin-right:1em;color:#e98300;font-weight:800;">
                                     MOBILE</p><a href="tel:{{contact.mobile}}" type="tel">+{{contact.mobile}}</a>
                                 </div>
                             </div>
-                            <a target="_blank" style="color:#0066a1;" href="mailto:{{contact.email}}">
+                            <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
                                 <img class="contact-email-icon" src="/static/main/images/icons/@-email-2.png">
                                 {{contact.email}}
                             </a>

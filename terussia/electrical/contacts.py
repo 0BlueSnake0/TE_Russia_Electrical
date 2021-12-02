@@ -3,8 +3,8 @@ CONTACTS = {
         "Anatoly": {
             "last_name":"Мартынов",
             "first_name":"Анатолий", 
-            "position":"Director of sales department TE Industry Rus", 
-            "LLC":"Tyco Electronics Rus LLC",
+            "position":"Директор по продажам TE Industry Rus", 
+            "LLC":"ООО «Тайко Электроникс Рус»",
             "address":"",
             "tel":"7-495-790-7902",
             "ext":"",
@@ -14,7 +14,7 @@ CONTACTS = {
         "Alexander": {
             "last_name":"Маськов",
             "first_name":"Александр", 
-            "position":"Менеджер по продажам TE Industry", 
+            "position":"Менеджер по продажам TE Industry Rus", 
             "LLC":"ООО «Тайко Электроникс Рус»",
             "address":"127287, Москва, 2-я Хуторская ул. 38А, стр 8",
             "tel":"7-495-790-7902",
@@ -33,7 +33,7 @@ CONTACTS = {
             "tel":"7-812-718-8193",
             "ext":"",
             "mobile":"7-911-196-0873",
-            "email":"dva@terussia.ru",
+            "email":"adi@terussia.ru",
         }, 
     },
 

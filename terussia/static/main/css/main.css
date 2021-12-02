@@ -1,4 +1,9 @@
 
+@keyframes opacity-occurance-1 {
+    from {opacity:0;transform:translateY(-10%);}
+    to {opacity:1;transform:translateY(0%);}
+} 
+
 body {
     width:80vw;
     margin-left:auto;margin-right:auto; 
@@ -7,7 +12,7 @@ body {
     width:100%;
     display:flex;
     flex-direction:column;
-    margin-top:2em; 
+    margin-top:1vh; 
     margin-left:auto;
     margin-right:auto;
 }
@@ -35,6 +40,7 @@ body {
     color: #6f7279; 
     font-size: 18px;
     font-weight:200; 
+    position:relative;
 }
 
 .paragraph-title {
@@ -46,13 +52,16 @@ body {
     color: #6f7279; 
     font-size:28px;
     font-weight:200; 
+    margin:1em;
 } 
  
 
 .paragraph-img {   
     width:50%;
     float:right;
-    margin:1em;  
+    margin-left:1em;  
+    margin-right:1em;  
+    margin-bottom:1em; 
 }
 
 .department-info {
@@ -74,3 +83,21 @@ body {
     font-weight:200; 
 } 
 .specification-icon {margin:1em;width:8em;}
+
+
+
+.flexbox {
+    width:100%;
+    display:flex;
+    flex-wrap: wrap; 
+} 
+.flexbox-item {
+    width:25%;margin-left:3vw;margin-right:3vw;
+    display:block; 
+    text-align: center; 
+    min-width:12em;max-width:20em;
+}
+
+#huge-nums .flexbox-item {
+    animation-name:opacity-occurance-1;animation-duration:1s;
+}

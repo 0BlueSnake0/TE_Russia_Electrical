@@ -15,12 +15,11 @@
 
 
 .slideshow {
-    width:75vw;
     margin-left:auto;
-    margin-right:auto;
-    margin-top:1vh;  
-    border-radius:2em;
+    margin-right:auto;  
     display:block;  
+    margin-top:1vh;
+    margin-bottom:1vh;
 } 
 .click-zone {
     width:7%; 
@@ -78,7 +77,5 @@
     width:15px;
     height:15px;
     margin:5px;
-}
-.dot:hover { 
     cursor: pointer;
-}
+} 

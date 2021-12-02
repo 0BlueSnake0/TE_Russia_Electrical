@@ -9,15 +9,15 @@
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/fields.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/contacts.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/catalog.css' %}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/products.css' %}"> 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
         <script type="text/javascript" src="/static/main/js/animate_number.js"></script>
     </head>
 
     <body> 
-
-        <a href="#site-navigation-750-minus" id="page-up">
+        <a href="#up" id="page-up">
             <img style="margin:auto;" src="/static/main/images/icons/page-up.png">
-        </a>
+        </a><div id="up"></div>
 
         <label id="site-navigation-750-minus" class="site-navigation-750-minus"> 
 
@@ -99,10 +99,8 @@
             </div>
 
             <div id="site-navigation-750-plus" class="site-navigation-750-plus">
-                <div  class="logo-item">
-                    <a href="https://terussia.ru/" class="logo">
-                    <img src="/static/main/images/icons/te-logo.png"></a> 
-                </div> 
+                <a href="https://terussia.ru/" class="logo">
+                <img src="/static/main/images/icons/te-logo.png"></a>  
                 <label id="nav"> 
                     {% for title1,value1 in dropdown1.items %}  
                         <label class="layer-1"> 
@@ -142,6 +140,9 @@
         {% block start %}{% endblock %}
         {% block contacts %}{% endblock %}
         {% block catalog %}{% endblock %}
+        {% block regions %}{% endblock %}
+        {% block product %}{% endblock %}
+        {% block timetable %}{% endblock %}
  
         <div  class="footer-gray-vl"></div>
         <div class="footer-info">    

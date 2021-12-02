@@ -2,20 +2,40 @@ DROPDOWN_1 = {
 
     "ПРОДУКЦИЯ": {
         "title":"ПРОДУКЦИЯ",
-        "link":"https://terussia.ru/%d0%ba%d0%b0%d1%82%d0%b0%d0%bb%d0%be%d0%b3%d0%b8-%d0%bf%d1%80%d0%be%d0%b4%d1%83%d0%ba%d1%86%d0%b8%d0%b8/",
+        "link":"#",
         "content": {
-            "Продукция завода Entrellec":{
-                "link":"#",
-                "content":{
-
-                },
-            }, 
-            "Продукция завода Schrack":{
-                "link":"#",
-                "content":{
-                    
-                },
-            }, 
+            "Клеммные соединения":{
+                "link":"/products/clamp-connections",
+                "content":{},
+            },  
+            "Реле":{
+                "link":"/products/relays",
+                "content":{},
+            },  
+            "Кабельные наконечники":{
+                "link":"/products/cable-lugs",
+                "content":{},
+            },  
+            "Кабельные стяжки":{
+                "link":"/products/cable-ties",
+                "content":{},
+            },  
+            "Кабель-каналы перфорированные":{
+                "link":"/products/perforated-cable-channels",
+                "content":{},
+            },  
+            "Кабельные вводы":{
+                "link":"/products/cable-entries",
+                "content":{},
+            },  
+            "Спиральная лента":{
+                "link":"/products/spiral-ribbon",
+                "content":{},
+            },  
+            "Маркировка":{
+                "link":"/products/marking",
+                "content":{},
+            },  
         } 
     },
     
@@ -45,6 +65,10 @@ DROPDOWN_1 = {
             },
             "Санкт-Петербург":{
                 "link":"/contacts/St-Petersburg/",
+                "content":{}, 
+            },
+            "Ответственность по регионам":{
+                "link":"/contacts/regions/all",
                 "content":{}, 
             } 
         }, 

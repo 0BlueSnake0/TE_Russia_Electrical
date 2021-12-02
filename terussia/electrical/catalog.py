@@ -5,8 +5,8 @@ CATALOGS = {
         "title":"Клеммные соединения Entrellec",
         "preview":"/static/main/catalog_files/images/preview1.png",
     },
-    "industrial-relays":{
-        "link":"/catalog/industrial-relays",
+    "relays":{
+        "link":"/catalog/relays",
         "filename":"RELAYS_2020.pdf",
         "title":"Промышленные реле",
         "preview":"/static/main/catalog_files/images/preview2.png",

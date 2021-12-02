@@ -44,10 +44,13 @@ TEXT_SLIDESHOWS = {
 IMAGE_SLIDESHOWS = {
     1: {
         0:"/static/main/images/slideshow-images/robots.png",
-        1:"/static/main/images/slideshow-images/man1.png",
-        2:"/static/main/images/slideshow-images/solar-panels.png",
-        3:"/static/main/images/slideshow-images/man2.png",
-        4:"/static/main/images/slideshow-images/surgeon.png",
-        5:"/static/main/images/slideshow-images/machine.png", 
+        1:"/static/main/images/slideshow-images/man1.png", 
+        2:"/static/main/images/slideshow-images/man2.png",
+        3:"/static/main/images/slideshow-images/surgeon.png",
+        4:"/static/main/images/slideshow-images/machine.png", 
+    },
+    2: {
+        0:"/static/main/images/products/clamp-connections/clamps-0.png",
+        1:"/static/main/images/products/clamp-connections/clamps-1.png", 
     }
 }

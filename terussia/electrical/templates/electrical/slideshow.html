@@ -5,22 +5,23 @@
 style= "
     
     {% if data_type == 'image' %}
-        height:55.6vw;
+        width:60vw; 
+        height:41.4vw;
     {% elif data_type == 'text'  %}
-        height:22vh;
+        width:100%; 
+        min-height:24vh;max-height:28vh;
         display:flex;flex-direction:column;justify-content:center;align-items:center;
     {% endif %};
 "
 onmouseenter='addKeyControl("{{data_type}}", {{slideshow_id}})' 
 onmouseleave="removeKeyControl()"> 
     <div style="display:flex;width:100%;height:100%;">
-        <div style="margin-right:-7%;" class="click-zone">
+        <div class="click-zone"> 
             <label style="border-bottom: 0.25em solid rgba({{arrows_color}}, 1);border-left: 0.25em solid rgba({{arrows_color}}, 1);" 
             onclick='lastSlide("{{data_type}}",{{slideshow_id}})' class="last-slide-arrow"></label>
         </div>  
         <div class="slideshow-content" onmouseleave='stopAutoSlideshow("{{data_type}}",{{slideshow_id}})' onmouseenter='runAutoSlideshow("{{data_type}}",{{slideshow_id}})'>
-            {% get_range number_of_slides as slides %}
-            
+            {% get_range number_of_slides as slides %} 
             {% if data_type == "image" %} 
                 {% for slideshow_id_, slideshow_content in image_slideshows.items %}
                     {% if slideshow_id_ == slideshow_id %}
@@ -34,7 +35,7 @@ onmouseleave="removeKeyControl()">
                     {% if slideshow_id_ == slideshow_id %}
                         {% for slide_id, slide_content in slideshow_content.items %}
                         <div style="justify-content: center;width:80%;margin:auto;" class="slide" id="{{data_type}}-slideshow-{{slideshow_id}}-{{slide_id}}">
-                            <div style="margin:auto;text-align: center;display:flex;flex-direction: column;">
+                            <div style="margin:auto;text-align: center;display:block;">
                                 <h1 class="paragraph-title">{{slide_content.title}}</h1>
                                 <p class="paragraph">{{slide_content.text}}</p>
                             </div>
@@ -44,7 +45,7 @@ onmouseleave="removeKeyControl()">
                 {% endfor %}   
             {% endif %}
         </div> 
-        <div style="margin-left:-7%;" class="click-zone">
+        <div class="click-zone">
             <label style="border-bottom: 0.25em solid rgba({{arrows_color}}, 1);border-left: 0.25em solid rgba({{arrows_color}}, 1);"
             onclick='nextSlide("{{data_type}}",{{slideshow_id}})' class="next-slide-arrow"></label>
         </div> 
