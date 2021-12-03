@@ -3,3 +3,4 @@ django==3.2.7
 django-ckeditor==6.0.0
 Pillow==8.1.2
 django-richtextfield==1.6.1
+xlsx2html==0.4.0

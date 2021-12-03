@@ -9,6 +9,6 @@ urlpatterns = [
     path('contacts/<slug:city>/', contacts, name="contacts"),
     path('contacts/regions/<slug:region_slug>', regions, name="regions"), 
     path('products/<slug:product_slug>/', product_detail, name="product_detail"),
-    path('timetable/', timetable, name="timetable"),
+    path('seminars_timetable/', seminars_timetable, name="seminars_timetable"),
     path('<slug:category_slug>/videos/(?P<video_slug>\w+)', detail_video, name="detail_video"),
 ]

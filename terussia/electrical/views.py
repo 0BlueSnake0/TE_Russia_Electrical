@@ -1,13 +1,16 @@
 from django.shortcuts import render, HttpResponse
 from django.conf import settings
 from django.http import FileResponse
+from xlsx2html import xlsx2html 
+from .models import *
+
+from .header import *
 from .catalog import CATALOGS
 from .contacts import CONTACTS
 from .product import PRODUCTS
 from .department_info import DEPARTMENT_SPECIFICATIONS
 from .slideshows import TEXT_SLIDESHOWS,IMAGE_SLIDESHOWS
-from .models import *
-from .header import *
+from .tables import TABLES
 
 
 def index(request):
@@ -72,14 +75,29 @@ def product_detail(request, **kwargs):
             'text_slideshows':TEXT_SLIDESHOWS,
             'image_slideshows':IMAGE_SLIDESHOWS,
         }
-    )
+    ) 
 
+def seminars_timetable(request, **kwargs):
+    styles = TABLES["timetable_2020"]["styles"]
+    xlsx_path = f'{TABLES["timetable_2020"]["xlsx_path"]}'
+    html_path = f'{TABLES["timetable_2020"]["html_path"]}'
+    xlsx2html(xlsx_path, html_path) 
+    
+    file = open(html_path, 'r', encoding="utf8")
+    table = file.read()
+    html = f'{styles}\n{table}'
+    file.close() 
 
-def timetable(request, **kwargs):
+    file = open(html_path, 'w',encoding='utf8')
+    file.write(html)
+    file.close()
+    
+
     return render(
         request,
         template_name="electrical/timetable.html",
         context={  
+            'dropdown1':DROPDOWN_1,
         }
     )
 
