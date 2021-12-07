@@ -55,16 +55,6 @@ def contacts(request, **kwargs):
     )
 
 
-def regions(request, **kwargs):
-    return render(
-        request,
-        template_name="electrical/regions.html",
-        context={ 
-            'dropdown1':DROPDOWN_1,
-        }
-    )
-
-
 def product_detail(request, **kwargs):
     return render(
         request,
@@ -97,6 +87,19 @@ def seminars_timetable(request, **kwargs):
         request,
         template_name="electrical/timetable.html",
         context={  
+            'dropdown1':DROPDOWN_1,
+        }
+    )
+
+
+
+
+def regions(request, **kwargs):
+    map = ""
+    return render(
+        request,
+        template_name="electrical/regions.html",
+        context={ 
             'dropdown1':DROPDOWN_1,
         }
     )
