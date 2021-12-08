@@ -18,19 +18,21 @@
     box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.35);
     padding:2.5vw;
     margin:2vw;
-    display:block;
+    display:flex;flex-direction: column; 
 }
 
 .contact:hover {transition:0.3s;box-shadow: 23px 4px 55px -8px rgba(0, 0, 0, 0.5);}
-.contact-title {font-weight:800;font-size:20px; } 
+.contact-title {
+    font-weight:800;font-size:20px; 
+    width:100%;text-align:left;
+} 
 .contact-list a {letter-spacing: 0.05em;cursor:pointer;color:gray;}
 .contact-list a:hover {transition:0.5s;color:#0066a1;} 
 
 .position {
     font-weight:100;
     letter-spacing: 0.1em;
-    font-size:16px;  
-    letter-spacing: 0.1em;
+    font-size:16px;   
 }   
 
 .contact-text {display:block;} 

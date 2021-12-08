@@ -101,6 +101,7 @@ def regions(request, **kwargs):
         template_name="electrical/regions.html",
         context={ 
             'dropdown1':DROPDOWN_1,
+            "contacts":CONTACTS,
         }
     )
 
