@@ -315,8 +315,7 @@ input[class="checkbox-3"]:checked + .arrow-icon-2 + .menu-item-content-3 {
     }
     .logo  {margin-left:auto;margin-right:auto;} 
     .gray-vl {display:none;}  
-    .gray-gl {display:none;}  
-    header {margin-top:8vh;}
+    .gray-gl {display:none;}   
     .site-navigation-750-plus #nav {display:none;}
     .site-navigation-750-minus {display:flex;}
     .site-navigation-750-minus #to-fix-1 {

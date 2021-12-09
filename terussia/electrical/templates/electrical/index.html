@@ -31,11 +31,13 @@
     </script>
 
     {% with 1 as slideshow_id %}   
-        {% with image_slideshows|get_item:slideshow_id|length as number_of_slides %} 
-            {% with "image" as data_type %}  
-                {% with 8 as delay %}  
-                    {% with "0,0,0" as arrows_color %} 
-                        {% include 'electrical/slideshow.html' %}
+        {% with image_slideshows|get_item:slideshow_id as s %} 
+            {% with s.content|length as number_of_slides %}  
+                {% with "image" as data_type %}  
+                    {% with 8 as delay %}  
+                        {% with "0,0,0" as arrows_color %} 
+                            {% include 'electrical/slideshow.html' %}
+                        {% endwith %}
                     {% endwith %}
                 {% endwith %}
             {% endwith %}
@@ -162,14 +164,16 @@
 
     
     {% with 1 as slideshow_id %} 
-        {% with image_slideshows|get_item:slideshow_id|length as number_of_slides %} 
-            {% with "text" as data_type %}  
-                {% with 8 as delay %} 
-                    {% with "0,0,0" as arrows_color %} 
-                        {% include 'electrical/slideshow.html' %}
+        {% with text_slideshows|get_item:slideshow_id as s %} 
+            {% with s.content|length as number_of_slides %} 
+                {% with "text" as data_type %}  
+                    {% with 8 as delay %} 
+                        {% with "0,0,0" as arrows_color %} 
+                            {% include 'electrical/slideshow.html' %}
+                        {% endwith %}
                     {% endwith %}
                 {% endwith %}
-            {% endwith %}
+            {% endwith %} 
         {% endwith %}
     {% endwith %} 
     
