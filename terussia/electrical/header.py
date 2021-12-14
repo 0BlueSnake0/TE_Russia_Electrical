@@ -5,35 +5,35 @@ DROPDOWN_1 = {
         "link":"#",
         "content": {
             "Клеммные соединения":{
-                "link":"/products/clamp-connections",
+                "link":"/electrical/products/clamp-connections",
                 "content":{},
             },  
             "Реле":{
-                "link":"/products/relays",
+                "link":"/electrical/products/relays",
                 "content":{},
             },  
             "Кабельные наконечники":{
-                "link":"/products/cable-lugs",
+                "link":"/electrical/products/cable-lugs",
                 "content":{},
             },  
             "Кабельные стяжки":{
-                "link":"/products/cable-ties",
+                "link":"/electrical/products/cable-ties",
                 "content":{},
             },  
             "Кабель-каналы перфорированные":{
-                "link":"/products/perforated-cable-channels",
+                "link":"/electrical/products/perforated-cable-channels",
                 "content":{},
             },  
             "Кабельные вводы":{
-                "link":"/products/cable-entries",
+                "link":"/electrical/products/cable-entries",
                 "content":{},
             },  
             "Спиральная лента":{
-                "link":"/products/spiral-ribbon",
+                "link":"/electrical/products/spiral-ribbon",
                 "content":{},
             },  
             "Маркировка":{
-                "link":"/products/marking",
+                "link":"/electrical/products/marking",
                 "content":{},
             },  
         } 
@@ -44,7 +44,7 @@ DROPDOWN_1 = {
         "link":"#", 
         "content": {
             "Каталоги_продукции":{
-                "link":"/catalog",
+                "link":"/electrical/catalog",
                 "content":{ 
                 },
             }, 
@@ -60,15 +60,15 @@ DROPDOWN_1 = {
         "link":"#", 
         "content": {
             "Москва":{
-                "link":"/contacts/Moscow/",
+                "link":"/electrical/contacts/Moscow/",
                 "content":{}, 
             },
             "Санкт-Петербург":{
-                "link":"/contacts/St-Petersburg/",
+                "link":"/electrical/contacts/St-Petersburg/",
                 "content":{}, 
             },
             "Ответственность по регионам":{
-                "link":"/contacts/regions/all",
+                "link":"/electrical/contacts/regions/all",
                 "content":{}, 
             } 
         }, 

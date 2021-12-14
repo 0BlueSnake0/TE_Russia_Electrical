@@ -10,6 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.2/ref/settings/
 """
 
+import os
 from pathlib import Path
 BASE_DIR = Path(__file__).resolve().parent.parent
 
@@ -104,11 +105,11 @@ USE_L10N = True
 
 USE_TZ = False
 
+ 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, 'static'),
+)
 
-# STATIC_ROOT =  f'{BASE_DIR}/static'
-STATICFILES_DIRS = [
-    f'{BASE_DIR}/static',
-]
 MEDIA_ROOT = f'{BASE_DIR}/media'
 
 STATIC_URL = '/static/'

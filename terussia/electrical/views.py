@@ -1,4 +1,4 @@
-from django.shortcuts import render, HttpResponse
+from django.shortcuts import render, HttpResponse, redirect
 from django.conf import settings
 from django.http import FileResponse
 from xlsx2html import xlsx2html 
@@ -13,7 +13,7 @@ from .slideshows import TEXT_SLIDESHOWS,IMAGE_SLIDESHOWS
 from .tables import TABLES
 
 
-def index(request):
+def index(request): 
     return render(
         request,
         template_name="electrical/index.html",

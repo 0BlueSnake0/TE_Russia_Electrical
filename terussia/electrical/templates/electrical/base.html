@@ -11,19 +11,19 @@
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/catalog.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/products.css' %}"> 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-        <script type="text/javascript" src="/static/main/js/animate_number.js"></script>
+        <script type="text/javascript" src="{% static 'main/js/animate_number.js' %}"></script>
     </head>
 
     <body> 
         <a href="#up" id="page-up">
-            <img style="margin:auto;" src="/static/main/images/icons/page-up.png">
+            <img style="margin:auto;" src="{% static 'main/images/icons/page-up.png' %}">
         </a><div id="up"></div>
 
         <label id="site-navigation-750-minus" class="site-navigation-750-minus"> 
 
             <div id="to-fix-1">  
                 <input type="checkbox" class="checkbox-1"> 
-                <img class="dropdown-icon" src="/static/main/images/icons/bl-dropdown-icon.png"> 
+                <img class="dropdown-icon" src="{% static 'main/images/icons/bl-dropdown-icon.png' %}"> 
 
                 <div class="menu-item-content-1">
                     <div id="content">  
@@ -32,7 +32,7 @@
                             <a class="menu-item-title-1 default-text" href="{{value1.link}}">{{title1}}</a> 
                             {% if value1.content.items|length != 0 %}
                             <input type="checkbox" class="checkbox-2">   
-                            <img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png">  
+                            <img class="arrow-icon-1" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}">  
                                 <div class="menu-item-content-2"> 
                                     {% for title2,value2 in value1.content.items %} 
                                     <label class="layer-2">
@@ -41,7 +41,7 @@
                                         </label>
                                         {% if value2.content.items|length != 0 %}
                                         <input type="checkbox" class="checkbox-3">  
-                                        <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-1.png">  
+                                        <img class="arrow-icon-2" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}">  
                                         <div class="menu-item-content-3"> 
                                             {% for title3,value3 in value2.content.items %}    
                                             <label><a class="default-text" href="{{value3}}">{{title3}}</a></label>
@@ -63,7 +63,7 @@
                         {% csrf_token %}  
                         <input type="text" placeholder="Искать" class="searcher-field">   
                     </form> 
-                    <img class="search-icon" src="/static/main/images/icons/search.png">   
+                    <img class="search-icon" src="{% static 'main/images/icons/search.png' %}">   
                 </label>   
             </div> 
  
@@ -74,13 +74,13 @@
                 <div id="contact-info">
                     <div id="address-and-tel">
                         <a class="default-text">
-                            <img src="/static/main/images/icons/address.png">
+                            <img src="{% static 'main/images/icons/address.png' %}">
                             <p>Адрес: </p>
                             <p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
                         </a> 
                         <div class="gray-vl"></div>
                         <a href="tel:7-495-790-9028" class="default-text" type="tel">
-                            <img src="/static/main/images/icons/phone.png">
+                            <img src="{% static 'main/images/icons/phone.png' %}">
                             <p>Телефон: </p>
                             <p>+7(495) 790-9028</p>  
                         </a>   
@@ -91,7 +91,7 @@
                             {% csrf_token %}  
                             <input type="text" placeholder="Искать" class="searcher-field">   
                         </form> 
-                        <img  class="search-icon" src="/static/main/images/icons/search.png">   
+                        <img  class="search-icon" src="{% static 'main/images/icons/search.png' %}">   
                     </label>
 
                 </div>
@@ -100,14 +100,14 @@
 
             <div id="site-navigation-750-plus" class="site-navigation-750-plus">
                 <a href="https://terussia.ru/" class="logo">
-                <img src="/static/main/images/icons/te-logo.png"></a>  
+                <img src="{% static 'main/images/icons/te-logo.png' %}"></a>  
                 <label id="nav"> 
                     {% for title1,value1 in dropdown1.items %}  
                         <label class="layer-1"> 
                             <a class="menu-item-title-1 default-text" href="{{value1.link}}">
                                 {{title1}}
                                 {% if value1.content.items|length != 0 %}
-                                <img class="arrow-icon-1" src="/static/main/images/icons/bl-arrow-icon-1.png"> 
+                                <img class="arrow-icon-1" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}"> 
                                 {% endif %}
                             </a>  
                             {% if value1.content.items|length != 0 %}
@@ -117,7 +117,7 @@
                                         <a class="menu-item-title-2 default-text" href="{{value2.link}}">
                                             {{title2}}
                                             {% if value2.content.items|length != 0 %}
-                                            <img class="arrow-icon-2" src="/static/main/images/icons/bl-arrow-icon-3.png"> 
+                                            <img class="arrow-icon-2" src="{% static 'main/images/icons/bl-arrow-icon-3.png' %}"> 
                                             {% endif %}
                                         </a>
                                         {% if value2.content.items|length != 0 %}
@@ -151,17 +151,17 @@
                 <p id="footer-copyright" class="default-text" >Разработано © TE Russia 2021.</p> 
                 <label>
                     <a class="default-text">
-                        <img src="/static/main/images/icons/address-2.png"> 
+                        <img src="{% static 'main/images/icons/address-2.png' %}"> 
                         <p style="color:gray;">127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
                     </a>  
                     <div  class="gray-vl"></div>
                     <a href="tel:7-495-790-9028" class="default-text" style="cursor:pointer;" type="tel">
-                        <img src="/static/main/images/icons/phone.png"> 
+                        <img src="{% static 'main/images/icons/phone.png' %}"> 
                         <p>+7(495) 790-9028</p>  
                     </a>   
                     <div class="gray-vl"></div>
                     <a href="mailto:info@terussia.ru" class="default-text"  style="cursor:pointer;">
-                        <img src="/static/main/images/icons/@-email.png"> 
+                        <img src="{% static 'main/images/icons/@-email.png' %}"> 
                         <p>info@terussia.ru</p>  
                     </a>    
                 </label>

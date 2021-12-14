@@ -4,9 +4,9 @@
 {% block regions %} 
 <!DOCTYPE html> 
 <title>Ответственность по регионам</title>  
-<script type="text/javascript" src="/static/main/js/controlmap.js"></script>
-<script type="text/javascript" src="/static/main/js/mapdata.js"></script>
-<script type="text/javascript" src="/static/main/js/countrymap.js"></script>
+<script type="text/javascript" src="{% static 'main/js/controlmap.js' %}"></script>
+<script type="text/javascript" src="{% static 'main/js/mapdata.js' %}" ></script>
+<script type="text/javascript" src="{% static 'main/js/countrymap.js' %}"></script>
 
 <h1 class="paragraph-title">Ответственность по регионам</h1>
 <div id="map"></div>  
@@ -35,7 +35,7 @@
                             </div>
                         </div>
                         <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
-                            <img class="contact-email-icon" src="/static/main/images/icons/@-email-2.png">
+                            <img class="contact-email-icon" src="{% static 'main/images/icons/@-email-2.png' %}">
                             {{contact.email}}
                         </a>
                     </div> 
