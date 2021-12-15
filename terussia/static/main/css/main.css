@@ -68,6 +68,7 @@ body {
     display:flex; 
     flex-wrap: wrap; 
     justify-content:center; 
+    text-align: center;
 }
 .departmant-item { 
     display:block; 
@@ -89,13 +90,17 @@ body {
 .flexbox {
     width:100%;
     display:flex;
-    flex-wrap: wrap; 
+    flex-wrap: wrap;  
 } 
 .flexbox-item {
     width:25%;margin-left:3vw;margin-right:3vw;
     display:block; 
     text-align: center; 
     min-width:12em;max-width:20em;
+}
+
+#huge-nums { 
+    text-align:center;justify-content:center;
 }
 
 #huge-nums .flexbox-item {

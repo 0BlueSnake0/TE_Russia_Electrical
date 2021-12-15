@@ -13,17 +13,6 @@ CONTACTS = {
         }, 
     },
     "Moscow": {
-        "Alexander": {
-            "last_name":"Маськов",
-            "first_name":"Александр", 
-            "position":"Менеджер по продажам TE Industry Rus", 
-            "LLC":"ООО «Тайко Электроникс Рус»",
-            "address":"127287, Москва, 2-я Хуторская ул. 38А, стр 8",
-            "tel":"7-495-790-7902",
-            "ext":"414",
-            "mobile":"7-916-267-4781",
-            "email":"anm@terussia.ru",
-        },
         "Anatoly": {
             "last_name":"Мартынов",
             "first_name":"Анатолий", 
@@ -35,6 +24,17 @@ CONTACTS = {
             "mobile":"7-916-907-4199",
             "email":"avm@terussia.ru",
         }, 
+        "Alexander": {
+            "last_name":"Маськов",
+            "first_name":"Александр", 
+            "position":"Менеджер по продажам TE Industry Rus", 
+            "LLC":"ООО «Тайко Электроникс Рус»",
+            "address":"127287, Москва, 2-я Хуторская ул. 38А, стр 8",
+            "tel":"7-495-790-7902",
+            "ext":"414",
+            "mobile":"7-916-267-4781",
+            "email":"anm@terussia.ru",
+        },
     },
 
 

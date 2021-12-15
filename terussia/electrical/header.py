@@ -49,7 +49,7 @@ DROPDOWN_1 = {
                 },
             }, 
             "Обучение":{
-                "link":"https://terussia.ru/%d0%be%d0%b1%d1%83%d1%87%d0%b5%d0%bd%d0%b8%d0%b5/",
+                "link":"/electrical/seminars_timetable/",
                 "content":{},  
             }, 
         }
