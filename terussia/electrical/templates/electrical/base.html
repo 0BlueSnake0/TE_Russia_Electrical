@@ -6,22 +6,22 @@
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/header.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/footer.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/fields.css' %}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/searcher.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/contacts.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/catalog.css' %}"> 
         <link rel="stylesheet" type="text/css" href="{% static 'main/css/products.css' %}"> 
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-        <script type="text/javascript" src="{% static 'main/js/animate_number.js' %}"></script>
+        <script type="text/javascript" src="{% static 'main/js/animate_number.js' %}"></script>  
     </head>
 
     <body> 
         <a href="#up" id="page-up">
-            <img style="margin:auto;" src="{% static 'main/images/icons/page-up.png' %}">
+            <img style="margin:auto;height:3vh; ;" src="{% static 'main/images/icons/page-up.png' %}">
         </a><div id="up"></div>
 
-        <label id="site-navigation-750-minus" class="site-navigation-750-minus"> 
+        <label id="site-navigation-750-minus"> 
 
-            <div id="to-fix-1">  
+            <div id="sn-750-minus">  
                 <input type="checkbox" class="checkbox-1"> 
                 <img class="dropdown-icon" src="{% static 'main/images/icons/bl-dropdown-icon.png' %}"> 
 
@@ -29,7 +29,7 @@
                     <div id="content">  
                     {% for title1,value1 in dropdown1.items %}  
                         <label class="layer-1">  
-                            <a class="menu-item-title-1 default-text" href="{{value1.link}}">{{title1}}</a> 
+                            <a class="menu-item-title-1 default-text" target="{{value1.target}}" href="{{value1.link}}">{{title1}}</a> 
                             {% if value1.content.items|length != 0 %}
                             <input type="checkbox" class="checkbox-2">   
                             <img class="arrow-icon-1" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}">  
@@ -37,14 +37,14 @@
                                     {% for title2,value2 in value1.content.items %} 
                                     <label class="layer-2">
                                         <label>
-                                            <a class="menu-item-title-2 default-text" href="{{value2.link}}">{{title2}}</a>
+                                            <a class="menu-item-title-2 default-text" target="{{value2.target}}" href="{{value2.link}}">{{title2}}</a>
                                         </label>
                                         {% if value2.content.items|length != 0 %}
                                         <input type="checkbox" class="checkbox-3">  
                                         <img class="arrow-icon-2" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}">  
                                         <div class="menu-item-content-3"> 
                                             {% for title3,value3 in value2.content.items %}    
-                                            <label><a class="default-text" href="{{value3}}">{{title3}}</a></label>
+                                            <label><a class="default-text" target="{{value3.target}}" href="{{value3.link}}">{{title3}}</a></label>
                                             {% endfor %}  
                                         </div>
                                         {% endif %}
@@ -69,7 +69,7 @@
  
         </label>  
 
-        <header> 
+        <header>  
             <div class="contact-info">    
                 <div id="contact-info">
                     <div id="address-and-tel">
@@ -98,13 +98,12 @@
                 <div class="gray-gl"></div>
             </div>
 
-            <div id="site-navigation-750-plus" class="site-navigation-750-plus">
-                <a href="https://terussia.ru/" class="logo">
-                <img src="{% static 'main/images/icons/te-logo.png' %}"></a>  
-                <label id="nav"> 
+            <div id="site-navigation-750-plus"> 
+                <a href="https://terussia.ru/" id="logo"><img src="{% static 'main/images/icons/te-logo.png' %}"></a> 
+                <label id="sn-750-plus"> 
                     {% for title1,value1 in dropdown1.items %}  
                         <label class="layer-1"> 
-                            <a class="menu-item-title-1 default-text" href="{{value1.link}}">
+                            <a class="menu-item-title-1 default-text" target="{{value1.target}}" href="{{value1.link}}">
                                 {{title1}}
                                 {% if value1.content.items|length != 0 %}
                                 <img class="arrow-icon-1" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}"> 
@@ -114,16 +113,16 @@
                                 <div class="menu-item-content-1"> 
                                     {% for title2,value2 in value1.content.items %} 
                                     <label class="layer-2">
-                                        <a class="menu-item-title-2 default-text" href="{{value2.link}}">
+                                        <a class="menu-item-title-2 default-text" target="{{value2.target}}" href="{{value2.link}}">
                                             {{title2}}
                                             {% if value2.content.items|length != 0 %}
                                             <img class="arrow-icon-2" src="{% static 'main/images/icons/bl-arrow-icon-3.png' %}"> 
                                             {% endif %}
                                         </a>
                                         {% if value2.content.items|length != 0 %}
-                                            <div class="menu-item-content-2"> 
+                                            <div class="menu-item-content-2">  
                                                 {% for title3,value3 in value2.content.items %}   
-                                                <label><a class="default-text" href="{{value3}}">{{title3}}</a></label>
+                                                <label><a class="default-text" target="{{value3.target}}" href="{{value3.link}}">{{title3}}</a></label>
                                                 {% endfor %}  
                                             </div>
                                         {% endif %}
@@ -135,7 +134,7 @@
                     {% endfor %}  
                 </label> 
             </div>  
-        </header>   
+        </header>    
 
         {% block start %}{% endblock %}
         {% block contacts %}{% endblock %}
@@ -166,9 +165,7 @@
                     </a>    
                 </label>
             </div>
-        </div>
-        
+        </div> 
 
     </body> 
-    <script type="text/javascript" src="{% static 'main/js/navigation_fix.js' %}"></script>
-</html> 
+    <script type="text/javascript" src="{% static 'main/js/navigation.js' %}"></script> 

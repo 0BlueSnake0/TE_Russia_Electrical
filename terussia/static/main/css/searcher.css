@@ -37,7 +37,7 @@ input[class="search-checkbox"] {display: none;}
 }
 
 .search-icon {   
-    width:30px;height:30px;cursor:pointer; float:right;
+    width:3vh;height:3vh;cursor:pointer; float:right;
     margin-left:auto;right:0;top:0;
     pointer-events:auto;
     z-index:4;
@@ -66,10 +66,10 @@ input[class="search-checkbox"]:not(:checked) + .searcher + .search-icon {
 
 
 .searcher-field { 
-    height:50px;
+    height:5vh;
     width:100%; 
+    font-size:1.25em;
     color:gray; 
-    font-size:14px;
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style:oblique;
     border:none;   
@@ -83,7 +83,7 @@ input[class="search-checkbox"]:not(:checked) + .searcher + .search-icon {
 .search-box { 
     width:100%;
     margin:auto;
-    height:30px;
+    height:3vh;
     display:flex;
     align-items: center;
     position:absolute;

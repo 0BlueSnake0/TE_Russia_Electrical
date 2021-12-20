@@ -16,7 +16,7 @@
 .footer-info  a:first-child {min-width:10em;}
 .footer-info  a:last-child {min-width:5em;}
 
-.footer-info p {font-size:14px;} 
+.footer-info p {font-size:1em;} 
 .footer-info  a p {color:#e98300;padding:0.5em;} 
 .footer-info  a p:hover {color: #0066a1;} 
 

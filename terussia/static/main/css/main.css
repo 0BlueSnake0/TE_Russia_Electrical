@@ -8,6 +8,7 @@ body {
     width:80vw;
     margin-left:auto;margin-right:auto; 
 }
+
 .under-header-content {
     width:100%;
     display:flex;
@@ -57,7 +58,7 @@ body {
  
 
 .paragraph-img {   
-    width:50%;
+    width:65%;
     float:right;
     margin-left:1em;  
     margin-right:1em;  
@@ -74,7 +75,7 @@ body {
     display:block; 
     text-align: center;
     margin:1em;
-    min-width:12em;max-width:20em;
+    min-width:20em;max-width:25em;
 }
 .department-info p {  
     font-family:Arial, Helvetica, sans-serif;
@@ -83,20 +84,19 @@ body {
     font-size:28px;
     font-weight:200; 
 } 
-.specification-icon {margin:1em;width:8em;}
+.specification-icon {margin:1em;width:10em;}
 
 
 
 .flexbox {
     width:100%;
     display:flex;
-    flex-wrap: wrap;  
+    flex-wrap: wrap;   
 } 
 .flexbox-item {
     width:25%;margin-left:3vw;margin-right:3vw;
     display:block; 
-    text-align: center; 
-    min-width:12em;max-width:20em;
+    text-align: center;  
 }
 
 #huge-nums { 

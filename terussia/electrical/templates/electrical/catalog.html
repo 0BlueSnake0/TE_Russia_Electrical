@@ -6,10 +6,10 @@
         <div class="catalog-content">
             {% for title, catalog in catalogs.items %}
                 <div class="catalog-item"> 
-                    <a href="{{catalog.link}}"> 
+                    <a target="{{catalog.target}}" href="{{catalog.link}}"> 
                         <p class="catalog-title">{{catalog.title}}</p>
                     </a> 
-                    <a style="display:flex;" href="{{catalog.link}}"> 
+                    <a target="{{catalog.target}}" style="display:flex;" href="{{catalog.link}}"> 
                         <img class="catalog-preview-image" src="{{catalog.preview}}">
                     </a>
                 </div>

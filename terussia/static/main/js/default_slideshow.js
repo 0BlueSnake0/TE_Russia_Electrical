@@ -15,12 +15,12 @@ function turn_on_slide (data_type, slide_number, slideshow_id) {
             $("#" + data_type + "-slideshow-" + slideshow_id + "-dot-" + i).css("width", 15);
             $("#" + data_type + "-slideshow-" + slideshow_id + "-dot-" + i).css("height", 15);
             $("#" + data_type + "-slideshow-" + slideshow_id + "-dot-" + i).removeClass("checked-dot");
-        } 
+        }  
     }
 }
 turn_on_slide(data_type, 0, slideshow_id);
 
-function clickOnDot(data_type, choosed, slideshow_id) {
+function clickOnDot(data_type, choosed, slideshow_id) { 
     if (choosed < slide_number) { 
         document.getElementById(data_type + "-slideshow-" + slideshow_id + "-" + choosed).style.animationName = "last-slide"; 
     }

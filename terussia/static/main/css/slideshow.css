@@ -68,8 +68,8 @@
 
 .checked-dot {
     animation-name:dot-fading;animation-duration:1s;  
-}
-.checked-dot:hover {background:blue;}
+} 
+
 .dot-block {display:flex;margin-left:auto;margin-right:auto;}
 .dot {
     border-radius:50%;

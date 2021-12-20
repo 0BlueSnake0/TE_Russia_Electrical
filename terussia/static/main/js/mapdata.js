@@ -73,55 +73,55 @@ var simplemaps_countrymap_mapdata={
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2279: {
       name: "Adygey",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2280: {
       name: "Karachay-Cherkess",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2303: {
       name: "Ingush",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2304: {
       name: "Kabardin-Balkar",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2305: {
       name: "North Ossetia",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2306: {
       name: "Stavropol'",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2321: {
       name: "Chukchi Autonomous Okrug",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2324: {
       name: "Kaliningrad",
@@ -170,14 +170,14 @@ var simplemaps_countrymap_mapdata={
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2343: {
       name: "Smolensk",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2353: {
       name: "Karelia",
@@ -198,28 +198,28 @@ var simplemaps_countrymap_mapdata={
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2356: {
       name: "Kostroma",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2357: {
       name: "Nizhegorod",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2358: {
       name: "Tver'",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2359: {
       name: "Vologda",
@@ -233,147 +233,147 @@ var simplemaps_countrymap_mapdata={
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2361: {
       name: "Kaluga",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2362: {
       name: "Kursk",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2363: {
       name: "Lipetsk",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2364: {
       name: "Moskovsskaya",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2365: {
       name: "Moskva",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2366: {
       name: "Orel",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2367: {
       name: "Rostov",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2368: {
       name: "Tula",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2369: {
       name: "Volgograd",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2370: {
       name: "Belgorod",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2371: {
       name: "Krasnodar",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2372: {
       name: "Mordovia",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2373: {
       name: "Penza",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2374: {
       name: "Ryazan'",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2375: {
       name: "Tambov",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2376: {
       name: "Vladimir",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2377: {
       name: "Voronezh",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2378: {
       name: "Bashkortostan",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2379: {
       name: "Chelyabinsk",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2380: {
       name: "Kurgan",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2381: {
       name: "Nenets",
@@ -415,21 +415,21 @@ var simplemaps_countrymap_mapdata={
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2387: {
       name: "Udmurt",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2388: {
       name: "Astrakhan'",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2389: {
       name: "Chuvash",
@@ -450,21 +450,21 @@ var simplemaps_countrymap_mapdata={
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2392: {
       name: "Samara",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2393: {
       name: "Saratov",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2394: {
       name: "Tatarstan",
@@ -478,175 +478,175 @@ var simplemaps_countrymap_mapdata={
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2396: {
       name: "Khanty-Mansiy",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2397: {
       name: "Omsk",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2398: {
       name: "Tyumen'",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2399: {
       name: "Altay",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2400: {
       name: "Gorno-Altay",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2401: {
       name: "Kemerovo",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2402: {
       name: "Khakass",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2403: {
       name: "Novosibirsk",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2416: {
       name: "Chechnya",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2417: {
       name: "Dagestan",
       description: " ",
       color: "#00a2e8",
       hover_color: "#7dcef1",
-      url: "javascript:show_contact(1);"
+      url: "javascript:show_contact(2);"
     },
     RUS2602: {
       name: "Irkutsk",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2603: {
       name: "Krasnoyarsk",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2605: {
       name: "Tuva",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2606: {
       name: "Buryat",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2609: {
       name: "Amur",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2610: {
       name: "Chita",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2611: {
       name: "Primor'ye",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2612: {
       name: "Sakha (Yakutia)",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2613: {
       name: "Yevrey",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2614: {
       name: "Khabarovsk",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2615: {
       name: "Maga Buryatdan",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS2616: {
       name: "Sakhalin",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS3200: {
       name: "Perm'",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     },
     RUS3468: {
       name: "Kamchatka",
       description: " ",
       color: "#880015",
       hover_color: "#c46473",
-      url: "javascript:show_contact(2);"
+      url: "javascript:show_contact(1)"
     }
   },
   locations: {},
