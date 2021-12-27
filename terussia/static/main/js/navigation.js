@@ -14,7 +14,10 @@ function setMobileInterface() {
     $("#huge-nums .flexbox-layer-1").css("font-size", "100px");  
     $("#huge-nums .flexbox-layer-2").css("font-size", "60px");  
     $("#huge-nums .flexbox-layer-3").css("font-size", "25px");  
-     
+    
+    $("#site-navigation-750-minus .menu-item-content-1 #content").css("font-size", "28pt");  
+    $(".menu-item-content-1 img").css("width", "28px");  
+    $(".menu-item-content-1 img").css("height", "16px");  
 
     $("#address-and-tel").css("flex-direction", "column");
     $("#address-and-tel").css("flex-wrap", "wrap");
@@ -24,8 +27,8 @@ function setMobileInterface() {
 
     $("#logo").css("margin-left", "auto");
     $("#logo").css("margin-right", "auto"); 
-    
- 
+   
+
     $(".gray-vl").css("display", "none");
     $(".gray-gl").css("display", "none");  
 

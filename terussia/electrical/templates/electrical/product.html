@@ -43,9 +43,9 @@
 
         <p class="paragraph" style="text-align:left;">{{paragraph.text}}</p>  
         {% for title, link in paragraph.links.items %}
-            <p class="paragraph-title" 
+            <a href="#" class="paragraph-title" 
             style="right:0;color:cornflowerblue;font-size:1.5em;font-weight:600;font-family:Arial, Helvetica, sans-serif, Impact ;text-align:left;">
-            {{paragraph.subtitle}}</p>  
+            {{paragraph.subtitle}}</a>  
         {% endfor %}
     </div> 
 {% endfor %}
