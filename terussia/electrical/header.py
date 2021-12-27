@@ -6,7 +6,7 @@ DROPDOWN_1 = {
         "target":"_self",
         "content": {
             "Клеммные соединения":{
-                "link":"/products/clamp-connections",
+                "link":"/electrical/products/clamp-connections",
                 "target":"_blank",
                 "content":{},
             },  

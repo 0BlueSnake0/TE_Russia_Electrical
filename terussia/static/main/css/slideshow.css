@@ -74,8 +74,8 @@
 .dot {
     border-radius:50%;
     background: rgba(125,125,125,0.5);
-    width:15px;
-    height:15px;
-    margin:5px;
+    width:1.2em;
+    height:1.2em;
+    margin:0.75em;
     cursor: pointer;
 } 

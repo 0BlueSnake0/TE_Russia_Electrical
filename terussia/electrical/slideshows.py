@@ -72,5 +72,17 @@ IMAGE_SLIDESHOWS = {
             "width":'60vw',
             "height":'41.4vw',
         },
+    },
+
+    3: {
+        "content": {
+            0:"/static/main/images/products/relays/relays-0-1.png", 
+            1:"/static/main/images/products/relays/relays-2-3.png", 
+            2:"/static/main/images/products/relays/relays-4.png", 
+        },
+        "options": {
+            "width":'60vw',
+            "height":'30vw',
+        },
     }
 }

@@ -92,10 +92,11 @@ body {
     width:100%;
     display:flex;
     flex-wrap: wrap;   
+    overflow-wrap: wrap;
 } 
 .flexbox-item {
-    width:25%;margin-left:3vw;margin-right:3vw;
-    display:block; 
+    width:25%; 
+    display:block; margin:3vw;
     text-align: center;  
 }
 
@@ -103,6 +104,19 @@ body {
     text-align:center;justify-content:center;
 }
 
-#huge-nums .flexbox-item {
-    animation-name:opacity-occurance-1;animation-duration:1s;
+#huge-nums {
+    animation-name:opacity-occurance-1;animation-duration:2s;
+}
+
+#huge-nums [class="flexbox-layer-1"] { 
+    font-size:80px; 
+}
+
+#huge-nums [class="flexbox-layer-2"]{ 
+    font-size:40px; 
+}
+
+#huge-nums [class="flexbox-layer-3"] {
+    
+    font-size:18px;
 }

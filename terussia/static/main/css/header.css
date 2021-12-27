@@ -96,7 +96,7 @@ a {text-decoration:none;}
     position:relative;
     margin:1.25em;
     z-index:2;
-    width:3vh;height:2.5vh;
+    width:3vh; 
     cursor:pointer;pointer-events:auto;
 }
 .dropdown-icon:hover {content:url('/static/main/images/icons/or-dropdown-icon.png');} 
@@ -131,7 +131,7 @@ a {text-decoration:none;}
     box-shadow: 0 4px 5px -2px rgba(0,0,0,0.5);  
     align-items: center;  
     z-index:5;
-    height:6vh;
+    height:8vh;
     pointer-events: none;
 }
 #site-navigation-750-minus .menu-item-content-1 { 
