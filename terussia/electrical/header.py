@@ -13,13 +13,13 @@ DROPDOWN_1 = {
             "Реле":{
                 "link":"/electrical/products/relays",
                 "target":"_blank",
-                "content":{},
+                "content":{}, 
             },  
             "Кабельные наконечники":{
                 "link":"/electrical/products/cable-lugs",
                 "target":"_blank",
                 "content":{},
-            },  
+            },   
             "Кабельные стяжки":{
                 "link":"/electrical/products/cable-ties",
                 "target":"_blank",
