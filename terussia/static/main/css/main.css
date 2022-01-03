@@ -10,8 +10,7 @@ body {
 }
 
 .under-header-content {
-    width:74vw;
-    display:flex;
+    width:74vw;           
     flex-direction:column;
     margin-top:1vh; 
     margin-left:auto;

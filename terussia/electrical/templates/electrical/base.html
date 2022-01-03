@@ -29,20 +29,38 @@
                     <div id="content">  
                     {% for title1,value1 in dropdown1.items %}  
                         <label class="layer-1">  
-                            <a class="menu-item-title-1 default-text" target="{{value1.target}}" href="{{value1.link}}">{{title1}}</a> 
+                            <a class="menu-item-title-1 default-text" 
+                            {% if value1.link != "#" %} 
+                                target="{{value1.target}}" href="{{value1.link}}" 
+                            {% else %}
+                                style="pointer-events: none;"
+                            {% endif %}
+                            >{{title1}}</a> 
                             {% if value1.content.items|length != 0 %}
                             <input type="checkbox" class="checkbox-2">   
                             <img class="arrow-icon-1" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}">  
                                 <div class="menu-item-content-2"> 
                                     {% for title2,value2 in value1.content.items %} 
                                     <label class="layer-2"> 
-                                        <a class="menu-item-title-2 default-text" target="{{value2.target}}" href="{{value2.link}}">{{title2}}</a>
+                                        <a class="menu-item-title-2 default-text" 
+                                        {% if value2.link != "#" %} 
+                                            target="{{value2.target}}" href="{{value2.link}}" 
+                                        {% else %}
+                                            style="pointer-events: none;"
+                                        {% endif %}
+                                        >{{title2}}</a>
                                         {% if value2.content.items|length != 0 %}
                                         <input type="checkbox" class="checkbox-3">  
                                         <img class="arrow-icon-2" src="{% static 'main/images/icons/bl-arrow-icon-1.png' %}">  
                                         <div class="menu-item-content-3"> 
                                             {% for title3,value3 in value2.content.items %}    
-                                            <label><a class="default-text" target="{{value3.target}}" href="{{value3.link}}">{{title3}}</a></label>
+                                            <label><a class="default-text" 
+                                                {% if value3.link != "#" %} 
+                                                    target="{{value3.target}}" href="{{value3.link}}" 
+                                                {% else %}
+                                                    style="pointer-events: none;"
+                                                {% endif %}
+                                                >{{title3}}</a></label>
                                             {% endfor %}  
                                         </div>
                                         {% endif %}
