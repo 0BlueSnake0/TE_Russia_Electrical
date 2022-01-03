@@ -41,7 +41,7 @@ TEXT_SLIDESHOWS = {
             },  
         },
         "options": {
-            "width":'100%',
+            "width":'74vw',
             "height":'24vh', 
         },
     }, 
@@ -57,7 +57,7 @@ IMAGE_SLIDESHOWS = {
             4:"/static/main/images/slideshow-images/machine.png", 
         },
         "options": {
-            "width":'76vw',
+            "width":'84vw',
             "height":'38.1vw',
         },
     },

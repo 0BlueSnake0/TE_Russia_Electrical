@@ -7,42 +7,42 @@ DROPDOWN_1 = {
         "content": {
             "Клеммные соединения":{
                 "link":"/electrical/products/clamp-connections",
-                "target":"_blank",
+                "target":"_self",
                 "content":{},
             },  
             "Реле":{
                 "link":"/electrical/products/relays",
-                "target":"_blank",
+                "target":"_self",
                 "content":{}, 
             },  
             "Кабельные наконечники":{
                 "link":"/electrical/products/cable-lugs",
-                "target":"_blank",
+                "target":"_self",
                 "content":{},
             },   
             "Кабельные стяжки":{
                 "link":"/electrical/products/cable-ties",
-                "target":"_blank",
+                "target":"_self",
                 "content":{},
             },  
             "Кабель-каналы перфорированные":{
                 "link":"/electrical/products/perforated-cable-channels",
-                "target":"_blank",
+                "target":"_self",
                 "content":{},
             },  
             "Кабельные вводы":{
                 "link":"/electrical/products/cable-entries",
-                "target":"_blank",
+                "target":"_self",
                 "content":{},
             },  
             "Спиральная лента":{
                 "link":"/electrical/products/spiral-ribbon",
-                "target":"_blank",
+                "target":"_self",
                 "content":{},
             },  
             "Маркировка":{
                 "link":"/electrical/products/marking",
-                "target":"_blank",
+                "target":"_self",
                 "content":{},
             },  
         } 

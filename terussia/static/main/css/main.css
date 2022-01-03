@@ -5,12 +5,12 @@
 } 
 
 body {
-    width:80vw;
+    width:90vw;
     margin-left:auto;margin-right:auto; 
 }
 
 .under-header-content {
-    width:100%;
+    width:74vw;
     display:flex;
     flex-direction:column;
     margin-top:1vh; 
@@ -32,6 +32,7 @@ body {
 
 
 .paragraph {
+    width:74vw;
     display:block;
     word-wrap: break-word;
     text-align:justify;
@@ -42,6 +43,8 @@ body {
     font-size: 18px;
     font-weight:200; 
     position:relative;
+    margin-left:auto;
+    margin-right:auto;
 }
 
 .paragraph-title {
