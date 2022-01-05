@@ -1,7 +1,7 @@
 DEPARTMENT_SPECIFICATIONS = {
     "Изделия": {
         "title":"Изделий",
-        "number":"40000",
+        "number":"550000",
         "icon":"department-icon-0.png",
     },
     "Страны": {
@@ -29,9 +29,4 @@ DEPARTMENT_SPECIFICATIONS = {
         "number":"3000",
         "icon":"department-icon-5.png",
     },
-    "Производственные локации": {
-        "title":"Производственных локаций",
-        "number":"11",
-        "icon":"department-icon-6.png",
-    }, 
 }

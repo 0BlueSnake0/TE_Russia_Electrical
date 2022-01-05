@@ -29,7 +29,8 @@ PRODUCTS = {
             }, 
         },
         "slideshow_id_": 2,
-        "catalog_link":CATALOGS["clamp-connections"]["link"],
+        "catalog_link":CATALOGS["clamp-connections"]["link"], 
+        "software_link":"#",
     }, 
 
     "relays":{
@@ -114,7 +115,11 @@ PRODUCTS = {
 
             }, 
         },
-        "slideshow_id_": 3,
+        "static_image":"/static/main/images/products/relays/relays-0.png",
+        "static_image_settings":{
+            "width":"70%",    
+            "height":"auto" 
+        },
         "catalog_link":CATALOGS["relays"]["link"],
     }, 
 
@@ -122,53 +127,41 @@ PRODUCTS = {
         "product_title":"Кабельные наконечники",
         "description":"""
         
-        """,
-        "slideshow_id_": "",
-        "catalog_link":"",
+        """,  
     }, 
 
     "cable-ties":{
         "product_title":"Кабельные стяжки",
         "description":"""
         
-        """,
-        "slideshow_id_": "",
-        "catalog_link":"",
+        """,  
     }, 
 
     "perforated-cable-channels":{
         "product_title":"Кабель-каналы перфорированные",
         "description":"""
         
-        """,
-        "slideshow_id_": "",
-        "catalog_link":"",
+        """,  
     },  
 
     "cable-entries":{
         "product_title":"Кабельные вводы",
         "description":"""
         
-        """,
-        "slideshow_id_": "",
-        "catalog_link":"",
+        """,  
     },  
 
     "spiral-ribbon":{
         "product_title":"Спиральная лента",
         "description":"""
         
-        """,
-        "slideshow_id_": "",
-        "catalog_link":"",
+        """,  
     },  
 
     "marking":{ 
         "product_title":"Маркировка", 
         "description":"""
         
-        """,
-        "slideshow_id_": "",
-        "catalog_link":"",
+        """,  
     },   
 }

@@ -14,7 +14,7 @@
  
 <h1 class="paragraph-title">{{product.product_title}}</h1>
 
-{% if product.slideshow_id_ != "" %}   
+{% if product.slideshow_id_ %}   
     {% with product.slideshow_id_ as slideshow_id %}   
         {% with image_slideshows|get_item:slideshow_id as s %} 
             {% with s.content|length as number_of_slides %}  
@@ -28,12 +28,26 @@
             {% endwith %}
         {% endwith %}
     {% endwith %} 
+{% elif product.static_image %}
+    <div style="display:flex;">
+        <img class="static-image" src="{{product.static_image}}" 
+        style = "
+            width:{{product.static_image_settings.width}};
+            height:{{product.static_image_settings.height}};
+            margin-left:auto;margin-right:auto;
+        "> 
+    </div>
 {% endif %}
 
  
-{% if product.catalog_link != "" %}
-<a class="catalog-link" href="{{product.catalog_link}}">Каталог</a>
-{% endif %} 
+<div style="display: flex;flex-wrap:nowrap;">
+    {% if product.catalog_link %}
+        <a class="catalog-link" href="{{product.catalog_link}}">Каталог</a>
+    {% endif %}  
+    {% if product.software_link %}
+        <a class="software-link" href="{{product.software_link}}">Программное обеспечение</a>
+    {% endif %} 
+</div>
  
 {% for title, paragraph in product.description.items %}
     <div style="margin:5vw;">
@@ -43,7 +57,7 @@
 
         <p class="paragraph" style="text-align:left;">{{paragraph.text}}</p>  
         {% for title, link in paragraph.links.items %}
-            <a href="#" class="paragraph-title" 
+            <a href="#" class="paragraph-title product-sub-link" 
             style="right:0;color:cornflowerblue;font-size:1.5em;font-weight:600;font-family:Arial, Helvetica, sans-serif, Impact ;text-align:left;">
             {{paragraph.subtitle}}</a>  
         {% endfor %}

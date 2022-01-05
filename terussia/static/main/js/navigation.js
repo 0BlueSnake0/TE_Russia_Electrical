@@ -2,7 +2,7 @@ function setMobileInterface() {
     $(".contact-info a p").css("font-size", "1.5em");
     $(".under-header-content span").css("font-size", "25pt");
     $(".under-header-content .under-header-title").css("font-size", "25pt");  
-    $("#footer-info #footer-copyright").css("font-size", "2em");
+    $("#footer-info #footer-copyright").css("font-size", "2em"); 
     $("#footer-info label a p").css("font-size", "2em"); 
     
     $(".dropdown-icon").css("width", "4.25vh"); 
@@ -56,7 +56,7 @@ function isMobileDevice() {
     return isMobile;
 }
    
-if (isMobileDevice() == true || window.innerWidth < 750) { 
+if (isMobileDevice() == true || window.innerWidth <= 750) { 
     setMobileInterface();
 }  
 else {

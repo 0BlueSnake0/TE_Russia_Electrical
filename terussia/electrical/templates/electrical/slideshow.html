@@ -27,12 +27,11 @@ onmouseleave="removeKeyControl()">
             {% elif data_type == "text" %} 
                 {% for slideshow_id_, slideshow_content in text_slideshows.items %}
                     {% if slideshow_id_ == slideshow_id %} 
-                        {% for slide_id, slide_content in slideshow_content.content.items %}
-                         
-                        <div style="justify-content: center;width:80%;margin:auto;" class="slide" id="{{data_type}}-slideshow-{{slideshow_id}}-{{slide_id}}">
-                            <div style="margin:auto;text-align: center;display:block;">
-                                <h1 class="paragraph-title">{{slide_content.title}}</h1>
-                                <p class="paragraph">{{slide_content.text}}</p>
+                        {% for slide_id, slide_content in slideshow_content.content.items %} 
+                        <div style="justify-content:center;height:100%;" class="slide" id="{{data_type}}-slideshow-{{slideshow_id}}-{{slide_id}}">
+                            <div style="margin:auto;text-align:center;display:flex;flex-direction:column;align-items:center;">
+                                <h1 class="paragraph-title" style="margin:auto;">{{slide_content.title}}</h1>
+                                <p class="paragraph" style="margin:auto;">{{slide_content.text}}</p>
                             </div>
                         </div>
                         {% endfor %}   
@@ -69,8 +68,8 @@ onmouseleave="removeKeyControl()">
         <script type="text/javascript">
         var slideshow_width = "{{slideshow_content.options.width}}";
         var slideshow_height = "{{slideshow_content.options.height}}";  
-        document.getElementById("{{data_type}}-slideshow-{{slideshow_id}}").style.width  = slideshow_width;
-        document.getElementById("{{data_type}}-slideshow-{{slideshow_id}}").style.height =slideshow_height;
+        $("#{{data_type}}-slideshow-{{slideshow_id}}").css("width", slideshow_width);
+        $("#{{data_type}}-slideshow-{{slideshow_id}}").css("height", slideshow_height);
         </script> 
     {% endif %} 
 {% endfor %}  

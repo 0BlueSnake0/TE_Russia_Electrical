@@ -20,7 +20,10 @@
 .footer-info  a p {color:#e98300;padding:0.5em;} 
 .footer-info  a p:hover {color: #0066a1;} 
 
-#footer-copyright {text-align:left;color:gray;} 
+.footer-copyright {
+    text-align:left;
+    color:gray; 
+} 
  
 @media screen and (max-width: 750px) { 
     #footer-copyright {text-align:center;}

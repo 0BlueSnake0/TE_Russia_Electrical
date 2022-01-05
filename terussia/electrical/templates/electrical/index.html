@@ -7,28 +7,12 @@
 </head>
 
 <body id="main-content" class="main-content"> 
-    <div class="under-header-content"> 
-        <div class="orange-gl"></div>
-        <div style="width:100%;display:flex;flex-direction:column;">
-            <span class="under-header-title default-text">
-            Посмотреть расписание вебинаров TE Connectivity
-            </span>   
-            <span class="under-header-title default-text"> 
-                и записаться на них можно
-                <span class="title default-text">  
-                <a style="text-decoration:none;padding:0.1em;" class="default-text or-bl-link" 
-                target="_blank" href="{% url 'electrical:seminars_timetable' %}">ЗДЕСЬ</a>
-                </span>   
-            </span>   
-        </div>
-        <div class="orange-gl"></div>
-    </div> 
 
     <script type="text/javascript">
         var max_slide_numbers = {};
         var delays = {}; 
         var slideshows = {}; 
-    </script>
+    </script> 
 
     {% with 1 as slideshow_id %}   
         {% with image_slideshows|get_item:slideshow_id as s %} 
@@ -42,8 +26,9 @@
                 {% endwith %}
             {% endwith %}
         {% endwith %}
-    {% endwith %}
-    <div style="margin-top:5vh;">
+    {% endwith %} 
+
+    <div class="default-block">
         <div class="flexbox" id="huge-nums"> 
             <div class="flexbox-item" style="text-align:center;">
                 <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">247</p>
@@ -62,10 +47,11 @@
             </div>  
         </div>
     </div>
+    
 
-    <div>
+    <div class="default-block">
         <h1 class="paragraph-title">TE Connectivity</h1>
-        <p class="paragraph">
+        <p class="paragraph" >
             Решения, обеспечивающие работу электромобилей, 
             самолетов, цифровых заводов и "умных" домов. 
             Инновации, обеспечивающие жизненно важную медицинскую помощь, 
@@ -79,7 +65,7 @@
             которые могут изменить работу и жизнь мира завтра. 
         </p> 
     </div>
-    <div>
+    <div class="default-block">
         <h1 class="paragraph-title">Отделение электрики</h1>
         <script type="text/javascript">
             var arr = []; 
@@ -115,50 +101,92 @@
         </div> 
     </div> 
     
-    <div class="paragraph" style="position:relative;text-align:left;">
-        <div class="paragraph-title">Отделение электрики</div>
-        <div class="paragraph">
-            <img class="paragraph-img" src="{% static 'main/images/slideshow-images/man2.png' %}">
-            относится к одному из подразделений компании TE Connectivity и 
-            занимается разработкой и производством изделий для электрики. 
-            относится к одному из подразделений компании TE Connectivity и 
-            занимается разработкой и производством изделий для электрики. 
-            относится к одному из подразделений компании TE Connectivity и 
-            занимается разработкой и производством изделий для электрики. 
-            относится к одному из подразделений компании TE Connectivity и 
-            занимается разработкой и производством изделий для электрики. 
-            относится к одному из подразделений компании TE Connectivity и 
-            занимается разработкой и производством изделий для электрики.  
-        </div>
-    </div>    
-
-    <div class="paragraph" style="text-align:left;margin-top:1vh;">
-        <div class="paragraph-title">Исследования</div>
+    <div class="default-block">
+        <div class="paragraph" style="position:relative;text-align:left;">
+            <div class="paragraph-title">Отделение электрики</div>
+            <div class="paragraph">
+                <img class="paragraph-img" src="{% static 'main/images/static-images/main-page-photo-0.png' %}">
+                TE Industry Rus – относится к одному из подразделений 
+                компании TE Connectivity и занимается продажей и продвижением 
+                таких групп продукции как клемные и распределительные  блоки,
+                реле с установкой на плату и на дин-рейку, кабельных наконечников, 
+                стяжек, спиральной ленты маркировки для кабеля и других групп продукции,
+                производства TE Connectivity. 
+            </div>
+        </div>    
+    
         <div class="paragraph" style="text-align:left;">
-            <img class="paragraph-img" style="float:left;" src="{% static 'main/images/slideshow-images/man2.png' %}">
-            Постоянные инновации и совершенствование кабельной арматуры
-            Райхем основаны на 50-летнем опыте самостоятельного создания материалов, 
-            разработок конструкций, испытаний и производства. Результатом этого 
-            являются наши ключевые технологии, такие как: термоусаживаемая, 
-            эластомерная, заливная, гелевая, а также технология изготовления 
-            соединителей и наконечников.
-            Разнообразие наших технологий позволяет предложить оптимальные решения для 
-            каждого из наших заказчиков.  
-        </div>
-    </div>  
-    {% with 1 as slideshow_id %} 
-        {% with text_slideshows|get_item:slideshow_id as s %} 
-            {% with s.content|length as number_of_slides %} 
-                {% with "text" as data_type %}  
-                    {% with 8 as delay %} 
-                        {% with "0,0,0" as arrows_color %} 
-                            {% include 'electrical/slideshow.html' %}
+            <div class="paragraph-title">TE Industry Rus</div>
+            <div class="paragraph" style="text-align:left;">
+                <img class="paragraph-img" style="float:left;" src="{% static 'main/images/static-images/main-page-photo-1.png' %}">
+                TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
+                а так же поддерживает склад продукции в Москве и осуществляет доставку 
+                продукции в любую точку Российской Федерации. 
+                Вся имеющаяся на складе продукция сертифицирована.
+            </div>
+        </div>  
+    </div>
+ 
+        {% with 1 as slideshow_id %} 
+            {% with text_slideshows|get_item:slideshow_id as s %} 
+                {% with s.content|length as number_of_slides %} 
+                    {% with "text" as data_type %}  
+                        {% with 8 as delay %} 
+                            {% with "0,0,0" as arrows_color %} 
+                                {% include 'electrical/slideshow.html' %}
+                            {% endwith %}
                         {% endwith %}
                     {% endwith %}
-                {% endwith %}
-            {% endwith %} 
-        {% endwith %}
-    {% endwith %} 
+                {% endwith %} 
+            {% endwith %}
+        {% endwith %}  
+
+    <div class="default-block">
+        <div class="flexbox"> 
+            <div class="flexbox-item" style="width:20em;"> 
+                <img src="{% static 'main/images/icons/department-icon-6.png' %}">
+                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Честность</div>
+                <div class="paragraph" style="padding-top:none;padding-bottom:none;">
+                    Мы должны требовать от самих себя, наших партнеров и 
+                    всех других соответствия самым высоким стандартам этических норм и 
+                    честности. Мы должны стремиться к многообразию, справедливости,
+                    взаимоуважению и доверию.
+                </div>
+            </div>
+            <div class="flexbox-item" style="width:20em;"> 
+                <img src="{% static 'main/images/icons/department-icon-7.png' %}">
+                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Ответственность</div>
+                <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
+                    Мы гордимся обязательствами, взятыми нами по отношению к нашим клиентам,
+                    акционерам и друг к другу. Мы несем личную ответственность
+                    за наши действия и результаты и ожидаем того же от других.
+                </div>
+            </div>
+            <div class="flexbox-item" style="width:20em;"> 
+                <img src="{% static 'main/images/icons/department-icon-8.png' %}">
+                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Работа в команде</div>
+                <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
+                    Мы культивируем среду, которая воодушевляет побеждать
+                    при помощи креативности, непрерывного обучения, 
+                    перфекционизма и сотрудничества. Мы практикуем лидерство,
+                    которое вдохновляет и способствует полной вовлеченности и карьерному росту.
+                    Мы ожидаем прозрачных отношений и действий.
+                </div>
+            </div>
+            <div class="flexbox-item" style="width:20em;"> 
+                <img src="{% static 'main/images/icons/department-icon-9.png' %}">
+                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Новаторство</div>
+                <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
+                    Мы обнаружили, что инновации для наших клиентов являются 
+                    основой нашего бизнеса. Мы мотивируем себя на развитие новых 
+                    и улучшение существующих идей для наших клиентов и во всем, что 
+                    мы делаем. Мы поощряем, ожидаем и ценим креативность, принятие 
+                    обоснованных рисков, 
+                    открытость к переменам и разносторонние точки зрения.
+                </div>
+            </div>
+        </div>
+    </div>
     
 
 </body>

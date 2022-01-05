@@ -24,6 +24,7 @@ def index(request):
             'department_specifications':DEPARTMENT_SPECIFICATIONS,
             'text_slideshows':TEXT_SLIDESHOWS,
             'image_slideshows':IMAGE_SLIDESHOWS,
+            'under_header_content':"yes"
         }
     )   
     
