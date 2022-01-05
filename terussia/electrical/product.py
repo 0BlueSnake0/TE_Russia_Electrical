@@ -28,10 +28,26 @@ PRODUCTS = {
                 "links":{},
             }, 
         },
-        "slideshow_id_": 2,
+        "static_image":"/static/main/images/products/clamp-connections/clamps-0.png",
+        "static_image_settings":{
+            "width":"50%",    
+            "height":"auto" 
+        },
         "catalog_link":CATALOGS["clamp-connections"]["link"], 
-        "software_link":"#",
+        "software_link":" https://www.te.com/usa-en/products/brands/entrelec/easy-rail-designer-3d.html?tab=pgp-story",
     }, 
+    "distribution-blocks":{ 
+        "product_title":"Распределительные блоки", 
+        "description":"""
+        
+        """,  
+        "static_image":"/static/main/images/products/distribution-blocks/distr-blocks-0.png",
+        "static_image_settings":{
+            "width":"80%",    
+            "height":"auto" 
+        },
+        "catalog_link":CATALOGS["distribution-blocks"]["link"],
+    },  
 
     "relays":{
         "product_title":"Реле",
@@ -121,7 +137,7 @@ PRODUCTS = {
             "height":"auto" 
         },
         "catalog_link":CATALOGS["relays"]["link"],
-    }, 
+    },  
 
     "cable-lugs":{
         "product_title":"Кабельные наконечники",
@@ -156,6 +172,12 @@ PRODUCTS = {
         "description":"""
         
         """,  
+        "static_image":"/static/main/images/products/spiral-ribbon/spiral-ribbon-0.png",
+        "static_image_settings":{
+            "width":"70%",    
+            "height":"auto" 
+        },
+        "catalog_link":CATALOGS["spiral-ribbon"]["link"],
     },  
 
     "marking":{ 

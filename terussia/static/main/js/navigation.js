@@ -14,7 +14,7 @@ function setMobileInterface() {
     $("#huge-nums .flexbox-layer-1").css("font-size", "100px");  
     $("#huge-nums .flexbox-layer-2").css("font-size", "60px");  
     $("#huge-nums .flexbox-layer-3").css("font-size", "25px");  
-    
+     
     $("#site-navigation-750-minus .menu-item-content-1 #content").css("font-size", "28pt");  
     $(".menu-item-content-1 img").css("width", "28px");  
     $(".menu-item-content-1 img").css("height", "16px");  
@@ -45,7 +45,7 @@ function setMobileInterface() {
     $("header .search-box").css("display", "none");  
 
     $("#site-navigation-750-minus #sn-750-minus .search-box").css("display", "flex"); 
-    $("#site-navigation-750-minus #sn-750-minus .search-box").css("margin-right", "2em"); 
+    $("#site-navigation-750-minus #sn-750-minus .search-icon").css("margin-right", "10vw"); 
 
     $("#site-navigation-750-minus .search-box .searcher-field").css("left", "4em"); 
 } 

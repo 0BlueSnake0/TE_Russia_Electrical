@@ -37,11 +37,11 @@ input[class="search-checkbox"] {display: none;}
 }
 
 .search-icon {    
-    margin-right:-5vh;
-    width:5vh;cursor:pointer; float:right;
+    width:3.5vw;cursor:pointer; float:right;
+    right:0;top:0;
     margin-left:auto; 
     pointer-events:auto;
-    z-index:4;
+    z-index:4; 
 } 
 input[class="search-checkbox"]:checked + .searcher {
     display:flex;
@@ -66,30 +66,35 @@ input[class="search-checkbox"]:not(:checked) + .searcher + .search-icon {
 } 
 
 
+@media screen and (min-width:750px) {
+    .search-icon  { 
+        margin-right:-5vw;
+    } 
+}
+
 @media screen and (min-width:750px) and (max-width:850px) {
     .searcher-field  { 
-        height:12vw;
-        box-shadow: 6px 6px 24px 1px rgba(34, 60, 80, 0.3);
+        height:12vw; 
     } 
 }
 @media screen and (min-width:850px) {
     .searcher-field  { 
-        height:8vw;
-        box-shadow: 6px 6px 24px 1px rgba(34, 60, 80, 0.3);
+        height:8vw; 
     } 
 }
 
-.searcher-field {    
-    margin-left:-5%;
-    width:115%; 
+.searcher-field {     
+    padding-left:10%;
+    margin-left:-10%;
+    padding-right:10%;
     margin-right:-10%;
+    width:120%;  
     font-size:1.25em;
     color:gray; 
     font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
     font-style:oblique;
     border:none;   
-    position:absolute; 
-    margin-right:100%;
+    position:absolute;  
     z-index:3;
     outline: none;
     pointer-events:auto; 

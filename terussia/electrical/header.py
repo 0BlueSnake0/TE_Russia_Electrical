@@ -10,6 +10,11 @@ DROPDOWN_1 = {
                 "target":"_self",
                 "content":{},
             },  
+            "Распределительные блоки":{
+                "link":"/electrical/products/distribution-blocks",
+                "target":"_self",
+                "content":{},
+            },  
             "Реле":{
                 "link":"/electrical/products/relays",
                 "target":"_self",

@@ -1,20 +1,19 @@
 {% extends 'electrical/base.html' %}
 {% load static %}
-{% block catalog %}
-<html>
-    <body> 
-        <div class="catalog-content">
-            {% for title, catalog in catalogs.items %}
-                <div class="catalog-item"> 
-                    <a target="{{catalog.target}}" href="{{catalog.link}}"> 
-                        <p class="catalog-title">{{catalog.title}}</p>
-                    </a> 
-                    <a target="{{catalog.target}}" style="display:flex;" href="{{catalog.link}}"> 
-                        <img class="catalog-preview-image" src="{{catalog.preview}}">
-                    </a>
-                </div>
-            {% endfor %%}
-        </div>
-    </body>
-</html>
+{% block catalog %} 
+<div style="width:90vw;margin-left:auto;margin-right:auto;">
+    <div class="catalog-content">
+        {% for title, catalog in catalogs.items %}
+            <div class="catalog-item"> 
+                <a target="{{catalog.target}}" href="{{catalog.link}}"> 
+                    <p class="catalog-title">{{catalog.title}}</p>
+                </a> 
+                <a target="{{catalog.target}}" style="display:flex;" href="{{catalog.link}}"> 
+                    <img class="catalog-preview-image" src="{{catalog.preview}}">
+                </a>
+            </div>
+        {% endfor %%}
+    </div>  
+</div>
+
 {% endblock %}

@@ -50,6 +50,7 @@
 
 .static-image {
     box-shadow: 14px 18px 59px 11px rgba(34, 60, 80, 0.3);
+    margin-top:5vh;margin-bottom:5vh;
 }
 
 .product-sub-link:hover {

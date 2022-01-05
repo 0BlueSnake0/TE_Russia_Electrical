@@ -1,8 +1,7 @@
-.catalog-content {
-    margin-left:auto;margin-right:auto;
-    width:90vw;
+.catalog-content { 
     padding:5vw;
     display:flex;flex-wrap:wrap;
+    justify-content: center;
 }
 
 .catalog-item {
