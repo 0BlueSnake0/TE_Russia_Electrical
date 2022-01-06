@@ -62,9 +62,12 @@ PRODUCTS = {
                 "text":"""
                 Применение на динрейку через адаптер. Отличается высокой надежностью, длительным сроком службы 
                 и широким спектром опций оценки контактов для поддержки различных нагрузок.
-                """,
-                "links":{
-                    "Panel Plug-in Relays":"#",
+                """, 
+                "modals":{
+                    "Panel Plug-in Relays":{
+                        "id":"modal-0",
+                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                    },
                 },
             },
             "par1":{
@@ -72,9 +75,12 @@ PRODUCTS = {
                 "text":"""
                 В исполнении на печатную платую. Высокопроизводительные и 
                 высоконадежные реле соответствуют мировым стандартам для печатных плат на рынке. 
-                """,
-                "links":{
-                    "Power PCB Relays":"#",
+                """, 
+                "modals":{
+                    "Power PCB Relays":{
+                        "id":"modal-1",
+                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                    },
                 },
 
             },
@@ -83,9 +89,12 @@ PRODUCTS = {
                 "text":""" 
                 Миниатюрные реле на печатную плату. Предлагает небольшую  высоту 
                 исполнения в сочетании с высокой мощностьюю. В исполении с  открытым или перекидным контактом.
-                """,
-                "links":{
-                    "Miniature PCB Relays":"#",
+                """, 
+                "modals":{
+                    "Miniature PCB Relays":{
+                        "id":"modal-2",
+                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                    },
                 },
 
             },
@@ -94,9 +103,12 @@ PRODUCTS = {
                 "text":""" 
                 Твердотельные реле с длительным сроком службы и низким 
                 уровнем обслуживания при низком энергопотреблении, которые могут работать в жестких условиях.
-                """,
-                "links":{
-                    "Solid State Relays":"#",
+                """, 
+                "modals":{
+                    "Solid State Relays":{
+                        "id":"modal-3",
+                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                    },
                 },
 
             },
@@ -105,9 +117,12 @@ PRODUCTS = {
                 "text":""" 
                 Высокопроизводительные и надежные реле, 
                 которые производятся в малогабаритном дизайне. Подходят для коммутаций, для нагрузок до 5А.
-                """,
-                "links":{
-                    "Signal Relays":"#",
+                """,  
+                "modals":{
+                    "Signal Relays":{
+                        "id":"modal-4",
+                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                    },
                 },
 
             },
@@ -117,9 +132,12 @@ PRODUCTS = {
                 Предназначены для монтажа на печатной плате. 
                 Работают с пусковыми токами до 800 А и в основном используются в освещении, 
                 в комплекте с датчиками движения.
-                """,
-                "links":{
-                    "Inrush Power Relays":"#",
+                """, 
+                "modals":{
+                    "Inrush Power Relays":{
+                        "id":"modal-5",
+                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                    },
                 },
 
             },
@@ -129,9 +147,12 @@ PRODUCTS = {
                 Реле повешенной надежности. 
                 Ключевые электрохимические переключающие компоненты, используемые в цепях безопасности, 
                 востребованны в системах управления лифтами и эскалатороми, там где необходима повышенная надежность.
-                """,
-                "links":{
-                    "Force Guided Relays":"#",
+                """, 
+                "modals":{
+                    "Force Guided Relays":{
+                        "id":"modal-6",
+                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                    },
                 },
 
             }, 

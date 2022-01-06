@@ -101,8 +101,21 @@
         </div> 
     </div> 
     
-    <div class="default-block">
-        <div class="paragraph" style="position:relative;text-align:left;">
+    <div class="default-block" style="margin-bottom:20vh;"> 
+        <div class="paragraph">
+            <div class="paragraph-title">TE Industry Rus</div>
+            <div class="paragraph" style="text-align:left;">
+                <img class="paragraph-img" style="float:left;" src="{% static 'main/images/static-images/main-page-photo-1.png' %}">
+                TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
+                а так же поддерживает склад продукции в Москве и осуществляет доставку 
+                продукции в любую точку Российской Федерации. 
+                Вся имеющаяся на складе продукция сертифицирована.
+            </div>
+        </div>   
+    </div>
+
+    <div class="default-block" > 
+        <div class="paragraph">
             <div class="paragraph-title">Отделение электрики</div>
             <div class="paragraph">
                 <img class="paragraph-img" src="{% static 'main/images/static-images/main-page-photo-0.png' %}">
@@ -113,19 +126,9 @@
                 стяжек, спиральной ленты маркировки для кабеля и других групп продукции,
                 производства TE Connectivity. 
             </div>
-        </div>    
-    
-        <div class="paragraph" style="text-align:left;">
-            <div class="paragraph-title">TE Industry Rus</div>
-            <div class="paragraph" style="text-align:left;">
-                <img class="paragraph-img" style="float:left;" src="{% static 'main/images/static-images/main-page-photo-1.png' %}">
-                TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
-                а так же поддерживает склад продукции в Москве и осуществляет доставку 
-                продукции в любую точку Российской Федерации. 
-                Вся имеющаяся на складе продукция сертифицирована.
-            </div>
-        </div>  
+        </div>      
     </div>
+    
  
         {% with 1 as slideshow_id %} 
             {% with text_slideshows|get_item:slideshow_id as s %} 

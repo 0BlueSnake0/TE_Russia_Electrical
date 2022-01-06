@@ -11,6 +11,9 @@
 
 .product-buttons-block {
     display: flex;
+    align-items: center;
+    text-align:center;
+    justify-content: center;
     flex-wrap:wrap;
     align-items: center;
     margin-left:auto;
@@ -45,10 +48,6 @@
     box-shadow: 14px 18px 59px 11px rgba(34, 60, 80, 0.3);
     margin-top:5vh;margin-bottom:5vh;
 }
-
-.product-sub-link:hover {
-    animation-name:jump;animation-duration: 0.5s;
-} 
 
 .catalog-link { 
     display:flex;

@@ -1,0 +1,60 @@
+@keyframes jump {
+    0% {transform:translateY(0px);}
+    50% {transform:translateY(-6px);} 
+    100% {transform:translateY(0px);}
+}
+
+@keyframes opacity-occurance-1 {
+    from {opacity:0}
+    to {opacity:1}
+} 
+@keyframes opacity-occurance-2 {
+    from {opacity:0;transform:translateY(-10%);}
+    to {opacity:1;transform:translateY(0%);}
+} 
+
+.modal-btn { 
+    cursor:pointer; 
+    color:cornflowerblue;
+    font-size:1.5em;
+    font-weight:600;
+    font-family:Arial, Helvetica, sans-serif, Impact;
+    text-align:left;
+    padding-bottom:0 !important;
+}
+
+.modal-btn:hover { 
+    animation-name:jump;animation-duration: 0.5s;
+} 
+
+.modal-content {
+    text-align: center;
+    display:none;
+    position:fixed;
+    width:100vw;
+    height:100vh;
+    top:0;
+    right:0;
+    background-color: rgba(60, 65, 117, 0.5);
+    animation-name:opacity-occurance-1;animation-duration:1s;
+    z-index:3;
+} 
+
+.modal-img {
+    width:65vw;   
+    margin:auto;  
+    margin-top:12vw;
+    display: block;
+    animation-name:opacity-occurance-2;animation-duration:1s;
+    z-index:4;
+}
+
+.close-btn {
+    position:fixed;
+    top:12vw;
+    left:83.5vw;
+    cursor: pointer;
+}
+.close-btn img {
+    width:3.5vw; 
+}

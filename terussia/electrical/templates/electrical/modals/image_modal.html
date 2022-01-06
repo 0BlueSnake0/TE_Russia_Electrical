@@ -1,0 +1,17 @@
+{% load static %}
+<label class="modal">
+    <span id="{{modal.id}}" class="modal-btn paragraph-title" >{{title}}</span>  
+    <div id="{{modal.id}}-background" class="modal-content"> 
+        <img class="modal-img" src="{{modal.image}}"> 
+        <span id="{{modal.id}}-close" class="close-btn">
+            <img src="/static/main/images/icons/close-image-modal.png">
+        </span>
+    </div> 
+</label>
+
+<script> 
+    var modalID = "#{{modal.id}}";
+    var modalBackgroundID = "#{{modal.id}}-background";
+    var modalCloseID = "#{{modal.id}}-close";
+</script>
+<script type="text/javascript" src="{% static 'main/js/modals/image_modal.js' %}?version=1"></script> 

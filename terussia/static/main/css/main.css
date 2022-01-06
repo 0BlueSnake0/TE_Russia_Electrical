@@ -29,19 +29,19 @@
     color: #6f7279; 
     font-size: 18px;
     font-weight:200; 
-    position:relative;
+    margin:2vw; 
+    height:auto;
 }
 
 .paragraph-title {
     display:block;
+    text-align:center;
     word-wrap: break-word;
     font-family:Arial, Helvetica, sans-serif;
-    text-align:center;
     text-decoration: none;  
     color: #6f7279; 
     font-size:28px;
-    padding-top:2em;
-    padding-bottom:2em;
+    padding-top:2em;padding-bottom:2em;
     font-weight:200;  
 } 
  
@@ -116,5 +116,7 @@
 }
 
 .default-block {
-    margin-top:5vh;margin-left:auto;margin-right:auto;width:80vw;
+    margin-top:4vh;margin-bottom:4vh;
+    margin-left:auto;margin-right:auto;
+    width:80vw; 
 } 
