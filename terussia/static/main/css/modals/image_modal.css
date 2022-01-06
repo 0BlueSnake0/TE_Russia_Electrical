@@ -25,11 +25,11 @@
 
 .modal-btn:hover { 
     animation-name:jump;animation-duration: 0.5s;
-} 
+}  
 
 .modal-content {
-    text-align: center;
     display:none;
+    text-align: center;
     position:fixed;
     width:100vw;
     height:100vh;
@@ -41,11 +41,12 @@
 } 
 
 .modal-img {
-    width:65vw;   
+    width:90%;   
     margin:auto;  
     margin-top:12vw;
     display: block;
     animation-name:opacity-occurance-2;animation-duration:1s;
+    box-shadow: 14px 18px 59px 11px rgba(34, 60, 80, 0.3);
     z-index:4;
 }
 
@@ -57,4 +58,18 @@
 }
 .close-btn img {
     width:3.5vw; 
+}
+
+.content-zone {
+    width:65vw;   
+    margin:auto;  
+    display: block;
+    background:rgba(255,255,255,0.75);
+    padding-top:0.5em; 
+    padding-bottom:0.5em; 
+    padding-left:1em; 
+    padding-right:1em; 
+    box-shadow: 14px 18px 30px 11px rgba(34, 60, 80, 0.7);
+    overflow:auto;
+    height:90vh;
 }

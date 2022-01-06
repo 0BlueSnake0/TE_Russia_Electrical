@@ -2,16 +2,26 @@
 <label class="modal">
     <span id="{{modal.id}}" class="modal-btn paragraph-title" >{{title}}</span>  
     <div id="{{modal.id}}-background" class="modal-content"> 
-        <img class="modal-img" src="{{modal.image}}"> 
         <span id="{{modal.id}}-close" class="close-btn">
             <img src="/static/main/images/icons/close-image-modal.png">
         </span>
+        <div class="content-zone">
+            <img src="{{modal.image}}" id="{{modal.id}}-image" class="modal-img" > 
+            <p class="paragraph-title" style="font-weight:800;color:#e98300;padding-top:0em;padding-bottom:0em;">{{modal.title}}</p> 
+            <p class="paragraph-title" style="font-weight:800;font-size:20px;padding-top:0em;padding-bottom:0em;">{{modal.subtitle}}</p> 
+            <p class="paragraph">{{modal.text}}</p> 
+        </div>
     </div> 
 </label>
 
-<script> 
-    var modalID = "#{{modal.id}}";
-    var modalBackgroundID = "#{{modal.id}}-background";
-    var modalCloseID = "#{{modal.id}}-close";
-</script>
-<script type="text/javascript" src="{% static 'main/js/modals/image_modal.js' %}?version=1"></script> 
+<script>   
+    function OpenModal() {   
+        $("#{{modal.id}}-background").css("display", "block");
+    }
+    
+    function CloseModal() {   
+        $("#{{modal.id}}-background").css("display", "none");
+    }
+    $("#{{modal.id}}").on("click", OpenModal);  
+    $("#{{modal.id}}-close").on("click", CloseModal); 
+</script> 

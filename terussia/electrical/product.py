@@ -66,20 +66,41 @@ PRODUCTS = {
                 "modals":{
                     "Panel Plug-in Relays":{
                         "id":"modal-0",
-                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                        "image":"/static/main/images/modals/relays/panel-plugin.png", 
+                        "text":"""
+                            Установка на DIN-рейку через адаптер. 
+                            Отличается высокой надежностью, длительным сроком 
+                            службы и широким спектром опций контактов для 
+                            поддержки различных нагрузок.
+                            Отличие от других реле (под пайку) заключается в 
+                            специальных усиленных контактных выводах, так 
+                            в впроцессе эксплуатации реле может быть 
+                            неоднократно вставлено и удалено из клемной 
+                            колодки.
+                        """,
+                        "title":"Panel Plug-in Relays",
+                        "subtitle":"Реле для установки на цоколь",
                     },
                 },
             },
             "par1":{
                 "subtitle":"Power PCB Relays",
                 "text":"""
-                В исполнении на печатную платую. Высокопроизводительные и 
+                В исполнении на печатную плату. Высокопроизводительные и 
                 высоконадежные реле соответствуют мировым стандартам для печатных плат на рынке. 
                 """, 
                 "modals":{
                     "Power PCB Relays":{
                         "id":"modal-1",
-                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                        "image":"/static/main/images/modals/relays/power-pcb.png", 
+                        "text":""" 
+                            Реле в исполнении на печатную плату. 
+                            Высокопроизводительные и высоконадежные реле 
+                            соответствуют мировым стандартам для печатных 
+                            плат на рынке.
+                        """,
+                        "title":"Power PCB Relays",
+                        "subtitle":"Силовые реле на плату",
                     },
                 },
 
@@ -93,7 +114,11 @@ PRODUCTS = {
                 "modals":{
                     "Miniature PCB Relays":{
                         "id":"modal-2",
-                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                        "image":"/static/main/images/modals/relays/miniature-pcb.png", 
+                        "text":""" 
+                        """,
+                        "title":"Miniature PCB Relays",
+                        "subtitle":"Мини реле на плату",
                     },
                 },
 
@@ -107,7 +132,15 @@ PRODUCTS = {
                 "modals":{
                     "Solid State Relays":{
                         "id":"modal-3",
-                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                        "image":"/static/main/images/modals/relays/solid-state.png", 
+                        "text":"""  
+                            Твердотельные реле с длительным сроком службы и 
+                            низким уровнем обслуживания при низком 
+                            энергопотреблении, которые могут работать в 
+                            жестких условиях.
+                        """,
+                        "title":"Solid State Relays",
+                        "subtitle":"Твёрдотельные реле",
                     },
                 },
 
@@ -121,7 +154,14 @@ PRODUCTS = {
                 "modals":{
                     "Signal Relays":{
                         "id":"modal-4",
-                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                        "image":"/static/main/images/modals/relays/signal.png", 
+                        "text":""" 
+                            Высокопроизводительные и надежные реле, которые 
+                            производятся в малогабаритном дизайне. 
+                            Подходят для коммутаций, для нагрузок до 5А.
+                        """,
+                        "title":"Signal Relays",
+                        "subtitle":"Сигнальные реле",
                     },
                 },
 
@@ -136,7 +176,15 @@ PRODUCTS = {
                 "modals":{
                     "Inrush Power Relays":{
                         "id":"modal-5",
-                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                        "image":"/static/main/images/modals/relays/inrush-power.png", 
+                        "text":""" 
+                            Предназначены для монтажа на печатной плате. 
+                            Работают с пусковыми токами до 800 А и в основном 
+                            используются в освещении, датчиках движения,
+                            настенных розетках и шинных системах.
+                        """,
+                        "title":"Inrush Power Relays",
+                        "subtitle":"Пусковые реле",
                     },
                 },
 
@@ -151,7 +199,17 @@ PRODUCTS = {
                 "modals":{
                     "Force Guided Relays":{
                         "id":"modal-6",
-                        "image":"/static/main/images/modals/relays/relays-0.png", 
+                        "image":"/static/main/images/modals/relays/force-guided.png", 
+                        "text":""" 
+                            Реле с механически сблокированными контактами. 
+                            Ключевые электромеханические переключающие компоненты, 
+                            используемые в цепях безопасности, востребованы в 
+                            системах управления лифтами, 
+                            эскалаторами, конвеерами, там где необходима повышенная
+                            надежность.
+                        """,
+                        "title":"Force Guided Relays",
+                        "subtitle":"Высоконадежные реле с обратной связью",
                     },
                 },
 

@@ -70,12 +70,15 @@
 </div>
  
 {% for title, paragraph in product.description.items %}
-    <div style="margin:5vw;z-index:1;">
+    <div style="margin-left:5vw;z-index:1;">
         <p class="paragraph-title" 
         style="font-weight:800;font-family:Arial, Helvetica, sans-serif, Impact ;text-align:left;">
         {{paragraph.subtitle}}</p>  
 
         <p class="paragraph" style="text-align:left;margin-top:0;margin-bottom:0;">{{paragraph.text}}</p>  
+        <script type='text/javascript'> 
+            var modals = {};
+        </script>
         {% for title, modal in paragraph.modals.items %}
             {% include 'electrical/modals/image_modal.html' %} 
         {% endfor %}
