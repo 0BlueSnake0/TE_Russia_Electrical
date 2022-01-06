@@ -10,3 +10,11 @@ def get_range(number):
 @register.filter
 def get_item(dictionary, key):
     return dictionary.get(key)
+
+
+@register.simple_tag
+def get_first_item(dictionary):
+    values_view = dictionary.values()
+    value_iterator = iter(values_view)
+    first_value = next(value_iterator)
+    return first_value

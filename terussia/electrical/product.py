@@ -33,7 +33,10 @@ PRODUCTS = {
             "width":"50%",    
             "height":"auto" 
         },
-        "catalog_link":CATALOGS["clamp-connections"]["link"], 
+        "catalog_links":{
+            "Клеммные соединения Entrellec":CATALOGS["clamp-connections"]["link"],
+            "Клеммы с варисторами и защитными диодами":CATALOGS["clamps-with-varistors-and-protective-diods"]["link"],
+        },
         "software_link":" https://www.te.com/usa-en/products/brands/entrelec/easy-rail-designer-3d.html?tab=pgp-story",
     }, 
     "distribution-blocks":{ 
@@ -46,7 +49,9 @@ PRODUCTS = {
             "width":"80%",    
             "height":"auto" 
         },
-        "catalog_link":CATALOGS["distribution-blocks"]["link"],
+        "catalog_links":{
+            "Распределительные блоки серии DBL":CATALOGS["distribution-blocks"]["link"]
+        },
     },  
 
     "relays":{
@@ -136,7 +141,9 @@ PRODUCTS = {
             "width":"70%",    
             "height":"auto" 
         },
-        "catalog_link":CATALOGS["relays"]["link"],
+        "catalog_links":{
+            "Промышленные реле":CATALOGS["relays"]["link"]
+        },
     },  
 
     "cable-lugs":{
@@ -177,7 +184,9 @@ PRODUCTS = {
             "width":"70%",    
             "height":"auto" 
         },
-        "catalog_link":CATALOGS["spiral-ribbon"]["link"],
+        "catalog_links":{
+            "Спиральная лента SPIRAP":CATALOGS["spiral-ribbon"]["link"]
+        },
     },  
 
     "marking":{ 

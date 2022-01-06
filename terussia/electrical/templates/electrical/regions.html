@@ -13,7 +13,7 @@
 
 <div class="contact-list">
     {% for city, contact_group in contacts.items %} 
-        {% for title, contact in contact_group.items %}  
+        {% for title, contact in contact_group.contacts.items %}  
             <div id="{{title}}" class="contact"> 
                     <div>
                         <p class="contact-title">{{contact.first_name}} {{contact.last_name}}</p> 
@@ -47,7 +47,7 @@
     var contacts = {};
     var contact_id = 0;
     {% for city, contact_group in contacts.items %} 
-        {% for title, contact in contact_group.items %} 
+        {% for title, contact in contact_group.contacts.items %} 
             contacts[contact_id] = "{{title}}";
             contact_id += 1;
         {% endfor %}

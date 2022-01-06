@@ -14,7 +14,7 @@ from .tables import TABLES
 
 from django.views.decorators.cache import never_cache
 
-@never_cache
+
 def index(request): 
     return render(
         request,
@@ -28,7 +28,7 @@ def index(request):
         }
     )   
     
-@never_cache
+
 def catalog(request, **kwargs):
     return render(
         request,
@@ -39,12 +39,15 @@ def catalog(request, **kwargs):
         }
     ) 
 
-@never_cache
-def catalog_detail(request, **kwargs):   
-	filepath = f'{settings.BASE_DIR}/static/main/catalog_files/catalogs/{CATALOGS[kwargs["product"]]["filename"]}'
-	return FileResponse(open(filepath, 'rb'), content_type='application/pdf')
 
-@never_cache
+def catalog_detail(request, **kwargs):   
+	filepath = f'{settings.BASE_DIR}/static/main/catalog_files/catalogs/{CATALOGS[kwargs["product"]]["category"]}/{CATALOGS[kwargs["product"]]["filename"]}'
+	return FileResponse(
+        open(filepath, 'rb'), 
+        content_type='application/pdf'
+    )
+
+
 def contacts(request, **kwargs):
     print("you see regions now!")
     return render(
@@ -57,7 +60,7 @@ def contacts(request, **kwargs):
         }
     )
 
-@never_cache
+
 def product_detail(request, **kwargs):
     return render(
         request,
@@ -69,7 +72,8 @@ def product_detail(request, **kwargs):
             'image_slideshows':IMAGE_SLIDESHOWS,
         }
     ) 
-@never_cache
+
+
 def seminars_timetable(request, **kwargs):
     styles = TABLES["timetable_2020"]["styles"]
     xlsx_path = f'{TABLES["timetable_2020"]["xlsx_path"]}'
@@ -92,11 +96,9 @@ def seminars_timetable(request, **kwargs):
         context={  
             'dropdown1':DROPDOWN_1,
         }
-    )
+    )  
 
 
-
-@never_cache
 def regions(request, **kwargs):
     map = ""
     return render(
@@ -108,7 +110,7 @@ def regions(request, **kwargs):
         }
     )
 
-@never_cache
+
 def video_list(request, **kwargs): 
     all_videos = Video.objects.all()
     return render(
@@ -118,12 +120,12 @@ def video_list(request, **kwargs):
             "all_videos":all_videos,
         }
     )
-@never_cache
+
+
 def detail_video(request, **kwargs): 
     video = Video.objects.get(slug=kwargs["video_slug"])
     return render(
         request,
         template_name="electrical/video_detail.html",
         context={"video":video}
-    )
-
+    ) 

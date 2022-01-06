@@ -40,17 +40,37 @@
 {% endif %}
 
  
-<div style="display: flex;flex-wrap:nowrap;">
-    {% if product.catalog_link %}
-        <a class="catalog-link" href="{{product.catalog_link}}">Каталог</a>
+<div class="product-buttons-block">
+    {% if product.catalog_links %}
+        {% if product.catalog_links|length == 1 %}
+            {% get_first_item product.catalog_links as link_to_catalog %}  
+            <div style="margin:2em;">
+                <a class="catalog-link" href="{{link_to_catalog}}">Каталог</a>
+            </div>
+        {% else %} 
+        <div style="margin:2em;"> 
+            <a class="catalog-dropbtn catalog-link">
+                Каталоги
+            </a>
+            <div style="display:flex;">
+                <div class="catalog-dropdown-content">
+                    {% for title, link in product.catalog_links.items %}
+                        <a class="catalog-dropdown-item catalog-link" href="{{link}}">{{title}}</a>
+                    {% endfor %} 
+                </div> 
+            </div>
+        </div>
+        {% endif %}
     {% endif %}  
     {% if product.software_link %}
-        <a class="software-link" href="{{product.software_link}}">Программное обеспечение</a>
+        <div style="margin:2em;"> 
+            <a class="software-link" href="{{product.software_link}}">Программное обеспечение</a>
+        </div>
     {% endif %} 
 </div>
  
 {% for title, paragraph in product.description.items %}
-    <div style="margin:5vw;">
+    <div style="margin:5vw;pointer-events:none;z-index:1;">
         <p class="paragraph-title" 
         style="font-weight:800;font-family:Arial, Helvetica, sans-serif, Impact ;text-align:left;">
         {{paragraph.subtitle}}</p>  

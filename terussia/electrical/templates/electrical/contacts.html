@@ -1,10 +1,15 @@
 {% extends 'electrical/base.html' %}
 {% load static %} 
 {% block contacts %}  
+{% for city, contact_group in contacts.items %}
+    {% if city == current_city %}
+    <title>{{contact_group.city}}</title>
+    {% endif %}
+{% endfor %}
 <div class="contact-list">
     {% for city, contact_group in contacts.items %}
         {% if city == current_city %}
-            {% for title, contact in contact_group.items %} 
+            {% for title, contact in contact_group.contacts.items %} 
             <div class="contact"> 
                     <p class="contact-title">{{contact.first_name}} {{contact.last_name}}</p>
                     <div class="contact-text">
