@@ -12,6 +12,7 @@
     var slideshows = {}; 
 </script>
  
+<div style="width:74vw; margin-left:auto;margin-right:auto;">
 <h1 class="paragraph-title">{{product.product_title}}</h1>
 
 {% if product.slideshow_id_ %}   
@@ -29,12 +30,11 @@
         {% endwith %}
     {% endwith %} 
 {% elif product.static_image %}
-    <div style="display:flex;">
+    <div style="width:100%;display:flex;">
         <img class="static-image" src="{{product.static_image}}" 
         style = "
             width:{{product.static_image_settings.width}};
             height:{{product.static_image_settings.height}};
-            margin-left:auto;margin-right:auto;
         "> 
     </div>
 {% endif %}
@@ -70,7 +70,7 @@
 </div>
  
 {% for title, paragraph in product.description.items %}
-    <div style="margin-left:5vw;z-index:1;">
+    <div style="z-index:1;">
         <p class="paragraph-title" 
         style="font-weight:800;font-family:Arial, Helvetica, sans-serif, Impact ;text-align:left;">
         {{paragraph.subtitle}}</p>  
@@ -84,5 +84,7 @@
         {% endfor %}
     </div> 
 {% endfor %}
+
+</div>
 
 {% endblock %}

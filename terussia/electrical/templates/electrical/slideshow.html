@@ -9,7 +9,7 @@ style= "
 "
 onmouseenter='addKeyControl("{{data_type}}", {{slideshow_id}})' 
 onmouseleave="removeKeyControl()"> 
-    <div style="display:flex;width:100%;height:100%;">
+    <div style="display:flex;width:100%;height:auto;">
         <div class="click-zone"> 
             <label style="border-bottom: 0.25em solid rgba({{arrows_color}}, 1);border-left: 0.25em solid rgba({{arrows_color}}, 1);" 
             onclick='lastSlide("{{data_type}}",{{slideshow_id}})' class="last-slide-arrow"></label>
@@ -28,10 +28,10 @@ onmouseleave="removeKeyControl()">
                 {% for slideshow_id_, slideshow_content in text_slideshows.items %}
                     {% if slideshow_id_ == slideshow_id %} 
                         {% for slide_id, slide_content in slideshow_content.content.items %} 
-                        <div style="justify-content:center;height:100%;" class="slide" id="{{data_type}}-slideshow-{{slideshow_id}}-{{slide_id}}">
-                            <div style="margin:auto;text-align:center;display:flex;flex-direction:column;align-items:center;">
-                                <h1 class="paragraph-title" style="margin:auto;">{{slide_content.title}}</h1>
-                                <p class="paragraph" style="margin:auto;">{{slide_content.text}}</p>
+                        <div class="slide" id="{{data_type}}-slideshow-{{slideshow_id}}-{{slide_id}}">
+                            <div>
+                                <h1 class="paragraph-title">{{slide_content.title}}</h1>
+                                <p class="paragraph" >{{slide_content.text}}</p>
                             </div>
                         </div>
                         {% endfor %}   
@@ -44,7 +44,7 @@ onmouseleave="removeKeyControl()">
             onclick='nextSlide("{{data_type}}",{{slideshow_id}})' class="next-slide-arrow"></label>
         </div> 
     </div>
-    <div style="display:flex;width:auto;margin-top:1vh;">
+    <div style="display:flex;width:auto;margin-top:2vw;">
         <div class="dot-block"> 
             {% get_range number_of_slides as dots %}
             {% for id in dots %}

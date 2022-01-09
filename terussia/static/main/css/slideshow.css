@@ -23,7 +23,7 @@
 } 
 .click-zone {
     width:7vw; 
-    height:100%;
+    height:auto;
     align-items: center;
     display:flex;  
     margin-top:auto;
@@ -32,7 +32,7 @@
 
 .slideshow-content {
     width:100%;
-    height:100%;    
+    height:auto;    
 }
 
 .slide {
@@ -45,7 +45,7 @@
 
 .last-slide-arrow { 
     margin:1em;
-    width:1.25em;height:1.25em; 
+    width:2vw; height:2vw; 
     border-radius:0.2em;
     transform: rotate(45deg); 
     cursor:pointer; 
@@ -55,7 +55,7 @@
 
 .next-slide-arrow { 
     margin:1em;
-    width:1.25em;height:1.25em; 
+    width:2vw; height:2vw; 
     border-radius:0.2em;
     transform: rotate(-135deg); 
     cursor:pointer; 

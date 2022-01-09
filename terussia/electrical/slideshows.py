@@ -38,7 +38,7 @@ TEXT_SLIDESHOWS = {
         },
         "options": {
             "width":'74vw',
-            "height":'24vh', 
+            "height":'auto', 
         },
     }, 
 }

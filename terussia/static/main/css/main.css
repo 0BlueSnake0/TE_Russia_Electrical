@@ -41,18 +41,17 @@
     text-decoration: none;  
     color: #6f7279; 
     font-size:28px;
-    padding-top:2em;padding-bottom:2em;
+    padding-top:0.5em;padding-bottom:0.5em;
     font-weight:200;  
 } 
  
 
 .paragraph-img {   
-    width:45%;
-    float:right;
+    width:45%; 
     margin-left:1em;  
     margin-right:1em;  
     margin-bottom:1em; 
-    box-shadow: 10px 6px 30px -12px rgba(0, 0, 0, 0.8);
+    float:left; 
 }
 
 .department-info {
