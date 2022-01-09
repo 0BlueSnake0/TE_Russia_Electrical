@@ -183,14 +183,14 @@ a {text-decoration:none;}
 #site-navigation-750-minus .layer-1:hover .arrow-icon-1 {
     content:url('/static/main/images/icons/or-arrow-icon-1.png');
 }   
-#site-navigation-750-minus .layer-1:hover .menu-item-title-1 {color:#e98300;pointer-events: none;} 
+#site-navigation-750-minus .layer-1:hover .menu-item-title-1 {color:#e98300;} 
 #site-navigation-750-minus .layer-1:hover input[class="checkbox-2"]:checked  + .arrow-icon-1 { 
     content:url('/static/main/images/icons/or-arrow-icon-2.png');
 } 
 #site-navigation-750-minus .layer-2:hover .arrow-icon-2 {
     content:url('/static/main/images/icons/or-arrow-icon-1.png');
 }   
-#site-navigation-750-minus .layer-2:hover .menu-item-title-2 {color:#e98300;pointer-events: none;} 
+#site-navigation-750-minus .layer-2:hover .menu-item-title-2 {color:#e98300;} 
 #site-navigation-750-minus .layer-2:hover input[class="checkbox-3"]:checked + .arrow-icon-2 { 
     content:url('/static/main/images/icons/or-arrow-icon-2.png');
 } 
