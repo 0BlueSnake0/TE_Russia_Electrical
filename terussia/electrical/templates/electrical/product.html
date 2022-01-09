@@ -12,79 +12,82 @@
     var slideshows = {}; 
 </script>
  
-<div style="width:74vw; margin-left:auto;margin-right:auto;">
-<h1 class="paragraph-title">{{product.product_title}}</h1>
+<div style="width:74vw; margin-left:auto;margin-right:auto;"> 
+    <h1 class="paragraph-title" style="font-size:32px;font-weight:800;color: #e98300;">{{product.product_title}}</h1>
 
-{% if product.slideshow_id_ %}   
-    {% with product.slideshow_id_ as slideshow_id %}   
-        {% with image_slideshows|get_item:slideshow_id as s %} 
-            {% with s.content|length as number_of_slides %}  
-                {% with "image" as data_type %}  
-                    {% with 8 as delay %}  
-                        {% with "0,0,0" as arrows_color %} 
-                            {% include 'electrical/slideshow.html' %}
+    {% if product.slideshow_id_ %}   
+        {% with product.slideshow_id_ as slideshow_id %}   
+            {% with image_slideshows|get_item:slideshow_id as s %} 
+                {% with s.content|length as number_of_slides %}  
+                    {% with "image" as data_type %}  
+                        {% with 8 as delay %}  
+                            {% with "0,0,0" as arrows_color %} 
+                                {% include 'electrical/slideshow.html' %}
+                            {% endwith %}
                         {% endwith %}
                     {% endwith %}
                 {% endwith %}
             {% endwith %}
-        {% endwith %}
-    {% endwith %} 
-{% elif product.static_image %}
-    <div style="width:100%;display:flex;">
-        <img class="static-image" src="{{product.static_image}}" 
-        style = "
-            width:{{product.static_image_settings.width}};
-            height:{{product.static_image_settings.height}};
-        "> 
-    </div>
-{% endif %}
-
- 
-<div class="product-buttons-block">
-    {% if product.catalog_links %}
-        {% if product.catalog_links|length == 1 %}
-            {% get_first_item product.catalog_links as link_to_catalog %}  
-            <div style="margin:2em;">
-                <a class="catalog-link" href="{{link_to_catalog}}">Каталог</a>
-            </div>
-        {% else %} 
-        <div style="margin:2em;"> 
-            <a class="catalog-dropbtn catalog-link">
-                Каталоги
-            </a>
-            <div style="display:flex;">
-                <div class="catalog-dropdown-content">
-                    {% for title, link in product.catalog_links.items %}
-                        <a class="catalog-dropdown-item catalog-link" href="{{link}}">{{title}}</a>
-                    {% endfor %} 
-                </div> 
-            </div>
-        </div>
-        {% endif %}
+        {% endwith %} 
     {% endif %}  
-    {% if product.software_link %}
-        <div style="margin:2em;"> 
-            <a class="software-link" href="{{product.software_link}}">Программное обеспечение</a>
-        </div>
-    {% endif %} 
-</div>
- 
-{% for title, paragraph in product.description.items %}
-    <div style="z-index:1;">
-        <p class="paragraph-title" 
-        style="font-weight:800;font-family:Arial, Helvetica, sans-serif, Impact ;text-align:left;">
-        {{paragraph.subtitle}}</p>  
+    {% if product.text_image_blocks %}
+        {% for title, text_image_block in product.text_image_blocks.items %}
+            <div style="width:100%;display:block;">
+                {% if text_image_block.subtitle %}
+                <p class="paragraph-title">{{text_image_block.subtitle}}</p>
+                {% endif %}
+                <div style="width:100%;display:flex;">
+                    <img class="static-image" src="{{text_image_block.static_image}}" 
+                    style = "width:{{text_image_block.static_image_settings.width}};
+                    height:{{text_image_block.static_image_settings.height}};"> 
+                </div>
+                <p class="paragraph" style="text-align: left;">{{text_image_block.text}}</p>
+            </div>
+        {% endfor %}  
+    {% endif %}  
+    
+    {% for title, paragraph in product.description.items %}
+        <div style="z-index:1;">
+            <p class="paragraph-title" 
+            style="font-weight:800;font-family:Arial, Helvetica, sans-serif, Impact ;text-align:left;">
+            {{paragraph.subtitle}}</p>  
 
-        <p class="paragraph" style="text-align:left;margin-top:0;margin-bottom:0;">{{paragraph.text}}</p>  
-        <script type='text/javascript'> 
-            var modals = {};
-        </script>
-        {% for title, modal in paragraph.modals.items %}
-            {% include 'electrical/modals/image_modal.html' %} 
-        {% endfor %}
-    </div> 
-{% endfor %}
+            <p class="paragraph" style="text-align:left;margin-top:0;margin-bottom:0;">{{paragraph.text}}</p>  
+            <script type='text/javascript'> 
+                var modals = {};
+            </script>
+            {% for title, modal in paragraph.modals.items %}
+                {% include 'electrical/modals/image_modal.html' %} 
+            {% endfor %}
+        </div> 
+    {% endfor %}  
 
+    <div class="product-buttons-block">
+        {% if product.catalog_links %}
+            {% if product.catalog_links|length == 1 %}
+                {% get_first_item product.catalog_links as link_to_catalog %}  
+                <div style="margin:2em;">
+                    <a class="catalog-link" href="{{link_to_catalog}}">Каталог</a>
+                </div>
+            {% else %} 
+            <div style="margin:2em;"> 
+                <a class="catalog-dropbtn catalog-link">Каталоги</a>
+                <div style="display:flex;">
+                    <div class="catalog-dropdown-content">
+                        {% for title, link in product.catalog_links.items %}
+                            <a class="catalog-dropdown-item catalog-link" href="{{link}}">{{title}}</a>
+                        {% endfor %} 
+                    </div> 
+                </div>
+            </div>
+            {% endif %}
+        {% endif %}  
+        {% if product.software_link %}
+            <div style="margin:2em;"> 
+                <a class="software-link" href="{{product.software_link}}">Программное обеспечение</a>
+            </div>
+        {% endif %} 
+    </div>
 </div>
 
 {% endblock %}

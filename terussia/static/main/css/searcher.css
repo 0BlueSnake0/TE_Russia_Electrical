@@ -37,7 +37,7 @@ input[class="search-checkbox"] {display: none;}
 }
 
 .search-icon {    
-    width:3.5vw;cursor:pointer; float:right;
+    width:3vw;cursor:pointer; float:right;
     right:0;top:0;
     margin-left:auto; 
     pointer-events:auto;

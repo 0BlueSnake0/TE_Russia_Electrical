@@ -7,32 +7,38 @@ PRODUCTS = {
             "par0":{
                 "subtitle":"",
                 "text":"""
-                TE Connectivity (TE), мировой лидер в области 
-                соединения проводников предлагает широкий спектр 
-                технологий для соединения проводников в промышленном 
-                производстве, на железнодорожном и морском транспорте, 
-                в солнечной энергетике, а также во взрывоопасных средах. 
-                Компания TE Connectivity Ltd. является мировым лидером 
-                в области технологий и производства с оборотом в 14,9 
-                миллиардов долларов. На протяжении более 75 лет наши 
-                решения для соединения, зарекомендовавшие себя в самых 
-                суровых условиях, позволили добиться прогресса в области 
-                транспорта, промышленного применения, медицинских технологий, 
-                энергетики, передачи данных и для дома. Сочетая знания и 
-                умения 85 000 сотрудников, в том числе более 7 000 инженеров, 
-                работающих вместе с заказчиками в почти 150 странах, TE 
-                гарантирует, что КАЖДОЕ СОЕДИНЕНИЕ ВЫПОЛНЕНО НАДЕЖНО. 
-                Узнайте больше о наших изделиях в каталогах продукции или 
-                посетив обучение.
                 """,
                 "links":{},
             }, 
         },
-        "static_image":"/static/main/images/products/clamp-connections/clamps-0.png",
-        "static_image_settings":{
-            "width":"50%",    
-            "height":"auto" 
-        },
+        "text_image_blocks":{
+            "block0":{
+                "static_image":"/static/main/images/products/clamp-connections/clamps-0.png",
+                "static_image_settings":{
+                    "width":"50%",    
+                    "height":"auto" 
+                },
+                "text":"""
+                    TE Connectivity (TE), мировой лидер в области 
+                    соединения проводников предлагает широкий спектр 
+                    технологий для соединения проводников в промышленном 
+                    производстве, на железнодорожном и морском транспорте, 
+                    в солнечной энергетике, а также во взрывоопасных средах. 
+                    Компания TE Connectivity Ltd. является мировым лидером 
+                    в области технологий и производства с оборотом в 14,9 
+                    миллиардов долларов. На протяжении более 75 лет наши 
+                    решения для соединения, зарекомендовавшие себя в самых 
+                    суровых условиях, позволили добиться прогресса в области 
+                    транспорта, промышленного применения, медицинских технологий, 
+                    энергетики, передачи данных и для дома. Сочетая знания и 
+                    умения 85 000 сотрудников, в том числе более 7 000 инженеров, 
+                    работающих вместе с заказчиками в почти 150 странах, TE 
+                    гарантирует, что КАЖДОЕ СОЕДИНЕНИЕ ВЫПОЛНЕНО НАДЕЖНО. 
+                    Узнайте больше о наших изделиях в каталогах продукции или 
+                    посетив обучение.
+                """,
+            }    
+        }, 
         "catalog_links":{
             "Клеммные соединения Entrellec":CATALOGS["clamp-connections"]["link"],
             "Клеммы с варисторами и защитными диодами":CATALOGS["clamps-with-varistors-and-protective-diods"]["link"],
@@ -41,14 +47,18 @@ PRODUCTS = {
     }, 
     "distribution-blocks":{ 
         "product_title":"Распределительные блоки", 
-        "description":"""
-        
-        """,  
-        "static_image":"/static/main/images/products/distribution-blocks/distr-blocks-0.png",
-        "static_image_settings":{
-            "width":"80%",    
-            "height":"auto" 
-        },
+        "description":{},  
+        "text_image_blocks":{
+            "block0":{
+                "static_image":"/static/main/images/products/distribution-blocks/distr-blocks-0.png",
+                "static_image_settings":{
+                    "width":"80%",    
+                    "height":"auto" 
+                },
+                "text":"""
+                """,
+            }    
+        }, 
         "catalog_links":{
             "Распределительные блоки серии DBL":CATALOGS["distribution-blocks"]["link"]
         },
@@ -215,11 +225,17 @@ PRODUCTS = {
 
             }, 
         },
-        "static_image":"/static/main/images/products/relays/relays-0.png",
-        "static_image_settings":{
-            "width":"70%",    
-            "height":"auto" 
-        },
+        "text_image_blocks":{
+            "block0":{
+                "static_image":"/static/main/images/products/relays/relays-0.png",
+                "static_image_settings":{
+                    "width":"70%",    
+                    "height":"auto" 
+                },
+                "text":"""
+                """,
+            }    
+        }, 
         "catalog_links":{
             "Промышленные реле":CATALOGS["relays"]["link"]
         },
@@ -227,30 +243,22 @@ PRODUCTS = {
 
     "cable-lugs":{
         "product_title":"Кабельные наконечники",
-        "description":"""
-        
-        """,  
+        "description":{},  
     }, 
 
     "cable-ties":{
         "product_title":"Кабельные стяжки",
-        "description":"""
-        
-        """,  
+        "description":{},  
     }, 
 
     "perforated-cable-channels":{
         "product_title":"Кабель-каналы перфорированные",
-        "description":"""
-        
-        """,  
+        "description":{},  
     },  
 
     "cable-entries":{
         "product_title":"Кабельные вводы",
-        "description":"""
-        
-        """,  
+        "description":{},  
     },  
 
     "spiral-ribbon":{
@@ -258,6 +266,17 @@ PRODUCTS = {
         "description":{
             "par0":{
                 "subtitle":"",
+                "text":""" 
+                """,
+            }
+        },  
+        "text_image_blocks":{
+            "block0":{
+                "static_image":"/static/main/images/products/spiral-ribbon/spiral-ribbon-0.png",
+                "static_image_settings":{
+                    "width":"40%",    
+                    "height":"auto" 
+                }, 
                 "text":"""
                     Спиральная лента SPIRAP – это очень практичный способ создания и объединения жгутов кабелей, проводов,
                     трубок и шлангов. Это экономичный и быстро реализуемый способ защиты от истирания.
@@ -267,13 +286,24 @@ PRODUCTS = {
                     защитную оплетку проводов, кабелей, трубок или шлангов.
                     Лента изготовлена из различных материалов, чтобы отвечать широкому диапазону требований для различных
                     применений.  
-                """
-            }
-        },  
-        "static_image":"/static/main/images/products/spiral-ribbon/spiral-ribbon-0.png",
-        "static_image_settings":{
-            "width":"40%",    
-            "height":"auto" 
+                """,
+            },
+            "block1":{
+                "static_image":"/static/main/images/products/spiral-ribbon/spiral-ribbon-1.png",
+                "static_image_settings":{
+                    "width":"80%",    
+                    "height":"auto" 
+                },
+                "subtitle":"Ручной инструмент",
+                "text":"""
+                    Доступен небольшой ручной инструмент, чтобы сделать нанесение более легким и равномерным.
+                    Ручной инструмент для монтажа SPIRAP код заказа 500901 – вкладывается в каждую коробку с изделием
+                    SPIRAP , такой инструмент повышает скорость применения и делает процесс нанесения более равномерным
+                    по все длине пучка. Инструмент имее прорези для возможности использования со всем диапазоном изделий
+                    SPIRAP.
+                    Такой инструмент также можно заказать отдельно.
+                """,
+            },
         },
         "catalog_links":{
             "Спиральная лента SPIRAP":CATALOGS["spiral-ribbon"]["link"]
@@ -282,8 +312,6 @@ PRODUCTS = {
 
     "marking":{ 
         "product_title":"Маркировка", 
-        "description":"""
-        
-        """,  
+        "description":{},  
     },   
 }

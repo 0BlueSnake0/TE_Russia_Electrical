@@ -189,8 +189,7 @@ a {text-decoration:none;}
 } 
 #site-navigation-750-minus .layer-2:hover .arrow-icon-2 {
     content:url('/static/main/images/icons/or-arrow-icon-1.png');
-}   
-#site-navigation-750-minus .layer-2:hover .menu-item-title-2 {color:#e98300;} 
+}    
 #site-navigation-750-minus .layer-2:hover input[class="checkbox-3"]:checked + .arrow-icon-2 { 
     content:url('/static/main/images/icons/or-arrow-icon-2.png');
 } 
@@ -240,6 +239,7 @@ a {text-decoration:none;}
     margin-left:auto; float:right;
 } 
 #site-navigation-750-plus label { 
+    z-index:2;
     position: relative; 
     text-align: left;  
     letter-spacing: 0.1em;
