@@ -13,6 +13,10 @@
     to {opacity:1;transform:translateY(0%);}
 } 
 
+.modal {
+    display: block;
+} 
+
 .modal-btn { 
     cursor:pointer; 
     color: #e98300;
@@ -39,21 +43,34 @@
     animation-name:opacity-occurance-1;animation-duration:1s;
     z-index:3;
 } 
-
 .modal-img {
     width:90%;   
-    margin:auto;  
-    margin-top:20%;
+    margin-left:auto;  
+    margin-right:auto;
+    margin-top:3.5vw !important;  
     display: block;
     animation-name:opacity-occurance-2;animation-duration:1s;
     box-shadow: 14px 18px 59px 11px rgba(34, 60, 80, 0.3);
     z-index:4;
+} 
+.modal-img:first-child {
+    margin-top: 20%;
+}
+.modal-img:last-child {
+    margin-bottom: 5%;
+}
+
+
+.modal-img:first-child {
+    margin-top:20% !important;  
 }
 
 .close-btn {
     position:relative;
     right:0;margin-left:auto;
     cursor: pointer;
+    margin-right:1em;
+    margin-bottom:1em;
 }
 .close-btn:hover img {
     animation-name:jump;animation-duration: 0.25s;

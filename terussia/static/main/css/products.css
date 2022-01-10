@@ -101,3 +101,16 @@
 .catalog-dropdown-item:hover { 
     animation-name:jump;animation-duration: 0.5s;
 }
+
+.link-list {
+    color:#e98300;
+}
+
+.info-link {
+    text-align: left;
+    font-weight:800;
+    color:#e98300;
+}
+.info-link:hover { 
+    animation-name:jump;animation-duration: 0.5s;
+}

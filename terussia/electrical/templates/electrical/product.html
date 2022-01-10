@@ -34,8 +34,8 @@
         {% for title, text_image_block in product.text_image_blocks.items %}
             <div style="width:100%;display:block;">
                 {% if text_image_block.subtitle %}
-                <p class="paragraph-title">{{text_image_block.subtitle}}</p>
-                {% endif %}
+                    <p class="paragraph-title">{{text_image_block.subtitle}}</p>
+                {% endif %} 
                 <div style="width:100%;display:flex;">
                     <img class="static-image" src="{{text_image_block.static_image}}" 
                     style = "width:{{text_image_block.static_image_settings.width}};
@@ -61,6 +61,26 @@
             {% endfor %}
         </div> 
     {% endfor %}  
+
+    {% if product.link_blocks %}
+        {% for title, link_block in product.link_blocks.items %}
+            <div style="width:100%;display:block;">
+                {% if link_block.subtitle %}
+                    <p class="paragraph-title">{{text_image_block.subtitle}}</p>
+                {% endif %} 
+                <div style="width:100%;display:flex;">
+                    <img class="static-image"src="{{link_block.static_image}}" 
+                    style = "width:{{link_block.static_image_settings.width}};
+                    height:{{link_block.static_image_settings.height}};"> 
+                    <ul class="link-list">
+                        {% for title, link in link_block.links.items %}
+                            <li><a class="paragraph-title info-link" href="{{link}}">{{title}}</a></li>
+                        {% endfor %} 
+                    </ul>
+                </div>
+            </div>
+        {% endfor %}  
+    {% endif %} 
 
     <div class="product-buttons-block">
         {% if product.catalog_links %}

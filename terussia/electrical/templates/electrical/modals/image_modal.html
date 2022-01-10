@@ -3,7 +3,9 @@
     <span id="{{modal.id}}" class="modal-btn paragraph-title" >{{title}}</span>  
     <div id="{{modal.id}}-background" class="modal-content"> 
         <div class="content-zone">
-            <img src="{{modal.image}}" id="{{modal.id}}-image" class="modal-img" > 
+            <div style="display:flex;flex-direction: column;justify-content:center;">
+                {% for image in modal.images %}<img src="{{image}}" class="modal-img">{% endfor %}
+            </div>
             <p class="paragraph-title" style="font-weight:800;color:#e98300;padding-top:0em;padding-bottom:0em;">{{modal.title}}</p> 
             <p class="paragraph-title" style="font-weight:800;font-size:20px;padding-top:0em;padding-bottom:0em;">{{modal.subtitle}}</p> 
             <p class="paragraph">
