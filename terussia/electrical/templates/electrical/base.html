@@ -1,18 +1,20 @@
  
 {% load static %}  
+{% load customtags %}  
 <html lang="en">
     <head>
         <meta charset="UTF-8"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/header.css' %}?version=1">
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/footer.css' %}?version=1"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}?version=1"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/searcher.css' %}?version=1"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/contacts.css' %}?version=1"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/catalog.css' %}?version=1"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/products.css' %}?version=1"> 
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/modals/image_modal.css' %}?version=1">
+        {% get_random_num as vers %}
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/header.css' %}?version={{vers}}">
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/footer.css' %}?version={{vers}}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}?version={{vers}}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/searcher.css' %}?version={{vers}}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/contacts.css' %}?version={{vers}}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/catalog.css' %}?version={{vers}}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/products.css' %}?version={{vers}}"> 
+        <link rel="stylesheet" type="text/css" href="{% static 'main/css/modals/image_modal.css' %}?version={{vers}}">
         <script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script> 
-        <script type="text/javascript" src="{% static 'main/js/animate_number.js' %}?version=1"></script>  
+        <script type="text/javascript" src="{% static 'main/js/animate_number.js' %}?version={{vers}}"></script>  
     </head>
 
     <body> 
@@ -206,5 +208,5 @@
         </div> 
 
     </body> 
-    <script type="text/javascript" src="{% static 'main/js/navigation.js' %}?version=1"></script> 
-    <script type="text/javascript" src="{% static 'main/js/date.js' %}?version=1"></script>
+    <script type="text/javascript" src="{% static 'main/js/navigation.js' %}?version={{vers}}""></script> 
+    <script type="text/javascript" src="{% static 'main/js/date.js' %}?version={{vers}}"></script>

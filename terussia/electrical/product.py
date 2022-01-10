@@ -244,7 +244,7 @@ PRODUCTS = {
                     },
                 "static_image":"/static/main/images/products/relays/intellectual-systems.png",
                 "static_image_settings":{
-                    "width":"40%",    
+                    "width":"80%",    
                     "height":"auto" 
                 },
             },

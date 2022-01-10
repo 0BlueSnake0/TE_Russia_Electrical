@@ -1,4 +1,5 @@
 from django import template
+import random
 register = template.Library()
 
 
@@ -18,3 +19,7 @@ def get_first_item(dictionary):
     value_iterator = iter(values_view)
     first_value = next(value_iterator)
     return first_value
+
+@register.simple_tag
+def get_random_num(): 
+    return random.random()

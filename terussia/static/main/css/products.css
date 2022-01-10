@@ -102,7 +102,8 @@
     animation-name:jump;animation-duration: 0.5s;
 }
 
-.link-list {
+.link-list { 
+    width:auto;
     color:#e98300;
 }
 

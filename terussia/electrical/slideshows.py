@@ -54,7 +54,7 @@ IMAGE_SLIDESHOWS = {
         },
         "options": {
             "width":'84vw',
-            "height":'38.1vw',
+            "height":'auto',
         },
     }, 
 }
