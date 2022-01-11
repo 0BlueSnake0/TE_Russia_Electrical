@@ -4,13 +4,21 @@
     <div id="{{modal.id}}-background" class="modal-content"> 
         <div class="content-zone">
             <div style="display:flex;flex-direction: column;justify-content:center;">
-                {% for image in modal.images %}<img src="{{image}}" class="modal-img">{% endfor %}
-            </div>
-            <p class="paragraph-title" style="font-weight:800;color:#e98300;padding-top:0em;padding-bottom:0em;">{{modal.title}}</p> 
-            <p class="paragraph-title" style="font-weight:800;font-size:20px;padding-top:0em;padding-bottom:0em;">{{modal.subtitle}}</p> 
-            <p class="paragraph">
-                {{modal.text}}
-            </p> 
+                {% if modal.images %}
+                    {% for image in modal.images %}
+                        <img src="{{image}}" class="modal-img">
+                    {% endfor %}
+                {% else %}
+                    <div style="display: flex;flex-direction: column;margin-top:20%;">
+                        <div style="width:100%;display:flex;">
+                            <img style="margin:auto;width:14vw;" src="/static/main/images/errors/android.svg"> 
+                        </div>  
+                        <div style="width:100%;display:flex;">
+                            <p class="paragraph-title" style="margin:auto;font-weight:800;color:#e98300;padding:2em;font-size:36px;">Данный фрагмент в разработке</p>
+                        </div>  
+                    </div>
+                {% endif %}
+            </div> 
             <div style="display: flex;width:auto;">
                 <span id="{{modal.id}}-close" class="close-btn">
                     <img src="/static/main/images/icons/close-image-modal.png">

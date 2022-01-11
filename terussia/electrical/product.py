@@ -87,11 +87,7 @@ PRODUCTS = {
                             "/static/main/images/modals/relays/panel-plugin/panel-plugin-7.png",
                             "/static/main/images/modals/relays/panel-plugin/panel-plugin-8.png",
                             "/static/main/images/modals/relays/panel-plugin/panel-plugin-9.png",
-                        ], 
-                        "text":""" 
-                        """,
-                        "title":"",
-                        "subtitle":"",
+                        ],  
                     }, 
                 },
             },
@@ -108,11 +104,7 @@ PRODUCTS = {
                             "/static/main/images/modals/relays/solid-state/solid-state-0.png", 
                             "/static/main/images/modals/relays/solid-state/solid-state-1.png", 
                             "/static/main/images/modals/relays/solid-state/solid-state-2.png", 
-                        ], 
-                        "text":"""   
-                        """,
-                        "title":"",
-                        "subtitle":"",
+                        ],  
                     },
                 },
 
@@ -129,11 +121,7 @@ PRODUCTS = {
                         "images":[
                             "/static/main/images/modals/relays/power-pcb/power-pcb-0.png", 
                             "/static/main/images/modals/relays/power-pcb/power-pcb-1.png", 
-                        ], 
-                        "text":""" 
-                        """,
-                        "title":"",
-                        "subtitle":"",
+                        ],  
                     },
                 },
 
@@ -146,14 +134,7 @@ PRODUCTS = {
                 """, 
                 "modals":{
                     "Miniature PCB Relays":{
-                        "id":"modal-2", 
-                        "images":[
-                            "/static/main/images/modals/relays/miniature-pcb-0.png", 
-                        ], 
-                        "text":""" 
-                        """,
-                        "title":"",
-                        "subtitle":"",
+                        "id":"modal-2",   
                     },
                 },
 
@@ -169,11 +150,7 @@ PRODUCTS = {
                         "id":"modal-4", 
                         "images":[
                             "/static/main/images/modals/relays/signal/signal-0.png", 
-                        ], 
-                        "text":""" 
-                        """,
-                        "title":"",
-                        "subtitle":"",
+                        ],  
                     },
                 },
 
@@ -190,11 +167,7 @@ PRODUCTS = {
                         "id":"modal-5", 
                         "images":[
                             "/static/main/images/modals/relays/inrush-power/inrush-power-0.png", 
-                        ], 
-                        "text":""" 
-                        """,
-                        "title":"",
-                        "subtitle":"",
+                        ],  
                     },
                 },
 
@@ -212,11 +185,7 @@ PRODUCTS = {
                         "images":[
                             "/static/main/images/modals/relays/force-guided/force-guided-0.png", 
                             "/static/main/images/modals/relays/force-guided/force-guided-1.png", 
-                        ], 
-                        "text":"""  
-                        """,
-                        "title":"",
-                        "subtitle":"",
+                        ],  
                     },
                 },
 
@@ -244,7 +213,7 @@ PRODUCTS = {
                     },
                 "static_image":"/static/main/images/products/relays/intellectual-systems.png",
                 "static_image_settings":{
-                    "width":"80%",    
+                    "width":"50%",    
                     "height":"auto" 
                 },
             },
