@@ -6,6 +6,7 @@ from .models import *
 
 from .header import *
 from .catalog import CATALOGS
+from .modals import MODALS
 from .contacts import CONTACTS
 from .product import PRODUCTS
 from .department_info import DEPARTMENT_SPECIFICATIONS
@@ -70,6 +71,8 @@ def product_detail(request, **kwargs):
             'product':PRODUCTS[kwargs["product_slug"]],
             'text_slideshows':TEXT_SLIDESHOWS,
             'image_slideshows':IMAGE_SLIDESHOWS,
+            "modals":MODALS,
+            "videos":Video.objects.all(),
         }
     ) 
 

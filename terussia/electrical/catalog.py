@@ -3,7 +3,7 @@ CATALOGS = {
         "category":"clamp-connections",
         "link":"/electrical/catalog/clamp-connections",
         "filename":"clamp-connections.pdf",
-        "title":"Клеммные соединения Entrellec",
+        "title":"Клеммные соединения Entrelec",
         "preview":"/static/main/catalog_files/images/clamp-connections/clamp-connections.png",
         "target":"_blank",
     },

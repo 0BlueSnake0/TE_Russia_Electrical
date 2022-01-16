@@ -3,14 +3,7 @@ from .catalog import CATALOGS
 PRODUCTS = { 
     "clamp-connections":{
         "product_title":"Клеммные соединения",
-        "description": {
-            "par0":{
-                "subtitle":"",
-                "text":"""
-                """,
-                "links":{},
-            }, 
-        },
+        "description": {},
         "text_image_blocks":{
             "block0":{
                 "static_image":"/static/main/images/products/clamp-connections/clamps-0.png",
@@ -37,10 +30,14 @@ PRODUCTS = {
                     Узнайте больше о наших изделиях в каталогах продукции или 
                     посетив обучение.
                 """,
+                "videos":[ 
+                    "Entrelec-terminal-blocks", 
+                    "ESSAILEC-test-blocks", 
+                ],
             }    
         }, 
         "catalog_links":{
-            "Клеммные соединения Entrellec":CATALOGS["clamp-connections"]["link"],
+            "Клеммные соединения Entrelec":CATALOGS["clamp-connections"]["link"],
             "Клеммы с варисторами и защитными диодами":CATALOGS["clamps-with-varistors-and-protective-diods"]["link"],
         },
         "software_link":" https://www.te.com/usa-en/products/brands/entrelec/easy-rail-designer-3d.html?tab=pgp-story",
@@ -68,8 +65,7 @@ PRODUCTS = {
             },
             "par2":{
                 "subtitle":"",
-                "text":""" 
-                    Номинальное напряжение 1000 В переменного тока или 1500 В постоянного тока. 
+                "text":"""  
                     Модульная защищенная конструкция сокращает потребность в шинах, 
                     изоляторах, зажимах, креплениях, защитных экранах для распределения в электрическом щите.
                     Доступны версии для распределения потенциала не только с круглых проводников, 
@@ -86,6 +82,9 @@ PRODUCTS = {
                 },
                 "text":"""
                 """,
+                "videos":[
+                    "DBL-blocks",
+                ],
             },
         }, 
         "catalog_links":{
@@ -102,23 +101,9 @@ PRODUCTS = {
                 Применение на динрейку через адаптер. Отличается высокой надежностью, длительным сроком службы 
                 и широким спектром опций оценки контактов для поддержки различных нагрузок.
                 """, 
-                "modals":{
-                    "Panel Plug-in Relays":{
-                        "id":"modal-0",
-                        "images":[
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-0.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-1.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-2.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-3.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-4.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-5.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-6.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-7.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-8.png",
-                            "/static/main/images/modals/relays/panel-plugin/panel-plugin-9.png",
-                        ],  
-                    }, 
-                },
+                "links":{
+                    "Panel Plug-in Relays":"javascript:OpenModal('modal-0')",
+                }, 
             },
             "par1":{
                 "subtitle":"Solid State Relays",
@@ -126,16 +111,9 @@ PRODUCTS = {
                 Твердотельные реле с длительным сроком службы и низким 
                 уровнем обслуживания при низком энергопотреблении, которые могут работать в жестких условиях.
                 """, 
-                "modals":{
-                    "Solid State Relays":{
-                        "id":"modal-3", 
-                        "images":[
-                            "/static/main/images/modals/relays/solid-state/solid-state-0.png", 
-                            "/static/main/images/modals/relays/solid-state/solid-state-1.png", 
-                            "/static/main/images/modals/relays/solid-state/solid-state-2.png", 
-                        ],  
-                    },
-                },
+                "links":{
+                    "Solid State Relays":"javascript:OpenModal('modal-1')",
+                }, 
 
             },
             "par2":{
@@ -144,14 +122,8 @@ PRODUCTS = {
                 В исполнении на печатную плату. Высокопроизводительные и 
                 высоконадежные реле соответствуют мировым стандартам для печатных плат на рынке. 
                 """, 
-                "modals":{
-                    "Power PCB Relays":{
-                        "id":"modal-1",
-                        "images":[
-                            "/static/main/images/modals/relays/power-pcb/power-pcb-0.png", 
-                            "/static/main/images/modals/relays/power-pcb/power-pcb-1.png", 
-                        ],  
-                    },
+                "links":{
+                    "Power PCB Relays":"javascript:OpenModal('modal-2')",
                 },
 
             },
@@ -159,13 +131,11 @@ PRODUCTS = {
                 "subtitle":"Miniature PCB Relays",
                 "text":""" 
                 Миниатюрные реле на печатную плату. Предлагает небольшую  высоту 
-                исполнения в сочетании с высокой мощностьюю. В исполении с  открытым или перекидным контактом.
+                исполнения в сочетании с высокой мощностью. В исполении с  открытым или перекидным контактом.
                 """, 
-                "modals":{
-                    "Miniature PCB Relays":{
-                        "id":"modal-2",   
-                    },
-                },
+                "links":{
+                    "Miniature PCB Relays":"javascript:OpenModal('modal-3')",
+                }, 
 
             },
             "par4":{
@@ -174,14 +144,9 @@ PRODUCTS = {
                 Высокопроизводительные и надежные реле, 
                 которые производятся в малогабаритном дизайне. Подходят для коммутаций, для нагрузок до 5А.
                 """,  
-                "modals":{
-                    "Signal Relays":{
-                        "id":"modal-4", 
-                        "images":[
-                            "/static/main/images/modals/relays/signal/signal-0.png", 
-                        ],  
-                    },
-                },
+                "links":{
+                    "Signal Relays":"javascript:OpenModal('modal-4')",
+                }, 
 
             },
             "par5":{
@@ -191,14 +156,9 @@ PRODUCTS = {
                 Работают с пусковыми токами до 800 А и в основном используются в освещении, 
                 в комплекте с датчиками движения.
                 """, 
-                "modals":{
-                    "Inrush Power Relays":{
-                        "id":"modal-5", 
-                        "images":[
-                            "/static/main/images/modals/relays/inrush-power/inrush-power-0.png", 
-                        ],  
-                    },
-                },
+                "links":{
+                    "Inrush Power Relays":"javascript:OpenModal('modal-5')",
+                }, 
 
             },
             "par6":{
@@ -208,17 +168,14 @@ PRODUCTS = {
                 Ключевые электрохимические переключающие компоненты, используемые в цепях безопасности, 
                 востребованны в системах управления лифтами и эскалатороми, там где необходима повышенная надежность.
                 """, 
-                "modals":{
-                    "Force Guided Relays":{
-                        "id":"modal-6", 
-                        "images":[
-                            "/static/main/images/modals/relays/force-guided/force-guided-0.png", 
-                            "/static/main/images/modals/relays/force-guided/force-guided-1.png", 
-                        ],  
-                    },
-                },
+                "links":{
+                    "Force Guided Relays":"javascript:OpenModal('modal-6')",
+                }, 
 
             },  
+            "description_settings": {
+                "columns":2,
+            }
         },
         "text_image_blocks":{
             "block0":{
@@ -237,9 +194,9 @@ PRODUCTS = {
                 "links":{
                     "Relays Solutions Fact Sheet":"http://www.te.com/content/dam/te-com/documents/channel/global/relay_factsheet.pdf",
                     "Virtual Building Tour (must use IE to view)":"http://www.te.com/usa-en/custom/3d-building/home.html",
-                    "Relays in Intelligent Buildings Applications – Customer Presentation":"http://www.te.com/commerce/DocumentDelivery/DDEController?Action=srchrtrv&DocNm=1-1773899-3_Relays_in_Intelligent_Buildi&DocType=DS&DocLang=English&DocFilename=ENG_DS_1-1773899-3_Relays_in_Intelligent_Buildi_1016.pdf",
+                    "Relays in Intelligent Buildings Applications – Customer Presentation":"javascript:OpenModal('modal-7')",
                     "Relays In Intelligent Buildings – TELC Course":"https://www.te.com/commerce/uso/te-learning-connection/sso2.do?unit=360"
-                    },
+                },
                 "static_image":"/static/main/images/products/relays/intellectual-systems.png",
                 "static_image_settings":{
                     "width":"50%",    
@@ -254,21 +211,25 @@ PRODUCTS = {
 
     "cable-lugs":{
         "product_title":"Кабельные наконечники",
+        "startModal":"modal-development-1",
         "description":{},  
     }, 
 
     "cable-ties":{
         "product_title":"Кабельные стяжки",
+        "startModal":"modal-development-1",
         "description":{},  
     }, 
 
     "perforated-cable-channels":{
         "product_title":"Кабель-каналы перфорированные",
+        "startModal":"modal-development-1",
         "description":{},  
     },  
 
     "cable-entries":{
         "product_title":"Кабельные вводы",
+        "startModal":"modal-development-1",
         "description":{},  
     },  
 
@@ -323,6 +284,7 @@ PRODUCTS = {
 
     "marking":{ 
         "product_title":"Маркировка", 
+        "startModal":"modal-development-1",
         "description":{},  
     },   
 }

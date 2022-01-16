@@ -1,26 +1,10 @@
-{% load static %}
-<!DOCTYPE html>
-<html>
-    <head>
-        <title>{{video.slug}}</title>
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/main.css' %}?version={{vers}}"">
-        <link rel="stylesheet" type="text/css" href="{% static 'main/css/video.css' %}?version={{vers}}"">
-        <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.css"  >
-    </head>
-    <body> 
-        <div class="video-detail" controls>  
-            <video class="video-js video-clip"
-                {% if video.preview and video.preview.url %}
-                poster="{{video.preview.url}}"
-                {% endif %}
-                controls 
-            >
-                <source src="{{video.file.url}}" type="video/mp4" /> 
-            </video> 
+{% load static %}   
+ 
 
-            <p style="margin-top:-5%;margin-left:5%;font-size:25px;" class="preview-title">{{video.title}}</p>
-
-        </div>
-        <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
-    </body>
-</html>
+<video id="{{video.slug}}" width="600px" height="400px" class="video-js vjs-default-skin vjs-big-play-centered video-clip" width="640px" height="267px"
+    controls preload="auto" 
+    poster='{{video.preview.url}}' 
+    data-setup='{"playbackRates": [1, 1.25, 1.5, 1.75, 2] }'>
+    <source src="{{video.file.url}}" type='video/mp4' /> 
+</video>  
+<script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>

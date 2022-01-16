@@ -114,4 +114,16 @@
 }
 .info-link:hover { 
     animation-name:jump;animation-duration: 0.5s;
-}
+} 
+
+#description { 
+    width:100%; 
+    flex-wrap: wrap;   
+    overflow-wrap: wrap;  
+} 
+
+.description-item { 
+    display:flex;    
+    flex-direction: column;
+    flex-wrap: wrap; 
+} 

@@ -24,10 +24,10 @@ class VideoAdmin(admin.ModelAdmin):
         """ 
         preview = f"""
             {styles}
-            <video class="video-js video-link-img" poster="{obj.preview.url if obj.preview else ""}" controls style="width:300px;height:200px;border-radius:1em;" >
+            <video class="video-js video-link-img" poster="{obj.preview.url if obj.preview else ""}" controls style="width:300px;height:200px;" >
                 <source class="video-link-img" src="{obj.file.url}">
             </video>    
-            <p class="title">{obj.author}, {obj.uploaded_at.strftime("%d.%m.%Y %H:%M")}</p>    
+            <p class="title">{obj.uploaded_at.strftime("%d.%m.%Y %H:%M")}</p>    
             <script src="https://vjs.zencdn.net/7.15.4/video.min.js"></script>
             <p class="title">{obj.title}</p> 
         """  

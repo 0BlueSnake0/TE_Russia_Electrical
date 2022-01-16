@@ -113,6 +113,7 @@ a {text-decoration:none;}
 #site-navigation-750-minus input[class="checkbox-1"] {display: none;}
 #site-navigation-750-minus input[class="checkbox-1"]:checked + .dropdown-icon + .menu-item-content-1 {
     display:flex;animation-name:opacity-occurance-1;animation-duration:1s;
+    z-index:2;
 }  
 
 #site-navigation-750-minus input[class="checkbox-1"]:checked + .dropdown-icon {
@@ -164,13 +165,14 @@ a {text-decoration:none;}
     max-height:100%;
     overflow:auto; 
     background:white;
-    z-index:10;left:0;
+    z-index:2;left:0;
     font-size:18pt;
     pointer-events:auto;
 }
 
 #site-navigation-750-minus .menu-item-content-1 .menu-item-title-1 { 
     color: #0066a1;overflow-wrap:break-word;text-decoration: none;
+    z-index:1;
 }
 #site-navigation-750-minus .menu-item-content-1 .menu-item-content-2 {
     position:relative;display:none;width:auto;padding:1em;
@@ -239,7 +241,6 @@ a {text-decoration:none;}
     margin-left:auto; float:right;
 } 
 #site-navigation-750-plus label { 
-    z-index:2;
     position: relative; 
     text-align: left;  
     letter-spacing: 0.1em;
@@ -281,15 +282,16 @@ a {text-decoration:none;}
     background:white;
     box-shadow: 10px 4px 30px -8px rgba(0, 0, 0, 0.35);
     width:auto;
-    margin-top:3vh;
+    margin-top:3vh; 
+    z-index:2;
 }
 #site-navigation-750-plus .layer-1 {padding:1em;}
 #site-navigation-750-plus .layer-1 a {
     padding:0.5em; 
     color: #0066a1; 
     overflow-wrap:break-word; 
-    max-width:15em;text-decoration: none;
-    display:flex;flex-wrap:nowrap;
+    width:auto;text-decoration: none;
+    display:flex;flex-wrap:nowrap; 
 }  
 
 #site-navigation-750-plus .menu-item-content-2 { 
@@ -304,9 +306,9 @@ a {text-decoration:none;}
 #site-navigation-750-plus .layer-2 a {
     padding:0.5em; 
     color: #0066a1;   
-    overflow-wrap:break-word; 
-    min-width:12em;max-width:15em;text-decoration: none;
-    display:flex;flex-wrap:nowrap;
+    white-space: nowrap; 
+    text-decoration: none;
+    display:flex;flex-wrap:nowrap; 
 }  
 #site-navigation-750-plus  a:hover {color:#e98300;}  
 

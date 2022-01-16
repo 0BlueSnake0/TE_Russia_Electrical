@@ -1,4 +1,6 @@
 from django import template
+from django.core.exceptions import ObjectDoesNotExist
+from ..models import Video
 import random
 register = template.Library()
 
@@ -23,3 +25,14 @@ def get_first_item(dictionary):
 @register.simple_tag
 def get_random_num(): 
     return random.random()
+
+
+
+@register.simple_tag
+def get_video_obj(slug): 
+    video = None;
+    try:
+        video = Video.objects.get(slug=slug)
+    except ObjectDoesNotExist:
+        pass
+    return video;

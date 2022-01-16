@@ -1,41 +1,17 @@
-{% load static %}
-<label class="modal">
-    <span id="{{modal.id}}" class="modal-btn paragraph-title" >{{title}}</span>  
-    <div id="{{modal.id}}-background" class="modal-content"> 
+{% load static %} 
+<label class="modal">    
+    <div id="{{modal_id}}-background" class="modal-content"> 
         <div class="content-zone">
             <div style="display:flex;flex-direction: column;justify-content:center;">
-                {% if modal.images %}
-                    {% for image in modal.images %}
-                        <img src="{{image}}" class="modal-img">
-                    {% endfor %}
-                {% else %}
-                    <div style="display: flex;flex-direction: column;margin-top:20%;">
-                        <div style="width:100%;display:flex;">
-                            <img style="margin:auto;width:14vw;" src="/static/main/images/errors/android.svg"> 
-                        </div>  
-                        <div style="width:100%;display:flex;">
-                            <p class="paragraph-title" style="margin:auto;font-weight:800;color:#e98300;padding:2em;font-size:36px;">Данный фрагмент находится в разработке</p>
-                        </div>  
-                    </div>
-                {% endif %}
+                {% for image in modal.images %}  
+                    <img src="{{image}}" class="modal-img">
+                {% endfor %}   
             </div> 
             <div style="display: flex;width:auto;">
-                <span id="{{modal.id}}-close" class="close-btn">
+                <a href="{{modal.onclose}}" class="close-btn">
                     <img src="/static/main/images/icons/close-image-modal.png">
-                </span> 
+                </a> 
             </div>
         </div>
     </div> 
-</label>
-
-<script>   
-    function OpenModal() {   
-        $("#{{modal.id}}-background").css("display", "block");
-    }
-    
-    function CloseModal() {   
-        $("#{{modal.id}}-background").css("display", "none");
-    }
-    $("#{{modal.id}}").on("click", OpenModal);  
-    $("#{{modal.id}}-close").on("click", CloseModal); 
-</script> 
+</label> 

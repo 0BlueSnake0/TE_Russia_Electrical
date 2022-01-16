@@ -14,17 +14,27 @@
 } 
 
 .modal {
-    display: block;
+    display: block; 
+    margin:1em; 
 } 
 
 .modal-btn { 
-    cursor:pointer; 
-    color: #e98300;
-    font-size:1.5em;
-    font-weight:600;
+    display:block;
+    white-space: nowrap;
+    cursor:pointer;    
+    text-align:center; 
+    display:block; 
+    text-align:center; 
+    word-wrap: break-word;
     font-family:Arial, Helvetica, sans-serif, Impact;
-    text-align:left;
-    padding-bottom:0 !important;
+    text-decoration: none;  
+    color: white; 
+    box-shadow: 16px 15px 35px 0px rgba(34, 60, 80, 0.8);
+    background: #e98300;
+    font-size:1.25em;   
+    font-weight:600;   
+    margin:1em;
+    width:10em;padding:0.5em;  
 }
 
 .modal-btn:hover { 

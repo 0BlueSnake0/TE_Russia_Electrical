@@ -63,7 +63,7 @@ else {
     var desktop_navigation = document.getElementById("site-navigation-750-plus"); 
     window.addEventListener( "scroll", function(e) {  
             var scrolled = document.body.scrollTop - desktop_navigation.offsetTop; 
-            if (scrolled > 400 ) { 
+            if (scrolled > 100 ) { 
                 document.getElementById("page-up").style.display = "flex"; 
                     desktop_navigation.classList.add("to-fix-2");  
             }
