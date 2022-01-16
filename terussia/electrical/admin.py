@@ -3,8 +3,8 @@ from .models import *
 from django.utils.safestring import mark_safe
 
 
-@admin.register(Video)
-class VideoAdmin(admin.ModelAdmin):
+@admin.register(Movie)
+class MovieAdmin(admin.ModelAdmin):
     list_display = [
         'get_preview',  
         'get_filename',

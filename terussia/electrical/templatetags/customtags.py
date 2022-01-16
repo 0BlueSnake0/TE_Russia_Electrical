@@ -1,6 +1,6 @@
 from django import template
 from django.core.exceptions import ObjectDoesNotExist
-from ..models import Video
+from ..models import *
 import random
 register = template.Library()
 
@@ -32,7 +32,7 @@ def get_random_num():
 def get_video_obj(slug): 
     video = None;
     try:
-        video = Video.objects.get(slug=slug)
+        video = Movie.objects.get(slug=slug)
     except ObjectDoesNotExist:
         pass
     return video;

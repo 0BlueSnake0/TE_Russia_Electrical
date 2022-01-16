@@ -3,7 +3,7 @@ from ckeditor_uploader.fields import RichTextUploadingField
 from django.core.validators import FileExtensionValidator
 
 
-class Video(models.Model):
+class Movie(models.Model):
     slug = models.SlugField(default='', max_length=255, unique=True, verbose_name="Slug")
     title = models.CharField(default='',max_length=255, verbose_name="Заголовок", blank=True)
     file = models.FileField(

@@ -6,8 +6,8 @@ from django.contrib.auth.models import Group
 from .models import *
 
 admin.site.unregister(Group)
-@admin.register(User)
-class UserAdmin(UserAdmin):
+@admin.register(CustomUser)
+class CustomUserAdmin(UserAdmin):
     list_display = [
                     'get_avatar',
                     'username',

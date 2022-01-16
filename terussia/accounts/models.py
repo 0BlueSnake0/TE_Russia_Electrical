@@ -1,10 +1,11 @@
 from django.db import models
+from django.conf import settings
 from django.contrib.auth.models import BaseUserManager, AbstractBaseUser 
 import datetime
 from django.utils import timezone
 
 
-class UserManager(BaseUserManager):
+class CustomUserManager(BaseUserManager):
     def create_user(self, username, email, password, 
                     avatar=None, is_staff=False, is_admin=False):
         if not email:
@@ -32,9 +33,9 @@ class UserManager(BaseUserManager):
         return user
 
 
-class User(AbstractBaseUser):  
+class CustomUser(AbstractBaseUser):  
     username = models.CharField(default='', max_length=30, unique=True, verbose_name='Username')
-    avatar = models.ImageField(default='settings.STATIC_ROOT/images/icons/default-avatar.png', upload_to='accounts/users/avatars',
+    avatar = models.ImageField(default=f'', upload_to='accounts/users/avatars',
                                blank=True, verbose_name='Avatar')
     password = models.CharField(default='', max_length=30, verbose_name='Password')
     email = models.EmailField(default='', max_length=30, verbose_name='Email')
@@ -45,7 +46,7 @@ class User(AbstractBaseUser):
 
     USERNAME_FIELD = 'username'
     REQUIRED_FIELDS = ['email'] 
-    objects = UserManager()
+    objects = CustomUserManager()
 
     def has_perm(self, perm, obj=None):
         return True 

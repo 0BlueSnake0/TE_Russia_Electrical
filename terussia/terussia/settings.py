@@ -118,7 +118,7 @@ MEDIA_ROOT = f'{BASE_DIR}/media'
 STATIC_URL = '/static/'
 MEDIA_URL = '/media/'
 
-AUTH_USER_MODEL = 'accounts.User'
+AUTH_USER_MODEL = 'accounts.CustomUser'
 
 AUTHENTICATION_BACKENDS = (
     'django.contrib.auth.backends.ModelBackend',

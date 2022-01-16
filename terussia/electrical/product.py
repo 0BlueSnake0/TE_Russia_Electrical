@@ -32,7 +32,7 @@ PRODUCTS = {
                 """,
                 "videos":[ 
                     "Entrelec-terminal-blocks", 
-                    "ESSAILEC-test-blocks", 
+                    "Essailec-test-blocks", 
                 ],
             }    
         }, 
