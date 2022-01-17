@@ -4,7 +4,11 @@
 <video class="video-js vjs-default-skin vjs-big-play-centered video-clip"
     controls preload="auto" 
     poster='{{video.preview}}' 
-    data-setup='{"playbackRates": [1, 1.25, 1.5, 1.75, 2] }'>
-    <source src="{{video.src}}" type='video/mp4' /> 
+    data-setup='{ 
+        "playbackRates": [1, 1.25, 1.5, 1.75, 2], 
+        "techOrder": ["youtube"], 
+        "sources": [{ "type": "video/youtube", "src": "{{video.src}}"}] 
+    }'>
 </video>  
 <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+<script type="text/javascript" src="{% static 'main/js/youtube.min.js' %}?version={{vers}}"></script> 
