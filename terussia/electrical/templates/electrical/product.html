@@ -52,10 +52,9 @@
                         height:{{text_image_block.static_image_settings.height}};"> 
                     </div>
                     {% if text_image_block.videos %} 
-                        {% for video_slug in text_image_block.videos %}
-                            {% get_video_obj video_slug as video %}
-                            {% if video %}
-                                {% include 'electrical/video_detail.html' %}
+                        {% for title, video in text_image_block.videos.items %}   
+                            {% if video.src != "" %}
+                                {% include 'electrical/video_detail.html' %} 
                             {% endif %}
                         {% endfor %}  
                     {% endif %}  

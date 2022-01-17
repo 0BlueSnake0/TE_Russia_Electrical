@@ -1,10 +1,10 @@
 {% load static %}   
  
 
-<video id="{{video.slug}}" width="600px" height="400px" class="video-js vjs-default-skin vjs-big-play-centered video-clip" width="640px" height="267px"
+<video class="video-js vjs-default-skin vjs-big-play-centered video-clip"
     controls preload="auto" 
-    poster='{{video.preview.url}}' 
+    poster='{{video.preview}}' 
     data-setup='{"playbackRates": [1, 1.25, 1.5, 1.75, 2] }'>
-    <source src="{{video.file.url}}" type='video/mp4' /> 
+    <source src="{{video.src}}" type='video/mp4' /> 
 </video>  
 <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>

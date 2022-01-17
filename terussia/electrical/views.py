@@ -5,7 +5,7 @@ from xlsx2html import xlsx2html
 from .models import *
 
 from .header import *
-from .catalog import CATALOGS
+from .catalog import CATALOGS 
 from .modals import MODALS
 from .contacts import CONTACTS
 from .product import PRODUCTS
@@ -71,8 +71,7 @@ def product_detail(request, **kwargs):
             'product':PRODUCTS[kwargs["product_slug"]],
             'text_slideshows':TEXT_SLIDESHOWS,
             'image_slideshows':IMAGE_SLIDESHOWS,
-            "modals":MODALS,
-            "videos":Video.objects.all(),
+            "modals":MODALS, 
         }
     ) 
 

@@ -30,10 +30,16 @@ PRODUCTS = {
                     Узнайте больше о наших изделиях в каталогах продукции или 
                     посетив обучение.
                 """,
-                "videos":[ 
-                    "Entrelec-terminal-blocks", 
-                    "Essailec-test-blocks", 
-                ],
+                "videos":{
+                    "Essailec-test-blocks": {
+                        "preview":"/static/main/images/video-previews/Essailec-test-blocks.png",
+                        "src":"https://www.youtube.com/watch?v=OmNtd9BXiXw",
+                    }, 
+                    "Entrelec-terminal-blocks": {
+                        "preview":"/static/main/images/video-previews/Entrelec-terminal-blocks.png",
+                        "src":"https://www.youtube.com/watch?v=uDXoBY_xRTg",
+                    },  
+                },
             }    
         }, 
         "catalog_links":{
@@ -81,10 +87,13 @@ PRODUCTS = {
                     "height":"auto" 
                 },
                 "text":"""
-                """,
-                "videos":[
-                    "DBL-blocks",
-                ],
+                """, 
+                "videos":{
+                    "DBL-blocks": {
+                        "preview":"/static/main/images/video-previews/DBL-blocks.png",
+                        "src":"https://www.youtube.com/watch?v=R_UssO8-QLo",
+                    },   
+                },
             },
         }, 
         "catalog_links":{

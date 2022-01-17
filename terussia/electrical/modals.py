@@ -1,6 +1,6 @@
 MODALS = {
     "modal-development-1":{ 
-        "onclose":"/",
+        "onclose":"/electrical/",
         "text":"Данная страница находится в разработке",
         "template":"electrical/modals/in_development.html"
     }, 

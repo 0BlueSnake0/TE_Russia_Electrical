@@ -24,15 +24,4 @@ def get_first_item(dictionary):
 
 @register.simple_tag
 def get_random_num(): 
-    return random.random()
-
-
-
-@register.simple_tag
-def get_video_obj(slug): 
-    video = None;
-    try:
-        video = Movie.objects.get(slug=slug)
-    except ObjectDoesNotExist:
-        pass
-    return video;
+    return random.random() 
