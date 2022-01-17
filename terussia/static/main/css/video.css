@@ -5,8 +5,8 @@
 } 
 
 .video-clip {
-    width:70%;  
-    height:61.25%;
+    width:60%;  
+    height:50vh;
     display:flex;
     margin-left:auto;margin-right: auto;
     cursor: pointer;
