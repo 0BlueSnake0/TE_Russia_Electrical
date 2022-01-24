@@ -27,7 +27,7 @@ CONTACTS = {
                 "tel":"7-495-790-7902",
                 "ext":"",
                 "mobile":"7-916-907-4199",
-                "email":"avm@terussia.ru",
+                "email":"saleteam@terussia.ru",
             }, 
             "Alexander": {
                 "last_name":"Маськов",

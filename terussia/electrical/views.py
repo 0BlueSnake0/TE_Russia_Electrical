@@ -77,9 +77,9 @@ def product_detail(request, **kwargs):
 
 
 def seminars_timetable(request, **kwargs):
-    styles = TABLES["timetable_2020"]["styles"]
-    xlsx_path = f'{TABLES["timetable_2020"]["xlsx_path"]}'
-    html_path = f'{TABLES["timetable_2020"]["html_path"]}'
+    styles = TABLES["seminars_timetable"]["styles"]
+    xlsx_path = f'{TABLES["seminars_timetable"]["xlsx_path"]}'
+    html_path = f'{TABLES["seminars_timetable"]["html_path"]}'
     xlsx2html(xlsx_path, html_path) 
     
     file = open(html_path, 'r', encoding="utf8")
@@ -94,9 +94,10 @@ def seminars_timetable(request, **kwargs):
 
     return render(
         request,
-        template_name="electrical/timetable.html",
+        template_name=f'electrical/timetable.html',
         context={  
             'dropdown1':DROPDOWN_1,
+            'table_path':f'electrical/tables/{TABLES["seminars_timetable"]["html_file"]}',
         }
     )  
 

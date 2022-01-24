@@ -34,7 +34,7 @@
     font-size:1.25em;   
     font-weight:600;   
     margin:1em;
-    width:10em;padding:0.5em;  
+    width:auto;padding:0.5em;  
 }
 
 .modal-btn:hover { 

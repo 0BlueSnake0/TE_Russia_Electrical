@@ -3,7 +3,7 @@ MODALS = {
         "onclose":"/electrical/",
         "text":"Данная страница находится в разработке",
         "template":"electrical/modals/in_development.html"
-    }, 
+    },  
     "modal-0":{  
         "onclose":"javascript:CloseModal('modal-0')",
         "images":[
@@ -62,11 +62,20 @@ MODALS = {
         "images":[
             "/static/main/images/modals/relays/force-guided/force-guided-0.png", 
             "/static/main/images/modals/relays/force-guided/force-guided-1.png", 
+            "/static/main/images/modals/relays/force-guided/force-guided-2.png",  
         ],  
         "template":"electrical/modals/image_modal.html",
     },
     "modal-7":{ 
         "onclose":"javascript:CloseModal('modal-7')", 
+        "images":[
+            "/static/main/images/modals/relays/hv-contactors/hv-contactors-0.png",  
+            "/static/main/images/modals/relays/hv-contactors/hv-contactors-1.png",  
+        ],  
+        "template":"electrical/modals/image_modal.html",
+    },
+    "modal-8":{ 
+        "onclose":"javascript:CloseModal('modal-8')", 
         "text":"Данный фрагмент находится в разработке",
         "template":"electrical/modals/in_development.html"
     },

@@ -31,14 +31,16 @@ PRODUCTS = {
                     посетив обучение.
                 """,
                 "videos":{
-                    "Essailec-test-blocks": {
-                        "preview":"/static/main/images/video-previews/Essailec-test-blocks.png",
-                        "src":"https://www.youtube.com/watch?v=OmNtd9BXiXw",
-                    }, 
                     "Entrelec-terminal-blocks": {
                         "preview":"/static/main/images/video-previews/Entrelec-terminal-blocks.png",
                         "src":"https://www.youtube.com/watch?v=uDXoBY_xRTg",
+                        "id":"Entrelec-terminal-blocks",
                     },  
+                    "Essailec-test-blocks": {
+                        "preview":"/static/main/images/video-previews/Essailec-test-blocks.png",
+                        "src":"https://www.youtube.com/watch?v=OmNtd9BXiXw",
+                        "id":"Essailec-test-blocks",
+                    }, 
                 },
             }    
         }, 
@@ -92,6 +94,7 @@ PRODUCTS = {
                     "DBL-blocks": {
                         "preview":"/static/main/images/video-previews/DBL-blocks.png",
                         "src":"https://www.youtube.com/watch?v=R_UssO8-QLo",
+                        "id":"DBL-blocks",
                     },   
                 },
             },
@@ -179,9 +182,17 @@ PRODUCTS = {
                 """, 
                 "links":{
                     "Force Guided Relays":"javascript:OpenModal('modal-6')",
-                }, 
-
+                },  
             },  
+            "par7":{
+                "subtitle":"High Voltage Contactors IHV50 Series ",
+                "text":""" 
+                Предназначен для управления нагрузкой в сетях постоянного тока.
+                """, 
+                "links":{
+                    "High Voltage Contactors IHV50 Series":"javascript:OpenModal('modal-7')",
+                },  
+            }, 
             "description_settings": {
                 "columns":2,
             }
@@ -203,8 +214,8 @@ PRODUCTS = {
                 "links":{
                     "Relays Solutions Fact Sheet":"http://www.te.com/content/dam/te-com/documents/channel/global/relay_factsheet.pdf",
                     "Virtual Building Tour (must use IE to view)":"http://www.te.com/usa-en/custom/3d-building/home.html",
-                    "Relays in Intelligent Buildings Applications – Customer Presentation":"javascript:OpenModal('modal-7')",
-                    "Relays In Intelligent Buildings – TELC Course":"https://www.te.com/commerce/uso/te-learning-connection/sso2.do?unit=360"
+                    "Relays in Intelligent Buildings Applications – Customer Presentation":"javascript:OpenModal('modal-8')",
+                    "Relays In Intelligent Buildings – TELC Course":"https://www.te.com/commerce/uso/te-learning-connection/sso2.do?unit=360",
                 },
                 "static_image":"/static/main/images/products/relays/intellectual-systems.png",
                 "static_image_settings":{
@@ -214,7 +225,9 @@ PRODUCTS = {
             },
         },
         "catalog_links":{
-            "Промышленные реле":CATALOGS["relays"]["link"]
+            "Промышленные реле":CATALOGS["relays"]["link"],
+            "SCHRACK Force Guided Relays":CATALOGS["force-guided"]["link"],
+            "Power PCB Relay RT1 Inrushs":CATALOGS["rt1-inrush"]["link"], 
         },
     },  
 
