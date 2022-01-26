@@ -227,7 +227,7 @@ PRODUCTS = {
         "catalog_links":{
             "Промышленные реле":CATALOGS["relays"]["link"],
             "SCHRACK Force Guided Relays":CATALOGS["force-guided"]["link"],
-            "Power PCB Relay RT1 Inrushs":CATALOGS["rt1-inrush"]["link"], 
+            "Power PCB Relay RT1 Inrush":CATALOGS["rt1-inrush"]["link"], 
         },
     },  
 

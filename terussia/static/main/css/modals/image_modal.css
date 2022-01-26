@@ -39,7 +39,8 @@
 
 .modal-btn:hover { 
     animation-name:jump;animation-duration: 0.5s;
-}  
+    background:rgba(255, 174, 0, 1);
+}   
 
 .modal-content {
     display:none;

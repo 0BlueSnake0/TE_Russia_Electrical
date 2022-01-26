@@ -114,6 +114,7 @@
 }
 .info-link:hover { 
     animation-name:jump;animation-duration: 0.5s;
+    color:rgba(255, 174, 0, 1);
 } 
 
 #description { 
