@@ -105,6 +105,9 @@ MODALS = {
             },
             "2":{
                 "image":"/static/main/images/modals/relays/force-guided/force-guided-2.png", 
+                "links":{
+                    "SCHRACK Force Guided Relays":"/electrical/catalog/force-guided",
+                }, 
             },
         },  
         "template":"electrical/modals/image_modal.html",
@@ -120,9 +123,6 @@ MODALS = {
             },  
             "1":{
                 "image":"/static/main/images/modals/relays/hv-contactors/hv-contactors-1.png", 
-                "links":{
-                    "SCHRACK Force Guided Relays":"/electrical/catalog/force-guided",
-                }, 
             }, 
         },   
         "template":"electrical/modals/image_modal.html",

@@ -77,8 +77,10 @@
 }
 
 .close-btn {
-    position:relative;
-    right:0;margin-left:auto;
+    display:block;
+    z-index:5;
+    position:fixed;
+    top:85vh;left:85vw;margin-left:auto;
     cursor: pointer;
     margin-right:1em;
     margin-bottom:1em;
@@ -92,6 +94,7 @@
 }
 
 .content-zone {
+    z-index:2;
     width:65vw;   
     margin:auto;  
     display: block;
