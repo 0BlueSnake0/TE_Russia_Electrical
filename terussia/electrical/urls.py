@@ -7,7 +7,8 @@ urlpatterns = [
     path('catalog/', catalog, name="catalog"),
     path('catalog/<slug:product>/', catalog_detail, name="catalog_detail"),
     path('contacts/<slug:city>/', contacts, name="contacts"),
-    path('regions/<slug:region_slug>', regions, name="regions"), 
+    path('regions/<slug:region_slug>/', regions, name="regions"), 
     path('products/<slug:product_slug>/', product_detail, name="product_detail"),
-    path('seminars_timetable/', seminars_timetable, name="seminars_timetable")
+    path('seminars_timetable/', seminars_timetable, name="seminars_timetable"),
+    path('stop_activity/', stop_activity, name="stop_activity")
 ]

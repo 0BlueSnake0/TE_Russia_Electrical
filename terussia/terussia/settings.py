@@ -16,7 +16,9 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 
 
 SECRET_KEY = 'django-insecure-00dn%ysll3a%m&djj!uf_cje1t*lthvhhth)antdb9987(14lr'
-DEBUG = False
+DEBUG = True
+
+STOP_ACTIVITY = False
 
 ALLOWED_HOSTS = [
     'terussia.ru',
@@ -49,6 +51,8 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+
+    "electrical.middleware.activity.StopActivityMiddleware"
 ]
 
 ROOT_URLCONF = 'terussia.urls'

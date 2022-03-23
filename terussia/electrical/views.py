@@ -102,8 +102,7 @@ def seminars_timetable(request, **kwargs):
     )  
 
 
-def regions(request, **kwargs):
-    map = ""
+def regions(request, **kwargs): 
     return render(
         request,
         template_name="electrical/regions.html",
@@ -111,24 +110,11 @@ def regions(request, **kwargs):
             'dropdown1':DROPDOWN_1,
             "contacts":CONTACTS,
         }
-    )
+    )  
 
 
-def video_list(request, **kwargs): 
-    all_videos = Video.objects.all()
+def stop_activity(request, **kwargs): 
     return render(
         request,
-        template_name="electrical/video_list.html",
-        context={
-            "all_videos":all_videos,
-        }
-    )
-
-
-def detail_video(request, **kwargs): 
-    video = Video.objects.get(slug=kwargs["video_slug"])
-    return render(
-        request,
-        template_name="electrical/video_detail.html",
-        context={"video":video}
-    ) 
+        template_name="electrical/stop_activity.html"
+    )  
