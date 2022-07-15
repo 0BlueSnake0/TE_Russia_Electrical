@@ -1,0 +1,82 @@
+@keyframes next-slide { 
+    from {opacity:0;} 
+    to {opacity:1;}
+}
+
+@keyframes last-slide { 
+    from {opacity:0;} 
+    to {opacity:1;}
+}
+ 
+@keyframes dot-fading {
+    from {background:rgba(125,125,125,0.1);}
+    to {background: #e98300;}
+}
+
+
+.slideshow { 
+    margin-left:auto;
+    margin-right:auto;  
+    display:block;  
+    margin-top:5vh;
+    margin-bottom:1vh;
+} 
+.click-zone {
+    width:7vw; 
+    height:auto;
+    align-items: center;
+    display:flex;  
+    margin-top:auto;
+    margin-bottom:auto;   
+} 
+
+.slideshow-content {
+    width:100%;
+    height:auto;    
+} 
+
+.slide {
+    width:100%;
+    height:auto;  
+    animation-duration:0.9s;   
+    box-shadow: 14px 18px 59px 11px rgba(34, 60, 80, 0.3);
+}
+
+
+.last-slide-arrow { 
+    margin:1em;
+    width:2vw; height:2vw; 
+    border-radius:0.2em;
+    transform: rotate(45deg); 
+    cursor:pointer; 
+    margin-left:auto;
+    margin-right:auto;  
+}
+
+.next-slide-arrow { 
+    margin:1em;
+    width:2vw; height:2vw; 
+    border-radius:0.2em;
+    transform: rotate(-135deg); 
+    cursor:pointer; 
+    margin-left:auto;
+    margin-right:auto;    
+}
+
+.next-slide-arrow:hover {opacity: 0.5;transition: 0.2s;}
+.last-slide-arrow:hover {opacity: 0.5;transition: 0.2s;} 
+
+
+.checked-dot {
+    animation-name:dot-fading;animation-duration:1s;  
+} 
+
+.dot-block {display:flex;margin-left:auto;margin-right:auto;}
+.dot {
+    border-radius:50%;
+    background: rgba(125,125,125,0.5);
+    width:1.2em;
+    height:1.2em;
+    margin:0.75em;
+    cursor: pointer;
+} 

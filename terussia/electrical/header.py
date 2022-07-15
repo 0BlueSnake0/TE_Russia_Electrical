@@ -6,47 +6,47 @@ DROPDOWN_1 = {
         "target":"_self",
         "content": {
             "Клеммные соединения":{
-                "link":"/electrical/products/clamp-connections",
+                "link":"/products/clamp-connections",
                 "target":"_self",
                 "content":{},
             },  
             "Распределительные блоки":{
-                "link":"/electrical/products/distribution-blocks",
+                "link":"/products/distribution-blocks",
                 "target":"_self",
                 "content":{},
             },  
             "Реле":{
-                "link":"/electrical/products/relays",
+                "link":"/products/relays",
                 "target":"_self",
                 "content":{}, 
             },  
             "Кабельные наконечники":{
-                "link":"/electrical/products/cable-lugs",
+                "link":"/products/cable-lugs",
                 "target":"_self",
                 "content":{},
             },   
             "Кабельные стяжки":{
-                "link":"/electrical/products/cable-ties",
+                "link":"/products/cable-ties",
                 "target":"_self",
                 "content":{},
             },  
             "Кабель-каналы перфорированные":{
-                "link":"/electrical/products/perforated-cable-channels",
+                "link":"/products/perforated-cable-channels",
                 "target":"_self",
                 "content":{},
             },  
             "Кабельные вводы":{
-                "link":"/electrical/products/cable-entries",
+                "link":"/products/cable-entries",
                 "target":"_self",
                 "content":{},
             },  
             "Спиральная лента":{
-                "link":"/electrical/products/spiral-ribbon",
+                "link":"/products/spiral-ribbon",
                 "target":"_self",
                 "content":{},
             },  
             "Маркировка":{
-                "link":"/electrical/products/marking",
+                "link":"/products/marking",
                 "target":"_self",
                 "content":{},
             },  
@@ -59,12 +59,12 @@ DROPDOWN_1 = {
         "target":"_self",
         "content": {
             "Каталоги_продукции":{
-                "link":"/electrical/catalog",
+                "link":"/catalog",
                 "target":"_self",
                 "content":{},
             }, 
             "Обучение":{
-                "link":"/electrical/seminars_timetable/",
+                "link":"/seminars_timetable/",
                 "target":"_self",
                 "content":{},  
             }, 
@@ -77,17 +77,17 @@ DROPDOWN_1 = {
         "target":"_self",
         "content": {
             "Москва":{
-                "link":"/electrical/contacts/Moscow/",
+                "link":"/contacts/Moscow/",
                 "target":"_self",
                 "content":{}, 
             },
             "Санкт-Петербург":{
-                "link":"/electrical/contacts/St-Petersburg/",
+                "link":"/contacts/St-Petersburg/",
                 "target":"_self",
                 "content":{}, 
             },
             "Ответственность по регионам":{
-                "link":"/electrical/regions/all",
+                "link":"/regions/all",
                 "target":"_self",
                 "content":{}, 
             } 

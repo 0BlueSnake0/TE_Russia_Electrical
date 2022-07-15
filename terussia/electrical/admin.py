@@ -1,3 +1,280 @@
 from django.contrib import admin
+from django.conf import settings
 from .models import *
-from django.utils.safestring import mark_safe 
+from django.contrib.auth.models import Group, User
+from django.utils.safestring import mark_safe  
+
+
+admin.site.unregister(Group)
+admin.site.unregister(User) 
+
+
+@admin.register(Modal)
+class ModalAdmin(admin.ModelAdmin):
+    list_display = [
+        'title',
+        'get_content', 
+    ]  
+
+    def get_content(self, obj):
+        html = f"""
+            {obj.content}
+        """
+        return mark_safe(html)
+    
+    get_content.short_description = "Content"
+
+
+@admin.register(Catalog)
+class CatalogAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'get_preview',
+        'pdf'
+    ]  
+
+    def get_preview(self, obj):
+        html = ""
+        if obj.preview and obj.preview.url:
+                html = f"""
+                <img src="{obj.preview.url}" style="width:25em;">
+            """
+        return mark_safe(html)
+
+    get_preview.short_description = "Preview"
+    
+    
+@admin.register(ProductVideo)
+class ProductVideoAdmin(admin.ModelAdmin):
+    list_display = [
+        'title',
+        'get_video',
+        'get_link',
+    ]  
+
+
+    def get_video(self, obj):
+        params = f"""controls preload="auto" poster='{obj.preview.url}'"""
+        params += """data-setup='{ 
+                "aspectRatio":"1280:600",
+                "playbackRates": [1, 1.25, 1.5, 1.75, 2], 
+                "techOrder": ["youtube"], 
+                "sources": [{ "type": "video/youtube", "src":"""
+        params += f""" "{obj.youtube_link}" """ + "}]'"
+
+        html = f"""
+            <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.css">
+            <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.min.css"> 
+            <video class="video-js vjs-default-skin vjs-big-play-centered video-clip" {params}> 
+                <source src="{obj.youtube_link}" type="video/youtube">
+            </video>  
+            """
+        html+= """
+            <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
+            <script type="text/javascript" src="{% static 'js/video/youtube.min.js' %}?v=5"></script>
+        """
+        # if obj.preview and obj.preview.url:
+        #         html = f"""
+        #         <img src="{obj.preview.url}" style="width:25em;">
+        #     """
+        return mark_safe(html)
+
+    get_video.short_description = "Video"
+
+
+    def get_link(self, obj):
+        html = f"""
+            <a target="_blank" href="{obj.youtube_link}">{obj.youtube_link}</a>
+        """
+        return mark_safe(html)
+
+    get_link.short_description = "Youtube"
+
+@admin.register(Product)
+class ProductAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'get_image',
+        'get_modals',
+        'get_catalogs',
+    ]  
+
+    def get_image(self, obj):
+        html = ""
+        if obj.image and obj.image.url:
+                html = f"""
+                <img src="{obj.image.url}" style="width:25em;">
+            """
+        return mark_safe(html)
+
+    get_image.short_description = "Image"
+
+ 
+    def get_modals(self, obj):
+        styles = """
+            <style> 
+                .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
+                .edit-link:hover {color:cornflowerblue !important;}
+            </style>
+        """
+        html = f'{styles}<div style="display:flex;flex-direction:column;flex-wrap:wrap;">'
+        for modal in obj.modals.all():
+            html += f'''
+                <a class="edit-link" href="/admin/{modal._meta.app_label}/{modal._meta.model_name}/{modal.pk}/change">
+                {modal.title}
+                </a>
+            '''
+        html+= "</div>"  
+        return mark_safe(html)
+
+    get_modals.short_description = "Modals"
+
+
+    def get_catalogs(self, obj): 
+        html = f'<div style="display:flex;flex-direction:column;flex-wrap:wrap;">'
+        for catalog in obj.catalogs.all():
+            html += f'''
+                <a class="edit-link" href="/admin/{catalog._meta.app_label}/{catalog._meta.model_name}/{catalog.pk}/change">
+                {catalog.name}
+                </a>
+            '''
+        html+= "</div>"  
+        return mark_safe(html)
+
+    get_catalogs.short_description = "Catalogs"
+
+    
+@admin.register(State)
+class StateAdmin(admin.ModelAdmin):
+    list_display = [
+        'name',
+        'get_region', 
+    ] 
+
+
+    def get_region(self, obj):
+        html = f""" 
+            <div style="display:flex;">
+                <p>{obj.region.name}</p> 
+                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color_on_map};"></div>
+            </div>
+        """
+        return mark_safe(html)
+
+    get_region.short_description = "Region"
+
+    
+@admin.register(Region)
+class RegionAdmin(admin.ModelAdmin):
+    list_display = [
+        'get_name_and_color',
+        'get_states',
+    ] 
+
+
+    def get_name_and_color(self, obj):
+        html = f""" 
+            <div style="display:flex;">
+                <p>{obj.name}</p>
+                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.color_on_map};"></div>
+            </div>
+        """
+        return mark_safe(html)
+
+    get_name_and_color.short_description = "Name"
+
+
+    def get_states(self, obj):
+        styles = """
+            <style> 
+                .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
+                .edit-link:hover {color:cornflowerblue !important;}
+            </style>
+        """
+        html = f'{styles}<div style="display:flex;flex-direction:column;flex-wrap:wrap;">'
+        for state in State.objects.filter(region=obj):
+            html += f'''
+                <a class="edit-link" href="/admin/{state._meta.app_label}/{state._meta.model_name}/{state.pk}/change">
+                {state.name}
+                </a>
+            '''
+        html+= "</div>"  
+        return mark_safe(html)
+
+    get_states.short_description = "States"
+
+    
+@admin.register(ContactPerson)
+class ContactPersonAdmin(admin.ModelAdmin):
+    list_display = [
+        'get_info',
+        'get_region' 
+    ] 
+
+
+    def get_info(self, obj):
+        styles = """
+            <style> 
+                h1 {
+                    color:black;
+                    font-size:1.5em;
+                    font-weight:800;
+                }
+                h1:hover {
+                    color:gray;
+                }
+            </style>
+        """
+        html = f""" 
+            {styles}
+            <div>
+                <h1>{obj.first_name} {obj.last_name}</h1>
+                <p style="color:black;">{obj.position}</p>
+                <p style="color:gray;">{obj.organization}</p>
+                <p style="color:gray;">{obj.address if obj.address else ''}</p>
+                
+                <div style="display:flex;align-items:center;">
+                    <p style="color:#e98300;">TEL</p>
+                    <a target="_blank" href="tel:{obj.mobile}">{obj.mobile}</a>
+                    <p style="color:gray;">{'доб. ' + obj.extended_number if obj.extended_number else ''}</p> 
+                </div>
+                <div style="display:flex;align-items:center;">
+                    <p style="color:#e98300;">MOBILE</p>
+                    <a target="_blank" href="tel:{obj.tel}">{obj.tel}</a>
+                </div>
+                <div style="display:flex;align-items:center;"> 
+                    <img style="width:2em;margin:0.5em;" src="/static/images/icons/@-email-2.png">
+                    <a target="_blank" href="mailto:{obj.email}">{obj.email}</a>
+                </div>
+            </div> 
+        """
+        return mark_safe(html)
+ 
+    get_info.short_description = "Person"
+    
+
+    def get_region(self, obj):
+        html = f""" 
+            <div style="display:flex;">
+                <p>{obj.region.name}</p> 
+                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color_on_map};"></div>
+            </div>
+        """
+        return mark_safe(html)
+
+    get_region.short_description = "Region"
+
+    
+@admin.register(TimeTable)
+class TimeTableAdmin(admin.ModelAdmin):
+    list_display = [
+        'get_table'
+    ] 
+
+
+    def get_table(self, obj):
+        with open(f'{settings.BASE_DIR}/electrical/templates/electrical/tables/timetable_file.html', 'r') as html_table_file:
+            html = html_table_file.read()
+            return mark_safe(html) 
+    
+    get_table.short_description = "Table"

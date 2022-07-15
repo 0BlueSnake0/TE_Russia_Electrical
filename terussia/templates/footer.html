@@ -1,0 +1,39 @@
+{% load static %}  
+{% load customtags %}   
+
+<footer>
+    <span class="gray-gl"></span>  
+    <div> 
+        <div id="copyright">
+            <div class="default-text" >Разработано © TE Russia</div> 
+            <div class="default-text" id="year"></div> 
+        </div> 
+        <div id="footer-info"> 
+            <label>
+                <a class="default-text">
+                    <img src="{% static 'images/icons/address-2.png' %}"> 
+                    <p style="color:gray;">127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
+                </a>  
+            </label>
+            <span></span>
+    
+            <label>
+                <a href="tel:7-495-790-7902" class="default-text" style="cursor:pointer;" type="tel">
+                    <img src="{% static 'images/icons/phone.png' %}"> 
+                    <p>+7-495-790-7902</p>  
+                </a>   
+            </label>
+            <span></span>
+    
+            <label>
+                <a href="mailto:industry@terussia.ru" class="default-text"  style="cursor:pointer;">
+                    <img src="{% static 'images/icons/@-email.png' %}"> 
+                    <p>industry@terussia.ru</p>  
+                </a> 
+            </label>  
+        </div>
+    </div>
+</footer>
+<script type="text/javascript">
+    document.getElementById("year").innerHTML = new Date().getFullYear();
+</script>

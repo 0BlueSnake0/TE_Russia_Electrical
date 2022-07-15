@@ -1,4 +1,4 @@
-{% extends 'electrical/base.html' %}
+{% extends 'base.html' %}
 {% load static %} 
 {% block contacts %}  
 {% for city, contact_group in contacts.items %}
@@ -29,7 +29,7 @@
                             </div>
                         </div>
                         <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
-                            <img class="contact-email-icon" src="{% static 'main/images/icons/@-email-2.png' %}">
+                            <img class="contact-email-icon" src="{% static 'images/icons/@-email-2.png' %}">
                             {{contact.email}}
                         </a>
                     </div> 

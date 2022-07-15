@@ -1,0 +1,153 @@
+{% load static %}  
+{% load customtags %}   
+
+<label id="site-navigation-750-minus">  
+    <div id="sn-750-minus">  
+        <input type="checkbox" class="checkbox-1"> 
+        <img class="dropdown-icon" src="{% static 'images/icons/bl-dropdown-icon.png' %}"> 
+
+        <div class="menu-item-content-1">
+            <div id="content">  
+            {% for title1,value1 in dropdown1.items %}  
+                <label class="layer-1">  
+                    <a class="menu-item-title-1 default-text" 
+                    {% if value1.link != "#" %} 
+                        target="{{value1.target}}" href="{{value1.link}}" 
+                    {% else %}
+                        style="pointer-events: none;"
+                    {% endif %}
+                    >{{title1}}</a> 
+                    {% if value1.content.items|length != 0 %}
+                    <input type="checkbox" class="checkbox-2">   
+                    <img class="arrow-icon-1" src="{% static 'images/icons/bl-arrow-icon-1.png' %}">  
+                        <div class="menu-item-content-2"> 
+                            {% for title2,value2 in value1.content.items %} 
+                            <label class="layer-2"> 
+                                <a class="menu-item-title-2 default-text" 
+                                {% if value2.link != "#" %} 
+                                    target="{{value2.target}}" href="{{value2.link}}" 
+                                {% else %}
+                                    style="pointer-events: none;"
+                                {% endif %}
+                                >{{title2}}</a>
+                                {% if value2.content.items|length != 0 %}
+                                <input type="checkbox" class="checkbox-3">  
+                                <img class="arrow-icon-2" src="{% static 'images/icons/bl-arrow-icon-1.png' %}">  
+                                <div class="menu-item-content-3"> 
+                                    {% for title3,value3 in value2.content.items %}    
+                                    <label><a class="default-text" 
+                                        {% if value3.link != "#" %} 
+                                            target="{{value3.target}}" href="{{value3.link}}" 
+                                        {% else %}
+                                            style="pointer-events: none;"
+                                        {% endif %}
+                                        >{{title3}}</a></label>
+                                    {% endfor %}  
+                                </div>
+                                {% endif %}
+                            </label>
+                            {% endfor %} 
+                        </div>
+                    {% endif %} 
+                </label> 
+            {% endfor %}   
+            </div>    
+        </div> 
+
+        <label class="search-box">
+            <input type="checkbox" class="search-checkbox">
+            <form method="POST" class="searcher">
+                {% csrf_token %}  
+                <input type="text" placeholder="Искать" class="searcher-field">   
+            </form> 
+            <img class="search-icon" src="{% static 'images/icons/search.png' %}">   
+        </label>   
+    </div>  
+</label>  
+
+
+
+<header>  
+    <div class="contact-info">    
+        <div id="contact-info">
+            <div id="address-and-tel">
+                <a class="default-text">
+                    <img src="{% static 'images/icons/address.png' %}">
+                    <p>Адрес: </p>
+                    <p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
+                </a> 
+                <div class="gray-vl"></div>
+                <a href="tel:7-495-790-9028" class="default-text" type="tel">
+                    <img src="{% static 'images/icons/phone.png' %}">
+                    <p>Телефон: </p>
+                    <p>+7(495) 790-9028</p>  
+                </a>   
+            </div> 
+            <label class="search-box" >
+                <input type="checkbox" class="search-checkbox">
+                <form method="POST" class="searcher">
+                    {% csrf_token %}  
+                    <input type="text" placeholder="Искать" class="searcher-field">   
+                </form> 
+                <img  class="search-icon" src="{% static 'images/icons/search.png' %}">   
+            </label>
+
+        </div>
+        <div class="gray-gl"></div>
+    </div>
+
+    <div id="site-navigation-750-plus"> 
+        <a href="https://terussia.ru/" id="logo"><img src="{% static 'images/icons/te-logo.png' %}"></a> 
+        <label id="sn-750-plus"> 
+            {% for title1,value1 in dropdown1.items %}  
+                <label class="layer-1"> 
+                    <a class="menu-item-title-1 default-text" target="{{value1.target}}" href="{{value1.link}}">
+                        {{title1}}
+                        {% if value1.content.items|length != 0 %}
+                        <img class="arrow-icon-1" src="{% static 'images/icons/bl-arrow-icon-1.png' %}"> 
+                        {% endif %}
+                    </a>  
+                    {% if value1.content.items|length != 0 %}
+                        <div class="menu-item-content-1"> 
+                            {% for title2,value2 in value1.content.items %} 
+                            <label class="layer-2">
+                                <a class="menu-item-title-2 default-text" target="{{value2.target}}" href="{{value2.link}}">
+                                    {{title2}}
+                                    {% if value2.content.items|length != 0 %}
+                                    <img class="arrow-icon-2" src="{% static 'images/icons/bl-arrow-icon-3.png' %}"> 
+                                    {% endif %}
+                                </a>
+                                {% if value2.content.items|length != 0 %}
+                                    <div class="menu-item-content-2">  
+                                        {% for title3,value3 in value2.content.items %}   
+                                        <label><a class="default-text" target="{{value3.target}}" href="{{value3.link}}">{{title3}}</a></label>
+                                        {% endfor %}  
+                                    </div>
+                                {% endif %}
+                            </label>
+                            {% endfor %} 
+                        </div>
+                    {% endif %}
+                </label> 
+            {% endfor %}  
+        </label> 
+    </div>  
+    <div style="margin-top:1vh;" class="orange-gl"></div>
+    {% if under_header_content %}
+        <div class="under-header-content">  
+            <div style="width:100%;display:flex;flex-direction:column;">
+                <span class="under-header-title default-text">
+                Посмотреть расписание вебинаров TE Connectivity
+                </span>   
+                <span class="under-header-title default-text"> 
+                    и записаться на них можно
+                    <span class="title default-text">  
+                    <a style="text-decoration:none;padding:0.1em;" class="default-text or-bl-link" 
+                    target="_blank" href="{% url 'electrical:seminars_timetable' %}">ЗДЕСЬ</a>
+                    </span>   
+                </span>   
+            </div>
+        </div>  
+        <div style="margin-top:1vh;" class="orange-gl"></div>
+    {% endif %}
+</header>  

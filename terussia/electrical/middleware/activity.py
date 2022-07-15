@@ -1,6 +1,7 @@
 from django.shortcuts import render, HttpResponse, redirect
 from django.conf import settings   
 
+
 class StopActivityMiddleware: 
     def __init__(self, get_response):
         self.get_response = get_response

@@ -5,7 +5,7 @@
             <div style="display:flex;flex-direction: column;justify-content:center;">
                 <div style="display: flex;flex-direction: column;margin-top:20%;">
                     <div style="width:100%;display:flex;">
-                        <img style="margin:auto;width:14vw;" src="/static/main/images/errors/android.svg"> 
+                        <img style="margin:auto;width:14vw;" src="{% static 'images/errors/android.svg' %}"> 
                     </div>  
                     <div style="width:100%;display:flex;">
                         <p class="paragraph-title" style="margin:auto;font-weight:800;color:#e98300;padding:2em;font-size:36px;">{{modal.text}}</p>
@@ -14,7 +14,7 @@
             </div> 
             <div style="display: flex;width:auto;">
                 <a href="{{modal.onclose}}" class="close-btn">
-                    <img src="/static/main/images/icons/close-image-modal.png">
+                    <img src="{% static 'images/icons/close-image-modal.png' %}">
                 </a> 
             </div>
         </div>

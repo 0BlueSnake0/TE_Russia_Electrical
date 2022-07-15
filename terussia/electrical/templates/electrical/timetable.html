@@ -1,4 +1,4 @@
-{% extends 'electrical/base.html' %}
+{% extends 'base.html' %}
 {% load static %}  
 {% load customtags %}
 {% block timetable %} 
@@ -8,7 +8,7 @@
 
 
 <h1 class="paragraph-title">Расписание семинаров 2022</h1>
-<div style="display: flex;width:74vw;margin-left:auto;margin-right:auto;">
+<div id="timetable" style="display: flex;width:74vw;margin-left:auto;margin-right:auto;">
     {% include table_path %}
 </div>
 

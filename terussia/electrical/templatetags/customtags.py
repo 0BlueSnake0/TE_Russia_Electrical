@@ -20,8 +20,4 @@ def get_first_item(dictionary):
     values_view = dictionary.values()
     value_iterator = iter(values_view)
     first_value = next(value_iterator)
-    return first_value
-
-@register.simple_tag
-def get_random_num(): 
-    return random.random() 
+    return first_value 

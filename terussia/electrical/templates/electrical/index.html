@@ -1,199 +1,194 @@
-{% extends 'electrical/base.html' %}
+{% extends 'base.html' %}
 {% load static %}  
-{% load customtags %}
-{% block start %}
+{% load customtags %} 
+
 <head> 
     <title>Electrical</title> 
 </head>
 
-<body id="main-content" class="main-content"> 
+{% block maincontent %}
+<script type="text/javascript">
+    var max_slide_numbers = {};
+    var delays = {}; 
+    var slideshows = {}; 
+</script> 
 
+{% with 1 as slideshow_id %}   
+    {% with image_slideshows|get_item:slideshow_id as s %} 
+        {% with s.content|length as number_of_slides %}  
+            {% with "image" as data_type %}  
+                {% with 8 as delay %}  
+                    {% with "0,0,0" as arrows_color %} 
+                        {% include 'electrical/slideshow.html' %}
+                    {% endwith %}
+                {% endwith %}
+            {% endwith %}
+        {% endwith %}
+    {% endwith %}
+{% endwith %} 
+
+<div class="default-block">
+    <div class="flexbox" id="huge-nums"> 
+        <div class="flexbox-item" style="text-align:center;">
+            <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">247</p>
+            <p class="flexbox-layer-2" style="margin-top:-2em;font-family:Arial;color:#2E4957;font-weight:800;">Млрд.</p>
+            <p class="flexbox-layer-3" style="margin-top:-1em;font-family:Arial;color:#2E4957;font-weight:100;">Продуктов производится ежегодно</p>
+        </div>
+        <div class="flexbox-item" style="text-align:center;">
+            <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">14.9</p>
+            <p class="flexbox-layer-2" style="margin-top:-2em;font-family:Arial;color:#2E4957;font-weight:800;">Млрд. $</p>
+            <p class="flexbox-layer-3" style="margin-top:-1em;font-family:Arial;color:#2E4957;font-weight:100;">Продаж в 2021 г.</p>
+        </div>
+        <div class="flexbox-item" style="text-align:center;">
+            <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">675+</p>
+            <p class="flexbox-layer-2" style="margin-top:-2em;font-family:Arial;color:#2E4957;font-weight:800;">Млн. $</p>
+            <p class="flexbox-layer-3" style="margin-top:-1em;font-family:Arial;color:#2E4957;font-weight:100;">Инвестировано в инженерию, исследования и разработки</p>
+        </div>  
+    </div>
+</div>
+
+
+<div class="default-block">
+    <h1 class="paragraph-title">TE Connectivity</h1>
+    <p class="paragraph" >
+        Решения, обеспечивающие работу электромобилей, 
+        самолетов, цифровых заводов и "умных" домов. 
+        Инновации, обеспечивающие жизненно важную медицинскую помощь, 
+        устойчивое развитие сообществ, эффективные коммунальные сети и 
+        глобальную инфраструктуру связи. Более 75 лет мы сотрудничаем с 
+        заказчиками, производя высокотехнологичные продукты для
+        подключения и обнаружения, которые делают мир подключенным. 
+        Наше внимание к надежности и долговечности, стремление к 
+        прогрессу и непревзойденный ассортимент продукции позволяют 
+        большим и малым компаниям воплощать идеи в технологии, 
+        которые могут изменить работу и жизнь мира завтра. 
+    </p> 
+</div>
+<div class="default-block">
+    <h1 class="paragraph-title">Отделение электрики</h1>
     <script type="text/javascript">
-        var max_slide_numbers = {};
-        var delays = {}; 
-        var slideshows = {}; 
-    </script> 
+        var arr = []; 
+    </script>
+    <div id="department-info" class="department-info"> 
+        {% for title, specification in department_specifications.items %}
+        <input type="text" id="animation-2-showed" value="false" style="display:none;">
+        <div class="departmant-item">
+            <img class="specification-icon" src="/static/images/icons/{{specification.icon}}">
+            <p style="color: #e98300;" id="specification-{{specification.number}}">{{specification.number}}</p>   
+            <p style="font-weight:600;font-size:22px;color: #6f7279;">{{specification.title}}</p>  
+        </div>
+        <script type="text/javascript">
+            arr.push("specification-{{specification.number}}") 
+        </script>
+        {% endfor %}
+        <script type="text/javascript">    
+            function animateAllNumbers () {  
+                var dep = document.getElementById("department-info"); 
+                var showed = document.getElementById("animation-2-showed");  
+                if (showed.value == "false" && dep.offsetTop -document.body.scrollTop <= 640) { 
+                    for (var i=0;i<=arr.length;i++) {  
+                        var obj = document.getElementById(arr[i]);
+                        var number = obj.innerHTML; 
+                        animateNumber(obj, 0,number, 2000);
+                        showed.value = "true";
+                        window.removeEventListener("scroll", animateAllNumbers);
+                    }
+                } 
+            }  
+            window.addEventListener("scroll", animateAllNumbers);
+        </script>
+    </div> 
+</div> 
 
-    {% with 1 as slideshow_id %}   
-        {% with image_slideshows|get_item:slideshow_id as s %} 
-            {% with s.content|length as number_of_slides %}  
-                {% with "image" as data_type %}  
-                    {% with 8 as delay %}  
+<div class="default-block" style="margin-bottom:15%;"> 
+    <div style="margin-top:1vh;" class="orange-gl"></div>
+    <div class="paragraph">
+        <div class="paragraph-title" style="font-weight:800;">TE Industry Rus</div>
+        <div class="paragraph" style="text-align:left;">
+            <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-1.png' %}">
+            TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
+            а так же поддерживает склад продукции в Москве и осуществляет доставку 
+            продукции в любую точку Российской Федерации. 
+            Вся имеющаяся на складе продукция сертифицирована.
+        </div>
+    </div>   
+</div>
+
+<div class="default-block"> 
+    <div style="margin-top:1vh;" class="orange-gl"></div>
+    <div class="paragraph">
+        <div class="paragraph-title" style="font-weight:800;">Отделение электрики</div>
+        <div class="paragraph">
+            <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-0.png' %}">
+            TE Industry Rus – относится к одному из подразделений 
+            компании TE Connectivity и занимается продажей и продвижением 
+            таких групп продукции как клемные и распределительные  блоки,
+            реле с установкой на плату и на дин-рейку, кабельных наконечников, 
+            стяжек, спиральной ленты маркировки для кабеля и других групп продукции,
+            производства TE Connectivity. 
+        </div>
+    </div>    
+</div> 
+
+
+    {% with 1 as slideshow_id %} 
+        {% with text_slideshows|get_item:slideshow_id as s %} 
+            {% with s.content|length as number_of_slides %} 
+                {% with "text" as data_type %}  
+                    {% with 8 as delay %} 
                         {% with "0,0,0" as arrows_color %} 
                             {% include 'electrical/slideshow.html' %}
                         {% endwith %}
                     {% endwith %}
                 {% endwith %}
-            {% endwith %}
+            {% endwith %} 
         {% endwith %}
-    {% endwith %} 
+    {% endwith %}  
 
-    <div class="default-block">
-        <div class="flexbox" id="huge-nums"> 
-            <div class="flexbox-item" style="text-align:center;">
-                <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">247</p>
-                <p class="flexbox-layer-2" style="margin-top:-2em;font-family:Arial;color:#2E4957;font-weight:800;">Млрд.</p>
-                <p class="flexbox-layer-3" style="margin-top:-1em;font-family:Arial;color:#2E4957;font-weight:100;">Продуктов производится ежегодно</p>
+<div class="default-block">
+    <div class="flexbox"> 
+        <div class="flexbox-item" style="width:20em;"> 
+            <img src="{% static 'images/icons/department-icon-6.png' %}">
+            <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Честность</div>
+            <div class="paragraph" style="padding-top:none;padding-bottom:none;">
+                Мы должны требовать от самих себя, наших партнеров и 
+                всех других соответствия самым высоким стандартам этических норм и 
+                честности. Мы должны стремиться к многообразию, справедливости,
+                взаимоуважению и доверию.
             </div>
-            <div class="flexbox-item" style="text-align:center;">
-                <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">14.9</p>
-                <p class="flexbox-layer-2" style="margin-top:-2em;font-family:Arial;color:#2E4957;font-weight:800;">Млрд. $</p>
-                <p class="flexbox-layer-3" style="margin-top:-1em;font-family:Arial;color:#2E4957;font-weight:100;">Продаж в 2021 г.</p>
-            </div>
-            <div class="flexbox-item" style="text-align:center;">
-                <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">675+</p>
-                <p class="flexbox-layer-2" style="margin-top:-2em;font-family:Arial;color:#2E4957;font-weight:800;">Млн. $</p>
-                <p class="flexbox-layer-3" style="margin-top:-1em;font-family:Arial;color:#2E4957;font-weight:100;">Инвестировано в инженерию, исследования и разработки</p>
-            </div>  
         </div>
-    </div>
-    
-
-    <div class="default-block">
-        <h1 class="paragraph-title">TE Connectivity</h1>
-        <p class="paragraph" >
-            Решения, обеспечивающие работу электромобилей, 
-            самолетов, цифровых заводов и "умных" домов. 
-            Инновации, обеспечивающие жизненно важную медицинскую помощь, 
-            устойчивое развитие сообществ, эффективные коммунальные сети и 
-            глобальную инфраструктуру связи. Более 75 лет мы сотрудничаем с 
-            заказчиками, производя высокотехнологичные продукты для
-            подключения и обнаружения, которые делают мир подключенным. 
-            Наше внимание к надежности и долговечности, стремление к 
-            прогрессу и непревзойденный ассортимент продукции позволяют 
-            большим и малым компаниям воплощать идеи в технологии, 
-            которые могут изменить работу и жизнь мира завтра. 
-        </p> 
-    </div>
-    <div class="default-block">
-        <h1 class="paragraph-title">Отделение электрики</h1>
-        <script type="text/javascript">
-            var arr = []; 
-        </script>
-        <div id="department-info" class="department-info"> 
-            {% for title, specification in department_specifications.items %}
-            <input type="text" id="animation-2-showed" value="false" style="display:none;">
-            <div class="departmant-item">
-                <img class="specification-icon" src="/static/main/images/icons/{{specification.icon}}">
-                <p style="color: #e98300;" id="specification-{{specification.number}}">{{specification.number}}</p>   
-                <p style="font-weight:600;font-size:22px;color: #6f7279;">{{specification.title}}</p>  
+        <div class="flexbox-item" style="width:20em;"> 
+            <img src="{% static 'images/icons/department-icon-7.png' %}">
+            <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Ответственность</div>
+            <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
+                Мы гордимся обязательствами, взятыми нами по отношению к нашим клиентам,
+                акционерам и друг к другу. Мы несем личную ответственность
+                за наши действия и результаты и ожидаем того же от других.
             </div>
-            <script type="text/javascript">
-                arr.push("specification-{{specification.number}}") 
-            </script>
-            {% endfor %}
-            <script type="text/javascript">    
-                function animateAllNumbers () {  
-                    var dep = document.getElementById("department-info"); 
-                    var showed = document.getElementById("animation-2-showed");  
-                    if (showed.value == "false" && dep.offsetTop -document.body.scrollTop <= 640) { 
-                        for (var i=0;i<=arr.length;i++) {  
-                            var obj = document.getElementById(arr[i]);
-                            var number = obj.innerHTML; 
-                            animateNumber(obj, 0,number, 2000);
-                            showed.value = "true";
-                            window.removeEventListener("scroll", animateAllNumbers);
-                        }
-                    } 
-                }  
-                window.addEventListener("scroll", animateAllNumbers);
-            </script>
-        </div> 
-    </div> 
-    
-    <div class="default-block" style="margin-bottom:15%;"> 
-        <div style="margin-top:1vh;" class="orange-gl"></div>
-        <div class="paragraph">
-            <div class="paragraph-title" style="font-weight:800;">TE Industry Rus</div>
-            <div class="paragraph" style="text-align:left;">
-                <img class="paragraph-img" src="{% static 'main/images/static-images/main-page-photo-1.png' %}">
-                TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
-                а так же поддерживает склад продукции в Москве и осуществляет доставку 
-                продукции в любую точку Российской Федерации. 
-                Вся имеющаяся на складе продукция сертифицирована.
+        </div>
+        <div class="flexbox-item" style="width:20em;"> 
+            <img src="{% static 'images/icons/department-icon-8.png' %}">
+            <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Работа в команде</div>
+            <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
+                Мы культивируем среду, которая воодушевляет побеждать
+                при помощи креативности, непрерывного обучения, 
+                перфекционизма и сотрудничества. Мы практикуем лидерство,
+                которое вдохновляет и способствует полной вовлеченности и карьерному росту.
+                Мы ожидаем прозрачных отношений и действий.
             </div>
-        </div>   
-    </div>
-
-    <div class="default-block"> 
-        <div style="margin-top:1vh;" class="orange-gl"></div>
-        <div class="paragraph">
-            <div class="paragraph-title" style="font-weight:800;">Отделение электрики</div>
-            <div class="paragraph">
-                <img class="paragraph-img" src="{% static 'main/images/static-images/main-page-photo-0.png' %}">
-                TE Industry Rus – относится к одному из подразделений 
-                компании TE Connectivity и занимается продажей и продвижением 
-                таких групп продукции как клемные и распределительные  блоки,
-                реле с установкой на плату и на дин-рейку, кабельных наконечников, 
-                стяжек, спиральной ленты маркировки для кабеля и других групп продукции,
-                производства TE Connectivity. 
-            </div>
-        </div>    
-    </div> 
-    
- 
-        {% with 1 as slideshow_id %} 
-            {% with text_slideshows|get_item:slideshow_id as s %} 
-                {% with s.content|length as number_of_slides %} 
-                    {% with "text" as data_type %}  
-                        {% with 8 as delay %} 
-                            {% with "0,0,0" as arrows_color %} 
-                                {% include 'electrical/slideshow.html' %}
-                            {% endwith %}
-                        {% endwith %}
-                    {% endwith %}
-                {% endwith %} 
-            {% endwith %}
-        {% endwith %}  
-
-    <div class="default-block">
-        <div class="flexbox"> 
-            <div class="flexbox-item" style="width:20em;"> 
-                <img src="{% static 'main/images/icons/department-icon-6.png' %}">
-                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Честность</div>
-                <div class="paragraph" style="padding-top:none;padding-bottom:none;">
-                    Мы должны требовать от самих себя, наших партнеров и 
-                    всех других соответствия самым высоким стандартам этических норм и 
-                    честности. Мы должны стремиться к многообразию, справедливости,
-                    взаимоуважению и доверию.
-                </div>
-            </div>
-            <div class="flexbox-item" style="width:20em;"> 
-                <img src="{% static 'main/images/icons/department-icon-7.png' %}">
-                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Ответственность</div>
-                <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
-                    Мы гордимся обязательствами, взятыми нами по отношению к нашим клиентам,
-                    акционерам и друг к другу. Мы несем личную ответственность
-                    за наши действия и результаты и ожидаем того же от других.
-                </div>
-            </div>
-            <div class="flexbox-item" style="width:20em;"> 
-                <img src="{% static 'main/images/icons/department-icon-8.png' %}">
-                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Работа в команде</div>
-                <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
-                    Мы культивируем среду, которая воодушевляет побеждать
-                    при помощи креативности, непрерывного обучения, 
-                    перфекционизма и сотрудничества. Мы практикуем лидерство,
-                    которое вдохновляет и способствует полной вовлеченности и карьерному росту.
-                    Мы ожидаем прозрачных отношений и действий.
-                </div>
-            </div>
-            <div class="flexbox-item" style="width:20em;"> 
-                <img src="{% static 'main/images/icons/department-icon-9.png' %}">
-                <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Новаторство</div>
-                <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
-                    Мы обнаружили, что инновации для наших клиентов являются 
-                    основой нашего бизнеса. Мы мотивируем себя на развитие новых 
-                    и улучшение существующих идей для наших клиентов и во всем, что 
-                    мы делаем. Мы поощряем, ожидаем и ценим креативность, принятие 
-                    обоснованных рисков, 
-                    открытость к переменам и разносторонние точки зрения.
-                </div>
+        </div>
+        <div class="flexbox-item" style="width:20em;"> 
+            <img src="{% static 'images/icons/department-icon-9.png' %}">
+            <div class="paragraph-title" style="padding-top:none;padding-bottom:none;">Новаторство</div>
+            <div class="paragraph" style="padding-top:none;padding-bottom:none;"> 
+                Мы обнаружили, что инновации для наших клиентов являются 
+                основой нашего бизнеса. Мы мотивируем себя на развитие новых 
+                и улучшение существующих идей для наших клиентов и во всем, что 
+                мы делаем. Мы поощряем, ожидаем и ценим креативность, принятие 
+                обоснованных рисков, 
+                открытость к переменам и разносторонние точки зрения.
             </div>
         </div>
     </div>
-    
-
-</body>
-
-{% endblock %}
+</div> 
+{% endblock %} 

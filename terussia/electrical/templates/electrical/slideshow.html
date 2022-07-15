@@ -1,6 +1,5 @@
 {% load static %}
 {% load customtags %}
-<link rel="stylesheet" type="text/css" href="{% static 'main/css/slideshow.css' %}?version={{vers}}"> 
 <div id="{{data_type}}-slideshow-{{slideshow_id}}" class="slideshow" 
 style= " 
     {% if data_type == 'text'  %} 
@@ -60,7 +59,7 @@ onmouseleave="removeKeyControl()">
     slideshows["{{data_type}}-slideshow-{{slideshow_id}}"] = {{slideshow_id}};
     max_slide_numbers["{{data_type}}-slideshow-{{slideshow_id}}"] = {{number_of_slides}}-1;
 </script>
-<script src="{% static 'main/js/default_slideshow.js' %}" type="text/javascript"></script>
+<script src="{% static 'js/default_slideshow.js' %}" type="text/javascript"></script>
 
      
 {% for slideshow_id_, slideshow_content in image_slideshows.items %}

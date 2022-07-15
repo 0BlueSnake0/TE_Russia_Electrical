@@ -1,0 +1,70 @@
+footer {
+    position:relative;
+    display:block; 
+    width:80%; 
+    margin-left:auto;
+    margin-right:auto;
+    color:gray;
+} 
+
+
+footer span:first-child {
+    position:relative;
+    display:block;
+    height:0.5px;
+    width:100%; 
+    background-color: rgb(197, 191, 185);
+}
+
+#footer-info {
+    position:relative;
+    display:flex; 
+    align-items:center;
+    justify-content:center;
+    flex-wrap:wrap;  
+    width:80%;  
+    margin-left:auto;
+    margin-right:auto; 
+}    
+  
+ 
+#footer-info label {
+    position:relative;
+    display:block;
+    margin:1vw;
+}
+
+#footer-info label a {
+    position:relative;
+    display:flex;
+    align-items:center;
+    color: rgba(233, 131, 0, 1);
+}
+
+
+#footer-info label a:hover  {
+    opacity:0.6;
+}
+
+#footer-info label a img {
+    position:relative;
+    display:block;
+    width:3em;
+    height:3em; 
+    margin:0.5vw;
+}
+
+
+#copyright {
+    position:relative;
+    display:flex;
+    justify-content:center;
+    width:80%;  
+    margin-left:auto;
+    margin-right:auto; 
+}
+
+
+#copyright div {
+    margin:0.5em;
+}

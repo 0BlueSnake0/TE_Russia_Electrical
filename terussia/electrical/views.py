@@ -97,7 +97,7 @@ def seminars_timetable(request, **kwargs):
         template_name=f'electrical/timetable.html',
         context={  
             'dropdown1':DROPDOWN_1,
-            'table_path':f'electrical/tables/{TABLES["seminars_timetable"]["html_file"]}',
+            'table_path':html_path,
         }
     )  
 
