@@ -25,6 +25,13 @@ def index(request):
             'department_specifications':DEPARTMENT_SPECIFICATIONS,
             'text_slideshows':TEXT_SLIDESHOWS,
             'image_slideshows':IMAGE_SLIDESHOWS,
+            'intro_slideshow': [
+                '/static/images/slideshow/machine.png',
+                '/static/images/slideshow/man1.png',
+                '/static/images/slideshow/man2.png',
+                '/static/images/slideshow/robots.png',
+                '/static/images/slideshow/surgeon.png',
+            ],
             'under_header_content':"yes"
         }
     )   

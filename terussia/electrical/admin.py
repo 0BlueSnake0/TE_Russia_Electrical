@@ -54,29 +54,19 @@ class ProductVideoAdmin(admin.ModelAdmin):
 
 
     def get_video(self, obj):
-        params = f"""controls preload="auto" poster='{obj.preview.url}'"""
-        params += """data-setup='{ 
-                "aspectRatio":"1280:600",
-                "playbackRates": [1, 1.25, 1.5, 1.75, 2], 
-                "techOrder": ["youtube"], 
-                "sources": [{ "type": "video/youtube", "src":"""
+        params = f"""controls preload="auto" poster='{obj.preview.url}' """
+        params += """data-setup='{"aspectRatio":"1280:600", "playbackRates": [1, 1.25, 1.5, 1.75, 2], "techOrder": ["youtube"], sources": [{ "type": "video/youtube", "src":"""
         params += f""" "{obj.youtube_link}" """ + "}]'"
-
+        print(params)
         html = f"""
             <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.css">
             <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.min.css"> 
-            <video class="video-js vjs-default-skin vjs-big-play-centered video-clip" {params}> 
-                <source src="{obj.youtube_link}" type="video/youtube">
-            </video>  
+            <video class="video-js vjs-default-skin vjs-big-play-centered video-clip" {params}></video>  
             """
         html+= """
             <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
             <script type="text/javascript" src="{% static 'js/video/youtube.min.js' %}?v=5"></script>
-        """
-        # if obj.preview and obj.preview.url:
-        #         html = f"""
-        #         <img src="{obj.preview.url}" style="width:25em;">
-        #     """
+        """ 
         return mark_safe(html)
 
     get_video.short_description = "Video"
@@ -90,12 +80,14 @@ class ProductVideoAdmin(admin.ModelAdmin):
 
     get_link.short_description = "Youtube"
 
+
 @admin.register(Product)
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
         'name',
         'get_image',
         'get_modals',
+        'get_videos',
         'get_catalogs',
     ]  
 
@@ -114,7 +106,7 @@ class ProductAdmin(admin.ModelAdmin):
         styles = """
             <style> 
                 .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
-                .edit-link:hover {color:cornflowerblue !important;}
+                .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
             </style>
         """
         html = f'{styles}<div style="display:flex;flex-direction:column;flex-wrap:wrap;">'
@@ -130,13 +122,30 @@ class ProductAdmin(admin.ModelAdmin):
     get_modals.short_description = "Modals"
 
 
-    def get_catalogs(self, obj): 
+
+    def get_videos(self, obj): 
         html = f'<div style="display:flex;flex-direction:column;flex-wrap:wrap;">'
+        for video in obj.videos.all():
+            html += f'''
+                <a class="edit-link" href="/admin/{video._meta.app_label}/{video._meta.model_name}/{video.pk}/change"> 
+                    <p>{video.title}</p>
+                    <img style="width:15em;" src="{video.preview.url if video.preview and video.preview.url else ''}">
+                </a>
+            '''
+        html+= "</div>"  
+        return mark_safe(html)
+
+    get_videos.short_description = "Videos"
+
+
+    def get_catalogs(self, obj): 
+        html = f'<div style="display:flex;position:relative;flex-wrap:wrap;width:70em;">'
         for catalog in obj.catalogs.all():
             html += f'''
-                <a class="edit-link" href="/admin/{catalog._meta.app_label}/{catalog._meta.model_name}/{catalog.pk}/change">
-                {catalog.name}
-                </a>
+                <a style="display:block;margin:2em;" class="edit-link" href="/admin/{catalog._meta.app_label}/{catalog._meta.model_name}/{catalog.pk}/change">  
+                    <p>{catalog.name}</p> 
+                    <img style="width:10em;" src="{catalog.preview.url if catalog.preview and catalog.preview.url else ''}">
+                </a>  
             '''
         html+= "</div>"  
         return mark_safe(html)
@@ -153,9 +162,18 @@ class StateAdmin(admin.ModelAdmin):
 
 
     def get_region(self, obj):
+        styles = """
+            <style> 
+                .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
+                .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
+            </style>
+        """
         html = f""" 
-            <div style="display:flex;">
-                <p>{obj.region.name}</p> 
+            {styles}
+            <div style="display:flex;align-items:center;"> 
+                <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
+                {obj.region.name}
+                </a>
                 <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color_on_map};"></div>
             </div>
         """
@@ -174,7 +192,7 @@ class RegionAdmin(admin.ModelAdmin):
 
     def get_name_and_color(self, obj):
         html = f""" 
-            <div style="display:flex;">
+            <div style="display:flex;align-items:center;">
                 <p>{obj.name}</p>
                 <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.color_on_map};"></div>
             </div>
@@ -188,7 +206,7 @@ class RegionAdmin(admin.ModelAdmin):
         styles = """
             <style> 
                 .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
-                .edit-link:hover {color:cornflowerblue !important;}
+                .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
             </style>
         """
         html = f'{styles}<div style="display:flex;flex-direction:column;flex-wrap:wrap;">'
@@ -254,9 +272,18 @@ class ContactPersonAdmin(admin.ModelAdmin):
     
 
     def get_region(self, obj):
+        styles = """
+            <style> 
+                .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
+                .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
+            </style>
+        """
         html = f""" 
-            <div style="display:flex;">
-                <p>{obj.region.name}</p> 
+            {styles}
+            <div style="display:flex;align-items:center;"> 
+                <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
+                {obj.region.name}
+                </a>
                 <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color_on_map};"></div>
             </div>
         """

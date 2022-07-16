@@ -11,21 +11,15 @@
     var max_slide_numbers = {};
     var delays = {}; 
     var slideshows = {}; 
-</script> 
+</script>  
 
-{% with 1 as slideshow_id %}   
-    {% with image_slideshows|get_item:slideshow_id as s %} 
-        {% with s.content|length as number_of_slides %}  
-            {% with "image" as data_type %}  
-                {% with 8 as delay %}  
-                    {% with "0,0,0" as arrows_color %} 
-                        {% include 'electrical/slideshow.html' %}
-                    {% endwith %}
-                {% endwith %}
-            {% endwith %}
-        {% endwith %}
+
+<section>  
+    {% with intro_slideshow as content %}
+        {% include 'electrical/slideshow.html' %}
     {% endwith %}
-{% endwith %} 
+</section>
+
 
 <div class="default-block">
     <div class="flexbox" id="huge-nums"> 
@@ -129,21 +123,11 @@
         </div>
     </div>    
 </div> 
+ 
 
 
-    {% with 1 as slideshow_id %} 
-        {% with text_slideshows|get_item:slideshow_id as s %} 
-            {% with s.content|length as number_of_slides %} 
-                {% with "text" as data_type %}  
-                    {% with 8 as delay %} 
-                        {% with "0,0,0" as arrows_color %} 
-                            {% include 'electrical/slideshow.html' %}
-                        {% endwith %}
-                    {% endwith %}
-                {% endwith %}
-            {% endwith %} 
-        {% endwith %}
-    {% endwith %}  
+
+
 
 <div class="default-block">
     <div class="flexbox"> 

@@ -21,3 +21,8 @@ def get_first_item(dictionary):
     value_iterator = iter(values_view)
     first_value = next(value_iterator)
     return first_value 
+
+
+@register.simple_tag
+def get_item_index(lst, item):
+    return lst.index(item);
