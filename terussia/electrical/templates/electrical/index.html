@@ -9,19 +9,21 @@
 {% block maincontent %}
 <script type="text/javascript">
     var max_slide_numbers = {};
-    var delays = {}; 
-    var slideshows = {}; 
+    var activated_slides = {}; 
 </script>  
 
 
 <section>  
-    {% with intro_slideshow as content %}
-        {% include 'electrical/slideshow.html' %}
+    {% with image_slideshow as content %}
+        {% with 'image' as data_type %} 
+            {% with 'slideshow-1' as slideshowId %}
+                {% include 'slideshow.html' %}
+            {% endwith %}
+        {% endwith %}
     {% endwith %}
 </section>
-
-
-<div class="default-block">
+ 
+<section class="default-block">
     <div class="flexbox" id="huge-nums"> 
         <div class="flexbox-item" style="text-align:center;">
             <p class="flexbox-layer-1" style="font-family:Arial;color:#2E4957;font-weight:800;">247</p>
@@ -39,97 +41,85 @@
             <p class="flexbox-layer-3" style="margin-top:-1em;font-family:Arial;color:#2E4957;font-weight:100;">Инвестировано в инженерию, исследования и разработки</p>
         </div>  
     </div>
-</div>
+</section>
 
+<section>
+    
+    <div class="default-block">
+        <h1 class="paragraph-title">TE Connectivity</h1>
+        <p class="paragraph" >
+            Решения, обеспечивающие работу электромобилей, 
+            самолетов, цифровых заводов и "умных" домов. 
+            Инновации, обеспечивающие жизненно важную медицинскую помощь, 
+            устойчивое развитие сообществ, эффективные коммунальные сети и 
+            глобальную инфраструктуру связи. Более 75 лет мы сотрудничаем с 
+            заказчиками, производя высокотехнологичные продукты для
+            подключения и обнаружения, которые делают мир подключенным. 
+            Наше внимание к надежности и долговечности, стремление к 
+            прогрессу и непревзойденный ассортимент продукции позволяют 
+            большим и малым компаниям воплощать идеи в технологии, 
+            которые могут изменить работу и жизнь мира завтра. 
+        </p> 
+    </div>
 
-<div class="default-block">
-    <h1 class="paragraph-title">TE Connectivity</h1>
-    <p class="paragraph" >
-        Решения, обеспечивающие работу электромобилей, 
-        самолетов, цифровых заводов и "умных" домов. 
-        Инновации, обеспечивающие жизненно важную медицинскую помощь, 
-        устойчивое развитие сообществ, эффективные коммунальные сети и 
-        глобальную инфраструктуру связи. Более 75 лет мы сотрудничаем с 
-        заказчиками, производя высокотехнологичные продукты для
-        подключения и обнаружения, которые делают мир подключенным. 
-        Наше внимание к надежности и долговечности, стремление к 
-        прогрессу и непревзойденный ассортимент продукции позволяют 
-        большим и малым компаниям воплощать идеи в технологии, 
-        которые могут изменить работу и жизнь мира завтра. 
-    </p> 
-</div>
-<div class="default-block">
-    <h1 class="paragraph-title">Отделение электрики</h1>
-    <script type="text/javascript">
-        var arr = []; 
-    </script>
-    <div id="department-info" class="department-info"> 
-        {% for title, specification in department_specifications.items %}
-        <input type="text" id="animation-2-showed" value="false" style="display:none;">
-        <div class="departmant-item">
-            <img class="specification-icon" src="/static/images/icons/{{specification.icon}}">
-            <p style="color: #e98300;" id="specification-{{specification.number}}">{{specification.number}}</p>   
-            <p style="font-weight:600;font-size:22px;color: #6f7279;">{{specification.title}}</p>  
-        </div>
-        <script type="text/javascript">
-            arr.push("specification-{{specification.number}}") 
-        </script>
-        {% endfor %}
-        <script type="text/javascript">    
-            function animateAllNumbers () {  
-                var dep = document.getElementById("department-info"); 
-                var showed = document.getElementById("animation-2-showed");  
-                if (showed.value == "false" && dep.offsetTop -document.body.scrollTop <= 640) { 
-                    for (var i=0;i<=arr.length;i++) {  
-                        var obj = document.getElementById(arr[i]);
-                        var number = obj.innerHTML; 
-                        animateNumber(obj, 0,number, 2000);
-                        showed.value = "true";
-                        window.removeEventListener("scroll", animateAllNumbers);
-                    }
-                } 
-            }  
-            window.addEventListener("scroll", animateAllNumbers);
-        </script>
+    <div class="default-block">
+        <h1 class="paragraph-title">Отделение электрики</h1>
+        <div id="department-info">  
+            {% for title, specification in department_specifications.items %}
+                <input id="animated-numbers" value="false" style="display:none;">
+                <div class="departmant-item">
+                    <img class="specification-icon" src="/static/images/icons/{{specification.icon}}">
+                    <p class="animated-number" style="color: #e98300;" id="specification-{{specification.number}}">{{specification.number}}</p>   
+                    <p style="font-weight:600;font-size:22px;color: #6f7279;">{{specification.title}}</p>  
+                </div> 
+            {% endfor %} 
+            <script type="text/javascript" src="{% static 'js/animate_numbers.js' %}?v=5"></script> 
+        </div> 
     </div> 
-</div> 
-
-<div class="default-block" style="margin-bottom:15%;"> 
-    <div style="margin-top:1vh;" class="orange-gl"></div>
-    <div class="paragraph">
-        <div class="paragraph-title" style="font-weight:800;">TE Industry Rus</div>
-        <div class="paragraph" style="text-align:left;">
-            <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-1.png' %}">
-            TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
-            а так же поддерживает склад продукции в Москве и осуществляет доставку 
-            продукции в любую точку Российской Федерации. 
-            Вся имеющаяся на складе продукция сертифицирована.
-        </div>
-    </div>   
-</div>
-
-<div class="default-block"> 
-    <div style="margin-top:1vh;" class="orange-gl"></div>
-    <div class="paragraph">
-        <div class="paragraph-title" style="font-weight:800;">Отделение электрики</div>
+    
+    <div class="default-block" style="margin-bottom:15%;"> 
+        <div style="margin-top:1vh;" class="orange-gl"></div>
         <div class="paragraph">
-            <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-0.png' %}">
-            TE Industry Rus – относится к одному из подразделений 
-            компании TE Connectivity и занимается продажей и продвижением 
-            таких групп продукции как клемные и распределительные  блоки,
-            реле с установкой на плату и на дин-рейку, кабельных наконечников, 
-            стяжек, спиральной ленты маркировки для кабеля и других групп продукции,
-            производства TE Connectivity. 
-        </div>
-    </div>    
-</div> 
- 
+            <div class="paragraph-title" style="font-weight:800;">TE Industry Rus</div>
+            <div class="paragraph" style="text-align:left;">
+                <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-1.png' %}">
+                TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
+                а так же поддерживает склад продукции в Москве и осуществляет доставку 
+                продукции в любую точку Российской Федерации. 
+                Вся имеющаяся на складе продукция сертифицирована.
+            </div>
+        </div>   
+    </div>
+    
+    <div class="default-block"> 
+        <div style="margin-top:1vh;" class="orange-gl"></div>
+        <div class="paragraph">
+            <div class="paragraph-title" style="font-weight:800;">Отделение электрики</div>
+            <div class="paragraph">
+                <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-0.png' %}">
+                TE Industry Rus – относится к одному из подразделений 
+                компании TE Connectivity и занимается продажей и продвижением 
+                таких групп продукции как клемные и распределительные  блоки,
+                реле с установкой на плату и на дин-рейку, кабельных наконечников, 
+                стяжек, спиральной ленты маркировки для кабеля и других групп продукции,
+                производства TE Connectivity. 
+            </div>
+        </div>    
+    </div> 
+</section>
 
+<section>
+    {% with text_slideshow as content %}
+        {% with 'text' as data_type %} 
+            {% with 'slideshow-2' as slideshowId %}
+                {% include 'slideshow.html' %}
+            {% endwith %}
+        {% endwith %}
+    {% endwith %}
+</section>
+  
 
-
-
-
-<div class="default-block">
+<section class="default-block">
     <div class="flexbox"> 
         <div class="flexbox-item" style="width:20em;"> 
             <img src="{% static 'images/icons/department-icon-6.png' %}">
@@ -174,5 +164,5 @@
             </div>
         </div>
     </div>
-</div> 
+</section> 
 {% endblock %} 

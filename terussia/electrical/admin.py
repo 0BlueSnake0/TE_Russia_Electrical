@@ -50,14 +50,13 @@ class ProductVideoAdmin(admin.ModelAdmin):
         'title',
         'get_video',
         'get_link',
-    ]  
+    ]   
 
 
     def get_video(self, obj):
         params = f"""controls preload="auto" poster='{obj.preview.url}' """
         params += """data-setup='{"aspectRatio":"1280:600", "playbackRates": [1, 1.25, 1.5, 1.75, 2], "techOrder": ["youtube"], sources": [{ "type": "video/youtube", "src":"""
-        params += f""" "{obj.youtube_link}" """ + "}]'"
-        print(params)
+        params += f""" "{obj.youtube_link}" """ + "}]'" 
         html = f"""
             <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.css">
             <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.min.css"> 
@@ -85,11 +84,14 @@ class ProductVideoAdmin(admin.ModelAdmin):
 class ProductAdmin(admin.ModelAdmin):
     list_display = [
         'name',
+        'order',
         'get_image',
         'get_modals',
         'get_videos',
         'get_catalogs',
     ]  
+ 
+    ordering = ['order']
 
     def get_image(self, obj):
         html = ""
@@ -226,6 +228,7 @@ class RegionAdmin(admin.ModelAdmin):
 class ContactPersonAdmin(admin.ModelAdmin):
     list_display = [
         'get_info',
+        'city',
         'get_region' 
     ] 
 

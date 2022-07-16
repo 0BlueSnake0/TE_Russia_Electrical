@@ -1,0 +1,49 @@
+{% load static %}
+{% load customtags %}
+
+
+<div class="slideshow" id="{{slideshowId}}" onmouseenter="addKeyControl('{{slideshowId}}')" onmouseleave="removeKeyControl('{{slideshowId}}')">
+    <div style="display:flex;" onmouseenter="runAutoSlideShow('{{slideshowId}}')" onmouseleave="stopAutoSlideShow()">
+        <div style="display:flex;align-items:center;"><div class="slideshow-arrow left-arrow" onclick="prevSlide('{{slideshowId}}')"></div></div>
+        <div class="slides">
+            {% if data_type == 'image' %}
+                {% for item in content %}
+                    {% get_item_index content item as slideIndex %}
+                    <div id="{{slideshowId}}-slide-{{slideIndex}}" class="slide"><img src="{{item}}" class="slide-image"></div>
+                {% endfor %}
+            {% elif data_type == 'text' %}
+                {% for item in content.items %}
+                    {% get_item_index content.items item as slideIndex %}
+                    {% get_dictitem_content item as itemcontent %}
+                    <div id="{{slideshowId}}-slide-{{slideIndex}}" class="slide">
+                        <h1>{{itemcontent.title}}</h1>
+                        <p>{{itemcontent.text}}</p>
+                    </div>
+                {% endfor %}
+            {% endif %}
+        </div>
+        <div style="display:flex;align-items:center;"><div class="slideshow-arrow right-arrow" onclick="nextSlide('{{slideshowId}}')"></div></div>
+    </div>
+    <nav>
+        {% if data_type == 'image' %}
+            {% for item in content %}
+                {% get_item_index content item as slideIndex %}
+                <div id="{{slideshowId}}-dot-{{slideIndex}}" class="slideshow-dot" onclick='ActivateSlide("{{slideshowId}}", {{slideIndex}})'></div>
+            {% endfor %}
+        {% elif data_type == 'text' %}
+            {% for item in content.items %}
+                {% get_item_index content.items item as slideIndex %}
+                <div id="{{slideshowId}}-dot-{{slideIndex}}" class="slideshow-dot" onclick='ActivateSlide("{{slideshowId}}", {{slideIndex}})'></div>
+            {% endfor %}
+        {% endif %}
+    </nav>
+</div>
+
+
+<script type="text/javascript">
+    var slides = $("#{{slideshowId}} .slides .slide"); 
+    var currentSlideshowID = "{{slideshowId}}";
+    activated_slides[currentSlideshowID] = -1;
+    max_slide_numbers[currentSlideshowID] = slides.length; 
+</script> 
+<script type="text/javascript" src="{% static 'js/slideshow.js' %}"></script> 

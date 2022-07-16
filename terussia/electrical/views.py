@@ -21,17 +21,51 @@ def index(request):
         request,
         template_name="electrical/index.html",
         context={
-            'dropdown1':DROPDOWN_1,
-            'department_specifications':DEPARTMENT_SPECIFICATIONS,
-            'text_slideshows':TEXT_SLIDESHOWS,
-            'image_slideshows':IMAGE_SLIDESHOWS,
-            'intro_slideshow': [
+            'dropdown1':DROPDOWN_1, 
+            'department_specifications':DEPARTMENT_SPECIFICATIONS, 
+            'image_slideshow': [
                 '/static/images/slideshow/machine.png',
                 '/static/images/slideshow/man1.png',
                 '/static/images/slideshow/man2.png',
                 '/static/images/slideshow/robots.png',
                 '/static/images/slideshow/surgeon.png',
             ],
+            'text_slideshow': {
+                0: {
+                    "title":"ПРОДУКЦИЯ НА СКЛАДЕ В РОССИИ",
+                    "text":"""
+                        Локализация склада в Москве позволяет осуществлять 
+                        отгрузки продукции буквально на следующий день после размещения заказа
+                    """,
+                },
+                1: { 
+                    "title":"ОБУЧАЮЩИЕ ЦЕНТРЫ В РОССИИ",
+                    "text":"""
+                        Тайко Электроникс РУС – это 2 крупных центра ТЕХНИЧЕСКОЙ  
+                        поддержки клиентов в Москве и Санкт-Петербурге, которые занимаются 
+                        консультацией, обучением инженерно-технического персонала, руководителей 
+                        организаций, сотрудников офисов продаж, конечных заказчиков  по вопросам 
+                        характеристик и применения оборудования, произведенного на заводах 
+                        TE connectivity
+                    """, 
+                },
+                2: { 
+                    "title":"СЕТЬ ДИСТРИБЬЮТОРОВ",
+                    "text":"""
+                        Разветвленная сеть дистрибьюторских центров насчитывает более 50 
+                        крупных организаций по всей территории РФ, что позволяет
+                        в оперативном порядке найти продукцию TE в наличии в любом регионе.
+                    """, 
+                },
+                3: { 
+                    "title":"ПРЕДСТАВИТЕЛЬСТВА В РЕГИОНАХ",
+                    "text":"""
+                        Офисы “Тайко Электроникс РУС” представлены в основных 
+                        крупных регионах России, в городах: Москва, Санкт-Петербург и  
+                        Екатеринбург. 
+                    """, 
+                }, 
+            },
             'under_header_content':"yes"
         }
     )   

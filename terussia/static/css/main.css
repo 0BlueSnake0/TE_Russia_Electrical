@@ -1,8 +1,24 @@
+ :root {
 
-@keyframes opacity-occurance-1 {
-    from {opacity:0;transform:translateY(-10%);}
-    to {opacity:1;transform:translateY(0%);}
-}   
+ }
+
+ body {
+    font-family:Arial, Helvetica, sans-serif;
+    color: #6f7279; 
+ }
+ 
+h1 {
+
+}
+
+p {
+    
+}
+
+ul li {
+    list-style-type: none;
+}
+
 .under-header-content {
     width:100%;           
     flex-direction:column;
@@ -10,8 +26,9 @@
 }
 
 .orange-gl {border-top:1px solid #e98300;width:auto;}
+
+
 .under-header-title {
-    font-family:Arial, Helvetica, sans-serif;
     text-align:center;
     text-decoration: none; 
     line-height:1em;
@@ -26,7 +43,6 @@
     text-align:justify;
     font-family:Arial, Helvetica, sans-serif;
     text-align:center; 
-    color: #6f7279; 
     font-size: 18px;
     font-weight:200; 
     margin:2vw; 
@@ -54,7 +70,7 @@
     float:left; 
 }
 
-.department-info {
+#department-info {
     display:flex; 
     flex-wrap: wrap; 
     justify-content:center; 
@@ -68,7 +84,7 @@
     min-width:20em;max-width:25em;
 }
 
-.department-info p {  
+#department-info p {  
     font-family:Arial, Helvetica, sans-serif;
     text-align:center;
     text-decoration: none;  
@@ -119,3 +135,16 @@
     margin-left:auto;margin-right:auto;
     width:80vw; 
 } 
+
+
+#page-up {
+    background:#e98300;
+    width:6vh;height:6vh;
+    border-radius:50%;position:fixed;
+    top:80%;right:5%;
+    display:none;
+    animation-name:opacity-occurance-1;animation-duration:1s;
+}
+
+
+#page-up:hover {background:#0066a1;transition:1s;}

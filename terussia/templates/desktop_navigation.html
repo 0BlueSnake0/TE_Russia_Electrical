@@ -1,0 +1,41 @@
+{% load static %}  
+{% load customtags %}  
+
+
+<nav id="desktop-navigation"> 
+    <a href="https://terussia.ru/" id="logo"><img src="{% static 'images/icons/te-logo.png' %}"></a>  
+    <ul>
+        <li class="dropdown">
+            <div class="dropdown-content">
+                <h2>Продукция</h2><span></span>
+                <ul>
+                    {% get_products as products %} 
+                    {% for product in products %}
+                        <li><a>{{product.name}}</a></li> 
+                    {% endfor %} 
+                </ul>
+            </div>
+        </li>
+        <li class="dropdown">
+            <div class="dropdown-content">
+                <h2>Поддержка</h2><span></span>
+                <ul>
+                    <li><a href="">Каталоги продукции</a></li>
+                    <li><a href="">Обучение</a></li>
+                </ul>
+            </div>
+        </li>
+        <li class="dropdown">
+            <div class="dropdown-content">
+                <h2>Контакты</h2><span></span>
+                <ul>
+                    {% get_contacts as contacts %}
+                    {% for contact in contacts %}
+                        <li><a href="">{{contact}}</a></li>
+                    {% endfor %}
+                    <li><a href="">Ответственность по регионам</a></li>
+                </ul>
+            </div>
+        </li>
+    </ul>
+</nav> 

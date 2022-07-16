@@ -54,7 +54,8 @@ class Product(models.Model):
             FileExtensionValidator(['png', 'jpg'])
         ] 
     )
-    catalogs = models.ManyToManyField(Catalog)
+    order = models.PositiveIntegerField(default=0)
+    catalogs = models.ManyToManyField(Catalog, blank=True)
     modals = models.ManyToManyField(Modal, blank=True)
 
     software_link = models.URLField(default='', blank=True, max_length=255)
@@ -90,6 +91,7 @@ class ContactPerson(models.Model):
     tel = PhoneNumberField(default='')
     mobile = PhoneNumberField(default='', unique=True)
     extended_number = models.CharField(default='', max_length=255, blank=True)
+    city = models.CharField(default='', max_length=255)
 
 
     position = models.CharField(default='', max_length=255)  

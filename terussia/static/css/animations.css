@@ -21,3 +21,32 @@
         transform: translateX(0%);
     }
 }
+
+
+@keyframes occurance {
+    from {transform:translateY(-200%);}
+    to {transform:translateY(0%);}
+} 
+@keyframes opacity-occurance-1 {
+    from {opacity:0;transform:translateY(-10%);}
+    to {opacity:1;transform:translateY(0%);}
+} 
+@keyframes opacity-occurance-2 {
+    from {opacity:1;transform:translateY(0%);}
+    to {opacity:0;transform:translateY(-10%);}
+} 
+
+@keyframes rotation-1 { 
+    from {transform:rotate(-180deg);}
+    to {transform:rotate(0deg);}
+}
+@keyframes rotation-2 { 
+    from {transform:rotate(180deg);}
+    to {transform:rotate(0deg);}
+} 
+
+
+@keyframes opacity-occurance-1 {
+    from {opacity:0;transform:translateY(-10%);}
+    to {opacity:1;transform:translateY(0%);}
+}  
