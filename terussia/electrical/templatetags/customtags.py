@@ -1,6 +1,7 @@
 from django import template
 from django.core.exceptions import ObjectDoesNotExist
-from ..models import Product, ContactPerson
+from ..models import Product, ContactPerson 
+from pytils.translit import slugify
 import random
 register = template.Library()
 
@@ -45,3 +46,8 @@ def get_contacts():
         if person.city not in contacts:
             contacts += [person.city]  
     return contacts
+
+
+@register.simple_tag
+def slugify_word(word):
+    return slugify(word)

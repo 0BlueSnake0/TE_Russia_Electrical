@@ -13,11 +13,6 @@ header {
     display:flex;flex-direction:column; 
 }  
     
-.default-text { 
-    font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    font-weight: 400;
-    text-decoration: none;
-} 
 a {text-decoration:none;}
 .or-bl-link {color:#e98300;}.or-bl-link:hover {color: #0066a1;}
 .bl-or-link {color:#0066a1;}.or-bl-link:hover {color: #e98300;}

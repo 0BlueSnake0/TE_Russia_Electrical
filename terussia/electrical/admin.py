@@ -85,6 +85,7 @@ class ProductAdmin(admin.ModelAdmin):
     list_display = [
         'name',
         'order',
+        'slug',
         'get_image',
         'get_modals',
         'get_videos',
@@ -187,7 +188,7 @@ class StateAdmin(admin.ModelAdmin):
 @admin.register(Region)
 class RegionAdmin(admin.ModelAdmin):
     list_display = [
-        'get_name_and_color',
+        'get_name_and_color', 
         'get_states',
     ] 
 

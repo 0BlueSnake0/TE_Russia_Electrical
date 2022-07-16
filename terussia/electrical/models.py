@@ -60,14 +60,14 @@ class Product(models.Model):
 
     software_link = models.URLField(default='', blank=True, max_length=255)
     videos = models.ManyToManyField(ProductVideo, blank=True)
-
+    slug = models.SlugField(default='', max_length=255, unique=True)
 
     def __str__(self):
         return f'{self.name}' 
 
 
 class Region(models.Model):
-    name = models.CharField(default='', max_length=255)
+    name = models.CharField(default='', max_length=255) 
     color_on_map = models.CharField(default='', max_length=255)
 
 

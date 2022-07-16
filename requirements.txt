@@ -6,3 +6,4 @@ django-phonenumber-field[phonenumbers]
 django-solo
 Pillow 
 xlsx2html
+pytils
