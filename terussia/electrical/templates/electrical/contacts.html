@@ -1,41 +1,38 @@
 {% extends 'base.html' %}
 {% load static %} 
-{% block contacts %}  
-{% for city, contact_group in contacts.items %}
-    {% if city == current_city %}
-    <title>{{contact_group.city}}</title>
-    {% endif %}
-{% endfor %}
+{% block contacts %}   
+
+<title>Контакты</title> 
+
 <div class="contact-list">
-    {% for city, contact_group in contacts.items %}
-        {% if city == current_city %}
-            {% for title, contact in contact_group.contacts.items %} 
-            <div class="contact"> 
-                    <p class="contact-title">{{contact.first_name}} {{contact.last_name}}</p>
-                    <div class="contact-text">
-                        <p class="position">{{contact.position}}</p>
-                        <div> 
-                            <div><p style="color:gray;">{{contact.LLC}}</p></div>
+    {% for contact in contacts %}  
+        <div class="contact"> 
+                <p class="contact-title">{{contact.first_name}} {{contact.last_name}}</p>
+                <div class="contact-text">
+                    <p class="position">{{contact.position}}</p>
+                    <div> 
+                        <div><p style="color:gray;">{{contact.organization}}</p></div>
+                        {% if contact.address %}
                             <div><p style="color:gray;">{{contact.address}}</p></div> 
-                            <label style="display:flex;align-items:center;">
-                                <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p><a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel">+{{contact.tel}}</a>
-                                {% if contact.ext != "" %}
-                                    <p style="color:gray;"> доб. {{contact.ext}}</p>
-                                {% endif %} 
-                            </label>   
-                            <div style="display:flex;align-items:center;">
-                                <p style="margin-right:1em;color:#e98300;font-weight:800;">
-                                MOBILE</p><a href="tel:{{contact.mobile}}" type="tel">+{{contact.mobile}}</a>
-                            </div>
+                        {% endif %}
+                        <label style="display:flex;align-items:center;">
+                            <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p><a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel">{{contact.tel}}</a>
+                            {% if contact.extended_number %}
+                                <p style="color:gray;"> доб. {{contact.extended_number}}</p>
+                            {% endif %} 
+                        </label>   
+                        <div style="display:flex;align-items:center;">
+                            <p style="margin-right:1em;color:#e98300;font-weight:800;">
+                            MOBILE</p><a href="tel:{{contact.mobile}}" type="tel">{{contact.mobile}}</a>
                         </div>
-                        <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
-                            <img class="contact-email-icon" src="{% static 'images/icons/@-email-2.png' %}">
-                            {{contact.email}}
-                        </a>
-                    </div> 
-            </div>
-            {% endfor %}
-        {% endif %}
+                    </div>
+                    <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
+                        <img class="contact-email-icon" src="{% static 'images/icons/@-email-2.png' %}">
+                        {{contact.email}}
+                    </a>
+                </div> 
+        </div> 
     {% endfor %}
 </div> 
+
 {% endblock %}

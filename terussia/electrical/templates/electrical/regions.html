@@ -1,60 +1,73 @@
 {% extends 'base.html' %}
 {% load static %}  
 {% load customtags %}
+
+
 {% block regions %} 
-<!DOCTYPE html> 
+
 <title>Ответственность по регионам</title>  
-<script type="text/javascript" src="{% static 'js/controlmap.js' %}"></script>
-<script type="text/javascript" src="{% static 'js/mapdata.js' %}" ></script>
-<script type="text/javascript" src="{% static 'js/countrymap.js' %}"></script>
 
 <h1 class="paragraph-title">Ответственность по регионам</h1>
 
-<div style="width:74vw; margin-left:auto;margin-right:auto;">
-    <div id="map"></div>  
-</div> 
-
-<div class="contact-list">
-    {% for city, contact_group in contacts.items %} 
-        {% for title, contact in contact_group.contacts.items %}  
-            <div id="{{title}}" class="contact"> 
-                    <div>
-                        <p class="contact-title">{{contact.first_name}} {{contact.last_name}}</p> 
-                    </div>
-                    <div class="contact-text">
-                        <p class="position">{{contact.position}}</p>
-                        <div> 
-                            <div><p style="color:gray;">{{contact.LLC}}</p></div>
+<div style="width:74vw; margin-left:auto;margin-right:auto;"><div id="map"></div></div> 
+<div class="contact-list"> 
+    {% for city, contact_list in contacts.items %}   
+        {% for contact in contact_list %}
+            <div class="contact" id="{{contact.region.slug}}" style="display:none;"> 
+                <p class="contact-title">{{contact.first_name}} {{contact.last_name}}</p>
+                <div class="contact-text">
+                    <p class="position">{{contact.position}}</p>
+                    <div> 
+                        <div><p style="color:gray;">{{contact.organization}}</p></div>
+                        {% if contact.address %}
                             <div><p style="color:gray;">{{contact.address}}</p></div> 
-                            <label style="display:flex;align-items:center;">
-                                <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p><a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel">+{{contact.tel}}</a>
-                                {% if contact.ext != "" %}
-                                    <p style="color:gray;"> доб. {{contact.ext}}</p>
-                                {% endif %} 
-                            </label>   
-                            <div style="display:flex;align-items:center;">
-                                <p style="margin-right:1em;color:#e98300;font-weight:800;">
-                                MOBILE</p><a href="tel:{{contact.mobile}}" type="tel">+{{contact.mobile}}</a>
-                            </div>
+                        {% endif %}
+                        <label style="display:flex;align-items:center;">
+                            <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p><a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel">{{contact.tel}}</a>
+                            {% if contact.extended_number %}
+                                <p style="color:gray;"> доб. {{contact.extended_number}}</p>
+                            {% endif %} 
+                        </label>   
+                        <div style="display:flex;align-items:center;">
+                            <p style="margin-right:1em;color:#e98300;font-weight:800;">
+                            MOBILE</p><a href="tel:{{contact.mobile}}" type="tel">{{contact.mobile}}</a>
                         </div>
-                        <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
-                            <img class="contact-email-icon" src="{% static 'images/icons/@-email-2.png' %}">
-                            {{contact.email}}
-                        </a>
-                    </div> 
-            </div>
-        {% endfor %} 
-    {% endfor %}
-</div> 
-<script type="text/javascript">
-    var contacts = {};
-    var contact_id = 0;
-    {% for city, contact_group in contacts.items %} 
-        {% for title, contact in contact_group.contacts.items %} 
-            contacts[contact_id] = "{{title}}";
-            contact_id += 1;
+                    </div>
+                    <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
+                        <img class="contact-email-icon" src="{% static 'images/icons/@-email-2.png' %}">
+                        {{contact.email}}
+                    </a>
+                </div> 
+            </div> 
         {% endfor %}
-    {% endfor %}   
-    show_contact(-1); 
+    {% endfor %}
+</div>  
+
+
+<script type="text/javascript" src="{% static 'js/mapdata.js' %}" ></script>
+<script type="text/javascript" src="{% static 'js/countrymap.js' %}"></script>
+<script type="text/javascript">
+    var allStates = {}, state_info;
+    {% for city, contact_list in contacts.items %}   
+        {% for contact in contact_list %} 
+
+            {% get_states contact.region as states %}
+
+            {% for state in states %}
+                state_info = {
+                    name:"{{state.name}}",
+                    description: " ",
+                    color: "{{contact.region.color}}",
+                    hover_color: "{{contact.region.hover_color}}",
+                    url: "javascript:showContacts('{{contact.region.slug}}')"
+                }; 
+                allStates["{{state.slug}}"] = state_info;
+            {% endfor %}
+
+        {% endfor %}
+    {% endfor %} 
 </script>
+<script type="text/javascript" src="{% static 'js/controlmap.js' %}"></script>
+
+
 {% endblock %}

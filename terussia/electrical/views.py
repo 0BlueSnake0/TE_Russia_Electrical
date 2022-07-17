@@ -2,6 +2,7 @@ from django.shortcuts import render, HttpResponse, redirect
 from django.conf import settings
 from django.http import FileResponse
 from xlsx2html import xlsx2html 
+from pytils.translit import slugify 
 from .models import *
 
 from .header import *
@@ -71,34 +72,37 @@ def index(request):
     )   
     
 
-def catalog(request, **kwargs):
+def catalogs(request):
     return render(
         request,
-        template_name="electrical/catalog.html",
+        template_name="electrical/catalogs.html",
         context={
             'dropdown1':DROPDOWN_1,
-            'catalogs':CATALOGS,
+            'catalogs':list(Catalog.objects.all()),
         }
     ) 
 
 
 def catalog_detail(request, **kwargs):   
-	filepath = f'{settings.BASE_DIR}/static/main/catalog_files/catalogs/{CATALOGS[kwargs["product"]]["category"]}/{CATALOGS[kwargs["product"]]["filename"]}'
-	return FileResponse(
-        open(filepath, 'rb'), 
-        content_type='application/pdf'
-    )
+    pdf_file = f'{settings.BASE_DIR}{Catalog.objects.get(slug=kwargs["catalog_slug"]).pdf.url}'
+    return FileResponse(open(pdf_file, 'rb'), content_type='application/pdf' )
 
 
 def contacts(request, **kwargs):
-    print("you see regions now!")
+    contacts_dict = {}
+    for contact in list(ContactPerson.objects.all()):
+        slugified_city = slugify(contact.city)
+        if slugified_city not in contacts_dict:
+            contacts_dict[slugified_city] = []
+        contacts_dict[slugified_city].append(contact)
+
     return render(
         request,
         template_name="electrical/contacts.html",
-        context={
-            'dropdown1':DROPDOWN_1,
+        context={ 
             "contacts":CONTACTS,
             "current_city":kwargs["city"],
+            "contacts":contacts_dict[kwargs["city"]]
         }
     )
 
@@ -118,38 +122,48 @@ def product_detail(request, **kwargs):
 
 
 def seminars_timetable(request, **kwargs):
-    styles = TABLES["seminars_timetable"]["styles"]
-    xlsx_path = f'{TABLES["seminars_timetable"]["xlsx_path"]}'
-    html_path = f'{TABLES["seminars_timetable"]["html_path"]}'
-    xlsx2html(xlsx_path, html_path) 
+    try:
+        timetable = list(TimeTable.objects.all())[0]
+        table_path = f'{settings.BASE_DIR}{timetable.table.url}'
+        html_path = f'{settings.BASE_DIR}/electrical/templates/electrical/timetable_file.html'
     
-    file = open(html_path, 'r', encoding="utf8")
-    table = file.read()
-    html = f'{styles}\n{table}'
-    file.close() 
+        xlsx2html(table_path, html_path) 
+        
+        file = open(html_path, 'r', encoding="utf8")  
+        html = f"""
+            <link rel="stylesheet" type="text/css" href="/static/css/timetable.css"> 
+            {file.read()}
+        """
+        file.close() 
 
-    file = open(html_path, 'w',encoding='utf8')
-    file.write(html)
-    file.close()
+        file = open(html_path, 'w',encoding='utf8')
+        file.write(html)
+        file.close() 
+    except (FileNotFoundError, IndexError):
+        html_path = ''
     
-
     return render(
         request,
         template_name=f'electrical/timetable.html',
-        context={  
-            'dropdown1':DROPDOWN_1,
-            'table_path':html_path,
+        context={   
+            'html_table_path':html_path,
         }
     )  
 
 
-def regions(request, **kwargs): 
+def regions(request):    
+    contacts_dict = {}
+    for contact in list(ContactPerson.objects.all()):
+        slugified_city = slugify(contact.city)
+        if slugified_city not in contacts_dict:
+            contacts_dict[slugified_city] = []
+        contacts_dict[slugified_city].append(contact)
+
     return render(
         request,
         template_name="electrical/regions.html",
-        context={ 
-            'dropdown1':DROPDOWN_1,
-            "contacts":CONTACTS,
+        context={  
+            "contacts":contacts_dict,
         }
     )  
 

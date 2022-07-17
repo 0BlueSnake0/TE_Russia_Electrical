@@ -1,0 +1,18 @@
+@import url("/static/css/desktop_navigation.css");
+@import url("/static/css/mobile_navigation.css");
+
+
+/* Mobile styles */
+@media screen and (max-width:1060px) {
+    #desktop-navigation {
+        display:none;
+    }
+}
+
+
+/* Desktop styles */
+@media screen and (min-width:1060px) {
+    #mobile-navigation {
+        display:none;
+    }
+}

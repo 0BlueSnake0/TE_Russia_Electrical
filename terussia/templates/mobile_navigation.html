@@ -1,4 +1,61 @@
 {% load static %}  
 {% load customtags %}  
  
-<link rel="stylesheet" type="text/css" href="{% static 'css/mobile_navigation.css' %}?v=5">
+
+<nav id="mobile-navigation"> 
+    <span id="open" onclick="PressDropdown()"><div></div><div></div><div></div></span>
+    <input id="dropdown-check" type="checkbox">
+</nav>
+<ul id="mobile-dropdown">
+    <span id="close" onclick="PressDropdown()"><div></div><div></div></span>
+    <li class="dropdown">
+        <label>
+            <input type="checkbox">
+            <div style="display:flex;align-items:center;">
+                <p>Продукция</p><span></span>
+            </div>
+            <div class="dropdown-content">
+                <ul>
+                    {% get_products as products %} 
+                    {% for product in products %}
+                        <li><a href="{% url 'electrical:product_detail' product_slug=product.slug %}">{{product.name}}</a></li> 
+                    {% endfor %} 
+                </ul>
+            </div>
+
+        </label>
+    </li>
+    <li class="dropdown">
+        <label>
+            <input type="checkbox">
+            <div style="display:flex;align-items:center;">
+                <p>Поддержка</p><span></span>
+            </div>
+            <div class="dropdown-content">
+                <ul>
+                    <li><a href="{% url 'electrical:catalogs' %}">Каталоги продукции</a></li>
+                    <li><a href="{% url 'electrical:seminars_timetable' %}">Обучение</a></li>
+                </ul>
+            </div>
+        </label>
+    </li>
+    <li class="dropdown">
+        <label>
+            <input type="checkbox">
+            <div style="display:flex;align-items:center;">
+                <p>Контакты</p><span></span> 
+            </div>
+            <div class="dropdown-content">
+                <ul>
+                    {% get_contacts as contacts %}
+                    {% for contact in contacts %}
+                        {% slugify_word contact as slugified_city %}
+                        <li><a href="/contacts/{{slugified_city}}">{{contact}}</a></li>
+                    {% endfor %}
+                    <li><a href="">Ответственность по регионам</a></li>
+                </ul>
+            </div>
+        </label>
+    </li>
+</ul> 
+<script type="text/javascript" src="{% static 'js/dropdown.js' %}?v=2"></script>

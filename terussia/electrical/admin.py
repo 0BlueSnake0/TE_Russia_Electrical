@@ -17,9 +17,7 @@ class ModalAdmin(admin.ModelAdmin):
     ]  
 
     def get_content(self, obj):
-        html = f"""
-            {obj.content}
-        """
+        html = f"""{obj.content}"""
         return mark_safe(html)
     
     get_content.short_description = "Content"
@@ -29,8 +27,9 @@ class ModalAdmin(admin.ModelAdmin):
 class CatalogAdmin(admin.ModelAdmin):
     list_display = [
         'name',
+        'slug',
         'get_preview',
-        'pdf'
+        'pdf',
     ]  
 
     def get_preview(self, obj):
@@ -160,6 +159,7 @@ class ProductAdmin(admin.ModelAdmin):
 class StateAdmin(admin.ModelAdmin):
     list_display = [
         'name',
+        'slug',
         'get_region', 
     ] 
 
@@ -177,7 +177,7 @@ class StateAdmin(admin.ModelAdmin):
                 <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
                 {obj.region.name}
                 </a>
-                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color_on_map};"></div>
+                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color};"></div>
             </div>
         """
         return mark_safe(html)
@@ -189,6 +189,7 @@ class StateAdmin(admin.ModelAdmin):
 class RegionAdmin(admin.ModelAdmin):
     list_display = [
         'get_name_and_color', 
+        'slug',
         'get_states',
     ] 
 
@@ -197,7 +198,7 @@ class RegionAdmin(admin.ModelAdmin):
         html = f""" 
             <div style="display:flex;align-items:center;">
                 <p>{obj.name}</p>
-                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.color_on_map};"></div>
+                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.color};"></div>
             </div>
         """
         return mark_safe(html)
@@ -216,7 +217,7 @@ class RegionAdmin(admin.ModelAdmin):
         for state in State.objects.filter(region=obj):
             html += f'''
                 <a class="edit-link" href="/admin/{state._meta.app_label}/{state._meta.model_name}/{state.pk}/change">
-                {state.name}
+                {state.name} ({state.slug})
                 </a>
             '''
         html+= "</div>"  
@@ -230,7 +231,8 @@ class ContactPersonAdmin(admin.ModelAdmin):
     list_display = [
         'get_info',
         'city',
-        'get_region' 
+        'get_region',
+        'get_states',
     ] 
 
 
@@ -288,12 +290,32 @@ class ContactPersonAdmin(admin.ModelAdmin):
                 <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
                 {obj.region.name}
                 </a>
-                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color_on_map};"></div>
+                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color};"></div>
             </div>
         """
         return mark_safe(html)
 
     get_region.short_description = "Region"
+
+
+    def get_states(self, obj):
+        styles = """
+            <style> 
+                .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
+                .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
+            </style>
+        """
+        html = f'{styles}<div style="display:flex;flex-direction:column;flex-wrap:wrap;">'
+        for state in State.objects.filter(region=obj.region):
+            html += f'''
+                <a class="edit-link" href="/admin/{state._meta.app_label}/{state._meta.model_name}/{state.pk}/change">
+                {state.name} ({state.slug})
+                </a>
+            '''
+        html+= "</div>"  
+        return mark_safe(html)
+
+    get_states.short_description = "States"
 
     
 @admin.register(TimeTable)

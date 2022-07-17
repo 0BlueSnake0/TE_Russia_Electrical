@@ -2,11 +2,9 @@
 {% load customtags %}  
 
 
-<link rel="stylesheet" type="text/css" href="{% static 'css/desktop_navigation.css' %}?v=5">
-
-<nav>
+<nav id="desktop-navigation">
     <a href="https://terussia.ru/" id="logo"><img src="{% static 'images/icons/te-logo.png' %}"></a>  
-    <ul id="desktop-navigation">
+    <ul id="buttons">
         <li class="dropdown">
             <label>
                 <div style="display:flex;align-items:center;">
@@ -48,7 +46,7 @@
                             {% slugify_word contact as slugified_city %}
                             <li><a href="/contacts/{{slugified_city}}">{{contact}}</a></li>
                         {% endfor %}
-                        <li><a href="">Ответственность по регионам</a></li>
+                        <li><a href="{% url 'electrical:regions' %}">Ответственность по регионам</a></li>
                     </ul>
                 </div>
             </label>

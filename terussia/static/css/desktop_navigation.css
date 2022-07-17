@@ -1,9 +1,9 @@
-nav {
+#desktop-navigation {
     display:flex;
     align-items: center;
 }
 
-#desktop-navigation {
+#desktop-navigation #buttons {
     position:relative;
     display:flex;
     align-items: center;
@@ -44,7 +44,7 @@ nav {
 }
 
 
-.dropdown-content {
+#desktop-navigation .dropdown-content {
     display:none;
     position:absolute;
     width:auto;

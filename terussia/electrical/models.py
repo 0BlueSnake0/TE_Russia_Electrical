@@ -17,6 +17,7 @@ class Modal(models.Model):
 
 class Catalog(models.Model):
     name = models.CharField(default='', max_length=255)
+    slug = models.SlugField(default='', max_length=255, unique=True)
     pdf = models.FileField(default='', upload_to='catalogs/', 
         validators=[
             FileExtensionValidator(['pdf'])
@@ -29,7 +30,7 @@ class Catalog(models.Model):
     )
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name} ({self.slug})'
 
 
 class ProductVideo(models.Model):
@@ -67,8 +68,10 @@ class Product(models.Model):
 
 
 class Region(models.Model):
-    name = models.CharField(default='', max_length=255) 
-    color_on_map = models.CharField(default='', max_length=255)
+    name = models.CharField(default='', max_length=255, unique=True) 
+    color= models.CharField(default='', max_length=255, unique=True)
+    slug = models.SlugField(default='', max_length=255, unique=True)
+    hover_color= models.CharField(default='', max_length=255, unique=True)
 
 
     def __str__(self):
@@ -77,11 +80,12 @@ class Region(models.Model):
 
 class State(models.Model):
     name = models.CharField(default='', max_length=255)
-    region = models.ForeignKey(Region, default='', null=True, on_delete=models.SET_NULL)
+    slug = models.SlugField(default='', max_length=255, unique=True)
+    region = models.ForeignKey(Region, default='', null=True, blank=True, on_delete=models.SET_NULL)
 
 
     def __str__(self):
-        return f'{self.name}'
+        return f'{self.name} ({self.slug})'
 
  
 class ContactPerson(models.Model):

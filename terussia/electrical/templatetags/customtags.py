@@ -1,27 +1,9 @@
 from django import template
 from django.core.exceptions import ObjectDoesNotExist
-from ..models import Product, ContactPerson 
-from pytils.translit import slugify
-import random
-register = template.Library()
+from ..models import Product, ContactPerson, Region, State
+from pytils.translit import slugify 
 
-
-@register.simple_tag
-def get_range(number):
-    return list(range(number))
-
-
-@register.filter
-def get_item(dictionary, key):
-    return dictionary.get(key)
-
-
-@register.simple_tag
-def get_first_item(dictionary):
-    values_view = dictionary.values()
-    value_iterator = iter(values_view)
-    first_value = next(value_iterator)
-    return first_value 
+register = template.Library() 
 
 
 @register.simple_tag
@@ -47,6 +29,10 @@ def get_contacts():
             contacts += [person.city]  
     return contacts
 
+
+@register.simple_tag
+def get_states(region):
+    return list(State.objects.filter(region=region))
 
 @register.simple_tag
 def slugify_word(word):

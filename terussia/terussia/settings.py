@@ -39,7 +39,7 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
     'electrical.middleware.redirect.RedirectMiddleware',
-    'electrical.middleware.activity.StopActivityMiddleware',
+    'electrical.middleware.activity.StopActivityMiddleware', 
 ]
 
 ROOT_URLCONF = 'terussia.urls'
