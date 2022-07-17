@@ -7,7 +7,9 @@ function showContacts(region) {
 }
 
 
-function bindContactsWithMap(states) {  
-    for (var state_slug in states) simplemaps_countrymap_mapdata['state_specific'][state_slug] = states[state_slug];
-}
+function bindContactsWithMap(states_info) {  
+    for (var state_slug in states_info) { 
+        simplemaps_countrymap_mapdata['state_specific'][state_slug] = states_info[state_slug];
+    }
+} 
 bindContactsWithMap(allStates); 

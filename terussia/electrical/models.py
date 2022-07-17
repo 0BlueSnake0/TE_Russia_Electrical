@@ -69,8 +69,8 @@ class Product(models.Model):
 
 class Region(models.Model):
     name = models.CharField(default='', max_length=255, unique=True) 
-    color= models.CharField(default='', max_length=255, unique=True)
     slug = models.SlugField(default='', max_length=255, unique=True)
+    color= models.CharField(default='', max_length=255, unique=True)
     hover_color= models.CharField(default='', max_length=255, unique=True)
 
 

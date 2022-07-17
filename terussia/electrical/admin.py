@@ -165,21 +165,23 @@ class StateAdmin(admin.ModelAdmin):
 
 
     def get_region(self, obj):
-        styles = """
-            <style> 
-                .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
-                .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
-            </style>
-        """
-        html = f""" 
-            {styles}
-            <div style="display:flex;align-items:center;"> 
-                <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
-                {obj.region.name}
-                </a>
-                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color};"></div>
-            </div>
-        """
+        html = ""
+        if obj.region != None:
+            styles = """
+                <style> 
+                    .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
+                    .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
+                </style>
+            """
+            html = f""" 
+                {styles}
+                <div style="display:flex;align-items:center;"> 
+                    <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
+                    {obj.region.name}
+                    </a>
+                    <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color};"></div>
+                </div>
+            """
         return mark_safe(html)
 
     get_region.short_description = "Region"
@@ -277,22 +279,24 @@ class ContactPersonAdmin(admin.ModelAdmin):
     get_info.short_description = "Person"
     
 
-    def get_region(self, obj):
-        styles = """
-            <style> 
-                .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
-                .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
-            </style>
-        """
-        html = f""" 
-            {styles}
-            <div style="display:flex;align-items:center;"> 
-                <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
-                {obj.region.name}
-                </a>
-                <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color};"></div>
-            </div>
-        """
+    def get_region(self, obj): 
+        html = ""
+        if obj.region:
+            styles = """
+                <style> 
+                    .edit-link {font-size:1.25em;color:black !important;font-weight:800;}
+                    .edit-link:hover {color:cornflowerblue !important;opacity:0.6;}
+                </style>
+            """
+            html = f""" 
+                {styles}
+                <div style="display:flex;align-items:center;"> 
+                    <a class="edit-link" href="/admin/{obj.region._meta.app_label}/{obj.region._meta.model_name}/{obj.region.pk}/change">
+                    {obj.region.name}
+                    </a>
+                    <div style="border:0.2em solid black;margin:0.5em;width:2em;height:2em;background-color:{obj.region.color};"></div>
+                </div>
+            """
         return mark_safe(html)
 
     get_region.short_description = "Region"

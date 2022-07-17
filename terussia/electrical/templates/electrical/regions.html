@@ -47,23 +47,19 @@
 <script type="text/javascript" src="{% static 'js/mapdata.js' %}" ></script>
 <script type="text/javascript" src="{% static 'js/countrymap.js' %}"></script>
 <script type="text/javascript">
-    var allStates = {}, state_info;
+    var allStates = {};
     {% for city, contact_list in contacts.items %}   
-        {% for contact in contact_list %} 
-
-            {% get_states contact.region as states %}
-
+        {% for contact in contact_list %}  
+            {% get_states contact.region as states %} 
             {% for state in states %}
-                state_info = {
+                allStates["{{state.slug}}"]  = {
                     name:"{{state.name}}",
                     description: " ",
                     color: "{{contact.region.color}}",
                     hover_color: "{{contact.region.hover_color}}",
                     url: "javascript:showContacts('{{contact.region.slug}}')"
-                }; 
-                allStates["{{state.slug}}"] = state_info;
-            {% endfor %}
-
+                };  
+            {% endfor %} 
         {% endfor %}
     {% endfor %} 
 </script>
