@@ -13,6 +13,7 @@ admin.site.unregister(User)
 class ModalAdmin(admin.ModelAdmin):
     list_display = [
         'title',
+        'slug',
         'get_content', 
     ]  
 

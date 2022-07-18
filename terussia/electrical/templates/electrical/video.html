@@ -1,0 +1,17 @@
+{% load static %}   
+ 
+
+<video class="video-js vjs-default-skin vjs-big-play-centered video-clip"
+    controls preload="auto" 
+    {% if video.preview and video.preview.url %}
+        poster='{{video.preview}}' 
+    {% endif %}
+    data-setup='{ 
+        "aspectRation":"1280:600",
+        "playbackRates": [1, 1.25, 1.5, 1.75, 2], 
+        "techOrder": ["youtube"], 
+        "sources": [{ "type": "video/youtube", "src": "{{video.youtube_link}}"}] 
+    }'>
+</video>   
+<script type="text/javascript" src="{% static 'js/video/video.min.js' %}"></script> 
+<script type="text/javascript" src="{% static 'js/video/youtube.min.js' %}"></script> 

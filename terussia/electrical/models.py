@@ -8,6 +8,7 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 class Modal(models.Model):
     title = models.CharField(default='', max_length=255)
+    slug = models.SlugField(default='', max_length=255, unique=True)
     content = RichTextUploadingField(default='', blank=True)
 
 

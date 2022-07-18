@@ -40,7 +40,7 @@ MIDDLEWARE = [
 
     'electrical.middleware.redirect.RedirectMiddleware',
     'electrical.middleware.activity.StopActivityMiddleware', 
-    'electrical.middleware.regions.InitStatesMiddleware',
+    'electrical.middleware.states.InitStatesMiddleware',
 ]
 
 ROOT_URLCONF = 'terussia.urls'

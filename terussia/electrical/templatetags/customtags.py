@@ -18,7 +18,7 @@ def get_dictitem_content(item):
 
 @register.simple_tag
 def get_products():
-    return sorted(list(Product.objects.all()), key=lambda product: product.order, reverse=True)
+    return sorted(list(Product.objects.all()), key=lambda product: product.order)
 
 
 @register.simple_tag

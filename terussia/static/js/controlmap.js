@@ -3,7 +3,7 @@ function showContacts(region) {
     var contact = $("#" + region);
     contact.css("display", "flex");   
  
-    window.scrollTo(contact.offset().left, $(window).height() - contact.offset().top); 
+    window.scrollTo(contact.offset().left, contact.offset().top); 
 }
 
 

@@ -1,14 +1,45 @@
-@keyframes jump {
-    0% {transform:translateY(0px);}
-    50% {transform:translateY(-6px);} 
-    100% {transform:translateY(0px);}
+.product-image {
+    position:relative;
+    display:block;
+    width:40%;
+    margin:2vw;
 }
 
-@keyframes opacity-occurance {
-    from {opacity:0;transform:translateY(-50%);}
-    to {opacity:1;transform:translateY(0%);}
+
+.product-description {
+    position:relative;
+    display:block;
+}
+
+
+.project-videos {
+    position:relative;
+    display:flex;
+    justify-content: center;
+    flex-wrap: wrap;
 } 
 
+
+.video-clip {
+    width:45% !important;   
+    display:block;
+    cursor: pointer; 
+    animation-name:opacity-occurance;
+    animation-duration:2s;
+}
+
+
+.video-clip:hover {
+    opacity:0.8;
+}
+
+
+.vjs-play-progress {  
+    background:#e98300 !important;
+}   
+
+
+/* 
 .product-buttons-block {
     display: flex;
     align-items: center;
@@ -127,4 +158,4 @@
     display:flex;    
     flex-direction: column;
     flex-wrap: wrap; 
-} 
+}  */

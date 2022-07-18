@@ -107,16 +107,12 @@ def contacts(request, **kwargs):
     )
 
 
-def product_detail(request, **kwargs):
+def product_detail(request, **kwargs): 
     return render(
         request,
         template_name="electrical/product.html",
-        context={ 
-            'dropdown1':DROPDOWN_1,
-            'product':PRODUCTS[kwargs["product_slug"]],
-            'text_slideshows':TEXT_SLIDESHOWS,
-            'image_slideshows':IMAGE_SLIDESHOWS,
-            "modals":MODALS, 
+        context={  
+            'product': Product.objects.get(slug=kwargs['product_slug']) 
         }
     ) 
 
