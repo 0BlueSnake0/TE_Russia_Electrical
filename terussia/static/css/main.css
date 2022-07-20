@@ -70,6 +70,17 @@ ul {
     float:left; 
 }
 
+
+.animated-number {
+    color: #e98300;
+}
+
+.animated-number + p {
+    font-weight:600;
+    color: #6f7279;
+}
+
+
 #department-info {
     display:flex; 
     flex-wrap: wrap; 

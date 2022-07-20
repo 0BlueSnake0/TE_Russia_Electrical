@@ -1,7 +1,7 @@
 footer {
     position:relative;
-    display:block; 
-    width:80%; 
+    display:block;
+    width:74vw;
     margin-left:auto;
     margin-right:auto;
     color:gray;
@@ -20,9 +20,9 @@ footer span:first-child {
     position:relative;
     display:flex; 
     align-items:center;
-    justify-content:center;
+    justify-content:left;
     flex-wrap:wrap;  
-    width:80%;  
+    width:100%;
     margin-left:auto;
     margin-right:auto; 
 }    
@@ -49,8 +49,8 @@ footer span:first-child {
 #footer-info label a img {
     position:relative;
     display:block;
-    width:3em;
-    height:3em; 
+    width:3vw;
+    height:3vw;
     margin:0.5vw;
 }
 
@@ -58,13 +58,9 @@ footer span:first-child {
 #copyright {
     position:relative;
     display:flex;
-    justify-content:center;
-    width:80%;  
+    justify-content:left;
+    width:100%;
     margin-left:auto;
     margin-right:auto; 
 }
 
-
-#copyright div {
-    margin:0.5em;
-}

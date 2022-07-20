@@ -10,6 +10,8 @@
     justify-content:center;
     width:74vw;
     padding:2vw; 
+    margin-top:4vw;
+    margin-bottom:4vw;
     margin-left:auto;
     margin-right:auto;
     z-index:3;
@@ -26,6 +28,7 @@
 .slide {
     position:relative; 
     display:block;
+    text-align:center;
     width:100%; 
     animation-duration: 1s;
     z-index:1;

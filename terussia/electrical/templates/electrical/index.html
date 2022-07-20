@@ -63,24 +63,41 @@
     </div>
 
     <div class="default-block">
-        <h1 class="paragraph-title">Отделение электрики</h1>
+        <h1>Отделение электрики</h1>
         <div id="department-info">  
-            {% for title, specification in department_specifications.items %}
-                <input id="animated-numbers" value="false" style="display:none;">
-                <div class="departmant-item">
-                    <img class="specification-icon" src="/static/images/icons/{{specification.icon}}">
-                    <p class="animated-number" style="color: #e98300;" id="specification-{{specification.number}}">{{specification.number}}</p>   
-                    <p style="font-weight:600;font-size:22px;color: #6f7279;">{{specification.title}}</p>  
-                </div> 
-            {% endfor %} 
-            <script type="text/javascript" src="{% static 'js/animate_numbers.js' %}?v=5"></script> 
+            <input id="animated-numbers" value="false" style="display:none;">
+            <div class="departmant-item">
+                <img class="specification-icon" src="/static/images/icons/department-icon-0.png">
+                <p class="animated-number">55000</p><p>Изделий</p>
+            </div>
+            <div class="departmant-item">
+                <img class="specification-icon" src="/static/images/icons/department-icon-0.png">
+                <p class="animated-number">50</p><p>Стран</p>
+            </div>
+            <div class="departmant-item">
+                <img class="specification-icon" src="/static/images/icons/department-icon-0.png">
+                <p class="animated-number">10000</p><p>Заказчиков</p>
+            </div>
+            <div class="departmant-item">
+                <img class="specification-icon" src="/static/images/icons/department-icon-0.png">
+                <p class="animated-number">60</p><p>Лет опыта</p>
+            </div>
+            <div class="departmant-item">
+                <img class="specification-icon" src="/static/images/icons/department-icon-0.png">
+                <p class="animated-number">1000</p><p>Патентов</p>
+            </div>
+            <div class="departmant-item">
+                <img class="specification-icon" src="/static/images/icons/department-icon-0.png">
+                <p class="animated-number">3000</p><p>Инженеров</p>
+            </div>
+            <script type="text/javascript" src="{% static 'js/animate_numbers.js' %}"></script>
         </div> 
     </div> 
     
     <div class="default-block" style="margin-bottom:15%;"> 
         <div style="margin-top:1vh;" class="orange-gl"></div>
         <div class="paragraph">
-            <div class="paragraph-title" style="font-weight:800;">TE Industry Rus</div>
+            <h1>TE Industry Rus</h1>
             <div class="paragraph" style="text-align:left;">
                 <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-1.png' %}">
                 TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге, 
@@ -94,7 +111,7 @@
     <div class="default-block"> 
         <div style="margin-top:1vh;" class="orange-gl"></div>
         <div class="paragraph">
-            <div class="paragraph-title" style="font-weight:800;">Отделение электрики</div>
+            <h1>Отделение электрики</h1>
             <div class="paragraph">
                 <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-0.png' %}">
                 TE Industry Rus – относится к одному из подразделений 

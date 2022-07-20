@@ -5,16 +5,8 @@ from xlsx2html import xlsx2html
 from pytils.translit import slugify 
 from .models import *
 
-from .header import *
 from .catalog import CATALOGS 
 from .modals import MODALS
-from .contacts import CONTACTS
-from .product import PRODUCTS
-from .department_info import DEPARTMENT_SPECIFICATIONS
-from .slideshows import TEXT_SLIDESHOWS,IMAGE_SLIDESHOWS
-from .tables import TABLES
-
-from django.views.decorators.cache import never_cache
 
 
 def index(request): 
@@ -22,8 +14,6 @@ def index(request):
         request,
         template_name="electrical/index.html",
         context={
-            'dropdown1':DROPDOWN_1, 
-            'department_specifications':DEPARTMENT_SPECIFICATIONS, 
             'image_slideshow': [
                 '/static/images/slideshow/robots.png',
                 '/static/images/slideshow/man1.png',
