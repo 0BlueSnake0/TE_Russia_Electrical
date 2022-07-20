@@ -1,18 +1,31 @@
 #desktop-navigation {
+    position:relative;
     display:flex;
     align-items: center;
+    justify-content:space-between;
+    width:100%;
+    transition:0.3s;
+
+    background-color:white;
+    z-index:6;
 }
 
 #desktop-navigation #buttons {
     position:relative;
     display:flex;
+    flex-wrap:wrap;
     align-items: center;
-    justify-content: right;
-    width:100%;
-    z-index:5;
+    justify-content: center;
+    margin-left:auto;
+    margin-right:15%;
+    width:auto;
+    z-index:7;
 }
 
+
 #desktop-navigation li {
+    list-style-type:none;
+    white-space:nowrap;
     padding:0.5vw;
 }
  
@@ -27,7 +40,7 @@
 
 #desktop-navigation .dropdown {
     position:relative;
-    display:block; 
+    display:block;
     padding:0.5vw;
     text-align:left;
 }
@@ -49,7 +62,7 @@
     position:absolute;
     width:auto;
     height:auto;
-    padding:0.5vw;
+    padding:2vw;
 } 
 
 
@@ -57,8 +70,7 @@
     display:block;
     background-color: white;
     box-shadow: 4px 4px 47px 11px rgba(0, 0, 0, 0.2);
-    animation-name: navigation-dropdown;
-    animation-duration: 0.8s;
+    animation: fading-top 0.8s;
 } 
 
 #desktop-navigation .dropdown label span {
@@ -73,4 +85,9 @@
 #desktop-navigation .dropdown label:hover span {
     border-left: 0.1vw solid #e98300; 
     border-top: 0.1vw solid #e98300; 
+}
+
+
+#logo {
+    margin-left:2vw;
 }

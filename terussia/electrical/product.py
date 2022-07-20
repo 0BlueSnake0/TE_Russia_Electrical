@@ -48,7 +48,7 @@ PRODUCTS = {
             "Клеммные соединения Entrelec":CATALOGS["clamp-connections"]["link"],
             "Клеммы с варисторами и защитными диодами":CATALOGS["clamps-with-varistors-and-protective-diods"]["link"],
         },
-        "software_link":" https://www.te.com/usa-en/products/brands/entrelec/easy-rail-designer-3d.html?tab=pgp-story",
+        "software_link":"https://www.te.com/usa-en/products/brands/entrelec/easy-rail-designer-3d.html?tab=pgp-story",
     }, 
     "distribution-blocks":{ 
         "product_title":"Распределительные блоки", 

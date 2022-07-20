@@ -7,13 +7,14 @@ from phonenumber_field.modelfields import PhoneNumberField
 
 
 class Modal(models.Model):
-    title = models.CharField(default='', max_length=255)
+    button_title = models.CharField(default='', max_length=255)
+    button_text = models.TextField(default='', blank=True)
     slug = models.SlugField(default='', max_length=255, unique=True)
     content = RichTextUploadingField(default='', blank=True)
 
 
     def __str__(self):
-        return f'{self.title}'
+        return f'{self.button_title}'
 
 
 class Catalog(models.Model):
@@ -50,19 +51,16 @@ class ProductVideo(models.Model):
 
 class Product(models.Model):
     name = models.CharField(default='', max_length=255)
-    description = RichTextUploadingField(default='', blank=True)
-    image = models.ImageField(default='', blank=True, upload_to='products/',
-        validators=[
-            FileExtensionValidator(['png', 'jpg'])
-        ] 
-    )
     order = models.PositiveIntegerField(default=0)
-    catalogs = models.ManyToManyField(Catalog, blank=True)
-    modals = models.ManyToManyField(Modal, blank=True)
-
-    software_link = models.URLField(default='', blank=True, max_length=255)
-    videos = models.ManyToManyField(ProductVideo, blank=True)
     slug = models.SlugField(default='', max_length=255, unique=True)
+
+    description1 = RichTextUploadingField(default='', blank=True)
+    videos = models.ManyToManyField(ProductVideo, blank=True)
+    description2 = RichTextUploadingField(default='', blank=True)
+    modals = models.ManyToManyField(Modal, blank=True)
+    description3 = RichTextUploadingField(default='', blank=True)
+    catalogs = models.ManyToManyField(Catalog, blank=True)
+    software_link = models.URLField(default='', blank=True, max_length=255)
 
     def __str__(self):
         return f'{self.name}' 

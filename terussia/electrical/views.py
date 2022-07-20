@@ -25,11 +25,11 @@ def index(request):
             'dropdown1':DROPDOWN_1, 
             'department_specifications':DEPARTMENT_SPECIFICATIONS, 
             'image_slideshow': [
-                '/static/images/slideshow/machine.png',
+                '/static/images/slideshow/robots.png',
                 '/static/images/slideshow/man1.png',
                 '/static/images/slideshow/man2.png',
-                '/static/images/slideshow/robots.png',
                 '/static/images/slideshow/surgeon.png',
+                '/static/images/slideshow/machine.png',
             ],
             'text_slideshow': {
                 0: {

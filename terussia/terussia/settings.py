@@ -14,6 +14,7 @@ ALLOWED_HOSTS = [
     'bluesnakeengineer.ru',
     '127.0.0.1', 
     '192.168.1.68', 
+    '192.168.1.54',
 ]
 
 
@@ -126,11 +127,11 @@ CKEDITOR_CONFIGS = {
             ['Link', 'Unlink'],
             ['RemoveFormat', 'Source']
         ],
-        "height": '50%',
-        "width": '100%',
-        "filebrowserWindowWidth": 940,
+        "filebrowserWindowWidth":1200,
         "filebrowserWindowHeight": 725,
     },
+
+
 }
  
 

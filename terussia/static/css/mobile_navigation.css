@@ -127,8 +127,7 @@
     padding:0.5vw;
 
     background-color: white;
-    animation-name: navigation-dropdown;
-    animation-duration: 0.8s;
+    animation: fading-top 0.8s;
 } 
 
 

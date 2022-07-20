@@ -1,11 +1,8 @@
 
-function OpenModal(id) {   
-    var backgroundId = "#" + id + "-background";
-    console.log("opening " + backgroundId);
-    $(backgroundId).css("display", "block");
+function OpenModal(modalId) {
+    document.getElementById(modalId).style.display = "flex";
 }  
 
-function CloseModal(id) {    
-    var backgroundId = "#" + id + "-background";
-    $(backgroundId).css("display", "none");
+function CloseModal(modalId) {
+    document.getElementById(modalId).style.display = "none";
 }   

@@ -4,22 +4,15 @@
 {% block product %} 
 
  
-<title>{{product.name}}</title>     
+<title>{{product.name}}</title>
 
- 
-<script type="text/javascript"> 
-    OpenModal("{{product.startModal}}");
-</script> 
-
-<section>
-    <div style="width:74vw; margin-left:auto;margin-right:auto;"> 
+<section style="width:74vw;margin-left:auto;margin-right:auto;">
         <h1 style="text-align:center;font-weight:800;color: #e98300;">{{product.name}}</h1>
-    
-        <div style="display:flex;justify-content:center">
-            {% if product.image and product.image.url %}
-                <img class="product-image" src="{{product.image.url}}">
-            {% endif %}
-        </div>
+
+        {% if product.description1 != "" %}
+        <div class="product-description">{{product.description1|safe}}</div>
+        {% endif %}
+
 
         <div class="project-videos">
             {% for video in product.videos.all %}
@@ -27,128 +20,49 @@
             {% endfor %}
         </div>
 
-        <!-- {% if product.text_image_blocks %}
-            {% for title, text_image_block in product.text_image_blocks.items %}
-                <div style="width:100%;display:block;">
-                    <div>
-                        {% if text_image_block.subtitle %}
-                            <p class="paragraph-title">{{text_image_block.subtitle}}</p>
-                        {% endif %} 
-                        <div style="width:100%;display:flex;">
-                            <img class="static-image" src="{{text_image_block.static_image}}" 
-                            style = "width:{{text_image_block.static_image_settings.width}};
-                            height:{{text_image_block.static_image_settings.height}};"> 
-                        </div>
-                        {% if text_image_block.videos %} 
-                            {% for title, video in text_image_block.videos.items %}   
-                                {% if video.src != "" %}
-                                    {% include 'electrical/video_detail.html' %} 
-                                {% endif %}
-                            {% endfor %}  
-                        {% endif %}  
-                        <p class="paragraph" style="text-align: left;">{{text_image_block.text}}</p>
-                    </div> 
-                </div>
-            {% endfor %}  
-        {% endif %}   -->
-        
-        <div class="product-description">
-            {{product.description|safe}}
-        </div>
- 
-        <div class="product-modals">
-            {% for modal in product.modals.all %}
-                <a class="modal-btn" href="javascript:OpenModal('{{modal.slug}}')"> 
-                    <h1>{{modal.title}}</h1>
-                </a>
-                <div class="modal" id="{{modal.slug}}">
-                    {{modal.content|safe}}
-                </div>
-            {% endfor %}
-        </div>
-        
-        <!-- <div id="description" style="
-        z-index:1; 
-        {% if product.description.description_settings.columns %} 
-        display:flex; 
+        {% if product.description2 != "" %}
+        <div class="product-description">{{product.description2|safe}}</div>
         {% endif %}
-        ">
-            {% for title, paragraph in product.description.items %}
-                <div class="description-item">
-                    <p class="paragraph-title" 
-                    style="font-weight:800;font-family:Arial, Helvetica, sans-serif, Impact;">
-                    {{paragraph.subtitle}}</p>   
-                    <p class="paragraph" style="text-align:center;margin-bottom:auto;">{{paragraph.text}}</p>   
 
-                    <div style="position: relative;display:flex;justify-content:center;">
-                    {% for title, link in paragraph.links.items %} 
-                    <div>
-                        <a href="{{link}}"  
-                        class="modal-btn paragraph-title">{{title}}</a>
-                        {% include 'electrical/modals/image_modal.html' %} 
-                    </div>
-                    {% endfor %}
-                    </div>
-                </div> 
+        <div class="modals">
+            {% for modal in product.modals.all %}
+                <div class="modal-btn" >
+                    <h1>{{modal.button_title}}</h1>
+                    <p>{{modal.button_text}}</p>
+                    <button class="product-button" onclick="OpenModal('{{modal.slug}}')">
+                        <h1>{{modal.button_title}}</h1>
+                    </button>
+                </div>
+                {% include 'electrical/modal.html' %}
             {% endfor %} 
         </div> 
-        {% if product.description.description_settings.columns %}  
-            <script type="text/javascript">
-                var columns = {{product.description.description_settings.columns}};  
-                var column_width = (100 / columns); 
-                $("#description .description-item").css("width", column_width + "%"); 
-            </script>
-        {% endif %} 
-        
 
-        {% if product.link_blocks %}
-            {% for title, link_block in product.link_blocks.items %}
-                <div style="width:100%;display:block;">
-                    {% if link_block.subtitle %}
-                        <p class="paragraph-title">{{text_image_block.subtitle}}</p>
-                    {% endif %} 
-                    <div style="width:100%;display:flex;justify-content:center;align-items: center;">
-                        <img class="static-image" src="{{link_block.static_image}}" 
-                        style = " 
-                        width:{{link_block.static_image_settings.width}};
-                        height:{{link_block.static_image_settings.height}};"> 
-                        <ul class="link-list">
-                            {% for title, link in link_block.links.items %}
-                                <li><a class="paragraph info-link" href="{{link}}">{{title}}</a></li>
-                            {% endfor %} 
-                        </ul>
-                    </div>
-                </div>
-            {% endfor %}  
-        {% endif %}  -->
 
-        <!-- <div class="product-buttons-block">
-            {% if product.catalog_links %}
-                {% if product.catalog_links|length == 1 %} 
-                    <div style="margin:2em;">
-                        <a class="catalog-link" href="{{link_to_catalog}}">Каталог</a>
-                    </div>
-                {% else %} 
-                <div style="margin:2em;margin-top:5vw;margin-bottom:5vw;"> 
-                    <a class="catalog-dropbtn catalog-link">Каталоги</a>
-                    <div style="display:flex;">
-                        <div class="catalog-dropdown-content">
-                            {% for title, link in product.catalog_links.items %}
-                                <a class="catalog-dropdown-item catalog-link" href="{{link}}">{{title}}</a>
-                            {% endfor %} 
-                        </div> 
-                    </div>
+        {% if product.description3 != "" %}
+        <div class="product-description">{{product.description3|safe}}</div>
+        {% endif %}
+
+        {% if product.catalogs.all|length > 0 %}
+            <div class="button-set">
+                <div class="product-button catalog-link">
+                    <h1>Каталоги</h1>
+                    <ul>
+                        {% for catalog in product.catalogs.all %}
+                        <li>
+                        <a class="product-button catalog-link" href="{% url 'electrical:catalog_detail' catalog_slug=catalog.slug %}">
+                            <h3>{{catalog.name}}</h3>
+                        </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
                 </div>
+                {% if product.software_link %}
+                <a class="product-button software-link" href="{{product.software_link}}">
+                    <h2>Программное обеспечение</h2>
+                </a>
                 {% endif %}
-            {% endif %}  
-            {% if product.software_link %}
-                <div style="margin:2em;"> 
-                    <a class="software-link" href="{{product.software_link}}">Программное обеспечение</a>
-                </div>
-            {% endif %} 
-        </div> -->
-
-    </div>
+            </div>
+        {% endif %}
 
 </section>
 

@@ -1,31 +1,27 @@
 {% load static %}  
 {% load customtags %}   
 <head> 
-    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script> 
-    <script type="text/javascript" src="{% static 'js/modal.js' %}?v=5"></script>     
-    <link rel="stylesheet" type="text/css" href="{% static 'css/navigation.css' %}?v=5">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}?v=5">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/searcher.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/contacts.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/catalog.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/products.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/slideshow.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/animations.css' %}?v=5"> 
-    <link rel="stylesheet" type="text/css" href="{% static 'css/video.css' %}?v=5">
-    <link rel="stylesheet" type="text/css" href="{% static 'css/modals/image_modal.css' %}?v=5">
-    <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.css">
-    <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.min.css"> 
-    <link rel="stylesheet" type="text/css" href="https://unpkg.com/@silvermine/videojs-quality-selector/dist/css/quality-selector.css?v=5">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/videojs-resolution-switcher/0.4.2/videojs-resolution-switcher.min.css" />
+    <link rel="stylesheet" type="text/css" href="{% static 'css/navigation.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/header.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/footer.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/main.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/contacts.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/catalog.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/product.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/slideshow.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/animations.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/video.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/modal.css' %}">
+
+    <link rel="stylesheet" type="text/css" href="{% static 'css/video-js.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/video-js.min.css' %}">
+    <script type="text/javascript" src="{% static 'js/jquery.min.js' %}"></script>
+    <script type="text/javascript" src="{% static 'js/modal.js' %}"></script>
 </head>
 
 <body> 
     <div id="up"></div>
-    <a href="#up" id="page-up">
-        <img style="margin:auto;height:3vh; ;" src="{% static 'images/icons/page-up.png' %}">
-    </a> 
+    <a href="#up" id="page-up"><div></div><div></div><div></div></a>
 
     {% include 'header.html' %} 
 
@@ -36,7 +32,5 @@
     {% block product %}{% endblock %}
     {% block timetable %}{% endblock %} 
 
-    {% include 'footer.html' %}  
-
-    <script type="text/javascript" src="{% static 'main/js/navigation.js' %}?v=5""></script>  
+    {% include 'footer.html' %}
 </body> 

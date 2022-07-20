@@ -12,7 +12,8 @@ admin.site.unregister(User)
 @admin.register(Modal)
 class ModalAdmin(admin.ModelAdmin):
     list_display = [
-        'title',
+        'button_title',
+        'get_button_text',
         'slug',
         'get_content', 
     ]  
@@ -22,6 +23,15 @@ class ModalAdmin(admin.ModelAdmin):
         return mark_safe(html)
     
     get_content.short_description = "Content"
+
+
+    def get_button_text(self, obj):
+        html = ""
+        if obj.button_text:
+            html = f"{obj.button_text}"
+        return mark_safe(html)
+
+    get_button_text.short_description = "Button text"
 
 
 @admin.register(Catalog)
@@ -86,7 +96,7 @@ class ProductAdmin(admin.ModelAdmin):
         'name',
         'order',
         'slug',
-        'get_image',
+        'get_description1',
         'get_modals',
         'get_videos',
         'get_catalogs',
@@ -94,15 +104,13 @@ class ProductAdmin(admin.ModelAdmin):
  
     ordering = ['order']
 
-    def get_image(self, obj):
+    def get_description1(self, obj):
         html = ""
-        if obj.image and obj.image.url:
-                html = f"""
-                <img src="{obj.image.url}" style="width:25em;">
-            """
+        if obj.description1:
+            html = f"""{obj.description1}"""
         return mark_safe(html)
 
-    get_image.short_description = "Image"
+    get_description1.short_description = "Description 1"
 
  
     def get_modals(self, obj):
@@ -116,7 +124,7 @@ class ProductAdmin(admin.ModelAdmin):
         for modal in obj.modals.all():
             html += f'''
                 <a class="edit-link" href="/admin/{modal._meta.app_label}/{modal._meta.model_name}/{modal.pk}/change">
-                {modal.title}
+                {modal.button_title}
                 </a>
             '''
         html+= "</div>"  
