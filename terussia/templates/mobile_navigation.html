@@ -6,6 +6,7 @@
     <span id="open" onclick="PressDropdown()"><div></div><div></div><div></div></span>
     <input id="dropdown-check" type="checkbox">
 </nav>
+
 <ul id="mobile-dropdown">
     <span id="close" onclick="PressDropdown()"><div></div><div></div></span>
     <li class="dropdown">
@@ -18,7 +19,7 @@
                 <ul>
                     {% get_products as products %} 
                     {% for product in products %}
-                        <li><a href="{% url 'electrical:product_detail' product_slug=product.slug %}">{{product.name}}</a></li> 
+                        <li><a href="{% url 'electrical:product_detail' product_slug=product.slug %}"><p>{{product.name}}</p></a></li>
                     {% endfor %} 
                 </ul>
             </div>
@@ -33,8 +34,8 @@
             </div>
             <div class="dropdown-content">
                 <ul>
-                    <li><a href="{% url 'electrical:catalogs' %}">Каталоги продукции</a></li>
-                    <li><a href="{% url 'electrical:seminars_timetable' %}">Обучение</a></li>
+                    <li><a href="{% url 'electrical:catalogs' %}"><p>Каталоги продукции</p></a></li>
+                    <li><a href="{% url 'electrical:seminars_timetable' %}"><p>Обучение</p></a></li>
                 </ul>
             </div>
         </label>
@@ -50,12 +51,13 @@
                     {% get_contacts as contacts %}
                     {% for contact in contacts %}
                         {% slugify_word contact as slugified_city %}
-                        <li><a href="/contacts/{{slugified_city}}">{{contact}}</a></li>
+                        <li><a href="/contacts/{{slugified_city}}"><p>{{contact}}</p></a></li>
                     {% endfor %}
-                    <li><a href="">Ответственность по регионам</a></li>
+                    <li><a href=""><p>Ответственность по регионам</p></a></li>
                 </ul>
             </div>
         </label>
     </li>
 </ul> 
-<script type="text/javascript" src="{% static 'js/dropdown.js' %}?v=2"></script>
+
+<script type="text/javascript" src="{% static 'js/dropdown.js' %}"></script>

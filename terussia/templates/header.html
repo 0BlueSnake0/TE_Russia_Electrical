@@ -2,46 +2,21 @@
 {% load customtags %}     
 
 
-<header>  
-    <div class="contact-info">    
-        <div id="contact-info">
-            <div id="address-and-tel">
-                <a class="default-text">
-                    <img src="{% static 'images/icons/address.png' %}">
-                    <p>Адрес: </p>
-                    <p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p> 
-                </a> 
-                <div class="gray-vl"></div>
-                <a href="tel:7-495-790-9028" class="default-text" type="tel">
-                    <img src="{% static 'images/icons/phone.png' %}">
-                    <p>Телефон: </p>
-                    <p>+7(495) 790-9028</p>  
-                </a>   
-            </div>   
-        </div>
-        <div class="gray-gl"></div>
+<header>
+    <div id="contact-info">
+        <a>
+            <img src="{% static 'images/icons/address.png' %}">
+            <p>Адрес:</p><p>127287 г. Москва, ул. 2-я Хуторская, д. 38А, стр. 8</p>
+        </a>
+        <div class="vertical-line"></div>
+        <a href="tel:7-495-790-9028" type="tel">
+            <img src="{% static 'images/icons/phone.png' %}">
+            <p>Телефон:</p><p>+7(495) 790-9028</p>
+        </a>
     </div>
-    
+
+    <div class="horizontal-line"></div>
     {% include 'desktop_navigation.html' %}
     {% include 'mobile_navigation.html' %}
-
-    <div style="margin-top:1vh;" class="orange-gl"></div>
-    {% if under_header_content %}
-        <div class="under-header-content">  
-            <div style="width:100%;display:flex;flex-direction:column;">
-                <span class="under-header-title default-text">
-                Посмотреть расписание вебинаров TE Connectivity
-                </span>   
-                <span class="under-header-title default-text"> 
-                    и записаться на них можно
-                    <span class="title default-text">  
-                    <a style="text-decoration:none;padding:0.1em;" class="default-text or-bl-link" 
-                    target="_blank" href="{% url 'electrical:seminars_timetable' %}">ЗДЕСЬ</a>
-                    </span>   
-                </span>   
-            </div>
-        </div>  
-        <div style="margin-top:1vh;" class="orange-gl"></div>
-    {% endif %}
-
+    <div class="horizontal-line"></div>
 </header>  

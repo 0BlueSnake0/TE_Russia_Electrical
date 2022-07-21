@@ -10,7 +10,7 @@ STATES = {
        ("Kabardin-Balkar", "RUS2304"),
        ("North Ossetia", "RUS2305"),
        ("Stavropol'", "RUS2306"),
-       ("Bryansk", "RUS2337"),
+       ("Bryansk", "RUS2342"),
        ("Smolensk", "RUS2343"),
        ("Ivanovo", "RUS2355"),
        ("Kostroma", "RUS2356"),
@@ -31,9 +31,10 @@ STATES = {
        ("Tambov", "RUS2375"),
        ("Vladimir", "RUS2376"),
        ("Voronezh", "RUS2377"),
+       ("Astrakhan'", "RUS2388"),
        ("Kalmyk", "RUS2390"),
        ("Chechnya", "RUS2416"),
-       ("Dagestan", "RUS2417")
+       ("Dagestan", "RUS2417"),
     ],
     "#b5e61d": [
         ("Kaliningrad", "RUS2324"),
@@ -100,12 +101,13 @@ class InitStatesMiddleware:
 
 
     def __call__(self, request): 
-        for region_color in STATES:
-            for (name, slug) in STATES[region_color]:
-                if not State.objects.filter(slug=slug).exists():
-                    state = State.objects.create(slug=slug, name=name) 
-                    if Region.objects.filter(color=region_color).exists(): 
-                        state.region = Region.objects.get(color=region_color)
-                        state.save()
+        if 'admin' in request.path:
+            for region_color in STATES:
+                for (name, slug) in STATES[region_color]:
+                    if not State.objects.filter(slug=slug).exists():
+                        state = State.objects.create(slug=slug, name=name)
+                        if Region.objects.filter(color=region_color).exists():
+                            state.region = Region.objects.get(color=region_color)
+                            state.save()
 
         return self.get_response(request)

@@ -65,7 +65,6 @@
     border:none;
     cursor:pointer;
 
-    color: white;
     background-color:#e98300;
     box-shadow: 16px 15px 35px 0px rgba(34, 60, 80, 0.8);
 }
@@ -81,6 +80,7 @@
     text-align:center;
     word-wrap:break-word;
     font-weight:bold;
+    color: white;
 }
 
 

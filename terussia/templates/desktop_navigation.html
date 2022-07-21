@@ -52,15 +52,16 @@
             </label>
         </li>
     </ul>
-</nav> 
+</nav>
 
 
 <script>
     var desktop_navigation = document.getElementById("desktop-navigation");
+    var fix = 350;
     window.addEventListener(
         "scroll", function(e) {
             var scrolled = document.body.scrollTop - desktop_navigation.offsetTop;
-            if (scrolled > 150 ) {
+            if (scrolled >= fix ) {
                 $("#page-up").css("display", "flex");
 
                 $("#desktop-navigation").css("position", "fixed");

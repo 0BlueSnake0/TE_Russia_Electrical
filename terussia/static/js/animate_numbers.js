@@ -12,7 +12,7 @@ function animateNumber(counter, start, end, duration) {
 }
 
 function animateAllNumbers () {  
-    var dep = document.getElementById("department-info"); 
+    var dep = document.getElementById("department-info");
     var showed = document.getElementById("animated-numbers");  
     if (showed.value == "false" && dep.offsetTop -document.body.scrollTop <= 640) { 
         for (var i=0;i<counters.length;i++) {  

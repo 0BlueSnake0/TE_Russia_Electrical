@@ -14,7 +14,7 @@ function ActivateSlide(slideshowID, slideIndex)
         activated_slides[slideshowID] = slideIndex;
     }
 }
-if (slides.length > 0) ActivateSlide(currentSlideshowID, 0);
+if (slides.length > 0) ActivateSlide(currentSlideShowID, 0);
 
 
 function prevSlide(slideshowID) {
@@ -60,11 +60,11 @@ function pressKey(event) {
 }
 
 
-function addKeyControl (slideshowID) {    
+function addKeyControl(slideshowID) {
     $("body").on("keydown",{slideshowID:slideshowID }, pressKey);
 }
 
 
-function removeKeyControl () {   
+function removeKeyControl() {
     $("body").unbind("keydown");
 }

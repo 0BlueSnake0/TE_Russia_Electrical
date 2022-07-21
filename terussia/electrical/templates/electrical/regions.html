@@ -7,41 +7,45 @@
 
 <title>Ответственность по регионам</title>  
 
-<h1 class="paragraph-title">Ответственность по регионам</h1>
+<h1>Ответственность по регионам</h1>
+<div style="width:100%;"><div id="map"></div></div>
 
-<div style="width:74vw; margin-left:auto;margin-right:auto;"><div id="map"></div></div> 
-<div class="contact-list"> 
-    {% for city, contact_list in contacts.items %}   
+<div class="contact-list">
+    {% for city, contact_list in contacts.items %}
         {% for contact in contact_list %}
-            <div class="contact" id="{{contact.region.slug}}" style="display:none;"> 
-                <p class="contact-title">{{contact.first_name}} {{contact.last_name}}</p>
-                <div class="contact-text">
-                    <p class="position">{{contact.position}}</p>
-                    <div> 
-                        <div><p style="color:gray;">{{contact.organization}}</p></div>
-                        {% if contact.address %}
-                            <div><p style="color:gray;">{{contact.address}}</p></div> 
-                        {% endif %}
-                        <label style="display:flex;align-items:center;">
-                            <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p><a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel">{{contact.tel}}</a>
-                            {% if contact.extended_number %}
-                                <p style="color:gray;"> доб. {{contact.extended_number}}</p>
-                            {% endif %} 
-                        </label>   
-                        <div style="display:flex;align-items:center;">
-                            <p style="margin-right:1em;color:#e98300;font-weight:800;">
-                            MOBILE</p><a href="tel:{{contact.mobile}}" type="tel">{{contact.mobile}}</a>
-                        </div>
-                    </div>
-                    <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
-                        <img class="contact-email-icon" src="{% static 'images/icons/@-email-2.png' %}">
-                        {{contact.email}}
-                    </a>
-                </div> 
-            </div> 
+            <div class="contact" id="{{contact.region.slug}}" style="display:none;">
+                <h2>{{contact.first_name}} {{contact.last_name}}</h2>
+                <p>{{contact.position}}</p>
+                <p style="color:gray;">{{contact.organization}}</p>
+
+                {% if contact.address %}
+                <p style="color:gray;">{{contact.address}}</p>
+                {% endif %}
+
+                <label style="display:flex;align-items:center;">
+                    <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p>
+                    <a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel"><p>{{contact.tel}}</p></a>
+                    {% if contact.extended_number %}
+                        <p style="color:gray;"> доб. {{contact.extended_number}}</p>
+                    {% endif %}
+                </label>
+
+                <div style="display:flex;align-items:center;">
+                    <p style="margin-right:1em;color:#e98300;font-weight:800;">MOBILE</p>
+                    <a href="tel:{{contact.mobile}}" type="tel"><p>{{contact.mobile}}</p></a>
+                </div>
+
+                <a target="_blank" style="color:#0066a1;display:flex;align-items:center;" href="mailto:{{contact.email}}">
+                    <img src="{% static 'images/icons/email.png' %}">
+                    <p>{{contact.email}}</p>
+                </a>
+
+            </div>
+
         {% endfor %}
     {% endfor %}
-</div>  
+</div>
+
 
 
 <script type="text/javascript" src="{% static 'js/mapdata.js' %}" ></script>

@@ -23,14 +23,14 @@ def index(request):
             ],
             'text_slideshow': {
                 0: {
-                    "title":"ПРОДУКЦИЯ НА СКЛАДЕ В РОССИИ",
+                    "title":"Продукция на складе в Росии",
                     "text":"""
                         Локализация склада в Москве позволяет осуществлять 
                         отгрузки продукции буквально на следующий день после размещения заказа
                     """,
                 },
                 1: { 
-                    "title":"ОБУЧАЮЩИЕ ЦЕНТРЫ В РОССИИ",
+                    "title":"Обучающие центры в России",
                     "text":"""
                         Тайко Электроникс РУС – это 2 крупных центра ТЕХНИЧЕСКОЙ  
                         поддержки клиентов в Москве и Санкт-Петербурге, которые занимаются 
@@ -41,7 +41,7 @@ def index(request):
                     """, 
                 },
                 2: { 
-                    "title":"СЕТЬ ДИСТРИБЬЮТОРОВ",
+                    "title":"Сеть дистрибьюторов",
                     "text":"""
                         Разветвленная сеть дистрибьюторских центров насчитывает более 50 
                         крупных организаций по всей территории РФ, что позволяет
@@ -49,15 +49,14 @@ def index(request):
                     """, 
                 },
                 3: { 
-                    "title":"ПРЕДСТАВИТЕЛЬСТВА В РЕГИОНАХ",
+                    "title":"Представительства в регионах",
                     "text":"""
                         Офисы “Тайко Электроникс РУС” представлены в основных 
                         крупных регионах России, в городах: Москва, Санкт-Петербург и  
                         Екатеринбург. 
                     """, 
                 }, 
-            },
-            'under_header_content':"yes"
+            }
         }
     )   
     
@@ -67,7 +66,6 @@ def catalogs(request):
         request,
         template_name="electrical/catalogs.html",
         context={
-            'dropdown1':DROPDOWN_1,
             'catalogs':list(Catalog.objects.all()),
         }
     ) 
@@ -89,8 +87,7 @@ def contacts(request, **kwargs):
     return render(
         request,
         template_name="electrical/contacts.html",
-        context={ 
-            "contacts":CONTACTS,
+        context={
             "current_city":kwargs["city"],
             "contacts":contacts_dict[kwargs["city"]]
         }
