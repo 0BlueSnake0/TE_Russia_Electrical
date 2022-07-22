@@ -2,13 +2,6 @@ footer {
     position:relative;
     display:block;
     width:100%;
-    margin:2vw;
-    color:gray;
-} 
-
-
-footer p {
-    font-size:1vw;
 }
 
 
@@ -17,27 +10,21 @@ footer p {
     display:flex;
     justify-content:left;
     width:100%;
-    margin-left:auto;
-    margin-right:auto;
+    margin:1vw;
 }
 
 
 #footer-content {
     position:relative;
-    display:flex; 
-    align-items:center;
-    justify-content:left;
+    display:flex;
     flex-wrap:wrap;
     width:100%;
-    margin-left:auto;
-    margin-right:auto; 
 }    
 
 
 #footer-content a {
     position:relative;
     display:flex;
-    justify-content:center;
     align-items:center;
 }
 
@@ -46,19 +33,52 @@ footer p {
     color:gray;
 }
 
-#footer-content a p {
-    color:#e98300;
-}
-
 #footer-content a:hover p {
     color:gray;
 }
 
 
-#footer-content a img {
-    position:relative;
-    display:block;
-    width:2.5vw;
-    height:2.5vw;
-    margin:0.5vw;
+
+/* Mobile design */
+@media screen and (max-width:1060px) {
+    footer p {
+        font-size:2.5vw;
+        margin:1vw;
+    }
+
+    #footer-content {
+        flex-direction:column;
+        justify-content:left;
+    }
+
+    #footer-content a img {
+        width:8vw;
+        height:8vw;
+        margin:1vw;
+    }
+
+     #footer-content .vertical-line {
+         display:none !important;
+    }
+}
+
+
+/* Desktop design */
+@media screen and (min-width:1060px) {
+    footer p {
+        font-size:1vw;
+        margin:0.5vw;
+    }
+
+    #footer-content {
+        flex-direction:row;
+        justify-content:center;
+        align-items:center;
+    }
+
+    #footer-content a img {
+        width:2.5vw;
+        height:2.5vw;
+        margin:0.5vw;
+    }
 }

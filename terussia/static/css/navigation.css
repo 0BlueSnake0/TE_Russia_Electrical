@@ -2,7 +2,7 @@
 @import url("/static/css/mobile_navigation.css");
 
 
-/* Mobile styles */
+/* Mobile design */
 @media screen and (max-width:1060px) {
     #desktop-navigation {
         display:none;
@@ -10,7 +10,7 @@
 }
 
 
-/* Desktop styles */
+/* Desktop design */
 @media screen and (min-width:1060px) {
     #mobile-navigation {
         display:none;

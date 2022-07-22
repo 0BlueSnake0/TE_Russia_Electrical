@@ -3,8 +3,8 @@
 
 
 <nav id="desktop-navigation">
-    <a href="https://terussia.ru/" id="logo"><img src="{% static 'images/icons/te-logo.png' %}"></a>  
-    <ul id="buttons">
+    <a href="https://terussia.ru/" class="logo"><img src="{% static 'images/icons/te-logo.png' %}"></a>
+    <ul>
         <li class="dropdown">
             <label>
                 <div style="display:flex;align-items:center;">
@@ -14,7 +14,7 @@
                     <ul>
                         {% get_products as products %} 
                         {% for product in products %}
-                            <li><a href="{% url 'electrical:product_detail' product_slug=product.slug %}">{{product.name}}</a></li> 
+                            <li><a href="{% url 'electrical:product_detail' product_slug=product.slug %}"><p>{{product.name}}</p></a></li>
                         {% endfor %} 
                     </ul>
                 </div>
@@ -28,8 +28,8 @@
                 </div>
                 <div class="dropdown-content">
                     <ul>
-                        <li><a href="{% url 'electrical:catalogs' %}">Каталоги продукции</a></li>
-                        <li><a href="{% url 'electrical:seminars_timetable' %}">Обучение</a></li>
+                        <li><a href="{% url 'electrical:catalogs' %}"><p>Каталоги продукции</p></a></li>
+                        <li><a href="{% url 'electrical:seminars_timetable' %}"><p>Обучение</p></a></li>
                     </ul>
                 </div>
             </label>
@@ -44,9 +44,9 @@
                         {% get_contacts as contacts %}
                         {% for contact in contacts %}
                             {% slugify_word contact as slugified_city %}
-                            <li><a href="/contacts/{{slugified_city}}">{{contact}}</a></li>
+                            <li><a href="/contacts/{{slugified_city}}"><p>{{contact}}</p></a></li>
                         {% endfor %}
-                        <li><a href="{% url 'electrical:regions' %}">Ответственность по регионам</a></li>
+                        <li><a href="{% url 'electrical:regions' %}"><p>Ответственность по регионам</p></a></li>
                     </ul>
                 </div>
             </label>
@@ -69,6 +69,8 @@
                 $("#desktop-navigation").css("left", "0");
                 $("#desktop-navigation").css("padding", "1vw");
                 $("#desktop-navigation").css("box-shadow", "4px 4px 47px 11px rgba(0, 0, 0, 0.2)");
+                $("#desktop-navigation ul").css("margin-right", "15%");
+                $("#desktop-navigation .logo").css("display", "flex");
             }
             else {
                 $("#page-up").css("display", "none");
@@ -76,6 +78,8 @@
                 $("#desktop-navigation").css("position", "relative");
                 $("#desktop-navigation").css("padding", "0vw");
                 $("#desktop-navigation").css("box-shadow", "0px 0px 0px 0px");
+                $("#desktop-navigation #buttons").css("margin-right", "5%");
+                $("#desktop-navigation .logo").css("display", "none");
             }
         }
     );

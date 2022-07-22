@@ -15,25 +15,25 @@
 
 
 <div style="width:100%;display:flex;justify-content:center;">
-    <p style="width:50%;font-size:1.25vw;text-align:center;">
-    Посмотреть расписание вебинаров TE Connectivity и записаться на них можно
-    <a target="_blank" href="{% url 'electrical:seminars_timetable' %}">ЗДЕСЬ</a>
+    <p style="text-align:center;" id="seminars-link">
+        Посмотреть расписание вебинаров TE Connectivity и записаться на них можно
+        <a target="_blank" style="color:#e98300;" href="{% url 'electrical:seminars_timetable' %}">ЗДЕСЬ</a>
     </p>
 </div>
-
 <div class="horizontal-line"></div>
 
 
-<section>  
+<section>
     {% with image_slideshow as content %}
-        {% with 'image' as data_type %} 
+        {% with 'image' as data_type %}
             {% with 'slideshow-1' as slideshowId %}
                 {% include 'slideshow.html' %}
             {% endwith %}
         {% endwith %}
     {% endwith %}
 </section>
- 
+
+
 <section>
     <div id="huge-nums" class="flexbox">
         <div class="flex-item">
@@ -77,32 +77,32 @@
         <input id="animated-numbers" value="false" style="display:none;">
         <div class="flex-item">
             <img src="/static/images/icons/department-icon-0.png">
-            <h2 class="animated-number">55000</h2>
+            <h1 class="animated-number">55000</h1>
             <h1>Изделий</h1>
         </div>
         <div class="flex-item">
             <img src="/static/images/icons/department-icon-1.png">
-            <h2 class="animated-number">50</h2>
+            <h1 class="animated-number">50</h1>
             <h1>Стран</h1>
         </div>
         <div class="flex-item">
             <img src="/static/images/icons/department-icon-2.png">
-            <h2 class="animated-number">10000</h2>
+            <h1 class="animated-number">10000</h1>
             <h1>Заказчиков</p>
         </div>
         <div class="flex-item">
             <img src="/static/images/icons/department-icon-3.png">
-            <h2 class="animated-number">60</h2>
+            <h1 class="animated-number">60</h1>
             <h1>Лет опыта</p>
         </div>
         <div class="flex-item">
             <img src="/static/images/icons/department-icon-4.png">
-            <h2 class="animated-number">1000</h2>
+            <h1 class="animated-number">1000</h1>
             <h1>Патентов</h1>
         </div>
         <div class="flex-item">
             <img src="/static/images/icons/department-icon-5.png">
-            <h2 class="animated-number">3000</h2>
+            <h1 class="animated-number">3000</h1>
             <h1>Инженеров</h1>
         </div>
     </div>
@@ -113,7 +113,7 @@
     <div class="horizontal-line"></div>
     <h1 class="section-title">TE Industry Rus</h1>
     <p>
-        <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-1.png' %}">
+        <img src="{% static 'images/static-images/main-page-photo-1.png' %}">
         TE Industry Rus – имеет два офиса продаж в Москве и Санкт-Петербурге,
         а так же поддерживает склад продукции в Москве и осуществляет доставку
         продукции в любую точку Российской Федерации.
@@ -125,7 +125,7 @@
     <div class="horizontal-line"></div>
     <h1 class="section-title">Отделение электрики</h1>
     <p>
-        <img class="paragraph-img" src="{% static 'images/static-images/main-page-photo-0.png' %}">
+        <img src="{% static 'images/static-images/main-page-photo-0.png' %}">
         TE Industry Rus – относится к одному из подразделений
         компании TE Connectivity и занимается продажей и продвижением
         таких групп продукции как клемные и распределительные  блоки,
@@ -137,7 +137,7 @@
 
 <section>
     {% with text_slideshow as content %}
-        {% with 'text' as data_type %} 
+        {% with 'text' as data_type %}
             {% with 'slideshow-2' as slideshowId %}
                 {% include 'slideshow.html' %}
             {% endwith %}
@@ -170,7 +170,7 @@
         <div class="flex-item">
             <img src="{% static 'images/icons/department-icon-8.png' %}">
             <h1>Работа в команде</h1>
-            <p>
+            <p style="text-align:left;">
                 Мы культивируем среду, которая воодушевляет побеждать
                 при помощи креативности, непрерывного обучения, 
                 перфекционизма и сотрудничества. Мы практикуем лидерство,

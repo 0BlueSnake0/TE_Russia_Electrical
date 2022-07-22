@@ -1,19 +1,9 @@
-:root {
-    --not-active-dot-width:1.5vw;
-    --active-dot-width:3vw;
-}
-
 .slideshow {
     position:relative;
-    display:flex;
-    flex-direction:column;
-    justify-content:center;
-    width:100%;
-    margin-top:4vw;
-    margin-bottom:4vw;
+    display:block;
+    z-index:3;
     margin-left:auto;
     margin-right:auto;
-    z-index:3;
 }
 
 
@@ -26,17 +16,24 @@
 
 
 .slide {
-    position:relative; 
+    position:relative;
     display:block;
-    text-align:center;
-    width:90%;
+    width:100%;
+    margin-left:auto;
+    margin-right:auto;
     animation-duration: 1s;
     box-shadow: 4px 4px 47px 11px rgba(0, 0, 0, 0.2);
     z-index:1;
 }
 
 
-.slide h1 {
+.text-slide {
+    padding:4vw;
+    text-align:center;
+}
+
+
+.text-slide h1 {
     text-transform: uppercase;
 }
 
@@ -78,8 +75,6 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    width:3vw;
-    height:3vw;   
     z-index:2;
     cursor:pointer;
     transform: rotate(45deg);
@@ -91,13 +86,47 @@
 
 .slideshow .left-arrow { 
     border-left: 0.2vw solid black;  
-    border-bottom: 0.2vw solid black; 
-    margin-left:-3vw;
+    border-bottom: 0.2vw solid black;
 }
 
 
 .slideshow .right-arrow { 
     border-right: 0.2vw solid black; 
-    border-top: 0.2vw solid black;  
-    margin-right:-3vw;
+    border-top: 0.2vw solid black;
+}
+
+
+/* Mobile design */
+@media screen and (max-width:1060px) {
+    :root {
+        --active-dot-width:8vw;
+        --not-active-dot-width:4vw;
+    }
+
+    .slideshow .slideshow-arrow  {
+        display:none;
+    }
+
+    .slideshow {
+        width:96vw;
+        transform:translateX(-11vw);
+    }
+}
+
+
+/* Desktop design */
+@media screen and (min-width:1060px) {
+    :root {
+        --active-dot-width:4vw;
+        --not-active-dot-width:2vw;
+    }
+
+    .slideshow .slideshow-arrow  {
+        width:3vw;
+        height:3vw;
+    }
+
+    .slideshow {
+        width:100%;
+    }
 }

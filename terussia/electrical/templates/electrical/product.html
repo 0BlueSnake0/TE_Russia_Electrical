@@ -6,63 +6,63 @@
  
 <title>{{product.name}}</title>
 
-<section style="width:74vw;margin-left:auto;margin-right:auto;">
-        <h1 style="text-align:center;font-weight:800;color: #e98300;">{{product.name}}</h1>
+<section>
+    <h1 style="color: #e98300;">{{product.name}}</h1>
 
-        {% if product.description1 != "" %}
-        <div class="product-description">{{product.description1|safe}}</div>
-        {% endif %}
+    {% if product.description1 != "" %}
+    <div class="product-description">{{product.description1|safe}}</div>
+    {% endif %}
 
 
-        <div class="project-videos">
-            {% for video in product.videos.all %}
-                {% include 'electrical/video.html' %} 
-            {% endfor %}
-        </div>
+    <div class="project-videos">
+        {% for video in product.videos.all %}
+            {% include 'electrical/video.html' %}
+        {% endfor %}
+    </div>
 
-        {% if product.description2 != "" %}
-        <div class="product-description">{{product.description2|safe}}</div>
-        {% endif %}
+    {% if product.description2 != "" %}
+    <div class="product-description">{{product.description2|safe}}</div>
+    {% endif %}
 
-        <div class="modals">
-            {% for modal in product.modals.all %}
-                <div class="modal-btn" >
+    <div class="modals">
+        {% for modal in product.modals.all %}
+            <div class="modal-btn" >
+                <h1>{{modal.button_title}}</h1>
+                <p>{{modal.button_text}}</p>
+                <button class="product-button" onclick="OpenModal('{{modal.slug}}')">
                     <h1>{{modal.button_title}}</h1>
-                    <p>{{modal.button_text}}</p>
-                    <button class="product-button" onclick="OpenModal('{{modal.slug}}')">
-                        <h1>{{modal.button_title}}</h1>
-                    </button>
-                </div>
-                {% include 'electrical/modal.html' %}
-            {% endfor %} 
-        </div> 
-
-
-        {% if product.description3 != "" %}
-        <div class="product-description">{{product.description3|safe}}</div>
-        {% endif %}
-
-        {% if product.catalogs.all|length > 0 %}
-            <div class="button-set">
-                <div class="product-button catalog-link">
-                    <h1>Каталоги</h1>
-                    <ul>
-                        {% for catalog in product.catalogs.all %}
-                        <li>
-                        <a class="product-button catalog-link" href="{% url 'electrical:catalog_detail' catalog_slug=catalog.slug %}">
-                            <h3>{{catalog.name}}</h3>
-                        </a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                </div>
-                {% if product.software_link %}
-                <a class="product-button software-link" href="{{product.software_link}}">
-                    <h2>Программное обеспечение</h2>
-                </a>
-                {% endif %}
+                </button>
             </div>
-        {% endif %}
+            {% include 'electrical/modal.html' %}
+        {% endfor %}
+    </div>
+
+
+    {% if product.description3 != "" %}
+    <div class="product-description">{{product.description3|safe}}</div>
+    {% endif %}
+
+    {% if product.catalogs.all|length > 0 %}
+        <div class="button-set">
+            <div class="product-button catalog-link">
+                <h2>Каталоги</h2>
+                <ul>
+                    {% for catalog in product.catalogs.all %}
+                    <li>
+                    <a class="product-button catalog-link" href="{% url 'electrical:catalog_detail' catalog_slug=catalog.slug %}">
+                        <h3>{{catalog.name}}</h3>
+                    </a>
+                    </li>
+                    {% endfor %}
+                </ul>
+            </div>
+            {% if product.software_link %}
+            <a class="product-button software-link" href="{{product.software_link}}">
+                <h2>Программное обеспечение</h2>
+            </a>
+            {% endif %}
+        </div>
+    {% endif %}
 
 </section>
 
