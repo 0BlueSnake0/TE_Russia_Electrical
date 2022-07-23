@@ -4,12 +4,10 @@
 <title>Каталоги продукции</title>
 <div class="catalog-content">
     {% for catalog in catalogs %}
-        <div class="catalog-item"> 
-            <a target="_blank" href="{% url 'electrical:catalog_detail' catalog_slug=catalog.slug %}"> 
-                <h2>{{catalog.name}}</h2>
-                <img class="catalog-preview-image" src="{{catalog.preview.url}}">
-            </a>  
-        </div>
+        <a class="catalog" target="_blank" href="{% url 'electrical:catalog_detail' catalog_slug=catalog.slug %}">
+            <h2>{{catalog.name}}</h2>
+            <img src="{{catalog.preview.url}}">
+        </a>
     {% endfor %%}
 </div>   
 

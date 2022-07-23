@@ -7,7 +7,7 @@
 <div class="contact-list">
     {% for contact in contacts %}
         <div class="contact"> 
-            <h2>{{contact.first_name}} {{contact.last_name}}</h2>
+            <h1>{{contact.first_name}} {{contact.last_name}}</h1>
             <p>{{contact.position}}</p>
             <p style="color:gray;">{{contact.organization}}</p>
 
@@ -16,10 +16,10 @@
             {% endif %}
 
             <label style="display:flex;align-items:center;">
-                <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL </p>
+                <p style="margin-right:1em;color:#e98300;font-weight:800;">TEL</p>
                 <a style="margin-right:1em;" href="tel:{{contact.tel}}" type="tel"><p>{{contact.tel}}</p></a>
                 {% if contact.extended_number %}
-                    <p style="color:gray;"> доб. {{contact.extended_number}}</p>
+                    <p style="color:gray;">доб. {{contact.extended_number}}</p>
                 {% endif %}
             </label>
 

@@ -9,15 +9,13 @@
 }
 
 
-.contact h2 {
+.contact h1 {
     text-align:left;
 }
 
-
 .contact p {
-    font-size:1.25em;
+    margin:0.5vw;
 }
-
 
 .contact-list {
     display:flex;
