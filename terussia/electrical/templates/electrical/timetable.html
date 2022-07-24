@@ -1,14 +1,14 @@
 {% extends 'base.html' %}
 {% load static %}  
 {% load customtags %}
+
+
 {% block timetable %} 
 
- 
 <title>Расписание вебинаров</title>    
 
-
+<h1 style="color: #e98300;">Расписание семинаров 2022</h1>
 <section id="timetable">
-    <h1>Расписание семинаров 2022</h1>
     {% if html_table_path != '' %}
         {% include html_table_path %}
     {% endif %}

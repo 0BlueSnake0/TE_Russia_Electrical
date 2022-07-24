@@ -37,3 +37,10 @@ def get_states(region):
 @register.simple_tag
 def slugify_word(word):
     return slugify(word)
+
+
+@register.simple_tag
+def page_is_empty(product):
+    is_empty = product.description1 == "" and  product.description2 == "" and product.description3 == "" \
+        and len(list(product.videos.all())) == 0
+    return is_empty

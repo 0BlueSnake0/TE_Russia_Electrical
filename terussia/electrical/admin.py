@@ -72,9 +72,9 @@ class ProductVideoAdmin(admin.ModelAdmin):
             <link rel="stylesheet" type="text/css" href="https://vjs.zencdn.net/7.15.4/video-js.min.css"> 
             <video class="video-js vjs-default-skin vjs-big-play-centered video-clip" {params}></video>  
             """
-        html+= """
+        html+= f"""
             <script src="https://vjs.zencdn.net/7.17.0/video.min.js"></script>
-            <script type="text/javascript" src="{% static 'js/video/youtube.min.js' %}?v=5"></script>
+            <script type="text/javascript" src="{settings.STATIC_URL}/js/video/youtube.min.js"></script>
         """ 
         return mark_safe(html)
 
@@ -149,16 +149,16 @@ class ProductAdmin(admin.ModelAdmin):
     get_videos.short_description = "Videos"
 
 
-    def get_catalogs(self, obj): 
-        html = f'<div style="display:flex;position:relative;flex-wrap:wrap;width:70em;">'
+    def get_catalogs(self, obj):
+        html = f'<div style="display:flex;flex-wrap:wrap;">'
         for catalog in obj.catalogs.all():
             html += f'''
-                <a style="display:block;margin:2em;" class="edit-link" href="/admin/{catalog._meta.app_label}/{catalog._meta.model_name}/{catalog.pk}/change">  
-                    <p>{catalog.name}</p> 
-                    <img style="width:10em;" src="{catalog.preview.url if catalog.preview and catalog.preview.url else ''}">
-                </a>  
+                <a class="edit-link" style="width:50%;" href="/admin/{catalog._meta.app_label}/{catalog._meta.model_name}/{catalog.pk}/change">
+                    <p>{catalog.name}</p>
+                    <img style="width:90%" src="{catalog.preview.url if catalog.preview and catalog.preview.url else ''}">
+                </a>
             '''
-        html+= "</div>"  
+        html+= "</div>"
         return mark_safe(html)
 
     get_catalogs.short_description = "Catalogs"
@@ -277,11 +277,11 @@ class ContactPersonAdmin(admin.ModelAdmin):
                     <p style="color:#e98300;">MOBILE</p>
                     <a target="_blank" href="tel:{obj.tel}">{obj.tel}</a>
                 </div>
-                <div style="display:flex;align-items:center;"> 
-                    <img style="width:2em;margin:0.5em;" src="/static/images/icons/@-email-2.png">
+                <div style="display:flex;align-items:center;">
+                    <img style="width:2em;margin:0.5em;" src="{settings.STATIC_URL}/images/icons/email.png">
                     <a target="_blank" href="mailto:{obj.email}">{obj.email}</a>
                 </div>
-            </div> 
+            </div>
         """
         return mark_safe(html)
  

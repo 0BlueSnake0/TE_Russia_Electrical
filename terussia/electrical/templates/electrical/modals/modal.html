@@ -1,0 +1,16 @@
+{% load static %} 
+
+<label id="{{modal.slug}}" class="modal">
+    <div style="display:flex;flex-direction:column;">
+        <div class="modal-content">
+            {% if modal.content != '' %}
+                {{modal.content|safe}}
+            {% else %}
+                {% include 'electrical/modals/in_development.html' %}
+            {% endif %}
+        </div>
+        <div style="display:flex;justify-content:right">
+        <span onclick="CloseModal('{{modal.slug}}')"><div></div><div></div></span>
+        </div>
+    </div>
+</label> 

@@ -9,8 +9,10 @@ body {
     flex-direction:row;
     flex-wrap:wrap;
     justify-content:center;
-    align-items:space-between;
+    align-items:stretch;
     width:80vw;
+    overflow-y:scroll;
+    overflow-x:hidden;
     margin-left:auto;
     margin-right:auto;
     font-family:Arial, Helvetica, sans-serif;
@@ -70,7 +72,7 @@ p {
 }
 
 
-p img {
+h1 + p img {
     margin:1vw;
     float: left;
 }
@@ -210,8 +212,19 @@ input[type="checkbox"] {
 }
 
 
+#stop-activity {
+    position:relative;
+    display:flex;
+    justify-content:center;
+}
+
+#stop-activity img {
+    width:100%;
+}
+
+
 /* Mobile design */
-@media screen and (max-width:1060px) {
+@media screen and (max-width:1020px) {
     h1 {
         font-size:5vw;
     }
@@ -228,7 +241,7 @@ input[type="checkbox"] {
         font-size:3.5vw;
     }
 
-    p img {
+    h1 + p img {
         width:100%;
     }
 
@@ -260,11 +273,15 @@ input[type="checkbox"] {
     #seminars-link {
         width:70%;
     }
+
+    #stop-activity {
+        width:96vw;
+    }
 }
 
 
 /* Desktop design */
-@media screen and (min-width:1060px) {
+@media screen and (min-width:1020px) {
     h1 {
         font-size:2vw;
     }
@@ -281,7 +298,7 @@ input[type="checkbox"] {
         font-size:1.25vw;
     }
 
-    p img {
+    h1 + p img {
         width:50%;
     }
 
@@ -312,6 +329,10 @@ input[type="checkbox"] {
     }
 
     #seminars-link {
+        width:50%;
+    }
+
+    #stop-activity {
         width:50%;
     }
 }

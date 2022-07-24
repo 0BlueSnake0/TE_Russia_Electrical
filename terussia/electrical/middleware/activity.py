@@ -8,6 +8,9 @@ class StopActivityMiddleware:
 
 
     def __call__(self, request): 
-        if (settings.STOP_ACTIVITY) and ('stop_activity' not in request.path) :
-            return redirect("/electrical/stop_activity")
+        if (settings.STOP_ACTIVITY) and ('stop_activity' not in request.path):
+            return redirect("electrical:stop_activity")
+        elif (not settings.STOP_ACTIVITY and 'stop_activity' in request.path):
+            return redirect("/")
+
         return self.get_response(request)

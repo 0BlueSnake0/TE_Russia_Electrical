@@ -50,7 +50,7 @@
                     {% get_contacts as contacts %}
                     {% for contact in contacts %}
                         {% slugify_word contact as slugified_city %}
-                        <li><a href="/contacts/{{slugified_city}}"><p>{{contact}}</p></a></li>
+                        <li><a href="{% url 'electrical:contacts' city=slugified_city %}"><p>{{contact}}</p></a></li>
                     {% endfor %}
                     <li><a href="{% url 'electrical:regions' %}"><p>Ответственность по регионам</p></a></li>
                 </ul>

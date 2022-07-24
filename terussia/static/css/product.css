@@ -1,22 +1,21 @@
 .product-description {
     position:relative;
-    display:block;
+    width:100%;
+    height:auto;
     margin-top:2vw;
     margin-bottom:2vw;
+}
+
+
+.product-description p {
+    text-align:left;
+    margin:1vw;
 }
 
 
 .product-description:first-child {
     margin-top:0 !important;
 }
-
-
-.project-videos {
-    position:relative;
-    display:flex;
-    justify-content: center;
-    flex-wrap: wrap;
-} 
 
 
 .video-clip {
@@ -66,28 +65,46 @@
     cursor:pointer;
 
     background-color:#e98300;
+    color:white;
     box-shadow: 16px 15px 35px 0px rgba(34, 60, 80, 0.8);
 }
+
+
 .product-button:hover  {
     background-color:rgba(255, 174, 0, 1);
 }
 
 
 .product-button h1,
-.product-button h2,
-.product-button h3 {
-    width:70%;
-    text-align:center;
-    word-wrap:break-word;
-    font-weight:bold;
+.product-button h2 {
+    width:90%;
     color: white;
 }
 
+.catalog-link {
+    z-index:4;
+}
 
-.catalog-link {width:40%;}
-.product-button ul .catalog-link {width:100%;margin:0vw;}
-.software-link {width:40%;background-color:rgb(32, 93, 206);z-index:3;}
-.software-link:hover {background-color:rgb(115, 153, 225);}
+
+.product-button ul .catalog-link {
+    width:100%;
+    margin:0vw;
+}
+
+.product-button ul li {
+    list-style-type:none;
+}
+
+
+.software-link {
+    background-color:rgb(32, 93, 206);
+    z-index:3;
+}
+
+
+.software-link:hover {
+    background-color:rgb(115, 153, 225);
+}
 
 
 .product-button ul {
@@ -107,4 +124,39 @@
 
 .product-button:hover ul {
     display:flex;
+    animation: fading-top 1s;
+}
+
+
+/* Mobile design */
+@media screen and (max-width:1020px) {
+    #desktop-navigation {
+        display:none;
+    }
+    .catalog-link,
+    .software-link {
+        width:80%;
+    }
+
+    .product-description img {
+        width:100% !important;
+    }
+}
+
+
+/* Desktop design */
+@media screen and (min-width:1020px) {
+    #mobile-navigation {
+        display:none;
+    }
+
+    .catalog-link,
+    .software-link {
+        width:30%;
+    }
+
+    .product-button h1 {
+        font-size:1.5vw;
+    }
+
 }

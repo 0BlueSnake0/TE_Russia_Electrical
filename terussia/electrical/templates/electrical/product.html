@@ -7,61 +7,83 @@
 <title>{{product.name}}</title>
 
 <section>
-    <h1 style="color: #e98300;">{{product.name}}</h1>
 
-    {% if product.description1 != "" %}
-    <div class="product-description">{{product.description1|safe}}</div>
-    {% endif %}
+    {% page_is_empty product as empty %}
+    {% if not empty %}
+        <h1 style="color: #e98300;">{{product.name}}</h1>
 
-
-    <div class="project-videos">
-        {% for video in product.videos.all %}
-            {% include 'electrical/video.html' %}
-        {% endfor %}
-    </div>
-
-    {% if product.description2 != "" %}
-    <div class="product-description">{{product.description2|safe}}</div>
-    {% endif %}
-
-    <div class="modals">
-        {% for modal in product.modals.all %}
-            <div class="modal-btn" >
-                <h1>{{modal.button_title}}</h1>
-                <p>{{modal.button_text}}</p>
-                <button class="product-button" onclick="OpenModal('{{modal.slug}}')">
-                    <h1>{{modal.button_title}}</h1>
-                </button>
-            </div>
-            {% include 'electrical/modal.html' %}
-        {% endfor %}
-    </div>
+        {% if product.description1 != "" %}
+        <div class="product-description">{{product.description1|safe}}</div>
+        {% endif %}
 
 
-    {% if product.description3 != "" %}
-    <div class="product-description">{{product.description3|safe}}</div>
-    {% endif %}
-
-    {% if product.catalogs.all|length > 0 %}
-        <div class="button-set">
-            <div class="product-button catalog-link">
-                <h2>Каталоги</h2>
-                <ul>
-                    {% for catalog in product.catalogs.all %}
-                    <li>
-                    <a class="product-button catalog-link" href="{% url 'electrical:catalog_detail' catalog_slug=catalog.slug %}">
-                        <h3>{{catalog.name}}</h3>
-                    </a>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-            {% if product.software_link %}
-            <a class="product-button software-link" href="{{product.software_link}}">
-                <h2>Программное обеспечение</h2>
-            </a>
-            {% endif %}
+        <div class="product-videos">
+            {% for video in product.videos.all %}
+                {% include 'electrical/video.html' %}
+            {% endfor %}
         </div>
+
+        {% if product.description2 != "" %}
+        <div class="product-description">{{product.description2|safe}}</div>
+        {% endif %}
+
+        <div class="modals">
+            {% for modal in product.modals.all %}
+                <div class="modal-btn" >
+                    <h1>{{modal.button_title}}</h1>
+                    <p>{{modal.button_text}}</p>
+                    <button class="product-button" onclick="OpenModal('{{modal.slug}}')">
+                        <h1>{{modal.button_title}}</h1>
+                    </button>
+                </div>
+                {% include 'electrical/modals/modal.html' %}
+            {% endfor %}
+        </div>
+
+
+        {% if product.description3 != "" %}
+        <div class="product-description">{{product.description3|safe}}</div>
+        {% endif %}
+
+        {% if product.catalogs.all|length > 0 %}
+            <div class="button-set">
+                <div class="product-button catalog-link">
+                    <h1>Каталоги</h1>
+                    <ul>
+                        {% for catalog in product.catalogs.all %}
+                        <li>
+                        <a class="product-button catalog-link" href="{% url 'electrical:catalog_detail' catalog_slug=catalog.slug %}">
+                            <h1>{{catalog.name}}</h1>
+                        </a>
+                        </li>
+                        {% endfor %}
+                    </ul>
+                </div>
+                {% if product.software_link %}
+                <a class="product-button software-link" href="{{product.software_link}}">
+                    <h1>Программное обеспечение</h1>
+                </a>
+                {% endif %}
+            </div>
+        {% endif %}
+    {% else %}
+
+        <label id="in-development" class="modal">
+            <div style="display:flex;flex-direction:column;">
+                <div class="modal-content">
+                    {% include 'electrical/modals/in_development.html' %}
+                </div>
+                <div style="display:flex;justify-content:right">
+                <a href="{% url 'electrical:index' %}">
+                <span><div></div><div></div></span>
+                </a>
+                </div>
+            </div>
+        </label>
+        <script type="text/javascript">
+            OpenModal('in-development')
+        </script>
+
     {% endif %}
 
 </section>

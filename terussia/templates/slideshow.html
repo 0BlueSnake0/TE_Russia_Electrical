@@ -9,11 +9,11 @@
             <div class="slideshow-arrow left-arrow" onclick="prevSlide('{{slideshowId}}')"></div>
         </div>
         <div class="slides">
-            {% if data_type == 'image' %}
-                {% for item in content %}
-                    {% get_item_index content item as slideIndex %}
+            {% if data_type == 'static_image' %}
+                {% for img_url in content %}
+                    {% get_item_index content img_url as slideIndex %}
                     <div id="{{slideshowId}}-slide-{{slideIndex}}" class="slide">
-                        <img src="{{item}}">
+                        <img src="{% static img_url %}">
                     </div>
                 {% endfor %}
             {% elif data_type == 'text' %}

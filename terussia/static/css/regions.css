@@ -1,0 +1,24 @@
+#regions {
+    position:relative;
+    display:block;
+    width:100%;
+    overflow:scroll;
+    margin:5%;
+    box-shadow: 4px 4px 47px 11px rgba(0, 0, 0, 0.2);
+}
+
+
+/* Mobile design */
+@media screen and (max-width:1020px) {
+    #regions #map {
+        width:200%;
+    }
+}
+
+
+/* Desktop design */
+@media screen and (min-width:1020px) {
+    #regions #map {
+        width:100%;
+    }
+}

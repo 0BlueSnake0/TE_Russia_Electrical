@@ -1,9 +1,9 @@
-@import url("/static/css/desktop_navigation.css");
-@import url("/static/css/mobile_navigation.css");
+@import url("desktop_navigation.css");
+@import url("mobile_navigation.css");
 
 
 /* Mobile design */
-@media screen and (max-width:1060px) {
+@media screen and (max-width:1020px) {
     #desktop-navigation {
         display:none;
     }
@@ -11,7 +11,7 @@
 
 
 /* Desktop design */
-@media screen and (min-width:1060px) {
+@media screen and (min-width:1020px) {
     #mobile-navigation {
         display:none;
     }

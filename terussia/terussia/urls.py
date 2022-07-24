@@ -4,6 +4,8 @@ from django.conf.urls.static import static
 from django.conf import settings    
 
 
+handler404 = 'electrical.views.page_not_found'
+
 urlpatterns = [
     path('admin/', admin.site.urls),  
     path('', include("electrical.urls")),  

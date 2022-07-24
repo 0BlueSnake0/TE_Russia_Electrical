@@ -8,6 +8,7 @@ class RedirectMiddleware:
 
 
     def __call__(self, request): 
-        if (not settings.STOP_ACTIVITY) and ('terussia.ru' in request.path or 'bluesnakeengineer.ru' in request.path):
+        url = request.get_full_path()
+        if (not settings.STOP_ACTIVITY) and ('terussia.ru' in url or 'bluesnakeengineer.ru' in url):
             return redirect(f'/electrical/{request.path}')
         return self.get_response(request)
