@@ -27,7 +27,7 @@ class CatalogListView(ListView):
 
 class CatalogDetailView(DetailView):
     def get(self, request, *args, **kwargs):
-        pdf_file = f'{settings.BASE_DIR}{Catalog.objects.get(slug=kwargs["catalog_slug"]).pdf.url}'
+        pdf_file = Catalog.objects.get(slug=kwargs["catalog_slug"]).pdf.path
 
         return FileResponse(open(pdf_file, 'rb'), content_type='application/pdf' )
 
@@ -70,16 +70,13 @@ class ProductDetailView(DetailView):
 def seminars_timetable(request, **kwargs):
     try:
         timetable = list(TimeTable.objects.all())[0]
-        table_path = f'{settings.BASE_DIR}{timetable.table.url}'
+        table_path = f'{timetable.table.path}'
         html_path = f'{settings.BASE_DIR}/electrical/templates/electrical/tables/timetable_file.html'
     
         xlsx2html(table_path, html_path) 
         
         file = open(html_path, 'r', encoding="utf8")  
-        html = f"""
-            <link rel="stylesheet" type="text/css" href="/static/css/timetable.css"> 
-            {file.read()}
-        """
+        html = f'<link rel="stylesheet" href="{settings.STATIC_URL}/css/timetable.css">' + file.read()
         file.close() 
 
         file = open(html_path, 'w',encoding='utf8')
