@@ -35,7 +35,6 @@ MIDDLEWARE = [
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
 
-    'electrical.middleware.redirect.RedirectMiddleware',
     'electrical.middleware.activity.StopActivityMiddleware', 
     'electrical.middleware.states.InitStatesMiddleware',
 ]
@@ -133,11 +132,11 @@ CKEDITOR_CONFIGS = {
 
 STATIC_URL = '/static/' 
 STATICFILES_DIRS = [
-    f'{BASE_DIR}/static'
+    f'{BASE_DIR}/static/'
 ]
 
 MEDIA_URL = '/media/'
-MEDIA_ROOT = f'{BASE_DIR}/media' 
+MEDIA_ROOT = f'{BASE_DIR}/media/'
 
 
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField' 

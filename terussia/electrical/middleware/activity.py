@@ -11,6 +11,6 @@ class StopActivityMiddleware:
         if (settings.STOP_ACTIVITY) and ('stop_activity' not in request.path):
             return redirect("electrical:stop_activity")
         elif (not settings.STOP_ACTIVITY and 'stop_activity' in request.path):
-            return redirect("/")
+            return redirect("electrical:index")
 
         return self.get_response(request)
